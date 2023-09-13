@@ -20,8 +20,32 @@ function Cards() {
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </p>
-            <h3 className="map-written">Map</h3>
+            <div className="map_info">
+            <h3 className="map-written">Map &nbsp;<p className="map_written_b">
+            (মানচিত্র) </p></h3>
             <button className="circular-button">{<LocationOnIcon />}</button>
+            </div>
+            <div className="map_info">
+            <h3 className="map-written">Food Places &nbsp;<p className="map_written_b">
+            (খাবারের জায়গা) </p></h3>
+            <div className="badge-container">
+            <span className="badge">Food</span>
+            <span className="badge">Route</span>
+        </div>
+            </div>
+            <div className="map_info">
+            <h3 className="map-written">Transits &nbsp;<p className="map_written_b">
+            (গণপরিবহন) </p></h3>
+            <div className="badge-container">
+            <span className="badge">Food</span>
+            <span className="badge">Route</span>
+        </div>
+            </div>
+            <div className="map_info">
+            <h3 className="map-written">Prices &nbsp;<p className="map_written_b">
+            (যাত্রা খরচ) </p></h3>
+            
+            </div>
             <div className="badge-container">
             <span className="badge">Food</span>
             <span className="badge">Route</span>

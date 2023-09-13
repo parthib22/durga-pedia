@@ -2,6 +2,7 @@
     --primary-color: #212121;
     --background-color: #111;
     --font: sans-serif;
+    --tw-bg-opacity:1;
   }
   
   /*  */
@@ -13,7 +14,7 @@
   
   /* Timeline Container */
   .timeline {
-    background: #15172b;
+    background: rgb(31 41 55 / var(--tw-bg-opacity));
     margin: 20px auto;
     padding: 20px;
   }
@@ -86,65 +87,75 @@
   .info {
     display: flex;
     flex-direction: column;
-    background: #1d1f97;
-    color: gray;
+    background: rgb(55 65 81 / var(--tw-bg-opacity));
+    color: white;
     border-radius: 10px;
     padding: 10px;
   }
   
   /* Title of the card */
   .title {
-    color: rgb(0, 0, 0);
+    color: white;
+    font-family: 'Merriweather', serif;
     position: relative;
     
   }
 
   .map-written{
-    color:aqua;
+    color:wheat;
     position: relative;
     margin-top: 10px;
+    display: flex;
+    font-family: 'Merriweather', serif;
+  }
+
+  .map_written_b{
+    font-family: 'Noto Sans Bengali', sans-serif;
   }
 
   .mark-right {
-    background-color:#1d1f97;
-    color: aqua;
-    border-radius: 70%;
-    width:15%;
+    background-color:rgb(3 7 18 / var(--tw-bg-opacity));
+    color: green;
+    border-radius: 50%;
+    padding: 8px;
+    border: none;
     margin-right: 10px;
     float: right;
   }
 
   .mark-wrong{
     
-    background-color: #1d1f97;
-    color: aqua;
+    background-color: rgb(3 7 18 / var(--tw-bg-opacity));
+    color: red;
     border-radius: 50%;
-    width:15%;
-    height: 10%;
+    border: none;
+    padding: 8px;
     margin-right: 10px;
     float: right;
     
   }
 
-  .button-container {
+
+  .button_container {
     display: flex;
     justify-content: flex-end;
     margin-left: 10px;
+    padding-bottom: 10px;
   }
 
   .circular-button {
     position: relative;
     top: 1px; /* Adjust the top position as needed */
     right: 2px; /* Adjust the right position as needed */
-    background-color: #007bff; /* Set the background color */
+    background-color: rgb(79 70 229 / var(--tw-bg-opacity)); /* Set the background color */
     color: #fff; /* Set the text color */
     border: none;
     bottom: 2px;
     border-radius: 50%; /* Make the button circular */
-    width: 30px; /* Set the desired button size */
-    height: 30px; /* Set the desired button size */
+    width: 6%; /* Set the desired button size */ /* Set the desired button size */
     font-size: 20px; /* Set the font size as needed */
     cursor: pointer;
+    padding: 5px;
   }
 
   .badge-container {
@@ -154,7 +165,7 @@
   }
   
   .badge {
-    background-color: #007bff;
+    background-color: rgb(79 70 229 / var(--tw-bg-opacity));
     color: #fff;
     margin-top: 15px;
     padding: 5px 10px;
