@@ -152,7 +152,7 @@ export default function FormBottom(props: { onSubmit: any }) {
                 -
               </button>
               <div className="divPandal">{countpandal}</div>
-              <button id="plus" onClick={() => setCountPandal(countpandal + 1)}>
+              <button id="plus" onClick={() => countpandal < 40 && setCountPandal(countpandal + 1)}>
                 +
               </button>
             </span>
@@ -414,7 +414,11 @@ export default function FormBottom(props: { onSubmit: any }) {
             ducimus adipisci. Repellat, laudantium expedita! Aut debitis ex
             repudiandae omnis laboriosam dolor unde molestiae officia excepturi
             nobis. Natus, illum at.
+            
           </div>
+          <button className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+  Button
+</button>
         </form>
       </div>
     </>
