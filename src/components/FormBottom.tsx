@@ -106,7 +106,7 @@ export default function FormBottom(props: { onSubmit: any }) {
   //ends
   return (
     <>
-      <div className="container">
+      <div className="form-container">
         <form onSubmit={getlatlng}>
           {coordinates.lat && coordinates.lng && (
             <p>
