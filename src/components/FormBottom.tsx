@@ -38,7 +38,7 @@ export default function FormBottom(props: { onSubmit: any }) {
       window.removeEventListener("scroll", handlescroll);
     };
   }, []);
-  console.log(scrollcheck);
+  // console.log(scrollcheck);
   // useEffect(() => {
 
   // }, [addressbool]);
@@ -119,8 +119,6 @@ export default function FormBottom(props: { onSubmit: any }) {
             {<ExpandLessIcon />}
           </div>
           <div className="form-layout-1">
-            {/* <label className="lg-lbl">Your start location</label> */}
-            {/* <div className="sm-row"> */}
             <Autocomplete>
               <input
                 ref={address}
@@ -137,7 +135,6 @@ export default function FormBottom(props: { onSubmit: any }) {
             >
               {<MyLocationIcon />}
             </button>
-            {/* </div> */}
           </div>
 
           <div className="form-layout-2">
@@ -169,8 +166,8 @@ export default function FormBottom(props: { onSubmit: any }) {
               Get Roadmap
             </button>
           </div>
-                {/* added text below to simulate content */}
-          <div style={{textAlign: 'justify', padding: '20px'}}>
+          {/* added text below to simulate content */}
+          <div style={{ textAlign: "justify", padding: "20px" }}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
             doloribus explicabo similique blanditiis quibusdam magni ipsam.
             Esse, blanditiis minus voluptate aspernatur voluptas earum
