@@ -106,7 +106,7 @@ export default function FormBottom(props: { onSubmit: any }) {
   //ends
   return (
     <>
-      <div className="container">
+      <div className="form-container">
         <form onSubmit={getlatlng}>
           {coordinates.lat && coordinates.lng && (
             <p>
@@ -149,7 +149,12 @@ export default function FormBottom(props: { onSubmit: any }) {
                 -
               </button>
               <div className="divPandal">{countpandal}</div>
-              <button id="plus" onClick={() => countpandal < 40 && setCountPandal(countpandal + 1)}>
+              <button
+                id="plus"
+                onClick={() =>
+                  countpandal < 40 && setCountPandal(countpandal + 1)
+                }
+              >
                 +
               </button>
             </span>
@@ -166,13 +171,6 @@ export default function FormBottom(props: { onSubmit: any }) {
               Get Roadmap
             </button>
           </div>
-          {/* added text below to simulate content */}
-          <div style={{ textAlign: "justify", padding: "20px" }}>
-            khanki kom lekh
-          </div>
-          {/* <button className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
-  Button
-</button> */}
         </form>
       </div>
     </>
