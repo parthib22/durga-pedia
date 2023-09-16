@@ -9,6 +9,7 @@
   color: white;
   font-family: inherit;
   background: rgb(31 41 55 / 1);
+  box-shadow: 0 -70px 70px rgb(0 0 0 / 0.4);
   /* background-color: #303245; */
   /*background-color: #15172b; temporarily changed for testing purpose bara
    font-family: "Josefin Sans", sans-serif; */
@@ -19,7 +20,7 @@
   align-items: center;
   justify-content: center;
   color: rgba(255 255 255 / 0.9);
-  margin-block-end: 7px;
+  margin-block: 7px;
 }
 
 .expandIconRot {
@@ -33,7 +34,6 @@
   flex-direction: row;
   flex-wrap: no-wrap;
   width: 100%;
-  gap: 0px;
 }
 
 .ipStartLoc {
@@ -54,6 +54,7 @@
   box-sizing: border-box;
   color: #eee;
   font-size: 18px;
+  box-shadow: 0 0 50px rgb(0 0 0 / 0.3);
 }
 
 .btnStartLoc {
@@ -117,6 +118,7 @@
   color: #eee;
   font-size: 20px;
   cursor: default;
+  box-shadow: 0 0 30px rgb(0 0 0 / 0.4);
 }
 
 #minus,
@@ -134,6 +136,7 @@
   box-sizing: border-box;
   color: #eee;
   cursor: pointer;
+  box-shadow: 0 0 30px rgb(0 0 0 / 0.4);
 }
 
 .form-layout-3 {
@@ -177,6 +180,7 @@
   background: rgb(0, 112, 225);
   border: 3px solid rgba(0, 0, 0, 0.2);
   border-radius: 0;
+  box-shadow: 0 0 50px rgb(0 0 0 / 0.3);
   /* box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset,
     rgba(50, 50, 93, 0.1) 0 2px 5px 0, rgba(0, 0, 0, 0.07) 0 1px 1px 0; */
   box-sizing: border-box;

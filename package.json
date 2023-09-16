@@ -28,6 +28,8 @@
     "react-dom": "18.2.0",
     "react-redux": "^8.1.2",
     "redux": "^4.2.1",
+    "sweetalert2": "^11.7.28",
+    "sweetalert2-react-content": "^5.0.7",
     "typescript": "5.2.2"
   },
   "devDependencies": {
