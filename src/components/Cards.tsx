@@ -2,7 +2,7 @@
 import React from "react";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import DoneIcon from "@mui/icons-material/Done";
-import ClearIcon from '@mui/icons-material/Clear';
+import ClearIcon from "@mui/icons-material/Clear";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import "../app/cards.css";
 
@@ -13,8 +13,8 @@ function Cards() {
         <div className="card">
           <div className="info">
             <div className="button_container">
-              <button className="mark-right bg-green-950 text-green-400">{<DoneIcon />}</button>
-              <button className="mark-wrong bg-red-950 text-red-400">{<ClearIcon />}</button>
+              <button className="mark-right">{<DoneIcon />}</button>
+              <button className="mark-wrong">{<ClearIcon />}</button>
             </div>
             <h2 className="title">Title 1</h2>
             <p>
@@ -26,14 +26,14 @@ function Cards() {
             <div className="map_info">
               <h3 className="map-written">
                 Map &nbsp;
-                <p className="map_written_b">(মানচিত্র) </p>
+                {/* <p className="map_written_b">(মানচিত্র) </p> */}
               </h3>
               <button className="circular-button">{<LocationOnIcon />}</button>
             </div>
             <div className="map_info">
               <h3 className="map-written font-bold text-xl">
                 Food Places &nbsp;
-                <p className="map_written_b">(খাবারের জায়গা) </p>
+                {/* <p className="map_written_b">(খাবারের জায়গা) </p> */}
               </h3>
               <div className="badge-container">
                 <span className="badge">Food</span>
@@ -42,7 +42,8 @@ function Cards() {
             </div>
             <div className="map_info">
               <h3 className="map-written font-bold text-xl">
-                Transits &nbsp;<p className="map_written_b">(গণপরিবহন) </p>
+                Transits &nbsp;
+                {/* <p className="map_written_b">(গণপরিবহন) </p> */}
               </h3>
               <div className="badge-container">
                 <span className="badge">Food</span>
@@ -54,7 +55,8 @@ function Cards() {
             </div>
             <div className="map_info">
               <h3 className="map-written font-bold text-xl pb-8">
-                Prices &nbsp;<p className="map_written_b">(যাত্রা খরচ) </p>
+                Prices &nbsp;
+                {/* <p className="map_written_b">(যাত্রা খরচ) </p> */}
               </h3>
               <table className="fare_table border-collapse table-auto w-full text-sm">
                 <thead>
@@ -129,7 +131,8 @@ function Cards() {
             </div>
             <div className="map_info">
               <h3 className="map-written font-bold text-xl pb-8">
-                Weather &nbsp;<p className="map_written_b">(আবহাওয়া) </p>
+                Weather &nbsp;
+                {/* <p className="map_written_b">(আবহাওয়া) </p> */}
               </h3>
               <div className="flex justify-between">
                 <div className="flex flex-col">
