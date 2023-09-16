@@ -89,7 +89,7 @@ const AutoComplete = () => {
       <ul className="suggestions">
         {searchResults.map((item: any) => (
           <li key={item.id}>{item.pandal}</li>
-        ))}
+          ))}
       </ul>
     );}
   };
