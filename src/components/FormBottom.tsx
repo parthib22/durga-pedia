@@ -3,6 +3,7 @@ import "../app/form.css";
 // import '../app/globals.css'
 import MyLocationIcon from "@mui/icons-material/MyLocation";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
+
 import { createContext, useContext, useEffect, useRef, useState } from "react";
 import MyContext from "./MyContext";
 import {
@@ -13,6 +14,8 @@ import {
   DirectionsRenderer,
 } from "@react-google-maps/api";
 import { count } from "console";
+import withReactContent from "sweetalert2-react-content";
+import Swal from "sweetalert2";
 
 export default function FormBottom(props: { onSubmit: any }) {
   const { setContextData }: any = useContext(MyContext);
@@ -133,7 +136,16 @@ var _d2r = (Math.PI / 180.0);
             name=pandal.pandal;
         }
     }
+
+
     console.log(shortestDistance,flat,flng,name)
+    
+    const MySwal = withReactContent(Swal)
+    MySwal.fire({
+      title: "Found!",
+      html: "Check your nearest pandal is :"+name,
+      icon: 'success'
+    })
   }
   catch(e)
   {
