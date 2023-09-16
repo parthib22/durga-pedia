@@ -31,7 +31,7 @@ function Cards() {
               <button className="circular-button">{<LocationOnIcon />}</button>
             </div>
             <div className="map_info">
-              <h3 className="map-written font-bold text-xl">
+              <h3 className="map-written">
                 Food Places &nbsp;
                 {/* <p className="map_written_b">(খাবারের জায়গা) </p> */}
               </h3>
@@ -41,7 +41,7 @@ function Cards() {
               </div>
             </div>
             <div className="map_info">
-              <h3 className="map-written font-bold text-xl">
+              <h3 className="map-written">
                 Transits &nbsp;
                 {/* <p className="map_written_b">(গণপরিবহন) </p> */}
               </h3>
@@ -54,90 +54,58 @@ function Cards() {
               </div>
             </div>
             <div className="map_info">
-              <h3 className="map-written font-bold text-xl pb-8">
+              <h3 className="map-written">
                 Prices &nbsp;
                 {/* <p className="map_written_b">(যাত্রা খরচ) </p> */}
               </h3>
-              <table className="fare_table border-collapse table-auto w-full text-sm">
+              <table className="fare_table">
                 <thead>
                   <tr>
-                    <th className="border-b dark:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left text-xl">
-                      Medium
-                    </th>
-                    <th className="border-b dark:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left text-xl">
-                      Fare
-                    </th>
+                    <th className="tableHead">Medium</th>
+                    <th className="tableHead">Fare</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                      Bus
-                    </td>
-                    <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                      ₹ 100/-
-                    </td>
+                    <td className="tableBody">Bus</td>
+                    <td className="tableBody">₹ 100/-</td>
                   </tr>
                   <tr>
-                    <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                      Uber Hire
-                    </td>
-                    <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                      ₹ 100/-
-                    </td>
+                    <td className="tableBody">Uber Hire</td>
+                    <td className="tableBody">₹ 100/-</td>
                   </tr>
                   <tr>
-                    <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                      Uber Pool
-                    </td>
-                    <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                      ₹ 100/-
-                    </td>
+                    <td className="tableBody">Uber Pool</td>
+                    <td className="tableBody">₹ 100/-</td>
                   </tr>
                   <tr>
-                    <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                      Uber Go
-                    </td>
-                    <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                      ₹ 100/-
-                    </td>
+                    <td className="tableBody">Uber Go</td>
+                    <td className="tableBody">₹ 100/-</td>
                   </tr>
                   <tr>
-                    <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                      Uber Xl
-                    </td>
-                    <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                      ₹ 100/-
-                    </td>
+                    <td className="tableBody">Uber Xl</td>
+                    <td className="tableBody">₹ 100/-</td>
                   </tr>
                   <tr>
-                    <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                      Uber Premier
-                    </td>
-                    <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                      ₹ 100/-
-                    </td>
+                    <td className="tableBody">Uber Premier</td>
+                    <td className="tableBody">₹ 100/-</td>
                   </tr>
                   <tr>
-                    <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                      Local Taxi
-                    </td>
-                    <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                      ₹ 100/-
-                    </td>
+                    <td className="tableBody">Local Taxi</td>
+                    <td className="tableBody">₹ 100/-</td>
                   </tr>
                 </tbody>
               </table>
             </div>
             <div className="map_info">
-              <h3 className="map-written font-bold text-xl pb-8">
+              <h3 className="map-written">
                 Weather &nbsp;
                 {/* <p className="map_written_b">(আবহাওয়া) </p> */}
               </h3>
-              <div className="flex justify-between">
-                <div className="flex flex-col">
-                  <span className="text-6xl font-bold">29°C</span>
-                  <span className="font-semibold mt-1 text-gray-500">
+              <div className="weatherLg">
+                <div className="weatherSm">
+                  <div className="tempLg">29°C</div>
+                  <span className="locationSm font-semibold mt-1 text-gray-500">
                     Mudjimba, QLD
                   </span>
                 </div>

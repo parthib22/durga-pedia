@@ -210,5 +210,44 @@
 }
 
 .fare_table {
-  padding: auto;
+  width: 100%;
+  font-size: 0.875rem /* 14px */;
+  line-height: 1.25rem /* 20px */;
+}
+
+.tableHead {
+  border-bottom-width: 1px;
+  border-color: rgb(71 85 105 / 1);
+  font-weight: 500;
+  color: rgb(226 232 240 / 1);
+  text-align: left;
+  padding-block: 1rem;
+  font-size: 1.25rem /* 20px */;
+  line-height: 1.75rem /* 28px */;
+}
+
+.tableBody {
+  text-align: left;
+  border-color: rgb(51 65 85 / 1);
+  color: rgb(148 163 184 / 1);
+  padding-block: 0.7rem;
+}
+
+.weatherLg {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.weatehrSm {
+  display: flex;
+  flex-direction: column;
+}
+.tempLg {
+  font-size: 3.75rem /* 60px */;
+  line-height: 1;
+  font-weight: 700;
+}
+.locationSm {
+  font-weight: 600;
+  color: rgb(107 114 128 / 1);
 }
