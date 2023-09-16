@@ -86,7 +86,7 @@
 .info {
   display: flex;
   flex-direction: column;
-  background: rgb(55 65 81 / var(--tw-bg-opacity));
+  background: rgb(55 65 81 / 0.4);
   color: white;
   border-radius: 10px;
   padding: 1.5rem;
@@ -94,16 +94,19 @@
 
 /* Title of the card */
 .title {
-  color: white;
-  /* font-family: "Merriweather", serif; */
+  color: wheat;
   position: relative;
-  font-size: 1.875rem /* 30px */;
-  line-height: 2.25rem /* 36px */;
-  font-weight: 700;
+  font-size: 1.875rem;
+  font-weight: 500;
 }
 
 .info > p {
   text-align: justify;
+  border: 1px solid slategray;
+  padding: 7px 10px;
+  margin: 7px -5px;
+  margin-bottom: 20px;
+  border-radius: 10px;
 }
 
 /* Timeline dot  */
@@ -133,15 +136,16 @@
   right: -45px;
 }
 
+.map_info {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
 .map-written {
   color: wheat;
-  position: relative;
-  margin-top: 10px;
-  display: flex;
-  font-weight: 700;
-  font-size: 1.25rem /* 20px */;
-  line-height: 1.75rem /* 28px */;
-  /* font-family: "Merriweather", serif; */
+  font-weight: 400;
+  font-size: 16px;
 }
 
 /* .map_written_b {
@@ -182,30 +186,27 @@
 }
 
 .circular-button {
-  display: grid;
-  place-items: center;
-  padding: 10px;
-  background-color: rgb(79 70 229 / 1);
-  color: #fff;
-  border: 3px solid rgba(255 255 255 / 0.1);
-  border-radius: 50%;
+  /* background-color: rgb(79 70 229 / 1); */
+  margin-inline: 5px;
+  color: wheat;
+  /* border: 3px solid rgba(255 255 255 / 0.1); */
   cursor: pointer;
-  padding: 5px;
 }
 
 .badge-container {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
+  flex-direction: row;
+  gap: 5px;
 }
 
 .badge {
-  background-color: rgb(79 70 229 / var(--tw-bg-opacity));
+  background-color: rgb(79 70 229 / 0.2);
   color: #fff;
-  margin-top: 15px;
-  padding: 5px 10px;
-  margin-bottom: 8px;
-  margin-right: 10px;
+  font-weight: 300;
+  font-size: 14px;
+  padding: 2px 7px;
+  border: 1px solid slategray;
   border-radius: 6px;
 }
 
@@ -221,9 +222,8 @@
   font-weight: 500;
   color: rgb(226 232 240 / 1);
   text-align: left;
-  padding-block: 1rem;
-  font-size: 1.25rem /* 20px */;
-  line-height: 1.75rem /* 28px */;
+  padding-block: 0.5rem;
+  font-size: 1.1rem;
 }
 
 .tableBody {

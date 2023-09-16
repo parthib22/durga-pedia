@@ -73,7 +73,7 @@ const AutoComplete = ({ data }:any) => {
   return (
     <div className="autocomplete">
       <input
-        placeholder="Search Your Pandel"
+        placeholder="Search in your area"
         type="text"
         value={value}
         onChange={handleChange}
