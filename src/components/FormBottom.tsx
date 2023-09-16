@@ -56,6 +56,7 @@ export default function FormBottom(props: { onSubmit: any }) {
           if (data.status === "OK" && data.results.length > 0) {
             const result = data.results[0];
             const { lat, lng } = result.geometry.location;
+            StartPlanner(lat,lng);
             setCoordinates({ lat, lng });
             props.onSubmit(lat + "|" + lng);
           } else {
@@ -75,10 +76,7 @@ export default function FormBottom(props: { onSubmit: any }) {
     }
   };
 
-  // const handleInputChange = (e:any) => {
-  //   setAddress(e.target.value);
-  // };
-  // eslint-disable-next-line react-hooks/rules-of-hooks
+ 
   const { isLoaded }: any = useJsApiLoader({
     googleMapsApiKey: "AIzaSyDj2cR40F6xZo8mTepkyEpJl8BGVNDZ2qk",
     libraries: ["places"],
@@ -103,16 +101,54 @@ export default function FormBottom(props: { onSubmit: any }) {
     console.log("Your latitude is :" + lat + " and longitude is " + long);
     setContextData("Your latitude is :" + lat + " and longitude is " + long);
   }
+   function distanceGet(lat1:any,lng1:any,lat2:any,lng2:any)
+   {
+    var _eQuatorialEarthRadius = 6378.1370;
+var _d2r = (Math.PI / 180.0);
+    var dlong = (lng2 - lng1) * _d2r;
+    var dlat = (lat2 - lat1) * _d2r;
+    var a = Math.pow(Math.sin(dlat / 2.0), 2.0) + Math.cos(lat1 * _d2r) * Math.cos(lat2 * _d2r) * Math.pow(Math.sin(dlong / 2.0), 2.0);
+    var c = 2.0 * Math.atan2(Math.sqrt(a), Math.sqrt(1.0 - a));
+    var d = _eQuatorialEarthRadius * c;
+
+    return d;
+   }
+  async function StartPlanner  (lat:any,lng:any)
+  {
+    let shortestDistance = Infinity;
+    let flat = null;
+    let flng = null;
+    let name=null;
+ try{
+  const pandalData=fetch("https://cdn.jsdelivr.net/gh/THUNDERSAMA/durga-pedia@a85947898471f77358f792a840e2e9028c31b86c/output.json").then((response) => response.json());
+    for (const pandal of await pandalData) {
+        const latPandal = pandal.lat;
+        const lngPandal = pandal.lng;
+        const distance = distanceGet(lat,lng,latPandal,lngPandal);
+
+        if (distance < shortestDistance) {
+            shortestDistance = distance;
+            flat = latPandal;
+            flng =lngPandal;
+            name=pandal.pandal;
+        }
+    }
+    console.log(shortestDistance,flat,flng,name)
+  }
+  catch(e)
+  {
+    console.error(e);
+  }
+     
+    
+}
+  
   //ends
   return (
     <>
       <div className="form-container">
         <form onSubmit={getlatlng}>
-          {coordinates.lat && coordinates.lng && (
-            <p>
-              Latitude: {coordinates.lat}, Longitude: {coordinates.lng}
-            </p>
-          )}
+       
           <div
             className={`expandIcon ${scrollcheck > 50 ? "expandIconRot" : ""}`}
           >
