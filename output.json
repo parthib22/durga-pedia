@@ -1,0 +1,1986 @@
+[
+    {
+        "id": 1,
+        "pandal": "Ahiritola Sarbojanin",
+        "address": "No. 63B, Shop No. 107, BK Paul Ave, Ahiritola, Shyam Bazar, Kolkata, West Bengal 700005",
+        "map": "http://maps.google.com/maps?q=22.59506, 88.35752&ll=22.59506, 88.35752&z=17",
+        "lat": 22.59506,
+        "lng": 88.35752
+    },
+    {
+        "id": 2,
+        "pandal": "College Square Sarbojanin",
+        "address": "College Square, Kolkata, West Bengal 700009",
+        "map": "http://maps.google.com/maps?q=22.57486, 88.36457&ll=22.57486, 88.36457&z=17",
+        "lat": 22.57486,
+        "lng": 88.36457
+    },
+    {
+        "id": 3,
+        "pandal": "Dum Dum Park Tarun Sangha",
+        "address": "3 No Tank, Dum Dum Park, Kolkata, West Bengal 700055",
+        "map": "http://maps.google.com/maps?q=22.61072, 88.41362&ll=22.61072, 88.41362&z=17",
+        "lat": 22.61072,
+        "lng": 88.41362
+    },
+    {
+        "id": 4,
+        "pandal": "Dum Dum Park Bharat Chakra",
+        "address": "467, Dum Dum Park, Kolkata, West Bengal 700055",
+        "map": "http://maps.google.com/maps?q=22.61066, 88.41433&ll=22.61066, 88.41433&z=17",
+        "lat": 22.61066,
+        "lng": 88.41433
+    },
+    {
+        "id": 5,
+        "pandal": "Dum Dum Tarun Dal",
+        "address": "Satgachi, Baguiati, Kolkata, West Bengal 700028",
+        "map": "http://maps.google.com/maps?q=22.61173, 88.41873&ll=22.61173, 88.41873&z=17",
+        "lat": 22.61173,
+        "lng": 88.41873
+    },
+    {
+        "id": 6,
+        "pandal": "Dum Dum Park Yubak Brinda",
+        "address": "A 413, Dum Dum Park Rd, Dum Dum Park, South Dumdum, West Bengal 700055",
+        "map": "http://maps.google.com/maps?q=22.60547, 88.41773&ll=22.60547, 88.41773&z=17",
+        "lat": 22.60547,
+        "lng": 88.41773
+    },
+    {
+        "id": 7,
+        "pandal": "Baghbazar Sarbojonin Durgotsab & Exhibition",
+        "address": "Adhar Chandra Das Ln, Surir Bagan, Ultadanga, Kolkata, West Bengal 700067",
+        "map": "http://maps.google.com/maps?q=22.60458, 88.36623&ll=22.60458, 88.36623&z=17",
+        "lat": 22.60458,
+        "lng": 88.36623
+    },
+    {
+        "id": 8,
+        "pandal": "Telengabagan",
+        "address": "Adhar Chandra Das Ln, Surir Bagan, Ultadanga, Kolkata, West Bengal 700067",
+        "map": "http://maps.google.com/maps?q=22.59491, 88.38539&ll=22.59491, 88.38539&z=17",
+        "lat": 22.59491,
+        "lng": 88.38539
+    },
+    {
+        "id": 9,
+        "pandal": "Karbagan Sarbojanin",
+        "address": "17/1/H/54, Daspara, Ultadanga, Kolkata, West Bengal 700067",
+        "map": "http://maps.google.com/maps?q=22.59515, 88.38387&ll=22.59515, 88.38387&z=17",
+        "lat": 22.59515,
+        "lng": 88.38387
+    },
+    {
+        "id": 10,
+        "pandal": "Gouriberia",
+        "address": "Gauri Bari CIT Park, Manicktala, Fariapukur, Kolkata, West Bengal 700004",
+        "map": "http://maps.google.com/maps?q=22.59454, 88.37922&ll=22.59454, 88.37922&z=17",
+        "lat": 22.59454,
+        "lng": 88.37922
+    },
+    {
+        "id": 11,
+        "pandal": "Kumartuli Park",
+        "address": "Sovabazar, Kumartuli, Shobhabazar, Kolkata, West Bengal 700005",
+        "map": "http://maps.google.com/maps?q=22.59899, 88.36136&ll=22.59899, 88.36136&z=17",
+        "lat": 22.59899,
+        "lng": 88.36136
+    },
+    {
+        "id": 12,
+        "pandal": "Laketown Adhibasi Brinda",
+        "address": "P-104/A, Lake Town, Block A, Lake Town, Kolkata, West Bengal 700089",
+        "map": "http://maps.google.com/maps?q=22.6054, 88.40379&ll=22.6054, 88.40379&z=17",
+        "lat": 22.6054,
+        "lng": 88.40379
+    },
+    {
+        "id": 13,
+        "pandal": "Laketown Netaji Sporting Club",
+        "address": "Block E, Lake Town, Kolkata, West Bengal 700089",
+        "map": "http://maps.google.com/maps?q=22.60808, 88.39962&ll=22.60808, 88.39962&z=17",
+        "lat": 22.60808,
+        "lng": 88.39962
+    },
+    {
+        "id": 14,
+        "pandal": "Md. Ali Park",
+        "address": "Calcutta University, College Square, Kolkata, West Bengal 700073",
+        "map": "http://maps.google.com/maps?q=22.57722, 88.36087&ll=22.57722, 88.36087&z=17",
+        "lat": 22.57722,
+        "lng": 88.36087
+    },
+    {
+        "id": 15,
+        "pandal": "Mitali - Kankurgachi",
+        "address": "Maniktala Main Rd, Ghose Bagan, Kolkata, West Bengal 700054",
+        "map": "http://maps.google.com/maps?q=22.58004, 88.39397&ll=22.58004, 88.39397&z=17",
+        "lat": 22.58004,
+        "lng": 88.39397
+    },
+    {
+        "id": 16,
+        "pandal": "Salt Lake CJ Block",
+        "address": "CJ Block, Sector II, Bidhannagar, Kolkata, West Bengal 700091",
+        "map": "http://maps.google.com/maps?q=22.58927, 88.42359&ll=22.58927, 88.42359&z=17",
+        "lat": 22.58927,
+        "lng": 88.42359
+    },
+    {
+        "id": 17,
+        "pandal": "Salt Lake BJ Block",
+        "address": "BJ Park, BJ Block, Sector II, Bidhannagar, Kolkata, West Bengal 700091",
+        "map": "http://maps.google.com/maps?q=22.59079, 88.42672&ll=22.59079, 88.42672&z=17",
+        "lat": 22.59079,
+        "lng": 88.42672
+    },
+    {
+        "id": 18,
+        "pandal": "Salt Lake FD Block",
+        "address": "HCM6+9WF, FD Block, Sector III, Bidhannagar, Kolkata, West Bengal 700106",
+        "map": "http://maps.google.com/maps?q=22.58346, 88.41221&ll=22.58346, 88.41221&z=17",
+        "lat": 22.58346,
+        "lng": 88.41221
+    },
+    {
+        "id": 19,
+        "pandal": "Salt Lake GD Block",
+        "address": "GD Park, GD Block, Sector III, Bidhannagar, Kolkata, West Bengal 700106",
+        "map": "http://maps.google.com/maps?q=22.57677, 88.41416&ll=22.57677, 88.41416&z=17",
+        "lat": 22.57677,
+        "lng": 88.41416
+    },
+    {
+        "id": 20,
+        "pandal": "Salt Lake HA Block",
+        "address": "HA Park, HA Block, Sector III, Bidhannagar, Kolkata, West Bengal 700106",
+        "map": "http://maps.google.com/maps?q=22.57641, 88.41297&ll=22.57641, 88.41297&z=17",
+        "lat": 22.57641,
+        "lng": 88.41297
+    },
+    {
+        "id": 21,
+        "pandal": "Salt Lake IA Block",
+        "address": "IA market,, shop no.17,, salt lake,, sector-3, IA Block, Sector III, Bidhannagar, Kolkata, West Bengal 700097",
+        "map": "http://maps.google.com/maps?q=22.5743, 88.40952&ll=22.5743, 88.40952&z=17",
+        "lat": 22.5743,
+        "lng": 88.40952
+    },
+    {
+        "id": 22,
+        "pandal": "Salt Lake Labony Estate Puja",
+        "address": "B Block, EB Block, Sector 1, Salt Lake, Kolkata, West Bengal 700064",
+        "map": "http://maps.google.com/maps?q=22.58286, 88.40672&ll=22.58286, 88.40672&z=17",
+        "lat": 22.58286,
+        "lng": 88.40672
+    },
+    {
+        "id": 23,
+        "pandal": "Santosh Mitra Square",
+        "address": "Lebutala, Bowbazar, Kolkata, West Bengal 700014",
+        "map": "http://maps.google.com/maps?q=22.56545, 88.36546&ll=22.56545, 88.36546&z=17",
+        "lat": 22.56545,
+        "lng": 88.36546
+    },
+    {
+        "id": 24,
+        "pandal": "Sealdah Railway Athletic Club",
+        "address": "Kaiser St, Sealdah, Raja Bazar, Kolkata, West Bengal 700009",
+        "map": "http://maps.google.com/maps?q=22.57094, 88.37213&ll=22.57094, 88.37213&z=17",
+        "lat": 22.57094,
+        "lng": 88.37213
+    },
+    {
+        "id": 25,
+        "pandal": "Sovabazar Beniatola",
+        "address": "Beniatola St, Sovabazar, Shobhabazar, Kolkata, West Bengal 700005",
+        "map": "http://maps.google.com/maps?q=22.59591, 88.3609&ll=22.59591, 88.3609&z=17",
+        "lat": 22.59591,
+        "lng": 88.3609
+    },
+    {
+        "id": 26,
+        "pandal": "Sreebhumi Sporting Club",
+        "address": "Sreebhumi, Lake Town, Kolkata, West Bengal 700048",
+        "map": "http://maps.google.com/maps?q=22.59899, 88.40293&ll=22.59899, 88.40293&z=17",
+        "lat": 22.59899,
+        "lng": 88.40293
+    },
+    {
+        "id": 27,
+        "pandal": "Tala Barowari",
+        "address": "77-78, Raja Ram Mohan Sarani, Manicktala, Simla, Machuabazar, Kolkata, West Bengal 700009",
+        "map": "http://maps.google.com/maps?q=22.58489, 88.37211&ll=22.58489, 88.37211&z=17",
+        "lat": 22.58489,
+        "lng": 88.37211
+    },
+    {
+        "id": 28,
+        "pandal": "Manicktala Chaltabagan Lohapatty",
+        "address": "123-287, Pathuria Ghat St, Santoshpur, Jorabagan, Kolkata, West Bengal 700006",
+        "map": "http://maps.google.com/maps?q=22.58856, 88.35836&ll=22.58856, 88.35836&z=17",
+        "lat": 22.58856,
+        "lng": 88.35836
+    },
+    {
+        "id": 29,
+        "pandal": "Pathuriaghata Pancher Pally",
+        "address": "13b, Sikdar Bagan St, Shyambazar, Hati Bagan, Shyam Bazar, Kolkata, West Bengal 700004",
+        "map": "http://maps.google.com/maps?q=22.5957, 88.37342&ll=22.5957, 88.37342&z=17",
+        "lat": 22.5957,
+        "lng": 88.37342
+    },
+    {
+        "id": 30,
+        "pandal": "Hatibagan Nabin Pally",
+        "address": "Khanna, Shyam Bazar, Kolkata, West Bengal 700004",
+        "map": "http://maps.google.com/maps?q=22.5957, 88.37342&ll=22.5957, 88.37342&z=17",
+        "lat": 22.5957,
+        "lng": 88.37342
+    },
+    {
+        "id": 31,
+        "pandal": "Nalin Sarkar Street Sarbojanin Durgotsab",
+        "address": "Khanna, Shyam Bazar, Kolkata, West Bengal 700004",
+        "map": "http://maps.google.com/maps?q=22.59462, 88.37463&ll=22.59462, 88.37463&z=17",
+        "lat": 22.59462,
+        "lng": 88.37463
+    },
+    {
+        "id": 32,
+        "pandal": "Hatibagan Sarbojonin",
+        "address": "16, Principal Khudiram Bose Rd, Manicktala, Goa Bagan, Shobhabazar, Kolkata, West Bengal 700004",
+        "map": "http://maps.google.com/maps?q=22.59412, 88.37187&ll=22.59412, 88.37187&z=17",
+        "lat": 22.59412,
+        "lng": 88.37187
+    },
+    {
+        "id": 33,
+        "pandal": "Ultadanga Yuba Brinda",
+        "address": "7A, Daspara, Ultadanga, Kolkata, West Bengal 700067",
+        "map": "http://maps.google.com/maps?q=22.59582, 88.38168&ll=22.59582, 88.38168&z=17",
+        "lat": 22.59582,
+        "lng": 88.38168
+    },
+    {
+        "id": 34,
+        "pandal": "Kashi Bose Lane",
+        "address": "Sudhir Mukherjee Udyan, Kashi Bose Ln, Manicktala, Hedua, Kolkata, West Bengal 700006",
+        "map": "http://maps.google.com/maps?q=22.5911, 88.36878&ll=22.5911, 88.36878&z=17",
+        "lat": 22.5911,
+        "lng": 88.36878
+    },
+    {
+        "id": 35,
+        "pandal": "Purbachal Sarbojanin",
+        "address": "Purbachal, GA Block, Sector III, Bidhannagar, Kolkata, West Bengal 700106",
+        "map": "http://maps.google.com/maps?q=22.57301, 88.40746&ll=22.57301, 88.40746&z=17",
+        "lat": 22.57301,
+        "lng": 88.40746
+    },
+    {
+        "id": 36,
+        "pandal": "Salt Lake AJ Block",
+        "address": "AJ Block Park, AJ Block, Sector II, Bidhannagar, Kolkata, West Bengal 700091",
+        "map": "http://maps.google.com/maps?q=22.59216, 88.42829&ll=22.59216, 88.42829&z=17",
+        "lat": 22.59216,
+        "lng": 88.42829
+    },
+    {
+        "id": 37,
+        "pandal": "Laketown Natun Pally Pradeep Sangha",
+        "address": "J93W+FXP, Shree Bhumi, Patipukur, Kolkata, West Bengal 700048",
+        "map": "http://maps.google.com/maps?q=22.60372, 88.3975&ll=22.60372, 88.3975&z=17",
+        "lat": 22.60372,
+        "lng": 88.3975
+    },
+    {
+        "id": 38,
+        "pandal": "Rammohan Sammilani",
+        "address": "Rammohan Roy Rd, Yogi Para, Garpar, Machuabazar, Kolkata, West Bengal 700009",
+        "map": "http://maps.google.com/maps?q=22.58163, 88.37513&ll=22.58163, 88.37513&z=17",
+        "lat": 22.58163,
+        "lng": 88.37513
+    },
+    {
+        "id": 39,
+        "pandal": "Beleghata Nabamilan",
+        "address": "20, Hem Chandra Naskar Rd, Subhas Sarobar Park, Phool Bagan, Beleghata, Kolkata, West Bengal 700010",
+        "map": "http://maps.google.com/maps?q=22.56483, 88.39515&ll=22.56483, 88.39515&z=17",
+        "lat": 22.56483,
+        "lng": 88.39515
+    },
+    {
+        "id": 40,
+        "pandal": "Beleghata Sandhani",
+        "address": "Police Station, 18/4, Sura 3rd Ln, opposite to Beliaghata, Subhas Sarobar Park, Phool Bagan, Beleghata, Kolkata, West Bengal 700010",
+        "map": "http://maps.google.com/maps?q=22.56446, 88.39649&ll=22.56446, 88.39649&z=17",
+        "lat": 22.56446,
+        "lng": 88.39649
+    },
+    {
+        "id": 41,
+        "pandal": "Simla Bayam Samity",
+        "address": "Simla Byayam Samity Maidan, Simla, Machuabazar, Kolkata, West Bengal 700007",
+        "map": "http://maps.google.com/maps?q=22.58528, 88.36509&ll=22.58528, 88.36509&z=17",
+        "lat": 22.58528,
+        "lng": 88.36509
+    },
+    {
+        "id": 42,
+        "pandal": "Kumartuli Preparation",
+        "address": "1, Banamali Sarkar St, Sovabazar, Kumartuli, Shobhabazar, Kolkata, West Bengal 700005",
+        "map": "http://maps.google.com/maps?q=22.5996, 88.36239&ll=22.5996, 88.36239&z=17",
+        "lat": 22.5996,
+        "lng": 88.36239
+    },
+    {
+        "id": 43,
+        "pandal": "Swapnar Bagan Yubak Brinda",
+        "address": "Agro service agency, Kadapara, Phool Bagan, Kankurgachi, Kolkata, West Bengal 700054",
+        "map": "http://maps.google.com/maps?q=22.57919, 88.39546&ll=22.57919, 88.39546&z=17",
+        "lat": 22.57919,
+        "lng": 88.39546
+    },
+    {
+        "id": 44,
+        "pandal": "Lalabagan Yubak Brinda - Nabankur Sangha",
+        "address": "36, Lala Bagan Rd, Manicktala, Sahitya Parishad, Ward Number 15, Kolkata, West Bengal 700006",
+        "map": "http://maps.google.com/maps?q=22.58824, 88.3771&ll=22.58824, 88.3771&z=17",
+        "lat": 22.58824,
+        "lng": 88.3771
+    },
+    {
+        "id": 45,
+        "pandal": "Sammilita Lalabagan Sarbojanin",
+        "address": "88, Manicktala, Sahitya Parishad, Ward Number 15, Kolkata, West Bengal 700006",
+        "map": "http://maps.google.com/maps?q=22.58738, 88.37692&ll=22.58738, 88.37692&z=17",
+        "lat": 22.58738,
+        "lng": 88.37692
+    },
+    {
+        "id": 46,
+        "pandal": "Salt Lake AE Block - Part 1",
+        "address": "AE puja pandal ground, A.E. Block sector 1, AE Block, Sector 1, Bidhannagar, Kolkata, West Bengal 700064",
+        "map": "http://maps.google.com/maps?q=22.59856, 88.4094&ll=22.59856, 88.4094&z=17",
+        "lat": 22.59856,
+        "lng": 88.4094
+    },
+    {
+        "id": 47,
+        "pandal": "Kolkata",
+        "address": "Jawaharlal Nehru Road, Kolkata, West Bengal 700013",
+        "map": "http://maps.google.com/maps?q=22.56472, 88.35084&ll=22.56472, 88.35084&z=17",
+        "lat": 22.56472,
+        "lng": 88.35084
+    },
+    {
+        "id": 48,
+        "pandal": "Beleghata 33 No Pallibasibrinda",
+        "address": "Subhas Sarobar Park, Phool Bagan, Beleghata, Kolkata, West Bengal 700010",
+        "map": "http://maps.google.com/maps?q=22.5682, 88.39191&ll=22.5682, 88.39191&z=17",
+        "lat": 22.5682,
+        "lng": 88.39191
+    },
+    {
+        "id": 49,
+        "pandal": "Belgachia Sadharan Durgatsab",
+        "address": "Uttarpalli Play Ground, Tara Sankar Sarani, Tala, Kolkata, West Bengal 700037",
+        "map": "http://maps.google.com/maps?q=22.60921, 88.38342&ll=22.60921, 88.38342&z=17",
+        "lat": 22.60921,
+        "lng": 88.38342
+    },
+    {
+        "id": 50,
+        "pandal": "Kumartuli Sarbojanin",
+        "address": "Gopeshwar Pal St, Sovabazar, Kumartuli, Shobhabazar, Kolkata, West Bengal 700005",
+        "map": "http://maps.google.com/maps?q=22.60085, 88.36327&ll=22.60085, 88.36327&z=17",
+        "lat": 22.60085,
+        "lng": 88.36327
+    },
+    {
+        "id": 51,
+        "pandal": "Satadal",
+        "address": "Kali Krishna 2nd Lane, Raja Nabakrishna Street, Sovabazar, Hati Bagan, Shyam Bazar, Kolkata, West Bengal 700005",
+        "map": "http://maps.google.com/maps?q=22.59527, 88.36784&ll=22.59527, 88.36784&z=17",
+        "lat": 22.59527,
+        "lng": 88.36784
+    },
+    {
+        "id": 52,
+        "pandal": "Salt Lake AE Block - Part 2",
+        "address": "A-E-648, A.E. Block sector 1, AE Block, Sector 1, Bidhannagar, Kolkata, West Bengal 700136",
+        "map": "http://maps.google.com/maps?q=22.60093, 88.41335&ll=22.60093, 88.41335&z=17",
+        "lat": 22.60093,
+        "lng": 88.41335
+    },
+    {
+        "id": 53,
+        "pandal": "Salt Lake BE Block - West",
+        "address": "BE Park, BE Block, Sector 1, Bidhannagar, Kolkata, West Bengal 700064",
+        "map": "http://maps.google.com/maps?q=22.59683, 88.41219&ll=22.59683, 88.41219&z=17",
+        "lat": 22.59683,
+        "lng": 88.41219
+    },
+    {
+        "id": 54,
+        "pandal": "Salt Lake CK-CL Block",
+        "address": "CKCL Park, CL Block, Block CL, Sector II, Bidhannagar, Kolkata, West Bengal 700091",
+        "map": "http://maps.google.com/maps?q=22.58463, 88.42786&ll=22.58463, 88.42786&z=17",
+        "lat": 22.58463,
+        "lng": 88.42786
+    },
+    {
+        "id": 55,
+        "pandal": "Salt Lake DL block",
+        "address": "DL Park, DL Block, Sector II, Bidhannagar, Kolkata, West Bengal 700091",
+        "map": "http://maps.google.com/maps?q=22.58213, 88.42582&ll=22.58213, 88.42582&z=17",
+        "lat": 22.58213,
+        "lng": 88.42582
+    },
+    {
+        "id": 56,
+        "pandal": "Bangur Avenue Protirodh Bahini",
+        "address": "Block-A Park, Bangur Avenue, Bangur, Lake Town, Kolkata, West Bengal 700055",
+        "map": "http://maps.google.com/maps?q=22.6069, 88.40924&ll=22.6069, 88.40924&z=17",
+        "lat": 22.6069,
+        "lng": 88.40924
+    },
+    {
+        "id": 57,
+        "pandal": "Goabagan Sarbojanin",
+        "address": "Khanna, Ward Number 16, Kolkata, West Bengal 700006",
+        "map": "http://maps.google.com/maps?q=22.59124, 88.37286&ll=22.59124, 88.37286&z=17",
+        "lat": 22.59124,
+        "lng": 88.37286
+    },
+    {
+        "id": 58,
+        "pandal": "Hari Ghosh Street Sarbojonin",
+        "address": "Jagdish Nath Rai Ln, Hedua, Kolkata, West Bengal 700006",
+        "map": "http://maps.google.com/maps?q=22.59031, 88.36805&ll=22.59031, 88.36805&z=17",
+        "lat": 22.59031,
+        "lng": 88.36805
+    },
+    {
+        "id": 59,
+        "pandal": "Jagat Mukherjee Park",
+        "address": "Sovabazar, Shobhabazar, Kolkata, West Bengal 700005",
+        "map": "http://maps.google.com/maps?q=22.59977, 88.36614&ll=22.59977, 88.36614&z=17",
+        "lat": 22.59977,
+        "lng": 88.36614
+    },
+    {
+        "id": 60,
+        "pandal": "Baghbazar PalliPuja O Pradarshani",
+        "address": "12, Bagbazar St, near Girish Bhavan, Bidhan Sarani, Baghbazar, Kolkata, West Bengal 700003",
+        "map": "http://maps.google.com/maps?q=22.6028, 88.36736&ll=22.6028, 88.36736&z=17",
+        "lat": 22.6028,
+        "lng": 88.36736
+    },
+    {
+        "id": 61,
+        "pandal": "Beadon Street Sarbojanin",
+        "address": "Shibu Biswas Ln, Manicktala, Kolkata, West Bengal 700006",
+        "map": "http://maps.google.com/maps?q=22.58916, 88.36828&ll=22.58916, 88.36828&z=17",
+        "lat": 22.58916,
+        "lng": 88.36828
+    },
+    {
+        "id": 62,
+        "pandal": "Sammilita Malapara Sarbojanin",
+        "address": "1, NETAI HALDER STREET, MALAPARA, 1st Floor, Kolkata, West Bengal 700007",
+        "map": "http://maps.google.com/maps?q=22.58766, 88.35475&ll=22.58766, 88.35475&z=17",
+        "lat": 22.58766,
+        "lng": 88.35475
+    },
+    {
+        "id": 63,
+        "pandal": "Darpanarayan Thakur Street Pally Samity",
+        "address": "30-27, Darpanarayan Tagore St, Malapara, Jorabagan, Kolkata, West Bengal 700006",
+        "map": "http://maps.google.com/maps?q=22.5875, 88.35411&ll=22.5875, 88.35411&z=17",
+        "lat": 22.5875,
+        "lng": 88.35411
+    },
+    {
+        "id": 64,
+        "pandal": "Haritaki Bagan",
+        "address": "39, Dhiren Sen Sarani, Manicktala, Azad Hind Bag, Shyam Bazar, Kolkata, West Bengal 700009",
+        "map": "http://maps.google.com/maps?q=22.58639, 88.37209&ll=22.58639, 88.37209&z=17",
+        "lat": 22.58639,
+        "lng": 88.37209
+    },
+    {
+        "id": 65,
+        "pandal": "Sovabazar Sarbojanin",
+        "address": "Sovabazar St, Sovabazar, Hatkhola, Kolkata, West Bengal 700005",
+        "map": "http://maps.google.com/maps?q=22.59719, 88.36108&ll=22.59719, 88.36108&z=17",
+        "lat": 22.59719,
+        "lng": 88.36108
+    },
+    {
+        "id": 66,
+        "pandal": "Hatkhola Gosain Para",
+        "address": "7MJCH9X6+F242, Sovabazar, Ward Number 9, Kolkata, West Bengal 700005",
+        "map": "http://maps.google.com/maps?q=22.59863, 88.36009&ll=22.59863, 88.36009&z=17",
+        "lat": 22.59863,
+        "lng": 88.36009
+    },
+    {
+        "id": 67,
+        "pandal": "Laketown Vivekananda Park",
+        "address": "Kalindi Housing Estate, South Dumdum, West Bengal 700089",
+        "map": "http://maps.google.com/maps?q=22.6101, 88.40247&ll=22.6101, 88.40247&z=17",
+        "lat": 22.6101,
+        "lng": 88.40247
+    },
+    {
+        "id": 68,
+        "pandal": "Jawpur Bayam Samity",
+        "address": "JC72+2PM, Sahid Hemanta Kumar Bose Sarani, Sahapara, South Dumdum, West Bengal 700074",
+        "map": "http://maps.google.com/maps?q=22.61248, 88.40179&ll=22.61248, 88.40179&z=17",
+        "lat": 22.61248,
+        "lng": 88.40179
+    },
+    {
+        "id": 69,
+        "pandal": "Pragati Pally Adhibasi Brindra",
+        "address": "Khudiram Bose Rd, Kalindi Housing Estate, South Dumdum, West Bengal 700089",
+        "map": "http://maps.google.com/maps?q=22.60959, 88.40066&ll=22.60959, 88.40066&z=17",
+        "lat": 22.60959,
+        "lng": 88.40066
+    },
+    {
+        "id": 70,
+        "pandal": "Kabiraj Bagan",
+        "address": "Blue Heaven, 10/1, Telenga Bagan, Ultadanga, Kolkata, West Bengal 700067",
+        "map": "http://maps.google.com/maps?q=22.59385, 88.38272&ll=22.59385, 88.38272&z=17",
+        "lat": 22.59385,
+        "lng": 88.38272
+    },
+    {
+        "id": 71,
+        "pandal": "Ultadanga Bidhan Sangha",
+        "address": "7MJCH9VM+574Q, Kath Gola, Ward Number 14, Kolkata, West Bengal 700067",
+        "map": "http://maps.google.com/maps?q=22.59287, 88.38322&ll=22.59287, 88.38322&z=17",
+        "lat": 22.59287,
+        "lng": 88.38322
+    },
+    {
+        "id": 72,
+        "pandal": "Salt Lake AD Block",
+        "address": "AD Block, Sector 1, Bidhannagar, Kolkata, West Bengal 700064",
+        "map": "http://maps.google.com/maps?q=22.59685, 88.40644&ll=22.59685, 88.40644&z=17",
+        "lat": 22.59685,
+        "lng": 88.40644
+    },
+    {
+        "id": 73,
+        "pandal": "Salt Lake AG Block",
+        "address": "AG Block, Sector II, Bidhannagar, Kolkata, West Bengal 700091",
+        "map": "http://maps.google.com/maps?q=22.59842, 88.42329&ll=22.59842, 88.42329&z=17",
+        "lat": 22.59842,
+        "lng": 88.42329
+    },
+    {
+        "id": 74,
+        "pandal": "Ultadanga Sangrami",
+        "address": "59, 60Bagmari Rd, Block Number 5, BRS 3, l, Kolkata, West Bengal 700054",
+        "map": "http://maps.google.com/maps?q=22.59047, 88.39475&ll=22.59047, 88.39475&z=17",
+        "lat": 22.59047,
+        "lng": 88.39475
+    },
+    {
+        "id": 75,
+        "pandal": "Tarun Sporting Club",
+        "address": "38/4A, Manicktala, Azad Hind Bag, Kolkata, West Bengal 700006",
+        "map": "http://maps.google.com/maps?q=22.58635, 88.36503&ll=22.58635, 88.36503&z=17",
+        "lat": 22.58635,
+        "lng": 88.36503
+    },
+    {
+        "id": 76,
+        "pandal": "Shimla Vivekananda Sporting Club",
+        "address": "81, Manicktala, Azad Hind Bag, Kolkata, West Bengal 700006",
+        "map": "http://maps.google.com/maps?q=22.58628, 88.36687&ll=22.58628, 88.36687&z=17",
+        "lat": 22.58628,
+        "lng": 88.36687
+    },
+    {
+        "id": 77,
+        "pandal": "Shurir Bagan",
+        "address": "Surir Bagan, Ultadanga, Kolkata, West Bengal 700067",
+        "map": "http://maps.google.com/maps?q=22.59455, 88.38756&ll=22.59455, 88.38756&z=17",
+        "lat": 22.59455,
+        "lng": 88.38756
+    },
+    {
+        "id": 78,
+        "pandal": "Salt Lake CA Block",
+        "address": "CA Block, Sector 1, Bidhannagar, Kolkata, West Bengal 700064",
+        "map": "http://maps.google.com/maps?q=22.58749, 88.39968&ll=22.58749, 88.39968&z=17",
+        "lat": 22.58749,
+        "lng": 88.39968
+    },
+    {
+        "id": 79,
+        "pandal": "Salt Lake BG Block",
+        "address": "Apeejay School, BG Block, Sector II, Bidhannagar, Kolkata, West Bengal 700091",
+        "map": "http://maps.google.com/maps?q=22.59545, 88.42311&ll=22.59545, 88.42311&z=17",
+        "lat": 22.59545,
+        "lng": 88.42311
+    },
+    {
+        "id": 80,
+        "pandal": "Salt Lake AH Block",
+        "address": "HCVG+PW5, AH Block, Sector II, Bidhannagar, Kolkata, West Bengal 700091",
+        "map": "http://maps.google.com/maps?q=22.59423, 88.42727&ll=22.59423, 88.42727&z=17",
+        "lat": 22.59423,
+        "lng": 88.42727
+    },
+    {
+        "id": 81,
+        "pandal": "Shyambazar Nabin Sangha",
+        "address": "7MJCH9XG+F4J6, Fariapukur, Ward Number 12, Kolkata, West Bengal 700004",
+        "map": "http://maps.google.com/maps?q=22.59871, 88.37533&ll=22.59871, 88.37533&z=17",
+        "lat": 22.59871,
+        "lng": 88.37533
+    },
+    {
+        "id": 82,
+        "pandal": "Brindaban Matri Mandir",
+        "address": "12, Brindaban Mullick 1st Ln, Manicktala, Machuabazar, Kolkata, West Bengal 700006",
+        "map": "http://maps.google.com/maps?q=22.58214, 88.3731&ll=22.58214, 88.3731&z=17",
+        "lat": 22.58214,
+        "lng": 88.3731
+    },
+    {
+        "id": 83,
+        "pandal": "Wellington Nagarik Kalyan committee",
+        "address": "Chandni Chowk St, Chandni Chawk, Bowbazar, Kolkata, West Bengal 700072",
+        "map": "http://maps.google.com/maps?q=22.56418, 88.35855&ll=22.56418, 88.35855&z=17",
+        "lat": 22.56418,
+        "lng": 88.35855
+    },
+    {
+        "id": 84,
+        "pandal": "Ultadanga United Club",
+        "address": "CIT Rd, CIT Scheme VII M, Ghose Bagan, Kolkata, West Bengal 700054",
+        "map": "http://maps.google.com/maps?q=22.59126, 88.39126&ll=22.59126, 88.39126&z=17",
+        "lat": 22.59126,
+        "lng": 88.39126
+    },
+    {
+        "id": 85,
+        "pandal": "Dum Dum Mall Palli",
+        "address": "Mall Rd, NC Sen Avenue, K.B.Sarani, Golpark, South Dumdum, West Bengal 700080",
+        "map": "http://maps.google.com/maps?q=22.6284, 88.42161&ll=22.6284, 88.42161&z=17",
+        "lat": 22.6284,
+        "lng": 88.42161
+    },
+    {
+        "id": 86,
+        "pandal": "Sikdarbagan",
+        "address": "Sikdar Bagan St, Sovabazar, Hati Bagan, Shyam Bazar, Kolkata, West Bengal 700004",
+        "map": "http://maps.google.com/maps?q=22.59653, 88.37284&ll=22.59653, 88.37284&z=17",
+        "lat": 22.59653,
+        "lng": 88.37284
+    },
+    {
+        "id": 87,
+        "pandal": "Kankurgachi Progressive Youth",
+        "address": "Bagmari Lane, BRS 10, Kankurgachi, Kolkata, West Bengal 700054",
+        "map": "http://maps.google.com/maps?q=22.58221, 88.39187&ll=22.58221, 88.39187&z=17",
+        "lat": 22.58221,
+        "lng": 88.39187
+    },
+    {
+        "id": 88,
+        "pandal": "Subodh Mallick Square",
+        "address": "Nirmal Chandra St, Bowbazar, Kolkata, West Bengal 700016",
+        "map": "http://maps.google.com/maps?q=22.56345, 88.35964&ll=22.56345, 88.35964&z=17",
+        "lat": 22.56345,
+        "lng": 88.35964
+    },
+    {
+        "id": 89,
+        "pandal": "Ahiritola Jubak Brinda",
+        "address": "Ahiritola, Beniatola, Kolkata, West Bengal 700005",
+        "map": "http://maps.google.com/maps?q=22.5944, 88.35878&ll=22.5944, 88.35878&z=17",
+        "lat": 22.5944,
+        "lng": 88.35878
+    },
+    {
+        "id": 90,
+        "pandal": "B K Pal Park",
+        "address": "Beniatola, Kolkata, West Bengal 700005",
+        "map": "http://maps.google.com/maps?q=22.59527, 88.35999&ll=22.59527, 88.35999&z=17",
+        "lat": 22.59527,
+        "lng": 88.35999
+    },
+    {
+        "id": 91,
+        "pandal": "Nabadiaganta",
+        "address": "Panchanantala, Lal Garh Colony, Dum Dum, Kolkata, West Bengal 700074",
+        "map": "http://maps.google.com/maps?q=22.61486, 88.40275&ll=22.61486, 88.40275&z=17",
+        "lat": 22.61486,
+        "lng": 88.40275
+    },
+    {
+        "id": 92,
+        "pandal": "Jorashanko 7er Palli",
+        "address": "9b, Madan Chatterjee Ln, Raja Katra, Singhi Bagan, Jorasanko, Kolkata, West Bengal 700007",
+        "map": "http://maps.google.com/maps?q=22.58403, 88.36142&ll=22.58403, 88.36142&z=17",
+        "lat": 22.58403,
+        "lng": 88.36142
+    },
+    {
+        "id": 93,
+        "pandal": "Simla Sporting Club",
+        "address": "Simla St, Simla, Machuabazar, Kolkata, West Bengal 700006",
+        "map": "http://maps.google.com/maps?q=22.5851, 88.36671&ll=22.5851, 88.36671&z=17",
+        "lat": 22.5851,
+        "lng": 88.36671
+    },
+    {
+        "id": 94,
+        "pandal": "Krishnabagan Nabajiban Sangha",
+        "address": "123, Acharya Prafulla Chandra Rd, Bag Bazar Colony, Manicktala, Azad Hind Bag, Kolkata, West Bengal 700006",
+        "map": "http://maps.google.com/maps?q=22.58611, 88.37397&ll=22.58611, 88.37397&z=17",
+        "lat": 22.58611,
+        "lng": 88.37397
+    },
+    {
+        "id": 95,
+        "pandal": "Rammohan Smriti Sangha",
+        "address": "Machuabazar, Kolkata, West Bengal 700009",
+        "map": "http://maps.google.com/maps?q=22.58433, 88.3728&ll=22.58433, 88.3728&z=17",
+        "lat": 22.58433,
+        "lng": 88.3728
+    },
+    {
+        "id": 96,
+        "pandal": "Halasibagan",
+        "address": "13 A, Nerode Behari Mullick Rd, Manicktala, Sahitya Parishad, Ward Number 15, Kolkata, West Bengal 700006",
+        "map": "http://maps.google.com/maps?q=22.58984, 88.37784&ll=22.58984, 88.37784&z=17",
+        "lat": 22.58984,
+        "lng": 88.37784
+    },
+    {
+        "id": 97,
+        "pandal": "Amra Sabai - Ramdulal Sarkar Street",
+        "address": "Ramdulal Sarkar St, Hedua, Kolkata, West Bengal 700006",
+        "map": "http://maps.google.com/maps?q=22.58801, 88.36685&ll=22.58801, 88.36685&z=17",
+        "lat": 22.58801,
+        "lng": 88.36685
+    },
+    {
+        "id": 98,
+        "pandal": "Salt Lake AK Block",
+        "address": "AK Park, AK Block, Sector II, Bidhannagar, Kolkata, West Bengal 700091",
+        "map": "http://maps.google.com/maps?q=22.58881, 88.43084&ll=22.58881, 88.43084&z=17",
+        "lat": 22.58881,
+        "lng": 88.43084
+    },
+    {
+        "id": 99,
+        "pandal": "Salt Lake BH Block",
+        "address": "BH Block Ground, BH Block, Sector II, Salt Lake, Kolkata, West Bengal 700091",
+        "map": "http://maps.google.com/maps?q=22.59424, 88.42402&ll=22.59424, 88.42402&z=17",
+        "lat": 22.59424,
+        "lng": 88.42402
+    },
+    {
+        "id": 100,
+        "pandal": "Salt Lake BE Block - East",
+        "address": "BE Block, Sector 1, Bidhannagar, Kolkata, West Bengal 700064",
+        "map": "http://maps.google.com/maps?q=22.59611, 88.41431&ll=22.59611, 88.41431&z=17",
+        "lat": 22.59611,
+        "lng": 88.41431
+    },
+    {
+        "id": 101,
+        "pandal": "Madhya Kolkata Uttoran",
+        "address": "20, Surendra Lal Pyne Ln, near Medical College, Newland, College Square, Kolkata, West Bengal 700012",
+        "map": "http://maps.google.com/maps?q=22.57248, 88.36269&ll=22.57248, 88.36269&z=17",
+        "lat": 22.57248,
+        "lng": 88.36269
+    },
+    {
+        "id": 102,
+        "pandal": "Anupama Housing Complex",
+        "address": "Anupama Housing Complex Block-71, 71CC, Arjunpur, Kaikhali, Kolkata, West Bengal 700136",
+        "map": "http://maps.google.com/maps?q=22.62953, 88.43287&ll=22.62953, 88.43287&z=17",
+        "lat": 22.62953,
+        "lng": 88.43287
+    },
+    {
+        "id": 103,
+        "pandal": "Arjunpur Amra Sabai Club",
+        "address": "Kamardanga, Kolkata, West Bengal 700080",
+        "map": "http://maps.google.com/maps?q=22.62433, 88.42446&ll=22.62433, 88.42446&z=17",
+        "lat": 22.62433,
+        "lng": 88.42446
+    },
+    {
+        "id": 104,
+        "pandal": "CIT Sarbojanin",
+        "address": "Nainan Para, Baranagar, Kolkata, West Bengal 700036",
+        "map": "http://maps.google.com/maps?q=22.63342, 88.37746&ll=22.63342, 88.37746&z=17",
+        "lat": 22.63342,
+        "lng": 88.37746
+    },
+    {
+        "id": 105,
+        "pandal": "Hindu Mahasabha - Girish Park",
+        "address": "Vivekananda Rd, Amar Basu Sarani, Manicktala, Azad Hind Bag, Machuabazar, Kolkata, West Bengal 700006",
+        "map": "http://maps.google.com/maps?q=22.58601, 88.36212&ll=22.58601, 88.36212&z=17",
+        "lat": 22.58601,
+        "lng": 88.36212
+    },
+    {
+        "id": 106,
+        "pandal": "Kestopur Prafullakanan Adhibasibrinda",
+        "address": "29, Shyam Nagar Rd, Prafulla Kanan, Kestopur, Kolkata, West Bengal 700101",
+        "map": "http://maps.google.com/maps?q=22.60821, 88.42099&ll=22.60821, 88.42099&z=17",
+        "lat": 22.60821,
+        "lng": 88.42099
+    },
+    {
+        "id": 107,
+        "pandal": "Railpukur United Club",
+        "address": "Desh Bandhu Nagar, Baguiati, Kolkata, West Bengal 700059",
+        "map": "http://maps.google.com/maps?q=22.61222, 88.42741&ll=22.61222, 88.42741&z=17",
+        "lat": 22.61222,
+        "lng": 88.42741
+    },
+    {
+        "id": 108,
+        "pandal": "Sreeramnagar Appartment",
+        "address": "VIP Rd, Dhalipara, Tegharia, Rajarhat, Kolkata, West Bengal 700052",
+        "map": "http://maps.google.com/maps?q=22.62705, 88.43423&ll=22.62705, 88.43423&z=17",
+        "lat": 22.62705,
+        "lng": 88.43423
+    },
+    {
+        "id": 109,
+        "pandal": "Sunrise Point",
+        "address": "Rajarhat, Action Area II, Newtown, Kolkata, West Bengal 700161",
+        "map": "http://maps.google.com/maps?q=22.62259, 88.46811&ll=22.62259, 88.46811&z=17",
+        "lat": 22.62259,
+        "lng": 88.46811
+    },
+    {
+        "id": 110,
+        "pandal": "Techno India DAMA Healthcare & Medical Centre\r\n",
+        "address": "LB Block, Sector III, Bidhannagar, Kolkata, West Bengal 700098\r\n",
+        "map": "http://maps.google.com/maps?q=22.55939, 88.41105&ll=22.55939, 88.41105&z=17\r\n",
+        "lat": 22.55939,
+        "lng": 88.41105
+    },
+    {
+        "id": 111,
+        "pandal": "Udayrajpur puja pandal",
+        "address": "Gate no. 1 Basunagar, go straight to the 5th four-headed ending. Meet at the Udayrajpur math in front.",
+        "map": "https://goo.gl/maps/sUDVEczR8JUEYv6D6",
+        "lat": null,
+        "lng": null
+    },
+    {
+        "id": 112,
+        "pandal": "Park Circus",
+        "address": "Park St, Park Circus, Beniapukur, Kolkata, West Bengal 700017",
+        "map": "http://maps.google.com/maps?q=22.543079,88.36776&ll=22.543079,88.36776&z=17",
+        "lat": 22.543079,
+        "lng": 88.36776
+    },
+    {
+        "id": 113,
+        "pandal": "Maddox Square",
+        "address": "Garcha, Ballygunge, Kolkata, West Bengal 700026",
+        "map": "http://maps.google.com/maps?q=22.526407,88.35463&ll=22.526407,88.35463&z=17",
+        "lat": 22.526407,
+        "lng": 88.35463
+    },
+    {
+        "id": 114,
+        "pandal": "Deshapriya Park",
+        "address": "Manoharpukur, Kalighat, Kolkata, West Bengal 700029",
+        "map": "http://maps.google.com/maps?q=22.518661,88.353249&ll=22.518661,88.353249&z=17",
+        "lat": 22.518661,
+        "lng": 88.353249
+    },
+    {
+        "id": 115,
+        "pandal": "Haridevpur 41 Pally",
+        "address": "Haridevpur, Paschim Putiary, Kolkata, West Bengal 700082",
+        "map": "http://maps.google.com/maps?q=22.48303,88.338509&ll=22.48303,88.338509&z=17",
+        "lat": 22.48303,
+        "lng": 88.338509
+    },
+    {
+        "id": 116,
+        "pandal": "Ajeya Sanghati",
+        "address": "76/4, M.G. Rd, Haridevpur, Paschim Putiary, Kolkata, West Bengal 700082",
+        "map": "http://maps.google.com/maps?q=22.480553,88.337418&ll=22.480553,88.337418&z=17",
+        "lat": 22.480553,
+        "lng": 88.337418
+    },
+    {
+        "id": 117,
+        "pandal": "Haridevpur Vivekananda Sporting Club",
+        "address": "M.G. Rd, Arobindo Pally, Paschim Putiary, Kolkata, West Bengal 700041",
+        "map": "http://maps.google.com/maps?q=22.476332,88.338493&ll=22.476332,88.338493&z=17",
+        "lat": 22.476332,
+        "lng": 88.338493
+    },
+    {
+        "id": 118,
+        "pandal": "Haridevpur Vivekananda Park Athletic Club",
+        "address": "353/3A, M.G. Rd, opposite Uco Bank, Haridevpur, Branch, Kolkata, West Bengal 700082",
+        "map": "http://maps.google.com/maps?q=22.481016,88.336967&ll=22.481016,88.336967&z=17",
+        "lat": 22.481016,
+        "lng": 88.336967
+    },
+    {
+        "id": 119,
+        "pandal": "Pally Unnayan Samity Paschim Putiary",
+        "address": "Banerjee Para Rd, Paschim Putiary, Kolkata, West Bengal 700041",
+        "map": "http://maps.google.com/maps?q=22.478121,88.342247&ll=22.478121,88.342247&z=17",
+        "lat": 22.478121,
+        "lng": 88.342247
+    },
+    {
+        "id": 120,
+        "pandal": "Naskarpara Pally Unnayan Samity - Haridevpur",
+        "address": "Naskar Para Rd, Jiban Mohini Ghosh Park, Paschim Putiary, Kolkata, West Bengal 700041",
+        "map": "http://maps.google.com/maps?q=22.480223,88.339539&ll=22.480223,88.339539&z=17",
+        "lat": 22.480223,
+        "lng": 88.339539
+    },
+    {
+        "id": 121,
+        "pandal": "Barisha Club",
+        "address": "50, Santosh Roy Rd, Sakher Bazar, Purba Barisha, Kolkata, West Bengal 700008",
+        "map": "http://maps.google.com/maps?q=22.481551,88.312912&ll=22.481551,88.312912&z=17",
+        "lat": 22.481551,
+        "lng": 88.312912
+    },
+    {
+        "id": 122,
+        "pandal": "Barisha Janakalyan Sangha",
+        "address": "576A, P-25, Diamond Harbour Rd, Behala Chowrasta, Arcadia, Behala, Kolkata, West Bengal 700034",
+        "map": "http://maps.google.com/maps?q=22.485041,88.312746&ll=22.485041,88.312746&z=17",
+        "lat": 22.485041,
+        "lng": 88.312746
+    },
+    {
+        "id": 123,
+        "pandal": "Sabeda Bagan",
+        "address": "15, Raja Rammohan Roy Rd, 18 Bigha, Muradpur, Sarada Pally, Kolkata, West Bengal",
+        "map": "http://maps.google.com/maps?q=22.488293,88.316666&ll=22.488293,88.316666&z=17",
+        "lat": 22.488293,
+        "lng": 88.316666
+    },
+    {
+        "id": 124,
+        "pandal": "Behala Club",
+        "address": "Banamali Naskar Rd, Naskarpur, Behala, Kolkata, West Bengal 700034",
+        "map": "http://maps.google.com/maps?q=22.505381,88.314308&ll=22.505381,88.314308&z=17",
+        "lat": 22.505381,
+        "lng": 88.314308
+    },
+    {
+        "id": 125,
+        "pandal": "Behala Debdaru Fatak",
+        "address": "Arya Samity Ground, Panchanan Tala, Behala, Kolkata, West Bengal 700060",
+        "map": "http://maps.google.com/maps?q=22.502715,88.317472&ll=22.502715,88.317472&z=17",
+        "lat": 22.502715,
+        "lng": 88.317472
+    },
+    {
+        "id": 126,
+        "pandal": "Behala Sree Sangha",
+        "address": "Indrajit Pally, Behala, Kolkata, West Bengal 700034",
+        "map": "http://maps.google.com/maps?q=22.497669,88.320183&ll=22.497669,88.320183&z=17",
+        "lat": 22.497669,
+        "lng": 88.320183
+    },
+    {
+        "id": 127,
+        "pandal": "Behala Youngmen's Association",
+        "address": "71, Sahapur, New Alipore, Kolkata, West Bengal 700038",
+        "map": "http://maps.google.com/maps?q=22.507067,88.325104&ll=22.507067,88.325104&z=17",
+        "lat": 22.507067,
+        "lng": 88.325104
+    },
+    {
+        "id": 128,
+        "pandal": "Behala Adarsha Pally",
+        "address": "Roy Bahadur Rd, Buroshibtalla, Behala, Kolkata, West Bengal 700034",
+        "map": "http://maps.google.com/maps?q=22.499989,88.327632&ll=22.499989,88.327632&z=17",
+        "lat": 22.499989,
+        "lng": 88.327632
+    },
+    {
+        "id": 129,
+        "pandal": "Badamtala Ashar Sangha",
+        "address": "Tincowrie Ghosh Ln, Anami Sangha, Kalighat, Kolkata, West Bengal 700026",
+        "map": "http://maps.google.com/maps?q=22.517864,88.343994&ll=22.517864,88.343994&z=17",
+        "lat": 22.517864,
+        "lng": 88.343994
+    },
+    {
+        "id": 130,
+        "pandal": "Behala Nutan Dal",
+        "address": "Play Ground, Roy Bahadur Rd, Auddy Bagan Basti, Behala, Kolkata, West Bengal 700034",
+        "map": "http://maps.google.com/maps?q=22.501228,88.319565&ll=22.501228,88.319565&z=17",
+        "lat": 22.501228,
+        "lng": 88.319565
+    },
+    {
+        "id": 131,
+        "pandal": "Bosepukur Talbagan",
+        "address": "Tal Bagan, Bosepukur, Kasba, Kolkata, West Bengal 700042",
+        "map": "http://maps.google.com/maps?q=22.519376,88.383969&ll=22.519376,88.383969&z=17",
+        "lat": 22.519376,
+        "lng": 88.383969
+    },
+    {
+        "id": 132,
+        "pandal": "Rajdanga Tribarna Sangha",
+        "address": "131, Bosepukur Purba Para Rd, Sarat Park, Tal Bagan, Bosepukur, Kasba, Kolkata, West Bengal 700039",
+        "map": "http://maps.google.com/maps?q=22.516308,88.388357&ll=22.516308,88.388357&z=17",
+        "lat": 22.516308,
+        "lng": 88.388357
+    },
+    {
+        "id": 133,
+        "pandal": "Bosepukur Sitalamandir",
+        "address": "Tal Bagan, Bosepukur, Kasba, Kolkata, West Bengal 700042",
+        "map": "http://maps.google.com/maps?q=22.519158,88.38487&ll=22.519158,88.38487&z=17",
+        "lat": 22.519158,
+        "lng": 88.38487
+    },
+    {
+        "id": 134,
+        "pandal": "Singhi Park",
+        "address": "Central Government Officers Residential Complex, Dover Terrace, Ballygunge, Kolkata, West Bengal 700019",
+        "map": "http://maps.google.com/maps?q=22.521238,88.362991&ll=22.521238,88.362991&z=17",
+        "lat": 22.521238,
+        "lng": 88.362991
+    },
+    {
+        "id": 135,
+        "pandal": "Ekdalia Evergreen Club",
+        "address": "7-15, Ekdalia Rd, Ekdalia, Ballygunge, Kolkata, West Bengal 700019",
+        "map": "http://maps.google.com/maps?q=22.521111,88.366447&ll=22.521111,88.366447&z=17",
+        "lat": 22.521111,
+        "lng": 88.366447
+    },
+    {
+        "id": 136,
+        "pandal": "Jodhpur Park",
+        "address": "18, Jodhpur Park, Kolkata, West Bengal 700068",
+        "map": "http://maps.google.com/maps?q=22.504702,88.365028&ll=22.504702,88.365028&z=17",
+        "lat": 22.504702,
+        "lng": 88.365028
+    },
+    {
+        "id": 137,
+        "pandal": "Selimpur Pally",
+        "address": "Dhakuria, Selimpur, Kolkata, West Bengal 700031",
+        "map": "http://maps.google.com/maps?q=22.505087,88.368149&ll=22.505087,88.368149&z=17",
+        "lat": 22.505087,
+        "lng": 88.368149
+    },
+    {
+        "id": 138,
+        "pandal": "Santoshpur Lakepally",
+        "address": "Lake W Rd, Lake Terrace, Santoshpur, Kolkata, West Bengal 700075",
+        "map": "http://maps.google.com/maps?q=22.491508,88.382774&ll=22.491508,88.382774&z=17",
+        "lat": 22.491508,
+        "lng": 88.382774
+    },
+    {
+        "id": 139,
+        "pandal": "Mudiali Club",
+        "address": "NA, 12A, Rajani Sen Rd, Mudiali, Kolkata, West Bengal 700027",
+        "map": "http://maps.google.com/maps?q=22.510118,88.346725&ll=22.510118,88.346725&z=17",
+        "lat": 22.510118,
+        "lng": 88.346725
+    },
+    {
+        "id": 140,
+        "pandal": "Shibmandir Sarbojanin Durgotsab",
+        "address": "27, Lake Temple Rd, Lake Range, Kalighat, Kolkata, West Bengal 700045",
+        "map": "http://maps.google.com/maps?q=22.510822,88.349388&ll=22.510822,88.349388&z=17",
+        "lat": 22.510822,
+        "lng": 88.349388
+    },
+    {
+        "id": 141,
+        "pandal": "Naktala Udayan Sangha",
+        "address": "Extended Naktala Road, Sahid Nagar Colony, Netaji Nagar, Kolkata, West Bengal 700047",
+        "map": "http://maps.google.com/maps?q=22.474205,88.366524&ll=22.474205,88.366524&z=17",
+        "lat": 22.474205,
+        "lng": 88.366524
+    },
+    {
+        "id": 142,
+        "pandal": "Rajdanga Naba Uday Sangha",
+        "address": "Sector A, East Kolkata Twp, Kolkata, West Bengal 700039",
+        "map": "http://maps.google.com/maps?q=22.516531,88.391436&ll=22.516531,88.391436&z=17",
+        "lat": 22.516531,
+        "lng": 88.391436
+    },
+    {
+        "id": 143,
+        "pandal": "Suruchi Sangha",
+        "address": "370, Block M, New Alipore, Kolkata, West Bengal 700053",
+        "map": "http://maps.google.com/maps?q=22.509346,88.333664&ll=22.509346,88.333664&z=17",
+        "lat": 22.509346,
+        "lng": 88.333664
+    },
+    {
+        "id": 144,
+        "pandal": "Tridhara Sammilani",
+        "address": "Satyendranath Mazumder Sarani, Manoharpukur, Kalighat, Kolkata, West Bengal 700029",
+        "map": "http://maps.google.com/maps?q=22.519238,88.355377&ll=22.519238,88.355377&z=17",
+        "lat": 22.519238,
+        "lng": 88.355377
+    },
+    {
+        "id": 145,
+        "pandal": "Pratapaditya Road Trikone Park",
+        "address": "Rani Bhabani Rd, Sahanagar, Kalighat, Kolkata, West Bengal 700026",
+        "map": "http://maps.google.com/maps?q=22.513498,88.344658&ll=22.513498,88.344658&z=17",
+        "lat": 22.513498,
+        "lng": 88.344658
+    },
+    {
+        "id": 146,
+        "pandal": "Sanghasree",
+        "address": "44-45, Gurupada Halder Rd, Kalighat, Kolkata, West Bengal 700026",
+        "map": "http://maps.google.com/maps?q=22.521303,88.345795&ll=22.521303,88.345795&z=17",
+        "lat": 22.521303,
+        "lng": 88.345795
+    },
+    {
+        "id": 147,
+        "pandal": "Kidderpore 25 Pally",
+        "address": "Mansatala Row, Khidirpur, Kolkata, West Bengal 700023",
+        "map": "http://maps.google.com/maps?q=22.539078,88.326538&ll=22.539078,88.326538&z=17",
+        "lat": 22.539078,
+        "lng": 88.326538
+    },
+    {
+        "id": 148,
+        "pandal": "Behala Mukul Sangha",
+        "address": "Netaji Subhash Ln, Bakshi Bagan, Behala, Kolkata, West Bengal 700034",
+        "map": "http://maps.google.com/maps?q=22.503359,88.313705&ll=22.503359,88.313705&z=17",
+        "lat": 22.503359,
+        "lng": 88.313705
+    },
+    {
+        "id": 149,
+        "pandal": "66 Palli",
+        "address": "47, Nepal Bhattacharjee St, Anami Sangha, Kalighat, Kolkata, West Bengal 700026",
+        "map": "http://maps.google.com/maps?q=22.518148,88.342644&ll=22.518148,88.342644&z=17",
+        "lat": 22.518148,
+        "lng": 88.342644
+    },
+    {
+        "id": 150,
+        "pandal": "Hindustan Park",
+        "address": "Golpark, Hindustan Park, Gariahat, Kolkata, West Bengal 700029",
+        "map": "http://maps.google.com/maps?q=22.517592,88.362372&ll=22.517592,88.362372&z=17",
+        "lat": 22.517592,
+        "lng": 88.362372
+    },
+    {
+        "id": 151,
+        "pandal": "Adi Lake Palli",
+        "address": "11-29, Lake Place Rd, Lake Market, Kalighat, Kolkata, West Bengal 700029",
+        "map": "http://maps.google.com/maps?q=22.514532,88.349379&ll=22.514532,88.349379&z=17",
+        "lat": 22.514532,
+        "lng": 88.349379
+    },
+    {
+        "id": 152,
+        "pandal": "Bharat Mata",
+        "address": "11/6, Bijoygarh, Jadavpur, Kolkata, West Bengal 700032",
+        "map": "http://maps.google.com/maps?q=22.488014,88.36248&ll=22.488014,88.36248&z=17",
+        "lat": 22.488014,
+        "lng": 88.36248
+    },
+    {
+        "id": 153,
+        "pandal": "Golfgreen Phase 2",
+        "address": "CS5, Golf Green, Kolkata, West Bengal 700095",
+        "map": "http://maps.google.com/maps?q=22.492256,88.360809&ll=22.492256,88.360809&z=17",
+        "lat": 22.492256,
+        "lng": 88.360809
+    },
+    {
+        "id": 154,
+        "pandal": "Santoshpur Trikone Park",
+        "address": "2, South Rd, Aurobindo Block, Santoshpur, Kolkata, West Bengal 700075",
+        "map": "http://maps.google.com/maps?q=22.492996,88.378448&ll=22.492996,88.378448&z=17",
+        "lat": 22.492996,
+        "lng": 88.378448
+    },
+    {
+        "id": 155,
+        "pandal": "Netaji Nagar Sarbojanin",
+        "address": "Saraf Bajar, Netaji Nagar, Chadchan, West Bengal 700040",
+        "map": "http://maps.google.com/maps?q=22.480837,88.35763&ll=22.480837,88.35763&z=17",
+        "lat": 22.480837,
+        "lng": 88.35763
+    },
+    {
+        "id": 156,
+        "pandal": "Netaji Jatiya Sebadal",
+        "address": "Gandhi Colony Higher Secondary School, Minapara Rd, Aswini Nagar, Regent Park, Kolkata, West Bengal 700040",
+        "map": "http://maps.google.com/maps?q=22.484991,88.358231&ll=22.484991,88.358231&z=17",
+        "lat": 22.484991,
+        "lng": 88.358231
+    },
+    {
+        "id": 157,
+        "pandal": "New Alipore Children's Park",
+        "address": "New Alipore Childrens Park, Block O, Chetla, Kolkata, West Bengal 700053",
+        "map": "http://maps.google.com/maps?q=22.507145,88.337021&ll=22.507145,88.337021&z=17",
+        "lat": 22.507145,
+        "lng": 88.337021
+    },
+    {
+        "id": 158,
+        "pandal": "Pally Mangal Samity - Jodhpur Park",
+        "address": "Sirpa Residential Complex, Jodhpur Park, Kolkata, West Bengal 700068",
+        "map": "http://maps.google.com/maps?q=22.503017,88.36396&ll=22.503017,88.36396&z=17",
+        "lat": 22.503017,
+        "lng": 88.36396
+    },
+    {
+        "id": 159,
+        "pandal": "Poddar Nagar Sarbojanin",
+        "address": "Jadavpur, Kolkata, West Bengal 700032",
+        "map": "http://maps.google.com/maps?q=22.500887,88.364433&ll=22.500887,88.364433&z=17",
+        "lat": 22.500887,
+        "lng": 88.364433
+    },
+    {
+        "id": 160,
+        "pandal": "Chakraberia Sarbojanin",
+        "address": "Sreepally, Bhowanipore, Kolkata, West Bengal 700020",
+        "map": "http://maps.google.com/maps?q=22.533646,88.351891&ll=22.533646,88.351891&z=17",
+        "lat": 22.533646,
+        "lng": 88.351891
+    },
+    {
+        "id": 161,
+        "pandal": "Babubagan Club",
+        "address": "Dhakuria, Babu Bagan, Selimpur, Kolkata, West Bengal 700031",
+        "map": "http://maps.google.com/maps?q=22.507978,88.36853&ll=22.507978,88.36853&z=17",
+        "lat": 22.507978,
+        "lng": 88.36853
+    },
+    {
+        "id": 162,
+        "pandal": "Barisha Tarun Tirtha",
+        "address": "Barisha, Kolkata, West Bengal 700008",
+        "map": "http://maps.google.com/maps?q=22.487779,88.319108&ll=22.487779,88.319108&z=17",
+        "lat": 22.487779,
+        "lng": 88.319108
+    },
+    {
+        "id": 163,
+        "pandal": "Kidderpore 74 Pally",
+        "address": "5-2/A, 5-2/A, Monilal Banerjee Rd, Khidirpur, Kolkata, West Bengal 700069",
+        "map": "http://maps.google.com/maps?q=22.539439,88.325733&ll=22.539439,88.325733&z=17",
+        "lat": 22.539439,
+        "lng": 88.325733
+    },
+    {
+        "id": 164,
+        "pandal": "Kidderpore Kabitirtha",
+        "address": "Watganj, Kolkata, West Bengal 700023",
+        "map": "http://maps.google.com/maps?q=22.541059,88.321495&ll=22.541059,88.321495&z=17",
+        "lat": 22.541059,
+        "lng": 88.321495
+    },
+    {
+        "id": 165,
+        "pandal": "Kidderpore Pally Sharadiya",
+        "address": "Hem Chandra St, Andaman Dock, Watganj, Kolkata, West Bengal 700023",
+        "map": "http://maps.google.com/maps?q=22.543011,88.321173&ll=22.543011,88.321173&z=17",
+        "lat": 22.543011,
+        "lng": 88.321173
+    },
+    {
+        "id": 166,
+        "pandal": "Behala 29 Palli",
+        "address": "Pally Park, SN Roy Rd, Sahapur, New Alipore, Kolkata, West Bengal 700034",
+        "map": "http://maps.google.com/maps?q=22.507344,88.322428&ll=22.507344,88.322428&z=17",
+        "lat": 22.507344,
+        "lng": 88.322428
+    },
+    {
+        "id": 167,
+        "pandal": "Baishnabghata Patuli Upanagari",
+        "address": "Play Ground, Block E, Baishnabghata Patuli Twp, Patuli, Kolkata, West Bengal 700047",
+        "map": "http://maps.google.com/maps?q=22.470497,88.387209&ll=22.470497,88.387209&z=17",
+        "lat": 22.470497,
+        "lng": 88.387209
+    },
+    {
+        "id": 168,
+        "pandal": "Kendua Shanti Sangha",
+        "address": "45, Kendua Main Rd, Ashutoshpally, Baishnabghata Patuli Twp, Patuli, Kolkata, West Bengal 700048",
+        "map": "http://maps.google.com/maps?q=22.472073,88.381544&ll=22.472073,88.381544&z=17",
+        "lat": 22.472073,
+        "lng": 88.381544
+    },
+    {
+        "id": 169,
+        "pandal": "Falguni Sangha",
+        "address": "19, Suren Tagore Rd, Falguni Sangha, Ekdalia, Ballygunge, Kolkata, West Bengal 700019",
+        "map": "http://maps.google.com/maps?q=22.521794,88.365827&ll=22.521794,88.365827&z=17",
+        "lat": 22.521794,
+        "lng": 88.365827
+    },
+    {
+        "id": 170,
+        "pandal": "Chetla Agrani Club",
+        "address": "Jainuddin Mistry Ln, Chetla, Kolkata, West Bengal 700027",
+        "map": "http://maps.google.com/maps?q=22.516447,88.337154&ll=22.516447,88.337154&z=17",
+        "lat": 22.516447,
+        "lng": 88.337154
+    },
+    {
+        "id": 171,
+        "pandal": "Chelta Sarbasadharaner Club",
+        "address": "Chetla Rd, Chetla, Kolkata, West Bengal 700027",
+        "map": "http://maps.google.com/maps?q=22.517433,88.339927&ll=22.517433,88.339927&z=17",
+        "lat": 22.517433,
+        "lng": 88.339927
+    },
+    {
+        "id": 172,
+        "pandal": "Selimpur Naskarpara",
+        "address": "16, Naskar Para Lane, Naskar Para, Garfa, Kolkata, West Bengal 700031",
+        "map": "http://maps.google.com/maps?q=22.504809,88.376062&ll=22.504809,88.376062&z=17",
+        "lat": 22.504809,
+        "lng": 88.376062
+    },
+    {
+        "id": 173,
+        "pandal": "Bengal United Club",
+        "address": "Kunjalal Banerjee Rd, Lake Range, Kalighat, Kolkata, West Bengal 700026",
+        "map": "http://maps.google.com/maps?q=22.512061,88.347845&ll=22.512061,88.347845&z=17",
+        "lat": 22.512061,
+        "lng": 88.347845
+    },
+    {
+        "id": 174,
+        "pandal": "Chandranath Chatterjee Street",
+        "address": "46, Rupchand Mukherjee Ln, Jatin Das Park, Patuapara, Bhowanipore, Kolkata, West Bengal 700025",
+        "map": "http://maps.google.com/maps?q=22.52669,88.34585&ll=22.52669,88.34585&z=17",
+        "lat": 22.52669,
+        "lng": 88.34585
+    },
+    {
+        "id": 175,
+        "pandal": "Sebak Sangha",
+        "address": "60, Lt Tapan Chowdhury Ave, Lake Range, Kalighat, Kolkata, West Bengal 700026",
+        "map": "http://maps.google.com/maps?q=22.511665,88.349819&ll=22.511665,88.349819&z=17",
+        "lat": 22.511665,
+        "lng": 88.349819
+    },
+    {
+        "id": 176,
+        "pandal": "Dilip Smriti Sangha",
+        "address": "Anami Sangha, Kalighat, Kolkata, West Bengal 700026",
+        "map": "http://maps.google.com/maps?q=22.517795,88.344943&ll=22.517795,88.344943&z=17",
+        "lat": 22.517795,
+        "lng": 88.344943
+    },
+    {
+        "id": 177,
+        "pandal": "Ekush Pally Sarbojanin Durgotsab",
+        "address": "15, Bondel Rd, Ballygunge Park, Ballygunge, Kolkata, West Bengal 700019",
+        "map": "http://maps.google.com/maps?q=22.529246,88.368369&ll=22.529246,88.368369&z=17",
+        "lat": 22.529246,
+        "lng": 88.368369
+    },
+    {
+        "id": 178,
+        "pandal": "Acharya Prafulla Sangha - Behala",
+        "address": "5/3, Gopinagar, Behala, Kolkata, West Bengal 700034",
+        "map": "http://maps.google.com/maps?q=22.490651,88.313459&ll=22.490651,88.313459&z=17",
+        "lat": 22.490651,
+        "lng": 88.313459
+    },
+    {
+        "id": 179,
+        "pandal": "Adi Ballygunge",
+        "address": "7/3, Rifle Range Rd, Ballygunge Park, Ballygunge, Kolkata, West Bengal 700019",
+        "map": "http://maps.google.com/maps?q=22.530059,88.3722&ll=22.530059,88.3722&z=17",
+        "lat": 22.530059,
+        "lng": 88.3722
+    },
+    {
+        "id": 180,
+        "pandal": "Ballygunge Cultural Association",
+        "address": "149, Lake View Rd, lake Terrace, Ballygunge, Kolkata, West Bengal 700029",
+        "map": "http://maps.google.com/maps?q=22.516383,88.355806&ll=22.516383,88.355806&z=17",
+        "lat": 22.516383,
+        "lng": 88.355806
+    },
+    {
+        "id": 181,
+        "pandal": "Barisha Sabuj Sathi Club",
+        "address": "Paroshmoni, 79, 2, Diamond Harbour Rd, Kolkata, 700008",
+        "map": "http://maps.google.com/maps?q=22.47821,88.310755&ll=22.47821,88.310755&z=17",
+        "lat": 22.47821,
+        "lng": 88.310755
+    },
+    {
+        "id": 182,
+        "pandal": "Behala Arcadia Sarbojanin",
+        "address": "F8V8+Q52, Arcadia, Behala, Kolkata, West Bengal 700034",
+        "map": "http://maps.google.com/maps?q=22.4942,88.315165&ll=22.4942,88.315165&z=17",
+        "lat": 22.4942,
+        "lng": 88.315165
+    },
+    {
+        "id": 183,
+        "pandal": "Ganbani Sangha",
+        "address": "F8QH+F4W, Sarada Pally, Kolkata, West Bengal 700041",
+        "map": "http://maps.google.com/maps?q=22.488768,88.327804&ll=22.488768,88.327804&z=17",
+        "lat": 22.488768,
+        "lng": 88.327804
+    },
+    {
+        "id": 184,
+        "pandal": "Samaj Sebi Sangha",
+        "address": "529-534, P 23 Rd, Hemanta Mukherjee Sarani, lake Terrace, Ballygunge, Kolkata, West Bengal 700029",
+        "map": "http://maps.google.com/maps?q=22.514381,88.356192&ll=22.514381,88.356192&z=17",
+        "lat": 22.514381,
+        "lng": 88.356192
+    },
+    {
+        "id": 185,
+        "pandal": "Sodepur Pragati Sangha (Haridevpur)",
+        "address": "Sodepur 1st Ln, Dhawan Colony, Paschim Putiary, Kolkata, West Bengal 700041",
+        "map": "http://maps.google.com/maps?q=22.481164,88.331623&ll=22.481164,88.331623&z=17",
+        "lat": 22.481164,
+        "lng": 88.331623
+    },
+    {
+        "id": 186,
+        "pandal": "Santoshpur Sonar Toree Durgatsav",
+        "address": "49, S Park Rd, Bidhan Colony, Santoshpur, Kolkata, West Bengal 700075",
+        "map": "http://maps.google.com/maps?q=22.491841,88.378551&ll=22.491841,88.378551&z=17",
+        "lat": 22.491841,
+        "lng": 88.378551
+    },
+    {
+        "id": 187,
+        "pandal": "Abasar Sarbojonin",
+        "address": "18-10, Rakhal Mukherjee Rd, Bakul Bagan, Bhowanipore, Kolkata, West Bengal 700025",
+        "map": "http://maps.google.com/maps?q=22.527562,88.348897&ll=22.527562,88.348897&z=17",
+        "lat": 22.527562,
+        "lng": 88.348897
+    },
+    {
+        "id": 188,
+        "pandal": "Goal Math",
+        "address": "14-155, Bakul Garden Rd, Bakul Bagan, Bhowanipore, Kolkata, West Bengal 700025",
+        "map": "http://maps.google.com/maps?q=22.526427,88.349862&ll=22.526427,88.349862&z=17",
+        "lat": 22.526427,
+        "lng": 88.349862
+    },
+    {
+        "id": 189,
+        "pandal": "Barisha Netaji Sangha",
+        "address": "125, James Long Sarani, Bata Colony, Barisha, Kolkata, West Bengal 700008",
+        "map": "http://maps.google.com/maps?q=22.483851,88.314629&ll=22.483851,88.314629&z=17",
+        "lat": 22.483851,
+        "lng": 88.314629
+    },
+    {
+        "id": 190,
+        "pandal": "Behala Buroshibtala Janakalyan Sangha",
+        "address": "7, Kabiguru Sarani, Buroshibtalla, Behala, Kolkata, West Bengal 700034",
+        "map": "http://maps.google.com/maps?q=22.502289,88.329735&ll=22.502289,88.329735&z=17",
+        "lat": 22.502289,
+        "lng": 88.329735
+    },
+    {
+        "id": 191,
+        "pandal": "Jogajatri Club",
+        "address": "Buroshibtalla, Behala, Kolkata, West Bengal 700034",
+        "map": "http://maps.google.com/maps?q=22.501614,88.33128&ll=22.501614,88.33128&z=17",
+        "lat": 22.501614,
+        "lng": 88.33128
+    },
+    {
+        "id": 192,
+        "pandal": "Surya Nagar Sarbojanin",
+        "address": "211, Netaji Subhash Chandra Bose Rd, Regent Grove, Asoke Park, Kolkata, West Bengal 700047",
+        "map": "http://maps.google.com/maps?q=22.474889,88.359346&ll=22.474889,88.359346&z=17",
+        "lat": 22.474889,
+        "lng": 88.359346
+    },
+    {
+        "id": 193,
+        "pandal": "Golden Arrow Club",
+        "address": "Tara Rd, Lake Market, Kalighat, Kolkata, West Bengal 700029",
+        "map": "http://maps.google.com/maps?q=22.516293,88.347577&ll=22.516293,88.347577&z=17",
+        "lat": 22.516293,
+        "lng": 88.347577
+    },
+    {
+        "id": 194,
+        "pandal": "Purbachal Shakti Sangha",
+        "address": "21, Purbachal Main Rd, Shanti Pally, Ramlal Bazar, Haltu, Kolkata, West Bengal 700078",
+        "map": "http://maps.google.com/maps?q=22.504752,88.388116&ll=22.504752,88.388116&z=17",
+        "lat": 22.504752,
+        "lng": 88.388116
+    },
+    {
+        "id": 195,
+        "pandal": "Naskarpur Sarbojanin",
+        "address": "6D, Banerjee Para Rd, Naskarpur, Behala, Kolkata, West Bengal 700060",
+        "map": "http://maps.google.com/maps?q=22.50657,88.312064&ll=22.50657,88.312064&z=17",
+        "lat": 22.50657,
+        "lng": 88.312064
+    },
+    {
+        "id": 196,
+        "pandal": "Kolkata",
+        "address": "Jawaharlal Nehru Road, Kolkata, West Bengal 700013",
+        "map": "http://maps.google.com/maps?q=22.56472,88.350849&ll=22.56472,88.350849&z=17",
+        "lat": 22.56472,
+        "lng": 88.350849
+    },
+    {
+        "id": 197,
+        "pandal": "64 Pally",
+        "address": "Shyama Prasad Mukherjee Rd, Bakul Bagan, Bhowanipore, Kolkata, West Bengal 700025",
+        "map": "http://maps.google.com/maps?q=22.526789,88.346515&ll=22.526789,88.346515&z=17",
+        "lat": 22.526789,
+        "lng": 88.346515
+    },
+    {
+        "id": 198,
+        "pandal": "95 Pally",
+        "address": "Jodhpur Park, Kolkata, West Bengal 700068",
+        "map": "http://maps.google.com/maps?q=22.507621,88.362951&ll=22.507621,88.362951&z=17",
+        "lat": 22.507621,
+        "lng": 88.362951
+    },
+    {
+        "id": 199,
+        "pandal": "Bandhab Sammilani",
+        "address": "4-6, Maharaja Tagore Rd, Dhakuria, Babu Bagan, Selimpur, Kolkata, West Bengal 700031",
+        "map": "http://maps.google.com/maps?q=22.507819,88.367661&ll=22.507819,88.367661&z=17",
+        "lat": 22.507819,
+        "lng": 88.367661
+    },
+    {
+        "id": 200,
+        "pandal": "Bengal Boys Training Association",
+        "address": "Anami Sangha, Kalighat, Kolkata, West Bengal 700026",
+        "map": "http://maps.google.com/maps?q=22.517557,88.341182&ll=22.517557,88.341182&z=17",
+        "lat": 22.517557,
+        "lng": 88.341182
+    },
+    {
+        "id": 201,
+        "pandal": "Nepal Bhattacharjee Street",
+        "address": "7MJCG89R+4CJQ, Anami Sangha, Ward Number 83, Kolkata, West Bengal 700026",
+        "map": "http://maps.google.com/maps?q=22.517785,88.341048&ll=22.517785,88.341048&z=17",
+        "lat": 22.517785,
+        "lng": 88.341048
+    },
+    {
+        "id": 202,
+        "pandal": "Roynagar Unnayan Samity",
+        "address": "35 Adiganga, Co-Operative Rd, Kolkata, West Bengal 700070",
+        "map": "http://maps.google.com/maps?q=22.47242,88.360173&ll=22.47242,88.360173&z=17",
+        "lat": 22.47242,
+        "lng": 88.360173
+    },
+    {
+        "id": 203,
+        "pandal": "Shyamapally Shyama Sangha",
+        "address": "Anandapally Rd, Ananda Pally, Bapuji Nagar, Jadavpur, Kolkata, West Bengal 700032",
+        "map": "http://maps.google.com/maps?q=22.491519,88.371588&ll=22.491519,88.371588&z=17",
+        "lat": 22.491519,
+        "lng": 88.371588
+    },
+    {
+        "id": 204,
+        "pandal": "Bhawanipur Swadhin Sangha",
+        "address": "47, Ashutosh Mukherjee Rd, Paddapukur, Bhowanipore, Kolkata, West Bengal 700025",
+        "map": "http://maps.google.com/maps?q=22.531992,88.346236&ll=22.531992,88.346236&z=17",
+        "lat": 22.531992,
+        "lng": 88.346236
+    },
+    {
+        "id": 205,
+        "pandal": "Jatra Suru Sangha",
+        "address": "101-100, Raja Subodh Chandra Mallick Rd, Laxmi Narayan Colony, Garia, Kolkata, West Bengal 700047",
+        "map": "http://maps.google.com/maps?q=22.470616,88.377714&ll=22.470616,88.377714&z=17",
+        "lat": 22.470616,
+        "lng": 88.377714
+    },
+    {
+        "id": 206,
+        "pandal": "Judge Bagan Recreation Club",
+        "address": "Haridevpur, Paschim Putiary, Kolkata, West Bengal 700041",
+        "map": "http://maps.google.com/maps?q=22.477328,88.338962&ll=22.477328,88.338962&z=17",
+        "lat": 22.477328,
+        "lng": 88.338962
+    },
+    {
+        "id": 207,
+        "pandal": "Rupchand Mukherjee Lane Sarbojanin",
+        "address": "7, Rupchand Mukherjee Ln, Jatin Das Park, Patuapara, Bhowanipore, Kolkata, West Bengal 700025",
+        "map": "http://maps.google.com/maps?q=22.527274,88.344948&ll=22.527274,88.344948&z=17",
+        "lat": 22.527274,
+        "lng": 88.344948
+    },
+    {
+        "id": 208,
+        "pandal": "Lake Pally Sarbojanin",
+        "address": "72/11, Charu Market, Lake Gardens, Kolkata, West Bengal 700033",
+        "map": "http://maps.google.com/maps?q=22.507259,88.346236&ll=22.507259,88.346236&z=17",
+        "lat": 22.507259,
+        "lng": 88.346236
+    },
+    {
+        "id": 209,
+        "pandal": "Golfgreen Phase 1",
+        "address": "Golf Green, Kolkata, West Bengal 700095",
+        "map": "http://maps.google.com/maps?q=22.493392,88.362275&ll=22.493392,88.362275&z=17",
+        "lat": 22.493392,
+        "lng": 88.362275
+    },
+    {
+        "id": 210,
+        "pandal": "19 Pally",
+        "address": "City Mart Mall, Panchanantala Rd, Dhakuria, Kankulia, Kolkata, West Bengal 700031",
+        "map": "http://maps.google.com/maps?q=22.512735,88.3675&ll=22.512735,88.3675&z=17",
+        "lat": 22.512735,
+        "lng": 88.3675
+    },
+    {
+        "id": 211,
+        "pandal": "68 Pally",
+        "address": "27, Ashutosh Mukherjee Rd, Bakul Bagan, Bhowanipore, Kolkata, West Bengal 700025",
+        "map": "http://maps.google.com/maps?q=22.527443,88.346182&ll=22.527443,88.346182&z=17",
+        "lat": 22.527443,
+        "lng": 88.346182
+    },
+    {
+        "id": 212,
+        "pandal": "77 Palli",
+        "address": "Dhakuria, Selimpur, Kolkata, West Bengal 700031",
+        "map": "http://maps.google.com/maps?q=22.50667,88.368208&ll=22.50667,88.368208&z=17",
+        "lat": 22.50667,
+        "lng": 88.368208
+    },
+    {
+        "id": 213,
+        "pandal": "Abasarika Club",
+        "address": "Dhakuria kali Bari Ln, Dhakuria, Babu Bagan, Selimpur, Kolkata, West Bengal 700031",
+        "map": "http://maps.google.com/maps?q=22.508394,88.369281&ll=22.508394,88.369281&z=17",
+        "lat": 22.508394,
+        "lng": 88.369281
+    },
+    {
+        "id": 214,
+        "pandal": "Bakul Bagan Sarbojanin",
+        "address": "108-37, Bakul Garden Rd, Bakul Bagan, Bhowanipore, Kolkata, West Bengal 700025",
+        "map": "http://maps.google.com/maps?q=22.526645,88.348253&ll=22.526645,88.348253&z=17",
+        "lat": 22.526645,
+        "lng": 88.348253
+    },
+    {
+        "id": 215,
+        "pandal": "Haridevpur Adarsha Samiti",
+        "address": "Haridevpur, Paschim Putiary, Kolkata, West Bengal 700041",
+        "map": "http://maps.google.com/maps?q=22.475841,88.336934&ll=22.475841,88.336934&z=17",
+        "lat": 22.475841,
+        "lng": 88.336934
+    },
+    {
+        "id": 216,
+        "pandal": "Hindustan Club",
+        "address": "Ballygunge, Kolkata, West Bengal 700019",
+        "map": "http://maps.google.com/maps?q=22.520149,88.361256&ll=22.520149,88.361256&z=17",
+        "lat": 22.520149,
+        "lng": 88.361256
+    },
+    {
+        "id": 217,
+        "pandal": "Manoharpukur Youngs",
+        "address": "Bharat Chandra Rd, Dover Terrace, Kalighat, Kolkata, West Bengal 700029",
+        "map": "http://maps.google.com/maps?q=22.518682,88.356214&ll=22.518682,88.356214&z=17",
+        "lat": 22.518682,
+        "lng": 88.356214
+    },
+    {
+        "id": 218,
+        "pandal": "Padmapukur Youth Association",
+        "address": "Padmapukur, Paddapukur, Bhowanipore, Kolkata, West Bengal 700025",
+        "map": "http://maps.google.com/maps?q=22.531615,88.35234&ll=22.531615,88.35234&z=17",
+        "lat": 22.531615,
+        "lng": 88.35234
+    },
+    {
+        "id": 219,
+        "pandal": "Padmapukur Barowari",
+        "address": "Paddapukar Rd, Chakraberia, Ballygunge, Kolkata, West Bengal 700019",
+        "map": "http://maps.google.com/maps?q=22.531863,88.354293&ll=22.531863,88.354293&z=17",
+        "lat": 22.531863,
+        "lng": 88.354293
+    },
+    {
+        "id": 220,
+        "pandal": "Park Circus - Uddipani",
+        "address": "Ground, Orient Row, Beniapukur, Kolkata, West Bengal 700017",
+        "map": "http://maps.google.com/maps?q=22.54415,88.370054&ll=22.54415,88.370054&z=17",
+        "lat": 22.54415,
+        "lng": 88.370054
+    },
+    {
+        "id": 221,
+        "pandal": "Triangular Park Sarbojanin",
+        "address": "lake Terrace, Ballygunge, Kolkata, West Bengal 700029",
+        "map": "http://maps.google.com/maps?q=22.517978,88.357962&ll=22.517978,88.357962&z=17",
+        "lat": 22.517978,
+        "lng": 88.357962
+    },
+    {
+        "id": 222,
+        "pandal": "Sitalatala Kishore Sangha",
+        "address": "East Park, Purba Barisha, Kolkata, West Bengal 700008",
+        "map": "http://maps.google.com/maps?q=22.481194,88.321967&ll=22.481194,88.321967&z=17",
+        "lat": 22.481194,
+        "lng": 88.321967
+    },
+    {
+        "id": 223,
+        "pandal": "Prasanta Disha Sarbojanin",
+        "address": "Senhati Colony, Behala, Kolkata, West Bengal 700034",
+        "map": "http://maps.google.com/maps?q=22.499216,88.327643&ll=22.499216,88.327643&z=17",
+        "lat": 22.499216,
+        "lng": 88.327643
+    },
+    {
+        "id": 224,
+        "pandal": "Barisha Yubak Brinda",
+        "address": "Natunpara Maath, Natunpara, Biren Roy Rd W, Natunpara, Basudevpur Colony, Paschim Barisha, Kolkata, West Bengal 700063",
+        "map": "http://maps.google.com/maps?q=22.484386,88.306539&ll=22.484386,88.306539&z=17",
+        "lat": 22.484386,
+        "lng": 88.306539
+    },
+    {
+        "id": 225,
+        "pandal": "Aikya Sammilani",
+        "address": "12-1-C, 12-1-C, Diamond Harbour Rd, Pathak Para, Behala, Kolkata, West Bengal 700034",
+        "map": "http://maps.google.com/maps?q=22.504429,88.318609&ll=22.504429,88.318609&z=17",
+        "lat": 22.504429,
+        "lng": 88.318609
+    },
+    {
+        "id": 226,
+        "pandal": "Kidderpore 75 Pally",
+        "address": "4A, Hari Sava St, Khidirpur, Kolkata, West Bengal 700023",
+        "map": "http://maps.google.com/maps?q=22.540058,88.325711&ll=22.540058,88.325711&z=17",
+        "lat": 22.540058,
+        "lng": 88.325711
+    },
+    {
+        "id": 227,
+        "pandal": "Kidderpore Milan Sangha",
+        "address": "Watganj, Kolkata, West Bengal 700023",
+        "map": "http://maps.google.com/maps?q=22.540643,88.323512&ll=22.540643,88.323512&z=17",
+        "lat": 22.540643,
+        "lng": 88.323512
+    },
+    {
+        "id": 228,
+        "pandal": "Kidderpore Nabarag",
+        "address": "7MJCG8RC+M83Q, Andaman Dock, Ward Number 76, Kolkata, West Bengal 700023",
+        "map": "http://maps.google.com/maps?q=22.541634,88.32083&ll=22.541634,88.32083&z=17",
+        "lat": 22.541634,
+        "lng": 88.32083
+    },
+    {
+        "id": 229,
+        "pandal": "Kidderpore Udayan",
+        "address": "42, Andaman Dock, Khidirpur, Kolkata, West Bengal 700023",
+        "map": "http://maps.google.com/maps?q=22.545121,88.321484&ll=22.545121,88.321484&z=17",
+        "lat": 22.545121,
+        "lng": 88.321484
+    },
+    {
+        "id": 230,
+        "pandal": "Kidderpore Sarbojanin Durgotsab",
+        "address": "Braun Field squre, Khidirpur, Kolkata, West Bengal 700023",
+        "map": "http://maps.google.com/maps?q=22.538145,88.3251&ll=22.538145,88.3251&z=17",
+        "lat": 22.538145,
+        "lng": 88.3251
+    },
+    {
+        "id": 231,
+        "pandal": "Durgabari",
+        "address": "35, Ballygunge Pl, Ballygunge Place, Ballygunge, Kolkata, West Bengal 700019",
+        "map": "http://maps.google.com/maps?q=22.527195,88.369399&ll=22.527195,88.369399&z=17",
+        "lat": 22.527195,
+        "lng": 88.369399
+    },
+    {
+        "id": 232,
+        "pandal": "Lake Garden People's Association",
+        "address": "Jodhpur Gardens, Lake Gardens, Kolkata, West Bengal 700045",
+        "map": "http://maps.google.com/maps?q=22.506461,88.35646&ll=22.506461,88.35646&z=17",
+        "lat": 22.506461,
+        "lng": 88.35646
+    },
+    {
+        "id": 233,
+        "pandal": "Kalighat Milan Sangha",
+        "address": "32A, Jatin Das Park, Patuapara, Bhowanipore, Kolkata, West Bengal 700025",
+        "map": "http://maps.google.com/maps?q=22.52443,88.341107&ll=22.52443,88.341107&z=17",
+        "lat": 22.52443,
+        "lng": 88.341107
+    },
+    {
+        "id": 234,
+        "pandal": "Saradia Sammilani",
+        "address": "29, Chandra Mondal Ln, Sahanagar, Kalighat, Kolkata, West Bengal 700026",
+        "map": "http://maps.google.com/maps?q=22.51105,88.344197&ll=22.51105,88.344197&z=17",
+        "lat": 22.51105,
+        "lng": 88.344197
+    },
+    {
+        "id": 235,
+        "pandal": "Santoshpur Avenue South",
+        "address": "Aurobindo Block, Santoshpur, Kolkata, West Bengal 700075",
+        "map": "http://maps.google.com/maps?q=22.49083,88.380316&ll=22.49083,88.380316&z=17",
+        "lat": 22.49083,
+        "lng": 88.380316
+    },
+    {
+        "id": 236,
+        "pandal": "Lake Youth Corner",
+        "address": "9-13, Dr TN Majumder St, Lake Range, Kalighat, Kolkata, West Bengal 700045",
+        "map": "http://maps.google.com/maps?q=22.510694,88.347287&ll=22.510694,88.347287&z=17",
+        "lat": 22.510694,
+        "lng": 88.347287
+    },
+    {
+        "id": 237,
+        "pandal": "Ballygunge Purba Pally",
+        "address": "Ekdalia, Ballygunge, Kolkata, West Bengal 700019",
+        "map": "http://maps.google.com/maps?q=22.522052,88.370955&ll=22.522052,88.370955&z=17",
+        "lat": 22.522052,
+        "lng": 88.370955
+    },
+    {
+        "id": 238,
+        "pandal": "Barisha Udayan Pally",
+        "address": "Udayan Pally, Paschim Barisha, Kolkata, West Bengal 700063",
+        "map": "http://maps.google.com/maps?q=22.475365,88.30965&ll=22.475365,88.30965&z=17",
+        "lat": 22.475365,
+        "lng": 88.30965
+    },
+    {
+        "id": 239,
+        "pandal": "Putiary Club",
+        "address": "28, Banerjee Para Rd, Banerjee Para, Paschim Putiary, Kolkata, West Bengal 700041",
+        "map": "http://maps.google.com/maps?q=22.480153,88.342985&ll=22.480153,88.342985&z=17",
+        "lat": 22.480153,
+        "lng": 88.342985
+    },
+    {
+        "id": 240,
+        "pandal": "Naktala Sammilani",
+        "address": "Nabodaya Club Playground, Naktala, Garia, Kolkata, West Bengal 700047",
+        "map": "http://maps.google.com/maps?q=22.476475,88.36838&ll=22.476475,88.36838&z=17",
+        "lat": 22.476475,
+        "lng": 88.36838
+    },
+    {
+        "id": 241,
+        "pandal": "Bandhusree",
+        "address": "Jadu Colony, Sarada Pally, Kolkata, West Bengal 700034",
+        "map": "http://maps.google.com/maps?q=22.493447,88.316485&ll=22.493447,88.316485&z=17",
+        "lat": 22.493447,
+        "lng": 88.316485
+    },
+    {
+        "id": 242,
+        "pandal": "4 No Milani",
+        "address": "Raipur Mandal Para Rd, Naktala, Ganguly Bagan, Kolkata, West Bengal 700047",
+        "map": "http://maps.google.com/maps?q=22.477933,88.37235&ll=22.477933,88.37235&z=17",
+        "lat": 22.477933,
+        "lng": 88.37235
+    },
+    {
+        "id": 243,
+        "pandal": "Janmangal Samiti",
+        "address": "316, Kalighat Rd, Anami Sangha, Kalighat, Kolkata, West Bengal 700026",
+        "map": "http://maps.google.com/maps?q=22.518097,88.341547&ll=22.518097,88.341547&z=17",
+        "lat": 22.518097,
+        "lng": 88.341547
+    },
+    {
+        "id": 244,
+        "pandal": "22 Palli Northern Park",
+        "address": "Allenby Road, Jadubabur Bazar, Bhawanipur, Kolkata, West Bengal 700020",
+        "map": "http://maps.google.com/maps?q=22.53544,88.349884&ll=22.53544,88.349884&z=17",
+        "lat": 22.53544,
+        "lng": 88.349884
+    },
+    {
+        "id": 245,
+        "pandal": "Behala Nutan Sangha",
+        "address": "Gholeshapur, Behala, Kolkata, West Bengal 700034",
+        "map": "http://maps.google.com/maps?q=22.501966,88.319068&ll=22.501966,88.319068&z=17",
+        "lat": 22.501966,
+        "lng": 88.319068
+    },
+    {
+        "id": 246,
+        "pandal": "SB Park - Thakurpukur",
+        "address": "1-680, Bankura - Beliator - Sonamukhi - Khandaghosh - Nischintapur Rd, Panchanan Tola, Nabapally, Kolkata, West Bengal 700063",
+        "map": "http://maps.google.com/maps?q=22.46724,88.308612&ll=22.46724,88.308612&z=17",
+        "lat": 22.46724,
+        "lng": 88.308612
+    },
+    {
+        "id": 247,
+        "pandal": "Selimpur Club",
+        "address": "110, Selimpur Rd, Dhakuria, Selimpur, Kolkata, West Bengal 700031",
+        "map": "http://maps.google.com/maps?q=22.50493,88.370537&ll=22.50493,88.370537&z=17",
+        "lat": 22.50493,
+        "lng": 88.370537
+    },
+    {
+        "id": 248,
+        "pandal": "Bhawanipur 75 Pally",
+        "address": "Bhowanipore, Kolkata, West Bengal 700025",
+        "map": "http://maps.google.com/maps?q=22.533213,88.345477&ll=22.533213,88.345477&z=17",
+        "lat": 22.533213,
+        "lng": 88.345477
+    }
+]
