@@ -1,4 +1,6 @@
 // bus fare
+import { NextResponse } from "next/server";
+const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 function busfare(distance: number) {
   //let time = Date.getHours();
   let fare = 0;
@@ -39,9 +41,20 @@ function uberfare(distance: number, cartype: string) {
   }  
   return fare;
 }
+export async function POST(request: any) {
+  try {
+    const { distance} = await request.json();
+    console.log("Request Payload:", { distance });
+
 // fare in array format
-function getfare() {
-  const allfare = [busfare(50), uberfare(50, 'taxi')];
-  return allfare;
+const allfare = [busfare(distance), uberfare(distance, 'taxi')];
+return allfare;
+  } catch (error) {
+    console.error("Error:", error);
+    return NextResponse.json({
+        status: 'error',
+        message: 'Request payload error',
+    });
+}
 }
 

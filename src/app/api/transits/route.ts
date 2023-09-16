@@ -2,8 +2,8 @@ import { NextResponse } from "next/server";
 const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 export async function POST(request: any) {
   try {
-      const { lat, lng } = await request.json();
-      console.log("Request Payload:", { lat, lng });
+      
+      console.log("Requesconst { lat, lng } = await request.json();t Payload:", { lat, lng });
       const types = ["train_station","taxi_stand","subway_station","light_rail_station","bus_station"]; 
       const opennow = true;
 
