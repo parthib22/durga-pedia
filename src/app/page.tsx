@@ -2,6 +2,7 @@
 import FormBottom from "@/components/FormBottom";
 import TopMap from "@/components/TopMap";
 import SearchBox from "@/components/SearchBox";
+// import Pandels from "@/app/Pandels";
 import { useState } from "react";
 import { RootState, AppDispatch } from "./store";
 import { Providers } from "./Provider";
