@@ -7,12 +7,16 @@ import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import "../app/cards.css";
 import { RootState } from "@/app/store";
 import { useSelector } from "react-redux";
+import { getShebang } from "typescript";
+
 
 function Cards() {
   const [Display,SetDisplay]=useState(false);
   console.log(Display);
-
+  let visited=new Map();
+  
   const count = useSelector((state:RootState) => state.cordinates.value);
+  
   useEffect(() => {
    
     console.log("Count has changed to: " + count);
@@ -23,8 +27,27 @@ function Cards() {
       console.log(count);
       SetDisplay(true);
     }
-   
+    
   }, [count]); 
+
+  function startRouting() {
+    try {
+      if (count.fid!=null){
+        const cordiarray=[];
+        visited.set(count.fid,"bkcd");
+        var idvar=count.id;
+        var nop=count.nopal-1;
+        while (nop>0){
+          var res[]=getShebang(idvar);
+          idvar=res.id;
+          
+        }
+      }
+    }
+    catch(e){
+      console.error(e);
+    }
+  }
 
   console.log(count );
   const CardsDisplay=()=>{
