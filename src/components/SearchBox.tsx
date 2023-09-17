@@ -113,5 +113,4 @@ const AutoComplete = () => {
     </div>
   );
 };
-// samadrit gandu
 export default AutoComplete;
