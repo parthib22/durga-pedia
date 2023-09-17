@@ -1,12 +1,36 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import DoneIcon from "@mui/icons-material/Done";
 import ClearIcon from "@mui/icons-material/Clear";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import "../app/cards.css";
+import { RootState } from "@/app/store";
+import { useSelector } from "react-redux";
 
 function Cards() {
+  const [Display,SetDisplay]=useState(false);
+  console.log(Display);
+
+  const count = useSelector((state:RootState) => state.cordinates.value);
+  useEffect(() => {
+   
+    console.log("Count has changed to: " + count);
+    if (count !== null) {
+      console.log(Display);
+
+      console.log("Count is not null and its value is: " );
+      console.log(count);
+      SetDisplay(true);
+    }
+   
+  }, [count]); 
+
+  console.log(count );
+  const CardsDisplay=()=>{
+
+ if(Display)
+ {
   return (
     <div className="timeline">
       <div className="outer">
@@ -16,23 +40,26 @@ function Cards() {
               <button className="mark-right">{<DoneIcon />}</button>
               <button className="mark-wrong">{<ClearIcon />}</button>
             </div>
-            <h2 className="title">Title 1</h2>
+            <h2 className="title">
+              Lorem ipsum
+              <button className="circular-button">{<LocationOnIcon />}</button>
+            </h2>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
               nisi ut aliquip ex ea commodo consequat.
             </p>
-            <div className="map_info">
+            {/* <div className="map_info">
               <h3 className="map-written">
-                Map &nbsp;
-                {/* <p className="map_written_b">(মানচিত্র) </p> */}
+                Map
+                <p className="map_written_b">(মানচিত্র) </p>
               </h3>
-              <button className="circular-button">{<LocationOnIcon />}</button>
-            </div>
+              
+            </div> */}
             <div className="map_info">
               <h3 className="map-written">
-                Food Places &nbsp;
+                Food
                 {/* <p className="map_written_b">(খাবারের জায়গা) </p> */}
               </h3>
               <div className="badge-container">
@@ -42,20 +69,20 @@ function Cards() {
             </div>
             <div className="map_info">
               <h3 className="map-written">
-                Transits &nbsp;
+                Transits
                 {/* <p className="map_written_b">(গণপরিবহন) </p> */}
               </h3>
               <div className="badge-container">
-                <span className="badge">Food</span>
-                <span className="badge">Foodz</span>
-                <span className="badge">Foodzzz</span>
-                <span className="badge">Foodzzzz</span>
-                <span className="badge">Route</span>
+                <span className="badge">Train</span>
+                <span className="badge">Metro</span>
+                <span className="badge">Tram</span>
+                <span className="badge">Bus</span>
+                <span className="badge">Yellow Taxi</span>
               </div>
             </div>
             <div className="map_info">
               <h3 className="map-written">
-                Prices &nbsp;
+                Prices
                 {/* <p className="map_written_b">(যাত্রা খরচ) </p> */}
               </h3>
               <table className="fare_table">
@@ -99,7 +126,7 @@ function Cards() {
             </div>
             <div className="map_info">
               <h3 className="map-written">
-                Weather &nbsp;
+                Weather
                 {/* <p className="map_written_b">(আবহাওয়া) </p> */}
               </h3>
               <div className="weatherLg">
@@ -114,11 +141,11 @@ function Cards() {
             </div>
           </div>
         </div>
-        {/* <div className="card">
+        <div className="card">
             <div className="info">
               <div className="button_container">
-                <button className="mark-right">{<DoneOutlineIcon />}</button>
-                <button className="mark-wrong">{<CloseIcon />}</button>
+                <button className="mark-right">{<DoneIcon />}</button>
+                <button className="mark-wrong">{<ClearIcon />}</button>
               </div>
               <h2 className="title text-3xl font-bold">Title 2</h2>
               <p>
@@ -257,7 +284,7 @@ function Cards() {
               </div>
             </div>
           </div>
-          <div className="card">
+          {/* <div className="card">
             <div className="info">
               <div className="button_container">
                 <button className="mark-right">{<DoneOutlineIcon />}</button>
@@ -686,6 +713,13 @@ function Cards() {
       </div>
     </div>
   );
+        }
+        }
+        return (
+          <>
+          {<CardsDisplay/>}
+          </>
+        );
 }
 
 export default Cards;
