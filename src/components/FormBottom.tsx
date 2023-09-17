@@ -32,6 +32,7 @@ export default function FormBottom(props: { onSubmit: any }) {
   }>({ lat: null, lng: null });
   const [scrollcheck, setScrollcheck] = useState(0);
   const [countpandal, setCountPandal] = useState(1);
+  const [checked, setChecked]= useState(false);
   useEffect(() => {
     const handlescroll = () => {
       setScrollcheck(
@@ -111,7 +112,7 @@ export default function FormBottom(props: { onSubmit: any }) {
    function distanceGet(lat1:any,lng1:any,lat2:any,lng2:any)
    {
     var _eQuatorialEarthRadius = 6378.1370;
-var _d2r = (Math.PI / 180.0);
+    var _d2r = (Math.PI / 180.0);
     var dlong = (lng2 - lng1) * _d2r;
     var dlat = (lat2 - lat1) * _d2r;
     var a = Math.pow(Math.sin(dlat / 2.0), 2.0) + Math.cos(lat1 * _d2r) * Math.cos(lat2 * _d2r) * Math.pow(Math.sin(dlong / 2.0), 2.0);
@@ -122,22 +123,26 @@ var _d2r = (Math.PI / 180.0);
    }
   async function StartPlanner  (lat:any,lng:any)
   {
+    
     let shortestDistance = Infinity;
     let flat = null;
     let flng = null;
     let name=null;
+    let id=null;
  try{
   const pandalData=fetch("https://cdn.jsdelivr.net/gh/THUNDERSAMA/durga-pedia@a85947898471f77358f792a840e2e9028c31b86c/output.json").then((response) => response.json());
     for (const pandal of await pandalData) {
         const latPandal = pandal.lat;
         const lngPandal = pandal.lng;
         const distance = distanceGet(lat,lng,latPandal,lngPandal);
+        
 
         if (distance < shortestDistance) {
             shortestDistance = distance;
             flat = latPandal;
             flng =lngPandal;
             name=pandal.pandal;
+            id=pandal.id;
         }
     }
 
@@ -150,7 +155,7 @@ var _d2r = (Math.PI / 180.0);
       html: "Check your nearest pandal is :"+name,
       icon: 'success'
     })
-    const cordiarray = [{"lat": lat, "lng": lng, "lat1": flat, "lng1": flng}];
+    const cordiarray = [{"lat": lat, "lng": lng, "lat1": flat, "lng1": flng, "nopal": countpandal, "fid": id, "pcheck": checked}];
 
 try {
   dispatch(incrementByAmount(cordiarray || null));
@@ -223,7 +228,8 @@ try {
             <label className="labelCheck" htmlFor="ipCheck">
               Is your starting point the end point?
             </label>
-            <input id="ipCheck" type="checkbox" />
+            <input id="ipCheck" type="checkbox" onChange={() => setChecked(!checked)}
+            defaultChecked={checked}/>
           </div>
           <div className="form-layout-4">
             <button className="sbm-btn" type="submit">
