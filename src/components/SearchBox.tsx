@@ -28,7 +28,7 @@ const AutoComplete = () => {
     getPandalData()
       .then((data) => {
         setDatas(data); // Set the fetched data in the state
-        console.log(data);
+       // console.log(data);
       })
       .catch((error) => {
         console.error(error);
@@ -38,10 +38,16 @@ const AutoComplete = () => {
   useEffect(() => {
     // Ensure that datas is an array before filtering
     if (Array.isArray(datas)) {
+      
+        
       const filteredData = datas.filter((item: any) =>
         item.pandal.toLowerCase().includes(searchTerm.toLowerCase())
       );
+      if(searchTerm.length>=3)
+      {
+        console.log(searchTerm);
       setSearchResults(filteredData.slice(0, 10));
+      }
       // setSuggestionsActive(true);
     }
   }, [searchTerm, datas]);
@@ -84,7 +90,7 @@ const AutoComplete = () => {
   // };
 
   const Suggestions = () => {
-    if(searchTerm)
+    if(searchTerm.length>=3)
     {return (
       <ul className="suggestions">
         {searchResults.map((item: any) => (
