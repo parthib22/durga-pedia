@@ -10,12 +10,12 @@ import { useSelector } from "react-redux";
 import { getShebang } from "typescript";
 
 function Cards() {
+
   const [Display, SetDisplay] = useState(false);
   console.log(Display);
   let visited = new Map();
 
   const count = useSelector((state: RootState) => state.cordinates.value);
-
   useEffect(() => {
     console.log("Count has changed to: " + count);
     if (count !== null) {
@@ -28,19 +28,18 @@ function Cards() {
     }
     
   }, [count]); 
-  async function getShortestRoute(idvar: any) {
-    console.log("entered1");
+  function getShortestRoute(idvar: any,pandalData:any) {
+    
     let ar: any[]=[];
     try{
-      const pandalData=await fetch("https://cdn.jsdelivr.net/gh/THUNDERSAMA/durga-pedia@09e6f6c6e7bf3aa771adf311531cb44a5db30abb/outputk.json").then((response) => response.json());
       
-
-        console.log(pandalData[idvar-1][idvar]);
+        //console.log(idvar);
         var k=9999;
       for (const i in pandalData[idvar-1][idvar]) {
         // console.log(pandalData[idvar-1][idvar][i]);
          if(!visited.has(i))
          {
+         // console.log(i);
            if(pandalData[idvar-1][idvar][i]<k)
            {
           k=  pandalData[idvar-1][idvar][i];
@@ -50,7 +49,11 @@ function Cards() {
          
         
       }
-      
+     // console.log(ar[0].nid);
+     if (ar.length > 0) {
+      visited.set(ar[0].nid, "bkcd");
+    }
+
      return ar;
     }
     catch(e)
@@ -60,30 +63,61 @@ function Cards() {
     }
      
   }
-  function startRouting() {
+  async function showComputedRoute(keysval:any){
+    let str:string="";
+    for(const keysc of  keysval) {
+      console.log(keysc);
+      try{
+       
+        const pandalData=fetch("https://cdn.jsdelivr.net/gh/THUNDERSAMA/durga-pedia@a85947898471f77358f792a840e2e9028c31b86c/output.json").then((response) => response.json());
+        var la,lo;  
+        for (const pandal of await pandalData) {
+            if(pandal.id==keysc)
+            {
+              la=pandal.lat;
+              lo=pandal.lng
+              str=str+la+","+lo+"|";
+            }
+          }
+         
+        }catch(e){
+          console.error(e);
+        }
+         
+      }
+      console.log(str);
+  }
+  async function startRouting() {
+    const pandalData= await fetch("https://cdn.jsdelivr.net/gh/THUNDERSAMA/durga-pedia@09e6f6c6e7bf3aa771adf311531cb44a5db30abb/outputk.json").then((response) => response.json());
+
     console.log("entered"+count);
-    console.log(count[0].fid);
+    //console.log(count[0].fid);
 
     try {
       if (count[0].fid!=null){
        // console.log("entered");
-
-        const cordiarray=[];
-        visited.set(count[0].fid,"bkcd");
+      
+       // const cordiarray:[number, number][]=[];
+        visited.set(count[0].fid.toString(),"bkcd");
         var idvar=count[0].fid;
-        //var nop=count.nopal-1;
-        var res=getShortestRoute(idvar)
-        res.then(result => {
-          console.log(result);
-        }).catch(error => {
-          console.error("Error:", error);
-        });
-        //while (nop>0){
-         // var res=
+        var nop=count[0].nopal-1;
+       //console.log(nop);
+       var text=" ";
+        while (nop>0){
+       
+           var res=getShortestRoute(idvar,pandalData)
+           if (res && res[0]) {
+          idvar=res[0].nid;
+           }
          
-          // idvar=res.id;
-          
-        //}
+         nop--;
+        }
+        const keysval = Array.from(visited.keys());
+         
+         //console.log("hellod");
+          //console.log(keysval.length+"d");
+         showComputedRoute(keysval);
+        //console.log(cordiarray);
       }
     } catch (e) {
       console.error(e);
