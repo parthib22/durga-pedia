@@ -3,8 +3,9 @@ import "../app/form.css";
 // import '../app/globals.css'
 import MyLocationIcon from "@mui/icons-material/MyLocation";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
-
 import { createContext, useContext, useEffect, useRef, useState } from "react";
+import {useDispatch} from "react-redux";
+import {incrementByAmount} from '../../slices/GlobalStore';
 import MyContext from "./MyContext";
 import {
   useJsApiLoader,
@@ -17,7 +18,10 @@ import { count } from "console";
 import withReactContent from "sweetalert2-react-content";
 import Swal from "sweetalert2";
 
+
 export default function FormBottom(props: { onSubmit: any }) {
+  const dispatch = useDispatch();
+  dispatch(incrementByAmount(null));
   const { setContextData }: any = useContext(MyContext);
   const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
   console.log(googleMapsApiKey);
@@ -146,6 +150,13 @@ var _d2r = (Math.PI / 180.0);
       html: "Check your nearest pandal is :"+name,
       icon: 'success'
     })
+    const cordiarray = [{"lat": lat, "lng": lng, "lat1": flat, "lng1": flng}];
+
+try {
+  dispatch(incrementByAmount(cordiarray || null));
+} catch (e) {
+  console.error(e);
+}
   }
   catch(e)
   {

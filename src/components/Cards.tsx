@@ -1,12 +1,36 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import DoneIcon from "@mui/icons-material/Done";
 import ClearIcon from "@mui/icons-material/Clear";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import "../app/cards.css";
+import { RootState } from "@/app/store";
+import { useSelector } from "react-redux";
 
 function Cards() {
+  const [Display,SetDisplay]=useState(false);
+  console.log(Display);
+
+  const count = useSelector((state:RootState) => state.cordinates.value);
+  useEffect(() => {
+   
+    console.log("Count has changed to: " + count);
+    if (count !== null) {
+      console.log(Display);
+
+      console.log("Count is not null and its value is: " );
+      console.log(count);
+      SetDisplay(true);
+    }
+   
+  }, [count]); 
+
+  console.log(count );
+  const CardsDisplay=()=>{
+
+ if(Display)
+ {
   return (
     <div className="timeline">
       <div className="outer">
@@ -689,6 +713,13 @@ function Cards() {
       </div>
     </div>
   );
+        }
+        }
+        return (
+          <>
+          {<CardsDisplay/>}
+          </>
+        );
 }
 
 export default Cards;

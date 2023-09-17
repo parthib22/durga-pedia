@@ -8,7 +8,6 @@ import { Providers } from "./Provider";
 import { configureStore } from "@reduxjs/toolkit";
 import reducer from "../../slices/GlobalStore";
 import Cards from "@/components/Cards";
-
 export default function Home() {
   const [passCords, setCords] = useState(""); //changes by sam
   const getData = (data: string) => {
@@ -18,7 +17,7 @@ export default function Home() {
   };
   return (
     <>
-      <Providers>
+      <Providers >
         <SearchBox />
         <TopMap name={passCords} />
         <FormBottom onSubmit={getData} />
