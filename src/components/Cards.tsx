@@ -25,23 +25,67 @@ function Cards() {
 
       console.log("Count is not null and its value is: " );
       console.log(count);
+      startRouting()
       SetDisplay(true);
     }
     
   }, [count]); 
+  async function getShortestRoute(idvar: any) {
+    console.log("entered1");
+    let ar: any[]=[];
+    try{
+      const pandalData=await fetch("https://cdn.jsdelivr.net/gh/THUNDERSAMA/durga-pedia@09e6f6c6e7bf3aa771adf311531cb44a5db30abb/outputk.json").then((response) => response.json());
+      
 
+        console.log(pandalData[idvar-1][idvar]);
+        var k=9999;
+      for (const i in pandalData[idvar-1][idvar]) {
+        // console.log(pandalData[idvar-1][idvar][i]);
+         if(!visited.has(i))
+         {
+           if(pandalData[idvar-1][idvar][i]<k)
+           {
+          k=  pandalData[idvar-1][idvar][i];
+          ar=[{"nid":i,"ndist":k}];
+          }
+         }
+         
+        
+      }
+      
+     return ar;
+    }
+    catch(e)
+    {
+      console.log(e);
+      //return ar;
+    }
+     
+  }
   function startRouting() {
+    console.log("entered"+count);
+    console.log(count[0].fid);
+
     try {
-      if (count.fid!=null){
+      if (count[0].fid!=null){
+       // console.log("entered");
+
         const cordiarray=[];
-        visited.set(count.fid,"bkcd");
-        var idvar=count.id;
-        var nop=count.nopal-1;
-        while (nop>0){
-          var res[]=getShebang(idvar);
-          idvar=res.id;
+        visited.set(count[0].fid,"bkcd");
+        var idvar=count[0].fid;
+        //var nop=count.nopal-1;
+        var res=getShortestRoute(idvar)
+        res.then(result => {
+          console.log(result);
+        }).catch(error => {
+          console.error("Error:", error);
+        });
+        //while (nop>0){
+         // var res=
+         
+          // idvar=res.id;
           
-        }
+        //}
       }
     }
     catch(e){
@@ -746,3 +790,5 @@ function Cards() {
 }
 
 export default Cards;
+
+
