@@ -7,15 +7,17 @@ import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import "../app/cards.css";
 import { RootState } from "@/app/store";
 import { useSelector } from "react-redux";
-import { getShebang } from "typescript";
+
 
 function Cards() {
 
   const [Display, SetDisplay] = useState(false);
   console.log(Display);
   let visited = new Map();
-
+ 
   const count = useSelector((state: RootState) => state.cordinates.value);
+   let frar:{ id: string; lat: string; lng: string; name: string; }[]=[];
+   const [pandals, setPandals] = useState<{id: string,lat:string,lng:string,name:string }[]>([]);
   useEffect(() => {
     console.log("Count has changed to: " + count);
     if (count !== null) {
@@ -24,8 +26,10 @@ function Cards() {
       console.log("Count is not null and its value is: ");
       console.log(count);
       startRouting()
-      SetDisplay(true);
+      if (count[0].fid!=null){
+        SetDisplay(true);
     }
+  }
     
   }, [count]); 
   function getShortestRoute(idvar: any,pandalData:any) {
@@ -76,6 +80,7 @@ function Cards() {
             {
               la=pandal.lat;
               lo=pandal.lng
+              frar.push({"id":pandal.id,"lat":pandal.lat,"lng":pandal.lng,"name":pandal.pandal});
               str=str+la+","+lo+"|";
             }
           }
@@ -85,7 +90,15 @@ function Cards() {
         }
          
       }
-      console.log(str);
+     
+      let arstr=[];
+      //console.log(arstr);
+      arstr.push({"lat": count[0].lat, "lng": count[0].lng, "lat1": count[0].lat1, "lng1": count[0].lng1, "nopal": count[0].nopal, "fid": count[0].fid,
+       "pcheck": count[0].pcheck,"value_cordinates":str,"value_ids":keysval});
+      console.log(arstr);
+     setPandals(frar);
+     SetDisplay(true);
+      console.log(pandals);  
   }
   async function startRouting() {
     const pandalData= await fetch("https://cdn.jsdelivr.net/gh/THUNDERSAMA/durga-pedia@09e6f6c6e7bf3aa771adf311531cb44a5db30abb/outputk.json").then((response) => response.json());
@@ -124,21 +137,25 @@ function Cards() {
     }
   }
 
-  console.log(count);
+ // console.log(count+"ddd");
   const CardsDisplay = () => {
-    //  if(Display)
-    if (true) {
+    console.log(Display);  
+      if(Display)
+    // if (true) 
+  {
       return (
+        
         <div className="timeline">
           <div className="outer">
-            <div className="card">
+          {frar.map((t) => (
+            <div className="card" key={t.id}>
               <div className="info">
                 <div className="button_container">
                   <button className="mark mark-right">{<DoneIcon />}</button>
                   <button className="mark mark-wrong">{<ClearIcon />}</button>
                 </div>
                 <h2 className="title">
-                  Lorem ipsum
+                  {t.name}
                   <button className="circular-button">
                     {<LocationOnIcon />}
                   </button>
@@ -242,14 +259,36 @@ function Cards() {
                 </div>
               </div>
             </div>
-            <div className="card">
+  ))}
+           
+          </div>
+        </div>
+      );
+    }
+  };
+
+  // return <>{<CardsDisplay />}</>;
+  if (!Array.isArray(pandals)) {
+   
+    return <div>loading</div>; // or any loading indicator
+  }
+  console.log(Display);  
+  //if(Display)
+    // if (true) 
+  //{
+      return (
+        
+        <div className="timeline">
+          <div className="outer">
+          {pandals.map((t) => (
+            <div className="card" key={t.id}>
               <div className="info">
                 <div className="button_container">
                   <button className="mark mark-right">{<DoneIcon />}</button>
                   <button className="mark mark-wrong">{<ClearIcon />}</button>
                 </div>
                 <h2 className="title">
-                  Lorem Ipsum 2
+                  {t.name}
                   <button className="circular-button">
                     {<LocationOnIcon />}
                   </button>
@@ -261,14 +300,12 @@ function Cards() {
                   laboris nisi ut aliquip ex ea commodo consequat.
                 </p>
                 {/* <div className="map_info">
-                <h3 className="map-written font-bold text-xl">
-                  Map
-                  <p className="map_written_b">(মানচিত্র) </p>
-                </h3>
-                <button className="circular-button">
-                  {<LocationOnIcon />}
-                </button>
-              </div> */}
+              <h3 className="map-written">
+                Map
+                <p className="map_written_b">(মানচিত্র) </p>
+              </h3>
+              
+            </div> */}
                 <div className="map_info">
                   <h3 className="map-written">
                     Food
@@ -276,12 +313,6 @@ function Cards() {
                   </h3>
                   <div className="badge-container">
                     <span className="badge">Food</span>
-                    <span className="badge">Foodz</span>
-                    <span className="badge">Foodzzzz</span>
-                    <span className="badge">Foodzzzz</span>
-                    <span className="badge">Foodzzzzz</span>
-                    <span className="badge">Foodzzzzzzz</span>
-                    <span className="badge">Foodzzzzzzzzz</span>
                     <span className="badge">Route</span>
                   </div>
                 </div>
@@ -291,8 +322,11 @@ function Cards() {
                     {/* <p className="map_written_b">(গণপরিবহন) </p> */}
                   </h3>
                   <div className="badge-container">
-                    <span className="badge">Food</span>
-                    <span className="badge">Route</span>
+                    <span className="badge">Train</span>
+                    <span className="badge">Metro</span>
+                    <span className="badge">Tram</span>
+                    <span className="badge">Bus</span>
+                    <span className="badge">Yellow Taxi</span>
                   </div>
                 </div>
                 <div className="map_info">
@@ -358,438 +392,12 @@ function Cards() {
                 </div>
               </div>
             </div>
-            {/* <div className="card">
-            <div className="info">
-              <div className="button_container">
-                <button className="mark-right">{<DoneOutlineIcon />}</button>
-                <button className="mark-wrong">{<CloseIcon />}</button>
-              </div>
-              <h2 className="title text-3xl font-bold">Title 3</h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
-              </p>
-              <div className="map_info">
-                <h3 className="map-written font-bold text-xl">
-                  Map &nbsp;<p className="map_written_b">(মানচিত্র) </p>
-                </h3>
-                <button className="circular-button">
-                  {<LocationOnIcon />}
-                </button>
-              </div>
-              <div className="map_info">
-                <h3 className="map-written font-bold text-xl">
-                  Food Places &nbsp;
-                  <p className="map_written_b">(খাবারের জায়গা) </p>
-                </h3>
-                <div className="badge-container">
-                  <span className="badge">Food</span>
-                  <span className="badge">Foodz</span>
-                  <span className="badge">Foodzzzz</span>
-                  <span className="badge">Foodzzzz</span>
-                  <span className="badge">Foodzzzzzzz</span>
-                  <span className="badge">Foodzzzzz</span>
-                  <span className="badge">Foodzzzzzzzz</span>
-                  <span className="badge">Foodzzzz</span>
-                  <span className="badge">Foodzzzzzzzzzzzz</span>
-                  <span className="badge">Foodzzzz</span>
-                  <span className="badge">Route</span>
-                </div>
-              </div>
-              <div className="map_info">
-                <h3 className="map-written font-bold text-xl">
-                  Transits &nbsp;<p className="map_written_b">(গণপরিবহন) </p>
-                </h3>
-                <div className="badge-container">
-                  <span className="badge">Food</span>
-                  <span className="badge">Route</span>
-                </div>
-              </div>
-              <div className="map_info">
-                <h3 className="map-written font-bold text-xl pb-8">
-                  Prices &nbsp;<p className="map_written_b">(যাত্রা খরচ) </p>
-                </h3>
-                <table className="fare_table border-collapse table-auto w-full text-sm">
-                  <thead>
-                    <tr>
-                      <th className="border-b dark:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left font-bold text-xl">
-                        Medium
-                      </th>
-                      <th className="border-b dark:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left font-bold text-xl">
-                        Fare
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                        Bus
-                      </td>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                        ₹ 100/-
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                        Uber Hire
-                      </td>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                        ₹ 100/-
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                        Uber Pool
-                      </td>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                        ₹ 100/-
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                        Uber Go
-                      </td>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                        ₹ 100/-
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                        Uber Xl
-                      </td>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                        ₹ 100/-
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                        Uber Premier
-                      </td>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                        ₹ 100/-
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                        Local Taxi
-                      </td>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                        ₹ 100/-
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div className="map_info">
-                <h3 className="map-written font-bold text-xl pb-8">
-                  Weather &nbsp;<p className="map_written_b">(আবহাওয়া) </p>
-                </h3>
-                <div className="flex justify-between">
-                  <div className="flex flex-col">
-                    <span className="text-6xl font-bold">29°C</span>
-                    <span className="font-semibold mt-1 text-gray-500">
-                      Mudjimba, QLD
-                    </span>
-                  </div>
-                  {<WbSunnyIcon style={{ color: "yellow", fontSize: "3em" }} />}
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="card">
-            <div className="info">
-              <div className="button_container">
-                <button className="mark-right">{<DoneOutlineIcon />}</button>
-                <button className="mark-wrong">{<CloseIcon />}</button>
-              </div>
-              <h2 className="title text-3xl font-bold">Title 4</h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
-              </p>
-              <div className="map_info">
-                <h3 className="map-written font-bold text-xl">
-                  Map &nbsp;<p className="map_written_b">(মানচিত্র) </p>
-                </h3>
-                <button className="circular-button">
-                  {<LocationOnIcon />}
-                </button>
-              </div>
-              <div className="map_info">
-                <h3 className="map-written font-bold text-xl">
-                  Food Places &nbsp;
-                  <p className="map_written_b">(খাবারের জায়গা) </p>
-                </h3>
-                <div className="badge-container">
-                  <span className="badge">Food</span>
-                  <span className="badge">Foodz</span>
-                  <span className="badge">Foodzzzz</span>
-                  <span className="badge">Foodzzzz</span>
-                  <span className="badge">Foodzzzzzzzzzzzz</span>
-                  <span className="badge">Foodzzzzzzzzzzzz</span>
-                  <span className="badge">Foodzzzzzzzzzzzzzzzzzzzzzzz</span>
-                  <span className="badge">Foodzzzz</span>
-                  <span className="badge">Foodzzzzzzzzzzzz</span>
-                  <span className="badge">Foodzzzz</span>
-                  <span className="badge">
-                    Foodzzzzzzzzzzzzzzzzzzzzzzzz zzzzzzzzzzzzzzzzzzzzz
-                  </span>
-                  <span className="badge">Route</span>
-                </div>
-              </div>
-              <div className="map_info">
-                <h3 className="map-written font-bold text-xl">
-                  Transits &nbsp;<p className="map_written_b">(গণপরিবহন) </p>
-                </h3>
-                <div className="badge-container">
-                  <span className="badge">Food</span>
-                  <span className="badge">Route</span>
-                </div>
-              </div>
-              <div className="map_info">
-                <h3 className="map-written font-bold text-xl pb-8">
-                  Prices &nbsp;<p className="map_written_b">(যাত্রা খরচ) </p>
-                </h3>
-                <table className="fare_table border-collapse table-auto w-full text-sm">
-                  <thead>
-                    <tr>
-                      <th className="border-b dark:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left font-bold text-xl">
-                        Medium
-                      </th>
-                      <th className="border-b dark:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left font-bold text-xl">
-                        Fare
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                        Bus
-                      </td>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                        ₹ 100/-
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                        Uber Hire
-                      </td>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                        ₹ 100/-
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                        Uber Pool
-                      </td>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                        ₹ 100/-
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                        Uber Go
-                      </td>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                        ₹ 100/-
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                        Uber Xl
-                      </td>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                        ₹ 100/-
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                        Uber Premier
-                      </td>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                        ₹ 100/-
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                        Local Taxi
-                      </td>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                        ₹ 100/-
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div className="map_info">
-                <h3 className="map-written font-bold text-xl pb-8">
-                  Weather &nbsp;<p className="map_written_b">(আবহাওয়া) </p>
-                </h3>
-                <div className="flex justify-between">
-                  <div className="flex flex-col">
-                    <span className="text-6xl font-bold">29°C</span>
-                    <span className="font-semibold mt-1 text-gray-500">
-                      Mudjimba, QLD
-                    </span>
-                  </div>
-                  {<WbSunnyIcon style={{ color: "yellow", fontSize: "3em" }} />}
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="card">
-            <div className="info">
-              <div className="button_container">
-                <button className="mark-right">{<DoneOutlineIcon />}</button>
-                <button className="mark-wrong">{<CloseIcon />}</button>
-              </div>
-              <h2 className="title text-3xl font-bold">Title 5</h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
-              </p>
-              <div className="map_info">
-                <h3 className="map-written font-bold text-xl">
-                  Map &nbsp;<p className="map_written_b">(মানচিত্র) </p>
-                </h3>
-                <button className="circular-button">
-                  {<LocationOnIcon />}
-                </button>
-              </div>
-              <div className="map_info">
-                <h3 className="map-written font-bold text-xl">
-                  Food Places &nbsp;
-                  <p className="map_written_b">(খাবারের জায়গা) </p>
-                </h3>
-                <div className="badge-container">
-                  <span className="badge">Food</span>
-                  <span className="badge">Foodz</span>
-                  <span className="badge">Foodzzzz</span>
-                  <span className="badge">Foodzzzz</span>
-                  <span className="badge">Foodzzzzzzzzzzzz</span>
-                  <span className="badge">Foodzzzzzzzzzzzz</span>
-                  <span className="badge">Foodzzzzzzzzzzzzzzzzzzzzzzz</span>
-                  <span className="badge">Foodzzzz</span>
-                  <span className="badge">Foodzzzzzzzzzzzz</span>
-                  <span className="badge">Foodzzzz</span>
-                  <span className="badge">
-                    Foodzzzzzzzzzzzzzzzzzzzzzzzz zzzzzzzzzzzzzzzzzzzzz
-                  </span>
-                  <span className="badge">Route</span>
-                </div>
-              </div>
-              <div className="map_info">
-                <h3 className="map-written font-bold text-xl">
-                  Transits &nbsp;<p className="map_written_b">(গণপরিবহন) </p>
-                </h3>
-                <div className="badge-container">
-                  <span className="badge">Food</span>
-                  <span className="badge">Route</span>
-                </div>
-              </div>
-              <div className="map_info">
-                <h3 className="map-written font-bold text-xl pb-8">
-                  Prices &nbsp;<p className="map_written_b">(যাত্রা খরচ) </p>
-                </h3>
-                <table className="fare_table border-collapse table-auto w-full text-sm">
-                  <thead>
-                    <tr>
-                      <th className="border-b dark:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left font-bold text-xl">
-                        Medium
-                      </th>
-                      <th className="border-b dark:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left font-bold text-xl">
-                        Fare
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                        Bus
-                      </td>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                        ₹ 100/-
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                        Uber Hire
-                      </td>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                        ₹ 100/-
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                        Uber Pool
-                      </td>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                        ₹ 100/-
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                        Uber Go
-                      </td>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                        ₹ 100/-
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                        Uber Xl
-                      </td>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                        ₹ 100/-
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                        Uber Premier
-                      </td>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                        ₹ 100/-
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                        Local Taxi
-                      </td>
-                      <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                        ₹ 100/-
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div className="map_info">
-                <h3 className="map-written font-bold text-xl pb-8">
-                  Weather &nbsp;<p className="map_written_b">(আবহাওয়া) </p>
-                </h3>
-                <div className="flex justify-between">
-                  <div className="flex flex-col">
-                    <span className="text-6xl font-bold">29°C</span>
-                    <span className="font-semibold mt-1 text-gray-500">
-                      Mudjimba, QLD
-                    </span>
-                  </div>
-                  {<WbSunnyIcon style={{ color: "yellow", fontSize: "3em" }} />}
-                </div>
-              </div>
-            </div>
-          </div> */}
+  ))}
+           
           </div>
         </div>
       );
-    }
-  };
-  return <>{<CardsDisplay />}</>;
+                  //}
 }
 
 export default Cards;

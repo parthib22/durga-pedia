@@ -193,7 +193,7 @@ try {
             </Autocomplete>
             <button
               className="btnStartLoc"
-              type="submit"
+             
               color="primary"
               onClick={GetLocation}
             >
@@ -232,7 +232,7 @@ try {
             defaultChecked={checked}/>
           </div>
           <div className="form-layout-4">
-            <button className="sbm-btn" type="submit">
+            <button className="sbm-btn" type="submit" >
               Get Roadmap
             </button>
           </div>
