@@ -15,6 +15,7 @@
 .timeline {
   background: rgb(31 41 55 / 1);
   padding: 20px;
+  padding-block: 100px 0;
 }
 
 /* .timeline-bck {
@@ -46,11 +47,28 @@
   border: solid orangered;
 }
 
+.card:first-child::after {
+  content: "YOUR ROADMAP";
+  color: orangered;
+  position: absolute;
+  top: -58px;
+  right: 7%;
+  border: 5px solid orangered;
+  padding-inline: 10px;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.card:first-child::before {
+  /* border-top: transparent; */
+  width: 86%;
+}
+
 /* Setting the border of top, bottom, left */
 .card:nth-child(odd)::before {
   left: 0px;
-  top: -4.5px;
-  bottom: -4.5px;
+  top: -4.8px;
+  bottom: -4.8px;
   border-width: 5px 0 5px 5px;
   border-radius: 50px 0 0 50px;
 }
@@ -58,17 +76,29 @@
 /* Setting the border of top, bottom, right */
 .card:nth-child(even)::before {
   right: 0;
-  top: 0;
-  bottom: 0;
+  top: 0px;
+  bottom: 0px;
   border-width: 5px 5px 5px 0;
   border-radius: 0 50px 50px 0;
 }
 
+/* exceptions */
+.card:nth-child(3)::before{
+  bottom: -5px;
+}
+.card:nth-child(5)::before{
+  bottom: -5px;
+}
+.card:nth-child(8)::before{
+  bottom: -1px;
+}
+
 /* Removing the border if it is the first card */
-.card:first-child::before {
+
+/* .card:first-child::before {
   border-top: 0;
   border-top-left-radius: 0;
-}
+} */
 
 /* Removing the border if it is the last card  and it's odd */
 .card:last-child:nth-child(odd)::before {
@@ -84,6 +114,7 @@
 
 /* Information about the timeline */
 .info {
+  /* height: 130vh; */
   display: flex;
   flex-direction: column;
   background: rgb(55 65 81 / 0.4);
@@ -262,6 +293,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  font-family: inherit;
 }
 .weatehrSm {
   display: flex;
