@@ -119,13 +119,14 @@ function Cards() {
               cnt++;
             }
           }
-          // console.log(ar);
-          
+       
+          console.log(ar);
           // Now you can access data.results to get the merged results
         }).catch((error) => {
           // Handle any errors that occurred during the fetch
           console.error('Fetch Error:', error);
         });
+        console.log(ar);
         return(ar);
     } catch (error) {
       console.log(error);
@@ -156,6 +157,7 @@ function Cards() {
               "lng1":lo,
 
             });
+            console.log(resname);
             l1=la,ln1=lo;
             
             frar.push({
