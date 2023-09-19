@@ -164,6 +164,7 @@ export default function FormBottom(props: { onSubmit: any }) {
           nopal: countpandal,
           fid: id,
           pcheck: checked,
+          type:labelcheck,
         },
       ];
 

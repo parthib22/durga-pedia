@@ -1,6 +1,8 @@
 "use client";
 import { StandaloneSearchBox } from "@react-google-maps/api";
 // import data from "@/app/Pandels";
+import ClearIcon from "@mui/icons-material/Clear";
+import IosShareIcon from "@mui/icons-material/IosShare";
 import { useState, useEffect } from "react";
 import React from "react";
 import "../app/SearchBox.css";
@@ -28,7 +30,7 @@ const AutoComplete = () => {
     getPandalData()
       .then((data) => {
         setDatas(data); // Set the fetched data in the state
-       // console.log(data);
+        // console.log(data);
       })
       .catch((error) => {
         console.error(error);
@@ -38,15 +40,12 @@ const AutoComplete = () => {
   useEffect(() => {
     // Ensure that datas is an array before filtering
     if (Array.isArray(datas)) {
-      
-        
       const filteredData = datas.filter((item: any) =>
         item.pandal.toLowerCase().includes(searchTerm.toLowerCase())
       );
-      if(searchTerm.length>=3)
-      {
+      if (searchTerm.length >= 3) {
         console.log(searchTerm);
-      setSearchResults(filteredData.slice(0, 10));
+        setSearchResults(filteredData.slice(0, 10));
       }
       // setSuggestionsActive(true);
     }
@@ -90,25 +89,36 @@ const AutoComplete = () => {
   // };
 
   const Suggestions = () => {
-    if(searchTerm.length>=3)
-    {return (
-      <ul className="suggestions">
-        {searchResults.map((item: any) => (
-          <li key={item.id}>{item.pandal}</li>
+    if (searchTerm.length >= 3) {
+      return (
+        <ul className="suggestions">
+          {searchResults.map((item: any) => (
+            <li key={item.id}>{item.pandal}</li>
           ))}
-      </ul>
-    );}
+        </ul>
+      );
+    }
   };
 
   return (
     <div className="autocomplete">
-      <input
-        placeholder="Search in your area"
-        type="text"
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-        // onKeyDown={handleKeyDown}
-      />
+      <div>
+        <span
+          className={searchTerm.length > 0 ? "clearIco" : "icoActive"}
+          onClick={() => setSearchTerm("")}
+        >
+          {<ClearIcon />}
+        </span>
+        <span className="shareIco">{<IosShareIcon />}</span>
+        <input
+          className={searchTerm.length > 0 ? "ipPadding" : ""}
+          placeholder="Search in your area"
+          type="text"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          // onKeyDown={handleKeyDown}
+        />
+      </div>
       {<Suggestions />}
     </div>
   );
