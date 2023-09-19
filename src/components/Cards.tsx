@@ -57,6 +57,18 @@ function Cards() {
       //return ar;
     }
   }
+  async function GetDist(cords:any) {
+    
+  }
+  async function GetTransit(cords:any) {
+    
+  }
+  async function GetFare(dist:any) {
+    
+  }
+  async function GetResturant(cords:any) {
+    
+  }
   async function showComputedRoute(keysval: any) {
     let str: string = "";
     for (const keysc of keysval) {
