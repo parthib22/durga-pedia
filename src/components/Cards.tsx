@@ -304,23 +304,23 @@ function Cards() {
                   <tbody>
                     <tr>
                       <td className="tableBody">Bus</td>
-                      <td className="tableBody">₹ 100/-</td>
+                      <td className="tableBody">₹ 69/-</td>
                     </tr>
                     <tr>
                       <td className="tableBody">Local Taxi</td>
-                      <td className="tableBody">₹ 100/-</td>
+                      <td className="tableBody">₹ 69/-</td>
                     </tr>
                     <tr>
                       <td className="tableBody">Uber Go</td>
-                      <td className="tableBody">₹ 100/-</td>
+                      <td className="tableBody">₹ 69/-</td>
                     </tr>
                     <tr>
                       <td className="tableBody">Uber Xl</td>
-                      <td className="tableBody">₹ 100/-</td>
+                      <td className="tableBody">₹ 69/-</td>
                     </tr>
                     <tr>
                       <td className="tableBody">Uber Premier</td>
-                      <td className="tableBody">₹ 100/-</td>
+                      <td className="tableBody">₹ 69/-</td>
                     </tr>
                   </tbody>
                 </table>
