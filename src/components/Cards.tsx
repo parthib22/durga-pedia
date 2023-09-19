@@ -100,7 +100,7 @@ function Cards() {
         }).then((data) => {
           // Handle the response data here
           //console.log('Server Response:', data['results'][0].results);
-          
+          console.log("data from line 103"+data);
           var cnt=0,latnew,lngnew;
           for (const i in data['results'][0].results){
             if (cnt>6){
