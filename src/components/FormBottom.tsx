@@ -164,7 +164,7 @@ export default function FormBottom(props: { onSubmit: any }) {
           nopal: countpandal,
           fid: id,
           pcheck: checked,
-          type:labelcheck,
+          type: labelcheck,
         },
       ];
 
@@ -260,7 +260,11 @@ export default function FormBottom(props: { onSubmit: any }) {
           </div>
 
           <div className="form-layout-3">
-            <label className="labelCheck" htmlFor="ipCheck">
+            <label
+              className="labelCheck"
+              htmlFor="ipCheck"
+              style={labelcheck === "range" ? { color: "rgb(255 255 255 / 0.5)", textDecoration:'line-through' } : {}}
+            >
               Is your starting point the end point?
             </label>
             <input
@@ -268,11 +272,12 @@ export default function FormBottom(props: { onSubmit: any }) {
               type="checkbox"
               onChange={() => setChecked(!checked)}
               defaultChecked={checked}
+              disabled={labelcheck === "range" ? true : false}
             />
           </div>
           <div className="form-layout-4">
             <button className="sbm-btn" type="submit">
-              Get Roadmap
+              {labelcheck === "pandal" ? "Get Roadmap" : "Search"}
             </button>
           </div>
         </form>

@@ -229,133 +229,6 @@ function Cards() {
     }
   }
 
-  // console.log(count+"ddd");
-  const CardsDisplay = () => {
-    console.log(Display);
-    if (Display) {
-      // if (true)
-      return (
-        <div className="timeline">
-          <div className="outer">
-            {frar.map((t) => (
-              <div className="card" key={t.id}>
-                <div className="info">
-                  <div className="button_container">
-                    <button className="mark mark-right">{<DoneIcon />}</button>
-                    <button className="mark mark-wrong">{<ClearIcon />}</button>
-                  </div>
-                  <h2 className="title">
-                    {t.name}
-                    <button className="circular-button">
-                      {<LocationOnIcon />}
-                    </button>
-                  </h2>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
-                  {/* <div className="map_info">
-              <h3 className="map-written">
-                Map
-                <p className="map_written_b">(মানচিত্র) </p>
-              </h3>
-              
-            </div> */}
-                  <div className="map_info">
-                    <h3 className="map-written">
-                      Food
-                      {/* <p className="map_written_b">(খাবারের জায়গা) </p> */}
-                    </h3>
-                    <div className="badge-container">
-                      <span className="badge">Food</span>
-                      <span className="badge">Route</span>
-                    </div>
-                  </div>
-                  <div className="map_info">
-                    <h3 className="map-written">
-                      Transits
-                      {/* <p className="map_written_b">(গণপরিবহন) </p> */}
-                    </h3>
-                    <div className="badge-container">
-                      <span className="badge">Train</span>
-                      <span className="badge">Metro</span>
-                      <span className="badge">Tram</span>
-                      <span className="badge">Bus</span>
-                      <span className="badge">Yellow Taxi</span>
-                    </div>
-                  </div>
-                  <div className="map_info">
-                    <h3 className="map-written">
-                      Prices
-                      {/* <p className="map_written_b">(যাত্রা খরচ) </p> */}
-                    </h3>
-                    <table className="fare_table">
-                      <thead>
-                        <tr>
-                          <th className="tableHead">Medium</th>
-                          <th className="tableHead">Fare</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td className="tableBody">Bus</td>
-                          <td className="tableBody">₹ 100/-</td>
-                        </tr>
-                        <tr>
-                          <td className="tableBody">Uber Hire</td>
-                          <td className="tableBody">₹ 100/-</td>
-                        </tr>
-                        <tr>
-                          <td className="tableBody">Uber Pool</td>
-                          <td className="tableBody">₹ 100/-</td>
-                        </tr>
-                        <tr>
-                          <td className="tableBody">Uber Go</td>
-                          <td className="tableBody">₹ 100/-</td>
-                        </tr>
-                        <tr>
-                          <td className="tableBody">Uber Xl</td>
-                          <td className="tableBody">₹ 100/-</td>
-                        </tr>
-                        <tr>
-                          <td className="tableBody">Uber Premier</td>
-                          <td className="tableBody">₹ 100/-</td>
-                        </tr>
-                        <tr>
-                          <td className="tableBody">Local Taxi</td>
-                          <td className="tableBody">₹ 100/-</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                  <div className="map_info">
-                    <h3 className="map-written">
-                      Weather
-                      {/* <p className="map_written_b">(আবহাওয়া) </p> */}
-                    </h3>
-                    <div className="weatherLg">
-                      <div className="weatherSm">
-                        <div className="tempLg">29°C</div>
-                        <span className="locationSm">Mudjimba, QLD</span>
-                      </div>
-                      {
-                        <WbSunnyIcon
-                          style={{ color: "yellow", fontSize: "3em" }}
-                        />
-                      }
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      );
-    }
-  };
-
   // return <>{<CardsDisplay />}</>;
   if (!Array.isArray(pandals)) {
     return <div>loading</div>; // or any loading indicator
@@ -382,9 +255,7 @@ function Cards() {
               </h2>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
               </p>
               {/* <div className="map_info">
               <h3 className="map-written">
@@ -434,11 +305,7 @@ function Cards() {
                       <td className="tableBody">₹ 100/-</td>
                     </tr>
                     <tr>
-                      <td className="tableBody">Uber Hire</td>
-                      <td className="tableBody">₹ 100/-</td>
-                    </tr>
-                    <tr>
-                      <td className="tableBody">Uber Pool</td>
+                      <td className="tableBody">Local Taxi</td>
                       <td className="tableBody">₹ 100/-</td>
                     </tr>
                     <tr>
@@ -451,10 +318,6 @@ function Cards() {
                     </tr>
                     <tr>
                       <td className="tableBody">Uber Premier</td>
-                      <td className="tableBody">₹ 100/-</td>
-                    </tr>
-                    <tr>
-                      <td className="tableBody">Local Taxi</td>
                       <td className="tableBody">₹ 100/-</td>
                     </tr>
                   </tbody>

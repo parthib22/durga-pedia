@@ -225,7 +225,7 @@
   font-family: inherit;
   /* font-family: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Ubuntu, sans-serif; */
   font-size: 16px;
-  min-width: 75vw;
+  width: 10rem;
   height: 44px;
   line-height: 1.15;
   outline: none;
@@ -245,8 +245,8 @@
   cursor: default;
 }
 
-.sbm-btn:focus {
+/* .sbm-btn:focus {
   box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset,
     rgba(50, 50, 93, 0.2) 0 6px 15px 0, rgba(0, 0, 0, 0.1) 0 2px 2px 0,
     rgba(50, 151, 211, 0.3) 0 0 0 4px;
-}
+} */
