@@ -7,6 +7,7 @@ import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import "../app/cards.css";
 import { RootState } from "@/app/store";
 import { useSelector } from "react-redux";
+import axios from "axios";
 
 function Cards() {
   const [Display, SetDisplay] = useState(false);
@@ -57,23 +58,51 @@ function Cards() {
       //return ar;
     }
   }
-  async function GetDist(cords: any) {}
-  async function GetTransit(cords: any) {}
-  async function GetFare(dist: any) {}
-  async function GetResturant(cords: any) {}
+  async function GetDist(cords:any) {
+    const origins = cords.lat1+","+cords.lng1;
+    const destinations = cords.lat2+","+cords.lng2;
+    const apiKey = 'AIzaSyDj2cR40F6xZo8mTepkyEpJl8BGVNDZ2qk'; // Replace with your actual API key
+
+    try {
+      const response = await axios.get(`https://maps.googleapis.com/maps/api/distancematrix/json?origins=${origins}&destinations=${destinations}&key=${apiKey}`);
+      const distance = response.data.rows[0].elements[0].distance.text;
+      console.log(distance);
+
+      // return `Iteration ${iterator}:${distance}`;
+    }
+    catch(e){
+      console.log(e);
+    }
+  }
+  async function GetTransit(cords:any) {
+    
+  }
+  async function GetFare(dist:any) {
+    
+  }
+  async function GetResturant(cords:any) {
+    
+  }
   async function showComputedRoute(keysval: any) {
     let str: string = "";
     for (const keysc of keysval) {
-      console.log(keysc);
+      // console.log(keysc);
       try {
         const pandalData = fetch(
           "https://cdn.jsdelivr.net/gh/THUNDERSAMA/durga-pedia@a85947898471f77358f792a840e2e9028c31b86c/output.json"
         ).then((response) => response.json());
-        var la, lo;
+        var la, lo,l1=count[0].lat,ln1=count[0].lng;
         for (const pandal of await pandalData) {
           if (pandal.id == keysc) {
             la = pandal.lat;
             lo = pandal.lng;
+            // GetDist({
+            //   "lat1":l1,
+            //   "lng1":ln1,
+            //   "lat2":la,
+            //   "lng2":lo,
+            // });
+            l1=la,ln1=lo;
             frar.push({
               id: pandal.id,
               lat: pandal.lat,
