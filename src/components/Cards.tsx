@@ -120,16 +120,16 @@ function Cards() {
             }
           }
        
-          console.log(ar);
+          console.log("ar from line 123: "+ar);
           // Now you can access data.results to get the merged results
         }).catch((error) => {
           // Handle any errors that occurred during the fetch
           console.error('Fetch Error:', error);
         });
-        console.log(ar);
+        console.log("ar from line 129: "+ar);
         return(ar);
     } catch (error) {
-      console.log(error);
+      console.log("error from 132: "+error);
     }
   }
   async function showComputedRoute(keysval: any) {
