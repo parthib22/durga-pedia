@@ -1,11 +1,12 @@
 /* @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap"); */
 
-.form-container {
+.form-container form {
   position: relative;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   color: white;
   font-family: inherit;
   background: rgb(31 41 55 / 1);
@@ -44,7 +45,7 @@
   outline: 0;
   height: 3rem;
   padding-block: 0;
-  width: 100%;
+  width: calc(80vw - 3.5rem);
   padding-inline: 10px;
   /* border-top-right-radius: 0;
   border-bottom-right-radius: 0; */
@@ -81,7 +82,9 @@
 }
 
 .form-layout-2 {
+  position: relative;
   margin-block: 30px;
+  width: fit-content;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -92,9 +95,38 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 7px;
+  border: 1px solid transparent;
   font-weight: 400;
   color: #ffa800;
+  transition: all 1s ease !important;
 }
+.topactive {
+  opacity: 0.5;
+}
+.pandal-active {
+  position: absolute;
+  left: calc(50% - 6.9rem);
+  height: 1.8rem;
+  width: 9rem;
+  /* background-color: #eeeeeebd; */
+  border-bottom: 2px solid #eeeeeebd;
+}
+
+.range-active {
+  position: absolute;
+  left: calc(50% + 3.95rem);
+  height: 1.8rem;
+  width: 3rem;
+  /* background-color: #eeeeee1a; */
+  border-bottom: 2px solid #eeeeeebd;
+}
+
+/* .labelPandal .active {
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  padding: 0 5px;
+  transition: all 1s ease !important;
+} */
 .form-layout-2 > span {
   display: flex;
   flex-direction: row;
@@ -119,6 +151,11 @@
   font-size: 20px;
   cursor: default;
   box-shadow: 0 0 30px rgb(0 0 0 / 0.4);
+}
+
+.divPandal p {
+  font-size: 12px;
+  margin-left: 2px;
 }
 
 #minus,
@@ -189,7 +226,7 @@
   font-family: inherit;
   /* font-family: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Ubuntu, sans-serif; */
   font-size: 16px;
-  min-width: 85%;
+  min-width: 75vw;
   height: 44px;
   line-height: 1.15;
   outline: none;

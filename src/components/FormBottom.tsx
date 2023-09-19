@@ -32,6 +32,7 @@ export default function FormBottom(props: { onSubmit: any }) {
   // const [scrollcheck, setScrollcheck] = useState(0);
   const [countpandal, setCountPandal] = useState(1);
   const [checked, setChecked] = useState(false);
+  const [labelcheck, setLabelcheck] = useState("pandal");
   // useEffect(() => {
   //   const handlescroll = () => {
   //     setScrollcheck(
@@ -207,7 +208,26 @@ export default function FormBottom(props: { onSubmit: any }) {
           </div>
 
           <div className="form-layout-2">
-            <label className="labelPandal">Number of Pandals:</label>
+            <label className="labelPandal">
+              <span
+                className={labelcheck === "range" ? "topactive" : ""}
+                onClick={() => setLabelcheck("pandal")}
+              >
+                Number of Pandals
+              </span>
+              <span className="topactive">or</span>
+              <span
+                className={labelcheck === "pandal" ? "topactive" : ""}
+                onClick={() => setLabelcheck("range")}
+              >
+                Range
+              </span>
+              <div
+                className={
+                  labelcheck === "pandal" ? "pandal-active" : "range-active"
+                }
+              ></div>
+            </label>
             <span>
               <div
                 id="minus"
@@ -217,7 +237,16 @@ export default function FormBottom(props: { onSubmit: any }) {
               >
                 -
               </div>
-              <div className="divPandal">{countpandal}</div>
+              <div className="divPandal">
+                {labelcheck === "pandal" ? (
+                  countpandal
+                ) : (
+                  <>
+                    {countpandal}
+                    <p>km</p>
+                  </>
+                )}
+              </div>
               <div
                 id="plus"
                 onClick={() =>
