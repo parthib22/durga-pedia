@@ -4,7 +4,7 @@ const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 export async function POST(request: any) {
   try {
     const { lat, lng } = await request.json();
-    console.log("Request Payload:", { lat, lng });
+    // console.log("Request Payload:", { lat, lng });
 
     
     const types = ["restaurant"];
@@ -19,7 +19,7 @@ export async function POST(request: any) {
     const results = await Promise.all(apiCalls);
     const fjson = results.flat();
     var cnt=0;
-    console.log(fjson[0].next_page_token);
+    // console.log(fjson[0].next_page_token);
 
     
 

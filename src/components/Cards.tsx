@@ -15,9 +15,9 @@ function Cards() {
   let visited = new Map();
 
   const count = useSelector((state: RootState) => state.cordinates.value);
-  let frar: { id: string; lat: string; lng: string; name: string }[] = [];
+  let frar: { id: string; lat: string; lng: string; name: string; rst:any }[] = [];
   const [pandals, setPandals] = useState<
-    { id: string; lat: string; lng: string; name: string }[]
+    { id: string; lat: string; lng: string; name: string; rst:any }[]
   >([]);
   useEffect(() => {
     console.log("Count has changed to: " + count);
@@ -81,7 +81,55 @@ function Cards() {
     
   }
   async function GetResturant(cords:any) {
-    
+    try {
+      var lat=cords.lat1,lng=cords.lng1;
+      let ar: { rame: string; lat: string; lng: string; map: any }[] = [];
+      await fetch('/api/restaurants', {
+          method: 'POST',
+          headers:{
+              'Accept': 'text/plain, */*',
+              "Content-type":"application/json"
+          },
+          body:JSON.stringify({lat,lng}),
+          
+        }).then((response) => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json(); // Parse the JSON response
+        }).then((data) => {
+          // Handle the response data here
+          //console.log('Server Response:', data['results'][0].results);
+          
+          var cnt=0,latnew,lngnew;
+          for (const i in data['results'][0].results){
+            if (cnt>6){
+              break;
+            }
+            //console.log(data['results'][0].results[i].geometry.location.lat);
+            if (data['results'][0].results[i].opening_hours.open_now == true && data['results'][0].results[i].rating>=4){
+              latnew=data['results'][0].results[i].geometry.location.lat;
+              lngnew=data['results'][0].results[i].geometry.location.lng;
+              ar.push({
+                rame:data['results'][0].results[i].name,
+                lat:data['results'][0].results[i].geometry.location.lat,
+                lng:data['results'][0].results[i].geometry.location.lng,
+                map:"http://maps.google.com/maps?q="+latnew+","+ lngnew+"&ll="+latnew+","+ lngnew+"z=17",
+              })
+              cnt++;
+            }
+          }
+          // console.log(ar);
+          
+          // Now you can access data.results to get the merged results
+        }).catch((error) => {
+          // Handle any errors that occurred during the fetch
+          console.error('Fetch Error:', error);
+        });
+        return(ar);
+    } catch (error) {
+      console.log(error);
+    }
   }
   async function showComputedRoute(keysval: any) {
     let str: string = "";
@@ -102,12 +150,20 @@ function Cards() {
             //   "lat2":la,
             //   "lng2":lo,
             // });
+            
+            let resname=await GetResturant({
+              "lat1":la,
+              "lng1":lo,
+
+            });
             l1=la,ln1=lo;
+            
             frar.push({
               id: pandal.id,
               lat: pandal.lat,
               lng: pandal.lng,
               name: pandal.pandal,
+              rst:resname,
             });
             str = str + la + "," + lo + "|";
           }
@@ -304,7 +360,7 @@ function Cards() {
   if (!Array.isArray(pandals)) {
     return <div>loading</div>; // or any loading indicator
   }
-  console.log(Display);
+  console.log(pandals);
   //if(Display)
   // if (true)
   //{
@@ -343,8 +399,8 @@ function Cards() {
                   {/* <p className="map_written_b">(খাবারের জায়গা) </p> */}
                 </h3>
                 <div className="badge-container">
-                  <span className="badge">Food</span>
-                  <span className="badge">Route</span>
+                {t.rst.map((adv: { rame: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | React.PromiseLikeOfReactNode | null | undefined; },index: React.Key | null | undefined) => (
+                   <span className="badge" key={index}>{adv.rame}</span>))}
                 </div>
               </div>
               <div className="map_info">
