@@ -134,7 +134,7 @@ export async function POST(request: any) {
       console.error("Error:", error);
       return NextResponse.json({
           status: 'error',
-          message: 'Request payload error',
+          message: 'Request payload error'+error,
       });
   }
 }

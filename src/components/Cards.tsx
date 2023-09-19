@@ -92,12 +92,8 @@ function Cards() {
           },
           body:JSON.stringify({lat,lng}),
           
-        }).then((response) => {
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
-          return response.json(); // Parse the JSON response
-        }).then((data) => {
+        }).then(response => response.json()).then((data) => {
+          console.log(JSON.stringify(data) + " from 96");
           // Handle the response data here
           //console.log('Server Response:', data['results'][0].results);
           
