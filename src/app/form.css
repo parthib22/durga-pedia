@@ -82,6 +82,7 @@
 }
 
 .form-layout-2 {
+  position: relative;
   margin-block: 30px;
   width: fit-content;
   display: flex;
@@ -100,25 +101,25 @@
   color: #ffa800;
   transition: all 1s ease !important;
 }
-
-.active::before {
-  content: "";
+.topactive {
+  opacity: 0.5;
+}
+.pandal-active {
   position: absolute;
-  left: calc(50% - 7.3rem);
+  left: calc(50% - 6.9rem);
   height: 1.8rem;
-  width: 9.8rem;
+  width: 9rem;
   /* background-color: #eeeeeebd; */
-  border: 2px solid #eeeeeebd;
+  border-bottom: 2px solid #eeeeeebd;
 }
 
-.inactive::before {
-  content: "";
+.range-active {
   position: absolute;
-  left: calc(50% + 3.6rem);
+  left: calc(50% + 3.95rem);
   height: 1.8rem;
-  width: 3.7rem;
+  width: 3rem;
   /* background-color: #eeeeee1a; */
-  border: 2px solid #eeeeeebd;
+  border-bottom: 2px solid #eeeeeebd;
 }
 
 /* .labelPandal .active {

@@ -208,16 +208,25 @@ export default function FormBottom(props: { onSubmit: any }) {
           </div>
 
           <div className="form-layout-2">
-            <label
-              className={`labelPandal ${
-                labelcheck === "pandal" ? "active" : "inactive"
-              }`}
-            >
-              <span onClick={() => setLabelcheck("pandal")}>
+            <label className="labelPandal">
+              <span
+                className={labelcheck === "range" ? "topactive" : ""}
+                onClick={() => setLabelcheck("pandal")}
+              >
                 Number of Pandals
               </span>
-              or
-              <span onClick={() => setLabelcheck("range")}>Range</span>
+              <span className="topactive">or</span>
+              <span
+                className={labelcheck === "pandal" ? "topactive" : ""}
+                onClick={() => setLabelcheck("range")}
+              >
+                Range
+              </span>
+              <div
+                className={
+                  labelcheck === "pandal" ? "pandal-active" : "range-active"
+                }
+              ></div>
             </label>
             <span>
               <div
