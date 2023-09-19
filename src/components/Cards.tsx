@@ -96,7 +96,7 @@ function Cards() {
           console.log(JSON.stringify(data) + " from 96");
           // Handle the response data here
           //console.log('Server Response:', data['results'][0].results);
-          
+          console.log("data from line 103"+data);
           var cnt=0,latnew,lngnew;
           for (const i in data['results'][0].results){
             if (cnt>6){
@@ -116,16 +116,16 @@ function Cards() {
             }
           }
        
-          console.log(ar);
+          console.log("ar from line 123: "+ar);
           // Now you can access data.results to get the merged results
         }).catch((error) => {
           // Handle any errors that occurred during the fetch
           console.error('Fetch Error:', error);
         });
-        console.log(ar);
+        console.log("ar from line 129: "+ar);
         return(ar);
     } catch (error) {
-      console.log(error);
+      console.log("error from 132: "+error);
     }
   }
   async function showComputedRoute(keysval: any) {
@@ -300,23 +300,23 @@ function Cards() {
                   <tbody>
                     <tr>
                       <td className="tableBody">Bus</td>
-                      <td className="tableBody">₹ 100/-</td>
+                      <td className="tableBody">₹ 69/-</td>
                     </tr>
                     <tr>
                       <td className="tableBody">Local Taxi</td>
-                      <td className="tableBody">₹ 100/-</td>
+                      <td className="tableBody">₹ 69/-</td>
                     </tr>
                     <tr>
                       <td className="tableBody">Uber Go</td>
-                      <td className="tableBody">₹ 100/-</td>
+                      <td className="tableBody">₹ 69/-</td>
                     </tr>
                     <tr>
                       <td className="tableBody">Uber Xl</td>
-                      <td className="tableBody">₹ 100/-</td>
+                      <td className="tableBody">₹ 69/-</td>
                     </tr>
                     <tr>
                       <td className="tableBody">Uber Premier</td>
-                      <td className="tableBody">₹ 100/-</td>
+                      <td className="tableBody">₹ 69/-</td>
                     </tr>
                   </tbody>
                 </table>
