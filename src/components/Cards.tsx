@@ -109,11 +109,11 @@ return error;
         }).then(response => response.json()).then((data) => {
         
           var cnt=0,latnew,lngnew;
+          // console.log(data['results'][0].results[0]);
           for (const i in data['results'][0].results){
             if (cnt>6){
               break;
-            }
-            //console.log(data['results'][0].results[i].geometry.location.lat);
+            }            
             latnew=data['results'][0].results[i].geometry.location.lat;
             lngnew=data['results'][0].results[i].geometry.location.lng;
             ar.push({
@@ -149,13 +149,13 @@ return error;
         }).then(response => response.json()).then((data) => {
         
           var cnt=0,latnew,lngnew;
-          for (const i in data['results'][0].results){
+          for (const i in data['results'][1].results){
             if (cnt>6){
               break;
             }
             //console.log(data['results'][0].results[i].geometry.location.lat);
-            latnew=data['results'][1].results[i].geometry.location.lat;
-            lngnew=data['results'][1].results[i].geometry.location.lng;
+            latnew=data['results'][1].results[i]['geometry'].location.lat;
+            lngnew=data['results'][1].results[i]['geometry'].location.lng;
             ar.push({
               tstame:data['results'][1].results[i].name,
               lat:data['results'][1].results[i].geometry.location.lat,
@@ -433,26 +433,26 @@ return error;
                   {/* <p className="map_written_b">(গণপরিবহন) </p> */}
                 </h3>
                 
-                <h3 className="map-written">
+                <h4 className="map-written">
                  Trains 
                   {/* <p className="map_written_b">(খাবারের জায়গা) </p> */}
-                </h3>
+                </h4>
                 <div className="badge-container">
                 {t.trns.map((adv: { tstame: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | React.PromiseLikeOfReactNode | null | undefined; },index: React.Key | null | undefined) => (
                    <span className="badge" key={index}>{adv.tstame}</span>))}
                 </div>  
-                <h3 className="map-written">
+                <h4 className="map-written">
                  Metro 
                   {/* <p className="map_written_b">(খাবারের জায়গা) </p> */}
-                </h3>
+                </h4>
                 <div className="badge-container">
                 {t.met.map((adv: { tstame: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | React.PromiseLikeOfReactNode | null | undefined; },index: React.Key | null | undefined) => (
                    <span className="badge" key={index}>{adv.tstame}</span>))}
                 </div>
-                <h3 className="map-written">
+                <h4 className="map-written">
                  Bus Stops
                   {/* <p className="map_written_b">(খাবারের জায়গা) </p> */}
-                </h3>
+                </h4>
                 <div className="badge-container">
                 {t.bst.map((adv: { tstame: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | React.PromiseLikeOfReactNode | null | undefined; },index: React.Key | null | undefined) => (
                    <span className="badge" key={index}>{adv.tstame}</span>))}
