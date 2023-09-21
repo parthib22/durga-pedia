@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
+const googleMapsApiKey = "AIzaSyDj2cR40F6xZo8mTepkyEpJl8BGVNDZ2qk";
 export async function POST(request: any) {
   try {
       const { lat, lng } = await request.json();
