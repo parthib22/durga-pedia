@@ -149,8 +149,13 @@ return error;
         }).then(response => response.json()).then((data) => {
         
           var cnt=0,latnew,lngnew;
+          var leng=data['results'][1].results;
+          // console.log(leng.length);
           for (const i in data['results'][1].results){
             if (cnt>6){
+              break;
+            }
+            if (i>=leng.length){
               break;
             }
             //console.log(data['results'][0].results[i].geometry.location.lat);
@@ -187,10 +192,15 @@ return error;
           body:JSON.stringify({lat,lng}),
           
         }).then(response => response.json()).then((data) => {
-        
+          var leng=data['results'][2].results;
+          console.log(leng.length);
           var cnt=0,latnew,lngnew;
           for (const i in data['results'][2].results){
             if (cnt>6){
+              break;
+            }
+            // console.log(data['results'][2]['results'][i]);
+            if (i>=leng.length || data['results'][2]['results'][i]===null){
               break;
             }
             //console.log(data['results'][0].results[i].geometry.location.lat);
