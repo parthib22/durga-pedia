@@ -1,0 +1,26 @@
+name: Build and Push Docker Image
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Login to Docker Hub
+        run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Pull the existing image
+        run: docker pull samadrit/durga-pedia
+
+      - name: Build and tag the new image
+        run: docker build -t durga-pedia .
+
+      - name: Push the updated image to Docker Hub
+        run: docker push samadrit/durga-pedia
