@@ -15,9 +15,9 @@ function Cards() {
   let visited = new Map();
 
   const count = useSelector((state: RootState) => state.cordinates.value);
-  let frar: { id: string; lat: string; lng: string; name: string; rst:any; distance:any;duration:any; trns:any; met:any; bst:any}[] = [];
+  let frar: { id: string; lat: string; lng: string; name: string; rst:any;distance:any;duration:any; trns:any; met:any; bst:any; }[] = [];
   const [pandals, setPandals] = useState<
-    { id: string; lat: string; lng: string; name: string; rst:any;distance:any;duration:any;; trns:any; met:any; bst:any }[]
+    { id: string; lat: string; lng: string; name: string; rst:any;distance:any;duration:any; trns:any; met:any; bst:any }[]
   >([]);
   useEffect(() => {
     //console.log("Count has changed to: " + count);
@@ -64,22 +64,156 @@ function Cards() {
    // console.log(cords[0].lat1);
     const origins = cords.lat1+","+cords.lng1;
     const destinations = cords.lat2+","+cords.lng2;
-    const apiKey = 'AIzaSyDj2cR40F6xZo8mTepkyEpJl8BGVNDZ2qk'; // Replace with your actual API key
-
-    try {
-      const response = await axios.get(`https://maps.googleapis.com/maps/api/distancematrix/json?origins=${origins}&destinations=${destinations}&key=${apiKey}`);
-      const distance = response.data.rows[0].elements[0].distance.text;
-      console.log(distance);
-
-      // return `Iteration ${iterator}:${distance}`;
-    }
-    catch(e){
-      console.log(e);
-    }
-  }
-  async function GetTransit(cords:any) {
+    var d1,d2;
+//console.log(origins+"|"+destinations)
+ try {
+  await fetch('/api/distance', {
+    method: 'POST',
+    headers:{
+        'Accept': 'text/plain, */*',
+        "Content-type":"application/json"
+    },
+    body:JSON.stringify({origins,destinations}),
     
+  }).then(response => response.json()).then((data) => {
+   // console.log(JSON.stringify(data) + " from 96");
+    // Handle the response data here
+    //console.log('Server Response:', data['results'][0].results);
+   // console.log(data['results']['rows'][0]['elements'][0]['distance'].text);
+  d1=data['results']['rows'][0]['elements'][0]['distance'].text;
+  d2=data['results']['rows'][0]['elements'][0]['duration'].text;
+  
+  }).catch((error) => {
+
+  });
+  return ([d1,d2]);
+} catch (error) {
+console.log("error from 132: "+error);
+return error;
+}
+    }
+   
+  
+  async function GetTransitTrain(cords:any) {
+    try {
+      var lat=cords.lat1,lng=cords.lng1;
+      let ar: { tstame: string; lat: string; lng: string; map: any }[] = [];
+      await fetch('/api/transits', {
+          method: 'POST',
+          headers:{
+              'Accept': 'text/plain, */*',
+              "Content-type":"application/json"
+          },
+          body:JSON.stringify({lat,lng}),
+          
+        }).then(response => response.json()).then((data) => {
+        
+          var cnt=0,latnew,lngnew;
+          for (const i in data['results'][0].results){
+            if (cnt>6){
+              break;
+            }
+            //console.log(data['results'][0].results[i].geometry.location.lat);
+            latnew=data['results'][0].results[i].geometry.location.lat;
+            lngnew=data['results'][0].results[i].geometry.location.lng;
+            ar.push({
+              tstame:data['results'][0].results[i].name,
+              lat:data['results'][0].results[i].geometry.location.lat,
+              lng:data['results'][0].results[i].geometry.location.lng,
+               map:"http://maps.google.com/maps?q="+latnew+","+ lngnew+"&ll="+latnew+","+ lngnew+"z=17",
+            })
+            cnt++;            
+          }
+
+        }).catch((error) => {
+           console.error('Fetch Error:', error);
+        });
+        return(ar);
+    } catch (error) {
+      console.log("error from 132: "+error);
+    }
   }
+
+  async function GetTransitMetro(cords:any) {
+    try {
+      var lat=cords.lat1,lng=cords.lng1;
+      let ar: { tstame: string; lat: string; lng: string; map: any }[] = [];
+      await fetch('/api/transits', {
+          method: 'POST',
+          headers:{
+              'Accept': 'text/plain, */*',
+              "Content-type":"application/json"
+          },
+          body:JSON.stringify({lat,lng}),
+          
+        }).then(response => response.json()).then((data) => {
+        
+          var cnt=0,latnew,lngnew;
+          for (const i in data['results'][0].results){
+            if (cnt>6){
+              break;
+            }
+            //console.log(data['results'][0].results[i].geometry.location.lat);
+            latnew=data['results'][1].results[i].geometry.location.lat;
+            lngnew=data['results'][1].results[i].geometry.location.lng;
+            ar.push({
+              tstame:data['results'][1].results[i].name,
+              lat:data['results'][1].results[i].geometry.location.lat,
+              lng:data['results'][1].results[i].geometry.location.lng,
+               map:"http://maps.google.com/maps?q="+latnew+","+ lngnew+"&ll="+latnew+","+ lngnew+"z=17",
+            })
+            cnt++;            
+          }
+
+        }).catch((error) => {
+           console.error('Fetch Error:', error);
+        });
+        return(ar);
+    } catch (error) {
+      console.log("error from 132: "+error);
+    }
+  }
+
+  async function GetTransitBus(cords:any) {
+    try {
+      var lat=cords.lat1,lng=cords.lng1;
+      let ar: { tstame: string; lat: string; lng: string; map: any }[] = [];
+      await fetch('/api/transits', {
+          method: 'POST',
+          headers:{
+              'Accept': 'text/plain, */*',
+              "Content-type":"application/json"
+          },
+          body:JSON.stringify({lat,lng}),
+          
+        }).then(response => response.json()).then((data) => {
+        
+          var cnt=0,latnew,lngnew;
+          for (const i in data['results'][2].results){
+            if (cnt>6){
+              break;
+            }
+            //console.log(data['results'][0].results[i].geometry.location.lat);
+            latnew=data['results'][2].results[i].geometry.location.lat;
+            lngnew=data['results'][2].results[i].geometry.location.lng;
+            ar.push({
+              tstame:data['results'][2].results[i].name,
+              lat:data['results'][2].results[i].geometry.location.lat,
+              lng:data['results'][2].results[i].geometry.location.lng,
+               map:"http://maps.google.com/maps?q="+latnew+","+ lngnew+"&ll="+latnew+","+ lngnew+"z=17",
+            })
+            cnt++;            
+          }
+
+        }).catch((error) => {
+           console.error('Fetch Error:', error);
+        });
+        return(ar);
+    } catch (error) {
+      console.log("error from 132: "+error);
+    }
+  }
+
   async function GetFare(dist:any) {
     
   }
@@ -96,10 +230,7 @@ function Cards() {
           body:JSON.stringify({lat,lng}),
           
         }).then(response => response.json()).then((data) => {
-          console.log(JSON.stringify(data) + " from 96");
-          // Handle the response data here
-          //console.log('Server Response:', data['results'][0].results);
-          console.log("data from line 103"+data);
+        
           var cnt=0,latnew,lngnew;
           for (const i in data['results'][0].results){
             if (cnt>6){
@@ -118,16 +249,13 @@ function Cards() {
               cnt++;
             }
           }
-       
-          console.log("ar from line 123: "+ar);
-          // Now you can access data.results to get the merged results
+
         }).catch((error) => {
            console.error('Fetch Error:', error);
         });
-        console.log("ar from line 129: "+ar);
         return(ar);
     } catch (error) {
-      // console.log("error from 132: "+error);
+      console.log("error from 132: "+error);
     }
   }
   async function showComputedRoute(keysval: any) {
@@ -144,27 +272,49 @@ function Cards() {
           if (pandal.id == keysc) {
             la = pandal.lat;
             lo = pandal.lng;
-            // GetDist({
-            //   "lat1":l1,
-            //   "lng1":ln1,
-            //   "lat2":la,
-            //   "lng2":lo,
-            // });
-            
+           // console.log("l1 ="+l1+",ln1= "+ln1+",la= "+la+", lo"+lo)
+            let distance_cal:any=await GetDist({
+              "lat1":l1,
+              "lng1":ln1,
+              "lat2":la,
+              "lng2":lo,
+            });
+            //var spl_dist=distance_cal.split("|");
+            l1=la;
+            ln1=lo;
             let resname=await GetResturant({
               "lat1":la,
               "lng1":lo,
 
             });
-            console.log(resname);
-            l1=la,ln1=lo;
-            
+            console.log(distance_cal);
+            let train=await GetTransitTrain({
+              "lat1":la,
+              "lng1":lo,
+
+            });
+            let metro=await GetTransitMetro({
+              "lat1":la,
+              "lng1":lo,
+
+            });
+            let bus=await GetTransitBus({
+              "lat1":la,
+              "lng1":lo,
+
+            });
+
             frar.push({
               id: pandal.id,
               lat: pandal.lat,
               lng: pandal.lng,
               name: pandal.pandal,
               rst:resname,
+              distance:distance_cal[0],
+              duration:distance_cal[1],
+              trns:train,
+              met:metro,
+              bst:bus,
             });
             str = str + la + "," + lo + "|";
           }
@@ -237,10 +387,10 @@ function Cards() {
   if (!Array.isArray(pandals)) {
     return <div>loading</div>; // or any loading indicator
   }
-  console.log(pandals);
-  //if(Display)
-  // if (true)
-  //{
+  
+  else{
+    if(Display)
+    {
   return (
     <div className="timeline">
       <div className="outer">
@@ -282,13 +432,31 @@ function Cards() {
                   Transits
                   {/* <p className="map_written_b">(গণপরিবহন) </p> */}
                 </h3>
+                
+                <h3 className="map-written">
+                 Trains 
+                  {/* <p className="map_written_b">(খাবারের জায়গা) </p> */}
+                </h3>
                 <div className="badge-container">
-                  <span className="badge">Train</span>
-                  <span className="badge">Metro</span>
-                  <span className="badge">Tram</span>
-                  <span className="badge">Bus</span>
-                  <span className="badge">Yellow Taxi</span>
+                {t.trns.map((adv: { tstame: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | React.PromiseLikeOfReactNode | null | undefined; },index: React.Key | null | undefined) => (
+                   <span className="badge" key={index}>{adv.tstame}</span>))}
+                </div>  
+                <h3 className="map-written">
+                 Metro 
+                  {/* <p className="map_written_b">(খাবারের জায়গা) </p> */}
+                </h3>
+                <div className="badge-container">
+                {t.met.map((adv: { tstame: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | React.PromiseLikeOfReactNode | null | undefined; },index: React.Key | null | undefined) => (
+                   <span className="badge" key={index}>{adv.tstame}</span>))}
                 </div>
+                <h3 className="map-written">
+                 Bus Stops
+                  {/* <p className="map_written_b">(খাবারের জায়গা) </p> */}
+                </h3>
+                <div className="badge-container">
+                {t.bst.map((adv: { tstame: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | React.PromiseLikeOfReactNode | null | undefined; },index: React.Key | null | undefined) => (
+                   <span className="badge" key={index}>{adv.tstame}</span>))}
+                </div>                  
                 
               </div>
               <div className="map_info">
