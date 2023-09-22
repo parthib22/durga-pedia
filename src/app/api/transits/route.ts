@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
+const googleMapsApiKey = "AIzaSyDj2cR40F6xZo8mTepkyEpJl8BGVNDZ2qk";
 export async function POST(request: any) {
   try {
       const { lat, lng } = await request.json();
@@ -8,7 +8,7 @@ export async function POST(request: any) {
       const opennow = true;
 
       const apiCalls = types.map((typeval) => {
-        const apiurl = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?radius=1500&location=${lat},${lng}&keyword=${typeval.kword}&keyword=${typeval.type}&key=${googleMapsApiKey}`; 
+        const apiurl = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?radius=500&location=${lat},${lng}&keyword=${typeval.kword}&keyword=${typeval.type}&key=${googleMapsApiKey}`; 
      console.log(apiurl);
 
           return fetch(apiurl).then((response) => response.json());
