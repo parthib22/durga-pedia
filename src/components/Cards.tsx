@@ -59,7 +59,7 @@ function Cards() {
     }
   }
   async function GetDist(cords:any) {
-    console.log("in line 62");
+    // console.log("in line 62");
     console.log(cords.lat1);
    // console.log(cords[0].lat1);
     const origins = cords.lat1+","+cords.lng1;
@@ -447,17 +447,23 @@ return error;
                  Trains 
                   {/* <p className="map_written_b">(খাবারের জায়গা) </p> */}
                 </h4>
-                <div className="badge-container">
-                {t.trns.map((adv: { tstame: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | React.PromiseLikeOfReactNode | null | undefined; },index: React.Key | null | undefined) => (
-                   <span className="badge" key={index}>{adv.tstame}</span>))}
+                <div className="badge-container">{
+                (t.trns.length===0?"No Train Stations Available":
+                  t.trns.map((adv: { tstame: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | React.PromiseLikeOfReactNode | null | undefined; },index: React.Key | null | undefined) => (
+                   <span className="badge" key={index}>{adv.tstame}</span>)))}
+                {}
                 </div>  
                 <h4 className="map-written">
                  Metro 
                   {/* <p className="map_written_b">(খাবারের জায়গা) </p> */}
                 </h4>
                 <div className="badge-container">
-                {t.met.map((adv: { tstame: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | React.PromiseLikeOfReactNode | null | undefined; },index: React.Key | null | undefined) => (
-                   <span className="badge" key={index}>{adv.tstame}</span>))}
+                  {
+                    (t.met.length===0?"No Metro Stations Available":
+                    t.met.map((adv: { tstame: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | React.PromiseLikeOfReactNode | null | undefined; },index: React.Key | null | undefined) => (
+                      <span className="badge" key={index}>{adv.tstame}</span>)))
+                  }
+                
                 </div>
                 <h4 className="map-written">
                  Bus Stops
