@@ -1,5 +1,8 @@
 /* @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap"); */
 
+* {
+  transition: all 0.3s ease !important;
+}
 .form-container form {
   position: relative;
   width: 100%;
@@ -122,11 +125,6 @@
   border-bottom: 2px solid #eeeeeebd;
 }
 
-/* .labelPandal .active {
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  padding: 0 5px;
-  transition: all 1s ease !important;
-} */
 .form-layout-2 > span {
   display: flex;
   flex-direction: row;

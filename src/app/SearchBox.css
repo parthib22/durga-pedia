@@ -1,3 +1,7 @@
+* {
+  transition: all 0.3s ease !important;
+}
+
 .autocomplete {
   background: transparent;
   position: absolute;
