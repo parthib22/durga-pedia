@@ -8,6 +8,8 @@ import "../app/cards.css";
 import { RootState } from "@/app/store";
 import { useSelector } from "react-redux";
 import axios from "axios";
+import Link from "next/link";
+import { stringify } from "querystring";
 
 function Cards() {
   const [Display, SetDisplay] = useState(false);
@@ -230,7 +232,7 @@ return error;
   async function GetResturant(cords:any) {
     try {
       var lat=cords.lat1,lng=cords.lng1;
-      let ar: { rame: string; lat: string; lng: string; map: any }[] = [];
+      let ar: { rame: string; lat: string; lng: string; map: string }[] = [];
       await fetch('/api/restaurants', {
           method: 'POST',
           headers:{
@@ -389,6 +391,10 @@ return error;
       console.error(e);
     }
   }
+
+  function redirect(red: string)  {
+    window.open(red, '_blank');
+  }
 //console.log(pandals);
   //if(Display)
   // if (true)
@@ -433,8 +439,9 @@ return error;
                   {/* <p className="map_written_b">(খাবারের জায়গা) </p> */}
                 </h3>
                 <div className="badge-container">
-                {t.rst.map((adv: { rame: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | React.PromiseLikeOfReactNode | null | undefined; },index: React.Key | null | undefined) => (
-                   <span className="badge" key={index}>{adv.rame}</span>))}
+                {t.rst.map((adv: any,index: any) => (
+                   <Link href={adv.map} target="_blank" className="badge" key={index} 
+                   >{adv.rame}</Link>))}
                 </div>
               </div>
               <div className="map_info">
@@ -471,7 +478,7 @@ return error;
                 </h4>
                 <div className="badge-container">
                 {t.bst.map((adv: { tstame: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | React.PromiseLikeOfReactNode | null | undefined; },index: React.Key | null | undefined) => (
-                   <span className="badge" key={index}>{adv.tstame}</span>))}
+                   <a className="badge" key={index}>{adv.tstame}</a>))}
                 </div>                  
                 
               </div>
