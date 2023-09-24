@@ -76,8 +76,9 @@
   /* border-top-right-radius: 10px;
   border-bottom-right-radius: 10px; */
   /* font: 13px/40px "lucida sans", "trebuchet MS", "Tahoma"; */
-  color: #fff;
-  background: rgb(0, 112, 225);
+  color: rgb(31 41 55 / 1);
+  /* background: rgb(0, 112, 225); */
+  background-color: orangered;
   /* margin-top: -11.3%;
   margin-right: 1%; */
   /* right: 7px;
@@ -100,8 +101,9 @@
   justify-content: center;
   gap: 7px;
   border: 1px solid transparent;
-  font-weight: 400;
-  color: #ffa800;
+  font-weight: 600;
+  /* color: #ffa800; */
+  color: orangered;
   transition: all 1s ease !important;
 }
 .topactive {
@@ -109,11 +111,11 @@
 }
 .pandal-active {
   position: absolute;
-  left: calc(50% - 6.9rem);
+  left: calc(50% - 7rem);
   height: 1.8rem;
   width: 9rem;
   /* background-color: #eeeeeebd; */
-  border-bottom: 2px solid #eeeeeebd;
+  border-bottom: 2px solid rgba(255 255 255 / 0.8);
 }
 
 .range-active {
@@ -122,7 +124,7 @@
   height: 1.8rem;
   width: 3rem;
   /* background-color: #eeeeee1a; */
-  border-bottom: 2px solid #eeeeeebd;
+  border-bottom: 2px solid rgba(255 255 255 / 0.8);
 }
 
 .form-layout-2 > span {
@@ -182,6 +184,8 @@
 }
 
 #ipCheck {
+  accent-color: orangered !important;
+  background-color: oranngered;
   scale: 1.1;
   width: fit-content;
   border-radius: 5px;
@@ -202,41 +206,33 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 10px;
 }
 
 .sbm-btn {
-  margin: 25px;
-  margin-inline: auto;
-  appearance: button;
-  backface-visibility: hidden;
+  margin-block: 30px;
   /* background-color: #405cf5; */
   /* background-color: rgb(79 70 229 / var(--tw-bg-opacity)); */
-  background: rgb(0, 112, 225);
+  /* background: rgb(0, 112, 225); */
+  background-color: orangered;
   border: 3px solid rgba(0, 0, 0, 0.2);
   border-radius: 0;
   box-shadow: 0 0 50px rgb(0 0 0 / 0.3);
   /* box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset,
     rgba(50, 50, 93, 0.1) 0 2px 5px 0, rgba(0, 0, 0, 0.07) 0 1px 1px 0; */
-  box-sizing: border-box;
-  color: #fff;
+  color: rgb(31 41 55 / 1);
   cursor: pointer;
+  font-weight: 800;
+  letter-spacing: 0.5px;
   font-family: inherit;
   /* font-family: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Ubuntu, sans-serif; */
   font-size: 16px;
-  width: 10rem;
-  height: 44px;
-  line-height: 1.15;
+  width: 9rem;
+  height: 3rem;
   outline: none;
-  overflow: hidden;
-  padding: 0 25px;
   position: relative;
   text-align: center;
-  text-transform: none;
-  transform: translateZ(0);
   transition: all 0.2s, box-shadow 0.08s ease-in;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
 }
 
 .sbm-btn:disabled {
@@ -248,3 +244,27 @@
     rgba(50, 50, 93, 0.2) 0 6px 15px 0, rgba(0, 0, 0, 0.1) 0 2px 2px 0,
     rgba(50, 151, 211, 0.3) 0 0 0 4px;
 } */
+
+.shareIco {
+  height: 3rem;
+  width: 6.5rem;
+  color: white;
+  cursor: cursor;
+  background-color: rgb(255 255 255 / 0.1);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding-bottom: 2.5px;
+  border: 3px solid rgb(255 255 255 / 0.05);
+}
+
+.shareIco:disabled {
+  color: gray;
+  cursor: default;
+}
+
+.shareIco > span {
+  margin-inline: 3px;
+  margin-bottom: -3px;
+}

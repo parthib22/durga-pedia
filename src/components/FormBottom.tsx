@@ -4,8 +4,9 @@ import "../app/form.css";
 import MyLocationIcon from "@mui/icons-material/MyLocation";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import { createContext, useContext, useEffect, useRef, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { incrementByAmount } from "../../slices/GlobalStore";
+
 import MyContext from "./MyContext";
 import {
   useJsApiLoader,
@@ -17,10 +18,16 @@ import {
 import { count } from "console";
 import withReactContent from "sweetalert2-react-content";
 import Swal from "sweetalert2";
+import IosShareIcon from "@mui/icons-material/IosShare";
+import { RootState } from "@/app/store";
 
 export default function FormBottom(props: { onSubmit: any }) {
   const dispatch = useDispatch();
   dispatch(incrementByAmount(null));
+  const scheck = useSelector(
+    (state: RootState) => state.statecheck.someProperty
+  );
+  console.log(scheck);
   const { setContextData }: any = useContext(MyContext);
   const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
   console.log(googleMapsApiKey);
@@ -263,7 +270,14 @@ export default function FormBottom(props: { onSubmit: any }) {
             <label
               className="labelCheck"
               htmlFor="ipCheck"
-              style={labelcheck === "range" ? { color: "rgb(255 255 255 / 0.5)", textDecoration:'line-through' } : {}}
+              style={
+                labelcheck === "range"
+                  ? {
+                      color: "rgb(255 255 255 / 0.5)",
+                      textDecoration: "line-through",
+                    }
+                  : {}
+              }
             >
               Is your starting point the end point?
             </label>
@@ -277,7 +291,11 @@ export default function FormBottom(props: { onSubmit: any }) {
           </div>
           <div className="form-layout-4">
             <button className="sbm-btn" type="submit">
-              {labelcheck === "pandal" ? "Get Roadmap" : "Search"}
+              {labelcheck === "pandal" ? "GET ROUTE" : "SEARCH"}
+            </button>
+            <button className="shareIco" disabled={!scheck}>
+              <span>Share</span>
+              <IosShareIcon />
             </button>
           </div>
         </form>

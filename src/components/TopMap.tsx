@@ -28,7 +28,7 @@ const TopMap: React.FC<TopMapProps> = ({ name }) => {
         keyboardShortcuts: false,
         gestureHandling: "cooperative",
         center: { lat: 22.5726, lng: 88.3639 },
-        zoom: 10,
+        zoom: 13,
         styles: [],
       }
     );
