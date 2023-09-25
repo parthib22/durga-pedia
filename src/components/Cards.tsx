@@ -1,9 +1,10 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import DoneIcon from "@mui/icons-material/Done";
 import ClearIcon from "@mui/icons-material/Clear";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import "../app/cards.css";
 import { RootState } from "@/app/store";
 import { useSelector } from "react-redux";
@@ -15,6 +16,8 @@ import { useDispatch } from "react-redux";
 
 function Cards() {
   const [Display, SetDisplay] = useState(false);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [priceVis, setPriceVis] = useState(false);
   //console.log(Display);
   let visited = new Map();
   const dispatch = useDispatch();
@@ -474,13 +477,16 @@ function Cards() {
     return <div>loading</div>; // or any loading indicator
   } else {
     if (Display) {
+      if (scrollRef.current) {
+        scrollRef.current.scrollIntoView({ behavior: "smooth" });
+      }
       try {
         dispatch(setSomeProperty(Display));
       } catch (e) {
         console.error("Error at statecheck dispatch: " + e);
       }
       return (
-        <div className="timeline">
+        <div ref={scrollRef} className="timeline">
           <div className="outer">
             {pandals.map((t) => (
               <div className="card" key={t.id}>
@@ -536,32 +542,36 @@ function Cards() {
                       {/* <p className="map_written_b">(খাবারের জায়গা) </p> */}
                     </h4>
                     <div className="badge-container">
-                      {t.trns.length === 0
-                        ? "No Train Stations Available"
-                        : t.trns.map(
-                            (
-                              adv: {
-                                tstame:
-                                  | string
-                                  | number
-                                  | boolean
-                                  | React.ReactElement<
-                                      any,
-                                      string | React.JSXElementConstructor<any>
-                                    >
-                                  | Iterable<React.ReactNode>
-                                  | React.ReactPortal
-                                  | React.PromiseLikeOfReactNode
-                                  | null
-                                  | undefined;
-                              },
-                              index: React.Key | null | undefined
-                            ) => (
-                              <span className="badge" key={index}>
-                                {adv.tstame}
-                              </span>
-                            )
-                          )}
+                      {t.trns.length === 0 ? (
+                        <span className="unbadge">
+                          ! no train stations nearby
+                        </span>
+                      ) : (
+                        t.trns.map(
+                          (
+                            adv: {
+                              tstame:
+                                | string
+                                | number
+                                | boolean
+                                | React.ReactElement<
+                                    any,
+                                    string | React.JSXElementConstructor<any>
+                                  >
+                                | Iterable<React.ReactNode>
+                                | React.ReactPortal
+                                | React.PromiseLikeOfReactNode
+                                | null
+                                | undefined;
+                            },
+                            index: React.Key | null | undefined
+                          ) => (
+                            <span className="badge" key={index}>
+                              {adv.tstame}
+                            </span>
+                          )
+                        )
+                      )}
                       {}
                     </div>
                     <h4 className="map-written">
@@ -569,77 +579,92 @@ function Cards() {
                       {/* <p className="map_written_b">(খাবারের জায়গা) </p> */}
                     </h4>
                     <div className="badge-container">
-                      {t.met.length === 0
-                        ? "No Metro Stations Available"
-                        : t.met.map(
-                            (
-                              adv: {
-                                tstame:
-                                  | string
-                                  | number
-                                  | boolean
-                                  | React.ReactElement<
-                                      any,
-                                      string | React.JSXElementConstructor<any>
-                                    >
-                                  | Iterable<React.ReactNode>
-                                  | React.ReactPortal
-                                  | React.PromiseLikeOfReactNode
-                                  | null
-                                  | undefined;
-                              },
-                              index: React.Key | null | undefined
-                            ) => (
-                              <span className="badge" key={index}>
-                                {adv.tstame}
-                              </span>
-                            )
-                          )}
+                      {t.met.length === 0 ? (
+                        <span className="unbadge">
+                          ! no metro stations nearby
+                        </span>
+                      ) : (
+                        t.met.map(
+                          (
+                            adv: {
+                              tstame:
+                                | string
+                                | number
+                                | boolean
+                                | React.ReactElement<
+                                    any,
+                                    string | React.JSXElementConstructor<any>
+                                  >
+                                | Iterable<React.ReactNode>
+                                | React.ReactPortal
+                                | React.PromiseLikeOfReactNode
+                                | null
+                                | undefined;
+                            },
+                            index: React.Key | null | undefined
+                          ) => (
+                            <span className="badge" key={index}>
+                              {adv.tstame}
+                            </span>
+                          )
+                        )
+                      )}
                     </div>
                     <h4 className="map-written">
                       Bus Stops 🚌
                       {/* <p className="map_written_b">(খাবারের জায়গা) </p> */}
                     </h4>
                     <div className="badge-container">
-                      {t.bst.map(
-                        (
-                          adv: {
-                            tstame:
-                              | string
-                              | number
-                              | boolean
-                              | React.ReactElement<
-                                  any,
-                                  string | React.JSXElementConstructor<any>
-                                >
-                              | Iterable<React.ReactNode>
-                              | React.ReactPortal
-                              | React.PromiseLikeOfReactNode
-                              | null
-                              | undefined;
-                          },
-                          index: React.Key | null | undefined
-                        ) => (
-                          <a className="badge" key={index}>
-                            {adv.tstame}
-                          </a>
+                      {t.met.length === 0 ? (
+                        <span className="unbadge">! no bus stops nearby</span>
+                      ) : (
+                        t.bst.map(
+                          (
+                            adv: {
+                              tstame:
+                                | string
+                                | number
+                                | boolean
+                                | React.ReactElement<
+                                    any,
+                                    string | React.JSXElementConstructor<any>
+                                  >
+                                | Iterable<React.ReactNode>
+                                | React.ReactPortal
+                                | React.PromiseLikeOfReactNode
+                                | null
+                                | undefined;
+                            },
+                            index: React.Key | null | undefined
+                          ) => (
+                            <a className="badge" key={index}>
+                              {adv.tstame}
+                            </a>
+                          )
                         )
                       )}
                     </div>
                   </div>
                   <div className="map_info">
-                    <h3 className="map-written">
+                    <span
+                      className="map-written"
+                      onClick={() => {
+                        setPriceVis(!priceVis);
+                        console.log(priceVis);
+                      }}
+                    >
+                      <ArrowDropDownIcon />
                       Prices
                       {/* <p className="map_written_b">(যাত্রা খরচ) </p> */}
-                    </h3>
+                    </span>
                     <table className="fare_table">
-                      <thead>
+                      {/* <thead>
                         <tr>
                           <th className="tableHead">Medium</th>
                           <th className="tableHead">Fare</th>
                         </tr>
-                      </thead>
-                      <tbody>
+                      </thead> */}
+                      <tbody style={{ display: priceVis ? "" : "none" }}>
                         <tr>
                           <td className="tableBody">Bus</td>
                           <td className="tableBody">₹ 69/-</td>
@@ -675,7 +700,7 @@ function Cards() {
                       </div>
                       {
                         <WbSunnyIcon
-                          style={{ color: "yellow", fontSize: "3em" }}
+                          style={{ color: "orangered", fontSize: "3em" }}
                         />
                       }
                     </div>

@@ -183,7 +183,8 @@
   color: var(--primary-text);
   font-weight: 400;
   font-size: 16px;
-  margin-block: 5px;
+  margin-block: 10px;
+  cursor: pointer !important;
 }
 
 /* .map_written_b {
@@ -244,10 +245,8 @@
   /* background-color: rgb(79 70 229 / 1); */
   display: inline;
   position: relative;
-  bottom: 4px;
   /* scale: 1.2; */
   /* margin-inline: 5px; */
-  color: crimson;
   filter: drop-shadow(0 0 1px black);
   /* border: 3px solid rgba(255 255 255 / 0.1); */
   cursor: pointer;
@@ -258,6 +257,16 @@
   flex-wrap: wrap;
   flex-direction: row;
   gap: 5px;
+}
+
+.unbadge {
+  background-color: rgba(255, 0, 0, 0.1);
+  color: var(--secondary-text);
+  opacity: 0.5;
+  font-weight: 300;
+  font-size: 14px;
+  padding: 2px 7px;
+  /* border: 1px solid rgba(112, 128, 144, 0.2); */
 }
 
 .badge {
