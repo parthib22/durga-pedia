@@ -13,6 +13,8 @@ import Link from "next/link";
 import { stringify } from "querystring";
 import { setSomeProperty } from "../../slices/StateCheck";
 import { useDispatch } from "react-redux";
+import Image from 'next/image'
+
 
 function Cards() {
   const [Display, SetDisplay] = useState(false);
@@ -34,6 +36,7 @@ function Cards() {
     trns: any;
     met: any;
     bst: any;
+    weather:any;
   }[] = [];
   const [pandals, setPandals] = useState<
     {
@@ -47,6 +50,8 @@ function Cards() {
       trns: any;
       met: any;
       bst: any;
+      weather:any;
+
     }[]
   >([]);
   useEffect(() => {
@@ -346,6 +351,29 @@ function Cards() {
       console.log("error from 132: " + error);
     }
   }
+  async function GetWeather(cords: any) {
+
+    try{
+       var url="https://api.openweathermap.org/data/2.5/weather?lat="+cords.lat1+"&lon="+cords.lng1+"5&appid=0d6fc19faf7830c989855c0eec84a0ad&units=metric"
+      // console.log(url);
+       const response = await fetch(url);
+       const wth = await response.json();
+      // console.log(wth['weather'][0].icon);
+      // console.log(wth['main'].temp);
+      // console.log(wth.name);
+       var iconurl="https://openweathermap.org/img/wn/"+wth['weather'][0].icon+"@2x.png"
+       return ({"icon":iconurl,
+       "temp":wth['main'].temp,
+       "name":wth.name});
+         // .then((data)=>{
+        //   console.log(data);
+        // })
+       // console.log(vb);
+      }
+    catch(e){
+        console.log(e);
+    }
+  }
   async function showComputedRoute(keysval: any) {
     let str: string = "";
     var l1 = count[0].lat,
@@ -388,7 +416,12 @@ function Cards() {
               lat1: la,
               lng1: lo,
             });
-
+            
+            let weather = await GetWeather({
+              lat1: la,
+              lng1: lo,
+            })
+            console.log(weather);
             frar.push({
               id: pandal.id,
               lat: pandal.lat,
@@ -400,6 +433,7 @@ function Cards() {
               trns: train,
               met: metro,
               bst: bus,
+              weather:weather
             });
             str = str + la + "," + lo + "|";
           }
@@ -695,14 +729,17 @@ function Cards() {
                     </h3>
                     <div className="weatherLg">
                       <div className="weatherSm">
-                        <div className="tempLg">29°C</div>
-                        <span className="locationSm">Mudjimba, QLD</span>
+                        <div className="tempLg">{t.weather.temp}°C</div>
+                        <span className="locationSm">{t.weather.name}</span>
                       </div>
-                      {
+                      <Image src={t.weather.icon} className="h-auto w-64  rounded-lg shadow-none  imgfilter" alt={"image"} width={600}
+      height={600} />
+                
+                      {/* {
                         <WbSunnyIcon
                           style={{ color: "orangered", fontSize: "3em" }}
                         />
-                      }
+                      } */}
                     </div>
                   </div>
                 </div>

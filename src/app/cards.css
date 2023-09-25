@@ -6,6 +6,15 @@
 
   --primary-text: rgb(248 250 252);
   --secondary-text: rgb(203 213 225);
+  --blur: 0px;
+    --brightness: 1;
+    --contrast: 1;
+    --grayscale: 0;
+    --hue-rotate: 0deg;
+    --invert: 0;
+    --opacity: 1;
+    --saturate: 1;
+    --sepia: 0;
 }
 
 /*  */
@@ -314,11 +323,14 @@
   flex-direction: column;
 }
 .tempLg {
-  font-size: 3.75rem /* 60px */;
+  font-size: 2.5rem /* 60px */;
   line-height: 1;
   font-weight: 700;
 }
 .locationSm {
   font-weight: 600;
   color: rgb(107 114 128 / 1);
+}
+.imgfilter{
+  filter: blur(var(--blur)) brightness(var(--brightness)) contrast(var(--contrast)) grayscale(var(--grayscale)) hue-rotate(var(--hue-rotate)) invert(var(--invert)) opacity(var(--opacity)) saturate(var(--saturate)) sepia(var(--sepia));
 }
