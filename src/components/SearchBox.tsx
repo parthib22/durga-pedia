@@ -111,7 +111,7 @@ const AutoComplete = () => {
         {/* <span className="shareIco">{<IosShareIcon />}</span> */}
         <input
           // className={searchTerm.length > 0 ? "ipPadding" : ""}
-          placeholder="Happy Birthday Parthib!"
+          placeholder="Search pandal"
           type="text"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
