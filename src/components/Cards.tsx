@@ -17,7 +17,7 @@ function Cards() {
   const count = useSelector((state: RootState) => state.cordinates.value);
   let frar: { id: string; lat: string; lng: string; name: string; rst:any;distance:any;duration:any; trns:any; met:any; bst:any; }[] = [];
   const [pandals, setPandals] = useState<
-    { id: string; lat: string; lng: string; name: string; rst:any;distance:any;duration:any; trns:any; met:any; bst:any }[]
+    { id: string; lat: string; lng: string; name: string; rst:any;distance:any;duration:any; trns:any; met:any; bst:any; }[]
   >([]);
   useEffect(() => {
     //console.log("Count has changed to: " + count);
@@ -82,6 +82,7 @@ function Cards() {
    // console.log(data['results']['rows'][0]['elements'][0]['distance'].text);
   d1=data['results']['rows'][0]['elements'][0]['distance'].text;
   d2=data['results']['rows'][0]['elements'][0]['duration'].text;
+  // console.log(data);
   
   }).catch((error) => {
 
@@ -106,24 +107,34 @@ return error;
           },
           body:JSON.stringify({lat,lng}),
           
-        }).then(response => response.json()).then((data) => {
+        }).then(response => response.json()).then(async (data) => {
         
-          var cnt=0,latnew,lngnew;
+          var cnt=0,latnew,lngnew,tname,latshort,lngshort,mapshort;
+          let short:any=await GetDist({
+            lat1:lat,
+            lng:lng,
+            lat2:data['results'][0].results[0].geometry.location.lat,
+            lng2:data['results'][0].results[0].geometry.location.lng,
+          })
+          try{
           // console.log(data['results'][0].results[0]);
           for (const i in data['results'][0].results){
-            if (cnt>6){
-              break;
-            }            
+                     
             latnew=data['results'][0].results[i].geometry.location.lat;
             lngnew=data['results'][0].results[i].geometry.location.lng;
-            ar.push({
-              tstame:data['results'][0].results[i].name,
-              lat:data['results'][0].results[i].geometry.location.lat,
-              lng:data['results'][0].results[i].geometry.location.lng,
-               map:"http://maps.google.com/maps?q="+latnew+","+ lngnew+"&ll="+latnew+","+ lngnew+"z=17",
+            let disttrns:any=await GetDist({
+              lat1:lat,
+              lng:lng,
+              lat2:lngnew,
+              lng2:latnew,
             })
-            cnt++;            
-          }
+            if (short['results']['rows'][0]['elements'][0]['distance'].text>disttrns['results']['rows'][0]['elements'][0]['distance'].text){
+                tname=data['results'][1].results[i].name,
+                latshort=data['results'][1].results[i].geometry.location.lat,
+                lngshort=data['results'][1].results[i].geometry.location.lng,
+                mapshort="http://maps.google.com/maps?q="+latshort+","+ lngshort+"&ll="+latshort+","+ lngshort+"z=17",
+            }                       
+          }       
 
         }).catch((error) => {
            console.error('Fetch Error:', error);
@@ -289,6 +300,7 @@ return error;
               "lat2":la,
               "lng2":lo,
             });
+
             //var spl_dist=distance_cal.split("|");
             l1=la;
             ln1=lo;
