@@ -369,7 +369,7 @@ function Cards() {
       // console.log(wth.name);
        var iconurl="https://openweathermap.org/img/wn/"+wth['weather'][0].icon+"@2x.png"
        return ({"icon":iconurl,
-       "temp":wth['main'].temp,
+       "temp":Math.ceil(wth['main'].temp),
        "name":wth.name});
          // .then((data)=>{
         //   console.log(data);
