@@ -3,6 +3,7 @@ import "../app/form.css";
 // import '../app/globals.css'
 import MyLocationIcon from "@mui/icons-material/MyLocation";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
+import LoopIcon from "@mui/icons-material/Loop";
 import { createContext, useContext, useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { incrementByAmount } from "../../slices/GlobalStore";
@@ -20,14 +21,26 @@ import withReactContent from "sweetalert2-react-content";
 import Swal from "sweetalert2";
 import IosShareIcon from "@mui/icons-material/IosShare";
 import { RootState } from "@/app/store";
+import { setSomeProperty } from "../../slices/StateCheck";
 
 export default function FormBottom(props: { onSubmit: any }) {
   const dispatch = useDispatch();
   dispatch(incrementByAmount(null));
-  const scheck = useSelector(
+
+  const sCheck = useSelector(
     (state: RootState) => state.statecheck.someProperty
   );
-  console.log(scheck);
+
+  const [stateCheck, setStateCheck] = useState(true);
+
+  useEffect(() => {
+    if (sCheck === false) {
+      setStateCheck(false); // now disabled = {false}
+    }
+    console.log("scheck from useeffect " + stateCheck);
+  }, [sCheck]);
+
+  // console.log(sCheck);
   const { setContextData }: any = useContext(MyContext);
   const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
   console.log(googleMapsApiKey);
@@ -138,6 +151,11 @@ export default function FormBottom(props: { onSubmit: any }) {
     let name = null;
     let id = null;
     try {
+      try {
+        dispatch(setSomeProperty(true)); // now disabled = {true}
+      } catch (e) {
+        console.error("Error at statecheck dispatch: " + e);
+      }
       const pandalData = fetch(
         "https://cdn.jsdelivr.net/gh/THUNDERSAMA/durga-pedia@a85947898471f77358f792a840e2e9028c31b86c/output.json"
       ).then((response) => response.json());
@@ -291,10 +309,17 @@ export default function FormBottom(props: { onSubmit: any }) {
             />
           </div>
           <div className="form-layout-4">
-            <button className="sbm-btn" type="submit">
+            <button
+              className="sbm-btn"
+              type="submit"
+              // onClick={() => {
+              //   setStateCheck(true);
+              //   console.log("scheck from pds " + stateCheck);
+              // }}
+            >
               {labelcheck === "pandal" ? "GET ROUTE" : "SEARCH"}
             </button>
-            <button className="shareIco" disabled={!scheck}>
+            <button type="button" className="shareIco" disabled={stateCheck}>
               <span>Share</span>
               <IosShareIcon />
             </button>

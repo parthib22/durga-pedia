@@ -441,6 +441,11 @@ function Cards() {
               bst: bus,
               weather:weather
             });
+            try {
+              dispatch(setSomeProperty(false));
+            } catch (e) {
+              console.error("Error at statecheck dispatch: " + e);
+            }
             str = str + la + "," + lo + "|";
           }
         }
@@ -554,11 +559,7 @@ async function startRangeRouting()
       if (scrollRef.current) {
         scrollRef.current.scrollIntoView({ behavior: "smooth" });
       }
-      try {
-        dispatch(setSomeProperty(Display));
-      } catch (e) {
-        console.error("Error at statecheck dispatch: " + e);
-      }
+      
       return (
         <div ref={scrollRef} className="timeline">
           <div className="outer">
