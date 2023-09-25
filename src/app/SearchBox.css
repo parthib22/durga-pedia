@@ -55,8 +55,9 @@
 .autocomplete > div > .clearIco:focus {
   background-color: rgb(0 0 0 / 0.1);
 }
-.icoActive {
-  position: absolute;
+.autocomplete > div > .icoActive {
+  display: none;
+  /* position: absolute;
   height: 3rem;
   width: 3rem;
   right: 0rem;
@@ -64,6 +65,7 @@
   place-content: center;
   z-index: 2;
   color: rgb(0 0 0 / 0);
+  transition: none; */
 }
 
 .autocomplete > div > .clearIco {
@@ -76,6 +78,7 @@
   z-index: 2;
   color: rgb(0 0 0 / 0.4);
   cursor: pointer;
+  transition: none;
 }
 
 .autocomplete > input::placeholder {
