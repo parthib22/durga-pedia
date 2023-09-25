@@ -112,6 +112,7 @@ export default function FormBottom(props: { onSubmit: any }) {
     var lat = position.coords.latitude;
     var long = position.coords.longitude;
     setCoordinates({ lat: lat, lng: long });
+    StartPlanner(lat, long);
     console.log("Your latitude is :" + lat + " and longitude is " + long);
     setContextData("Your latitude is :" + lat + " and longitude is " + long);
   }
