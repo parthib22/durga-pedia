@@ -3,13 +3,13 @@ const googleMapsApiKey = "AIzaSyDj2cR40F6xZo8mTepkyEpJl8BGVNDZ2qk";
 export async function POST(request: any) {
   try {
       const { lat, lng } = await request.json();
-      console.log("Request Payload:", { lat, lng });
+    //  console.log("Request Payload:", { lat, lng });
       const types = [{type:"train_station",kword:"Train"},{type:"",kword:"Subway station"},{type:"",kword:"Bus stop"}]; 
       const opennow = true;
 
       const apiCalls = types.map((typeval) => {
         const apiurl = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?radius=500&location=${lat},${lng}&keyword=${typeval.kword}&keyword=${typeval.type}&key=${googleMapsApiKey}`; 
-     console.log(apiurl);
+    // console.log(apiurl);
 
           return fetch(apiurl).then((response) => response.json());
       });
@@ -20,7 +20,7 @@ export async function POST(request: any) {
     type ResultItem = {
         // Define the structure of the properties here
       };
-      console.log(fjson[0]['results'][0].types);
+     // console.log(fjson[0]['results'][0].types);
     var cnt=0;
 
     for (const property in fjson[0]['results']) {

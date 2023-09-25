@@ -61,7 +61,13 @@ function Cards() {
 
       // console.log("Count is not null and its value is: ");
       //console.log(count);
+      if(count[0].type=="range")
+      {
+      startRangeRouting();
+      }
+      else{
       startRouting();
+      }
       // if (count[0].fid != null) {
       //   SetDisplay(true);
       // }
@@ -498,7 +504,41 @@ function Cards() {
       console.error(e);
     }
   }
+async function startRangeRouting()
+{
+  const pandalData = await fetch(
+    "https://cdn.jsdelivr.net/gh/THUNDERSAMA/durga-pedia@09e6f6c6e7bf3aa771adf311531cb44a5db30abb/outputk.json"
+  ).then((response) => response.json());
+  try {
+    if (count[0].fid != null) {
+      // console.log("entered");
+    //  console.log(count);
+      let ar: any[] = [];
 
+      // const cordiarray:[number, number][]=[];
+      visited.set(count[0].fid.toString(), "bkcd");
+      var idvar = count[0].fid;
+      for (const i in pandalData[idvar - 1][idvar]) {
+        if (!visited.has(i)) {
+          // console.log(i);
+          if (pandalData[idvar - 1][idvar][i] <=count[0].nopal  ) {
+            let k = pandalData[idvar - 1][idvar][i];
+            ar = [{ nid: i, ndist: k }];
+            visited.set(ar[0].nid, "bkcd");
+          }
+        }
+      }
+      
+      const keysval = Array.from(visited.keys());
+     // console.log("printing");
+      console.log(keysval);
+    showComputedRoute(keysval);
+      
+    }
+  } catch (e) {
+    console.error(e);
+  }
+}
   function redirect(red: string) {
     window.open(red, "_blank");
   }
