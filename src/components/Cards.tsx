@@ -1,9 +1,7 @@
 "use client";
 import React, { useEffect, useState, useRef } from "react";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
 import DoneIcon from "@mui/icons-material/Done";
 import ClearIcon from "@mui/icons-material/Clear";
-import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import "../app/cards.css";
 import { RootState } from "@/app/store";
@@ -13,8 +11,7 @@ import Link from "next/link";
 import { stringify } from "querystring";
 import { setSomeProperty } from "../../slices/StateCheck";
 import { useDispatch } from "react-redux";
-import Image from 'next/image'
-
+import Image from "next/image";
 
 function Cards() {
   const [Display, SetDisplay] = useState(false);
@@ -36,7 +33,7 @@ function Cards() {
     trns: any;
     met: any;
     bst: any;
-    weather:any;
+    weather: any;
   }[] = [];
   const [pandals, setPandals] = useState<
     {
@@ -50,8 +47,7 @@ function Cards() {
       trns: any;
       met: any;
       bst: any;
-      weather:any;
-
+      weather: any;
     }[]
   >([]);
   useEffect(() => {
@@ -360,26 +356,34 @@ function Cards() {
     }
   }
   async function GetWeather(cords: any) {
-
-    try{
-       var url="https://api.openweathermap.org/data/2.5/weather?lat="+cords.lat1+"&lon="+cords.lng1+"5&appid=0d6fc19faf7830c989855c0eec84a0ad&units=metric"
+    try {
+      var url =
+        "https://api.openweathermap.org/data/2.5/weather?lat=" +
+        cords.lat1 +
+        "&lon=" +
+        cords.lng1 +
+        "5&appid=0d6fc19faf7830c989855c0eec84a0ad&units=metric";
       // console.log(url);
-       const response = await fetch(url);
-       const wth = await response.json();
+      const response = await fetch(url);
+      const wth = await response.json();
       // console.log(wth['weather'][0].icon);
       // console.log(wth['main'].temp);
       // console.log(wth.name);
-       var iconurl="https://openweathermap.org/img/wn/"+wth['weather'][0].icon+"@2x.png"
-       return ({"icon":iconurl,
-       "temp":Math.ceil(wth['main'].temp),
-       "name":wth.name});
-         // .then((data)=>{
-        //   console.log(data);
-        // })
-       // console.log(vb);
-      }
-    catch(e){
-        console.log(e);
+      var iconurl =
+        "https://openweathermap.org/img/wn/" +
+        wth["weather"][0].icon +
+        "@2x.png";
+      return {
+        icon: iconurl,
+        temp: Math.ceil(wth["main"].temp),
+        name: wth.name,
+      };
+      // .then((data)=>{
+      //   console.log(data);
+      // })
+      // console.log(vb);
+    } catch (e) {
+      console.log(e);
     }
   }
   async function showComputedRoute(keysval: any) {
@@ -427,11 +431,11 @@ function Cards() {
               lat1: la,
               lng1: lo,
             });
-            
+
             let weather = await GetWeather({
               lat1: la,
               lng1: lo,
-            })
+            });
             console.log(weather);
             frar.push({
               id: pandal.id,
@@ -444,7 +448,7 @@ function Cards() {
               trns: train,
               met: metro,
               bst: bus,
-              weather:weather
+              weather: weather,
             });
            
             str = str + la + "," + lo + "|";
@@ -522,41 +526,39 @@ function Cards() {
       console.error(e);
     }
   }
-async function startRangeRouting()
-{
-  const pandalData = await fetch(
-    "https://cdn.jsdelivr.net/gh/THUNDERSAMA/durga-pedia@09e6f6c6e7bf3aa771adf311531cb44a5db30abb/outputk.json"
-  ).then((response) => response.json());
-  try {
-    if (count[0].fid != null) {
-      // console.log("entered");
-    //  console.log(count);
-      let ar: any[] = [];
+  async function startRangeRouting() {
+    const pandalData = await fetch(
+      "https://cdn.jsdelivr.net/gh/THUNDERSAMA/durga-pedia@09e6f6c6e7bf3aa771adf311531cb44a5db30abb/outputk.json"
+    ).then((response) => response.json());
+    try {
+      if (count[0].fid != null) {
+        // console.log("entered");
+        //  console.log(count);
+        let ar: any[] = [];
 
-      // const cordiarray:[number, number][]=[];
-      visited.set(count[0].fid.toString(), "bkcd");
-      var idvar = count[0].fid;
-      for (const i in pandalData[idvar - 1][idvar]) {
-        if (!visited.has(i)) {
-          // console.log(i);
-          if (pandalData[idvar - 1][idvar][i] <=count[0].nopal  ) {
-            let k = pandalData[idvar - 1][idvar][i];
-            ar = [{ nid: i, ndist: k }];
-            visited.set(ar[0].nid, "bkcd");
+        // const cordiarray:[number, number][]=[];
+        visited.set(count[0].fid.toString(), "bkcd");
+        var idvar = count[0].fid;
+        for (const i in pandalData[idvar - 1][idvar]) {
+          if (!visited.has(i)) {
+            // console.log(i);
+            if (pandalData[idvar - 1][idvar][i] <= count[0].nopal) {
+              let k = pandalData[idvar - 1][idvar][i];
+              ar = [{ nid: i, ndist: k }];
+              visited.set(ar[0].nid, "bkcd");
+            }
           }
         }
+
+        const keysval = Array.from(visited.keys());
+        // console.log("printing");
+        console.log(keysval);
+        showComputedRoute(keysval);
       }
-      
-      const keysval = Array.from(visited.keys());
-     // console.log("printing");
-      console.log(keysval);
-    showComputedRoute(keysval);
-      
+    } catch (e) {
+      console.error(e);
     }
-  } catch (e) {
-    console.error(e);
   }
-}
   function redirect(red: string) {
     window.open(red, "_blank");
   }
@@ -572,7 +574,7 @@ async function startRangeRouting()
       if (scrollRef.current) {
         scrollRef.current.scrollIntoView({ behavior: "smooth" });
       }
-      
+
       return (
         <div ref={scrollRef} className="timeline">
           <div className="outer">
@@ -620,10 +622,10 @@ async function startRangeRouting()
                     </div>
                   </div>
                   <div className="map_info">
-                    <h3 className="map-written">
+                    {/* <h3 className="map-written">
                       Transits
-                      {/* <p className="map_written_b">(গণপরিবহন) </p> */}
-                    </h3>
+                      <p className="map_written_b">(গণপরিবহন) </p>
+                    </h3> */}
 
                     <h4 className="map-written">
                       Trains 🚅
@@ -786,9 +788,14 @@ async function startRangeRouting()
                         <div className="tempLg">{t.weather.temp}°C</div>
                         <span className="locationSm">{t.weather.name}</span>
                       </div>
-                      <Image src={t.weather.icon} className="h-auto w-64  rounded-lg shadow-none  imgfilter" alt={"image"} width={600}
-      height={600} />
-                
+                      <Image
+                        src={t.weather.icon}
+                        className="weatherImg"
+                        alt={"image"}
+                        width={50}
+                        height={50}
+                      />
+
                       {/* {
                         <WbSunnyIcon
                           style={{ color: "orangered", fontSize: "3em" }}

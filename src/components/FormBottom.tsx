@@ -1,6 +1,5 @@
 "use client";
 import "../app/form.css";
-// import '../app/globals.css'
 import MyLocationIcon from "@mui/icons-material/MyLocation";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import LoopIcon from "@mui/icons-material/Loop";
