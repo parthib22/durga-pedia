@@ -24,16 +24,16 @@ import { setSomeProperty } from "../../slices/StateCheck";
 
 export default function FormBottom(props: { onSubmit: any }) {
   const dispatch = useDispatch();
-  dispatch(incrementByAmount(null));
+  //dispatch(incrementByAmount(null));
 
   const sCheck = useSelector(
     (state: RootState) => state.statecheck.someProperty
   );
-
+console.log(sCheck);
   const [stateCheck, setStateCheck] = useState(true);
 
   useEffect(() => {
-    if (sCheck === false) {
+    if (sCheck!=null && sCheck[0].status!=null &&sCheck[0].status === false) {
       setStateCheck(false); // now disabled = {false}
     }
     console.log("scheck from useeffect " + stateCheck);
@@ -150,11 +150,11 @@ export default function FormBottom(props: { onSubmit: any }) {
     let name = null;
     let id = null;
     try {
-      try {
-        dispatch(setSomeProperty(true)); // now disabled = {true}
-      } catch (e) {
-        console.error("Error at statecheck dispatch: " + e);
-      }
+      // try {
+      //   dispatch(setSomeProperty(true)); // now disabled = {true}
+      // } catch (e) {
+      //   console.error("Error at statecheck dispatch: " + e);
+      // }
       const pandalData = fetch(
         "https://cdn.jsdelivr.net/gh/THUNDERSAMA/durga-pedia@a85947898471f77358f792a840e2e9028c31b86c/output.json"
       ).then((response) => response.json());
