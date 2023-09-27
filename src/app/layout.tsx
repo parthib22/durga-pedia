@@ -27,6 +27,7 @@ export default function RootLayout({
           property="og:description"
           content="This website helps to travel during the Durga Puja days in Kolkata. It helps everyone to search and locate nearby durga pandals and visit them accordingly. Our app also gives detailed information about most of the pandals in west bengal as well as the weather, transit, food places, etc."
         />
+        <meta property="og:image" content="/icon-192x192.png" />
         <meta property="og:url" content="https://durgapedia.online/" />
         <meta
           property="og:site_name"
@@ -41,10 +42,7 @@ export default function RootLayout({
           name="twitter:description"
           content="This website helps to travel during the Durga Puja days in Kolkata. It helps everyone to search and locate nearby durga pandals and visit them accordingly. Our app also gives detailed information about most of the pandals in west bengal as well as the weather, transit, food places, etc."
         />
-        <meta
-          name="twitter:image"
-          content="http://localhost/static/brand/banner_logo.png"
-        />
+        <meta name="twitter:image" content="/icon-192x192.png" />
         <link rel="manifest" href="/manifest.json" />
       </head>
       <body className={inter.className}>
