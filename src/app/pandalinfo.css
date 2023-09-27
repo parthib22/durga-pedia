@@ -27,6 +27,10 @@
   border-radius: 12px;
 }
 
+.cardClose {
+  display: none;
+}
+
 .mapPinBtn {
   scale: 0.75;
   filter: drop-shadow(0 0 1px black);

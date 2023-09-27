@@ -1,15 +1,19 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import "../app/pandalinfo.css";
 import Link from "next/link";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 
 const PandalInfo = () => {
+  const [enableCard, setEnableCard] = useState(false);
   return (
-    <div className="pandalCard">
+    <div className={`pandalCard ${enableCard && "cardClose"}`}>
       <div className="pandalInfo">
-        <button className="pandalClose">
+        <button
+          className="pandalClose"
+          onClick={() => setEnableCard(!enableCard)}
+        >
           <ArrowBackIosNewIcon />
         </button>
         <h2 className="pandalTitle">
