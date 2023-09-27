@@ -14,14 +14,19 @@
 
 .form-container form {
   position: relative;
-  width: 100%;
+  width: calc(100% - 4px);
+  margin-top: -35px;
+  margin-inline: 2px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: white;
   font-family: inherit;
-  box-shadow: 0 -70px 70px rgb(0 0 0 / 0.25);
+  background-color: var(--primary-bg);
+  box-shadow: 0 -50px 70px rgb(0 0 0 / 0.25);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
   /* background-color: #303245; */
   /*background-color: #15172b; temporarily changed for testing purpose bara
    font-family: "Josefin Sans", sans-serif; */
@@ -218,6 +223,8 @@
 }
 
 .sbm-btn {
+  position: relative;
+  z-index: 2;
   margin-block: 30px;
   /* background-color: #405cf5; */
   /* background-color: rgb(79 70 229 / var(--tw-bg-opacity)); */
@@ -254,6 +261,8 @@
 } */
 
 .shareIco {
+  position: relative;
+  z-index: 2;
   height: 3rem;
   width: 6.5rem;
   color: white;

@@ -26,7 +26,7 @@ const AutoComplete = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [datas, setDatas] = useState([]); // Initialize datas as an empty array
   // const [suggestionsActive, setSuggestionsActive] = useState(false);
-  const [enableCard, setEnableCard] = useState(false);
+  const [enableCard, setEnableCard] = useState(true);
 
   useEffect(() => {
     getPandalData()
@@ -92,28 +92,27 @@ const AutoComplete = () => {
 
   const PandalCard = () => {
     return (
-      <div className={`pandalCard ${enableCard && "cardClose"}`}>
-        <div className="pandalInfo">
-          <button className="pandalClose" onClick={() => setEnableCard(true)}>
-            <ArrowBackIosNewIcon />
-          </button>
-          <h2 className="pandalTitle">
-            t.name
-            <button className="mapPinBtn">📍</button>
-          </h2>
-          <p>
-            From above location Based on driving mode you will need /t.duration/{" "}
-            to travel /t.distance/
-          </p>
-          <div className="pandalMapInfo">
-            <div className="badge-container">
-              <h4 className="mapTopic">Food</h4>
-              <div className="badge">food</div>
-              <div className="badge">food</div>
-              <div className="badge">food</div>
-              <div className="badge">food</div>
-              <div className="badge">food</div>
-              {/* {t.rst.map((adv: any, index: any) => (
+      <div className={`pandalInfo ${enableCard && "cardClose"}`}>
+        <button className="pandalClose" onClick={() => setEnableCard(true)}>
+          <ArrowBackIosNewIcon />
+        </button>
+        <h2 className="pandalTitle">
+          t.name
+          <button className="mapPinBtn">📍</button>
+        </h2>
+        <p>
+          From above location Based on driving mode you will need /t.duration/{" "}
+          to travel /t.distance/
+        </p>
+        <div className="pandalMapInfo">
+          <div className="badge-container">
+            <h4 className="mapTopic">Food</h4>
+            <div className="badge">food</div>
+            <div className="badge">food</div>
+            <div className="badge">food</div>
+            <div className="badge">food</div>
+            <div className="badge">food</div>
+            {/* {t.rst.map((adv: any, index: any) => (
                 <Link
                   href={adv.map}
                   target="_blank"
@@ -123,17 +122,17 @@ const AutoComplete = () => {
                   {adv.rame}
                 </Link>
               ))} */}
-            </div>
           </div>
-          <div className="pandalMapInfo">
-            <div className="badge-container">
-              <h4 className="mapTopic">Trains</h4>
-              <div className="badge">food</div>
-              <div className="badge">food</div>
-              <div className="badge">food</div>
-              <div className="badge">food</div>
-              <div className="badge">food</div>
-              {/* {t.trns.length === 0 ? (
+        </div>
+        <div className="pandalMapInfo">
+          <div className="badge-container">
+            <h4 className="mapTopic">Trains</h4>
+            <div className="badge">food</div>
+            <div className="badge">food</div>
+            <div className="badge">food</div>
+            <div className="badge">food</div>
+            <div className="badge">food</div>
+            {/* {t.trns.length === 0 ? (
                 <span className="unbadge">! no train stations nearby</span>
               ) : (
                 t.trns.map(
@@ -161,15 +160,15 @@ const AutoComplete = () => {
                   )
                 )
               )} */}
-            </div>
-            <div className="badge-container">
-              <h4 className="mapTopic">Metro</h4>
-              <div className="badge">food</div>
-              <div className="badge">food</div>
-              <div className="badge">food</div>
-              <div className="badge">food</div>
-              <div className="badge">food</div>
-              {/* {t.met.length === 0 ? (
+          </div>
+          <div className="badge-container">
+            <h4 className="mapTopic">Metro</h4>
+            <div className="badge">food</div>
+            <div className="badge">food</div>
+            <div className="badge">food</div>
+            <div className="badge">food</div>
+            <div className="badge">food</div>
+            {/* {t.met.length === 0 ? (
                 <span className="unbadge">! no metro stations nearby</span>
               ) : (
                 t.met.map(
@@ -197,15 +196,15 @@ const AutoComplete = () => {
                   )
                 )
               )} */}
-            </div>
-            <div className="badge-container">
-              <h4 className="mapTopic">Bus Stops</h4>
-              <div className="badge">food</div>
-              <div className="badge">food</div>
-              <div className="badge">food</div>
-              <div className="badge">food</div>
-              <div className="badge">food</div>
-              {/* {t.met.length === 0 ? (
+          </div>
+          <div className="badge-container">
+            <h4 className="mapTopic">Bus Stops</h4>
+            <div className="badge">food</div>
+            <div className="badge">food</div>
+            <div className="badge">food</div>
+            <div className="badge">food</div>
+            <div className="badge">food</div>
+            {/* {t.met.length === 0 ? (
                 <span className="unbadge">! no bus stops nearby</span>
               ) : (
                 t.bst.map(
@@ -233,50 +232,49 @@ const AutoComplete = () => {
                   )
                 )
               )} */}
+          </div>
+        </div>
+        <div className="pandalMapInfo">
+          <span className="mapTopic">Prices</span>
+          <table className="pandalFareTable">
+            <tbody>
+              <tr>
+                <td className="pandalTableBody">Bus</td>
+                <td className="pandalTableBody">₹ 69/-</td>
+              </tr>
+              <tr>
+                <td className="pandalTableBody">Local Taxi</td>
+                <td className="pandalTableBody">₹ 69/-</td>
+              </tr>
+              <tr>
+                <td className="pandalTableBody">Uber Go</td>
+                <td className="pandalTableBody">₹ 69/-</td>
+              </tr>
+              <tr>
+                <td className="pandalTableBody">Uber Xl</td>
+                <td className="pandalTableBody">₹ 69/-</td>
+              </tr>
+              <tr>
+                <td className="pandalTableBody">Uber Premier</td>
+                <td className="pandalTableBody">₹ 69/-</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div className="pandalMapInfo">
+          <h3 className="mapTopic">Weather</h3>
+          <div className="pandalWeatherLg">
+            <div className="pandalWeatherSm">
+              <div className="pandalTempLg">t.weather.temp °C</div>
+              <span className="pandalLocationSm">t.weather.name</span>
             </div>
-          </div>
-          <div className="pandalMapInfo">
-            <span className="mapTopic">Prices</span>
-            <table className="pandalFareTable">
-              <tbody>
-                <tr>
-                  <td className="pandalTableBody">Bus</td>
-                  <td className="pandalTableBody">₹ 69/-</td>
-                </tr>
-                <tr>
-                  <td className="pandalTableBody">Local Taxi</td>
-                  <td className="pandalTableBody">₹ 69/-</td>
-                </tr>
-                <tr>
-                  <td className="pandalTableBody">Uber Go</td>
-                  <td className="pandalTableBody">₹ 69/-</td>
-                </tr>
-                <tr>
-                  <td className="pandalTableBody">Uber Xl</td>
-                  <td className="pandalTableBody">₹ 69/-</td>
-                </tr>
-                <tr>
-                  <td className="pandalTableBody">Uber Premier</td>
-                  <td className="pandalTableBody">₹ 69/-</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div className="pandalMapInfo">
-            <h3 className="mapTopic">Weather</h3>
-            <div className="pandalWeatherLg">
-              <div className="pandalWeatherSm">
-                <div className="pandalTempLg">t.weather.temp °C</div>
-                <span className="pandalLocationSm">t.weather.name</span>
-              </div>
-              {/* <Image
+            {/* <Image
                 src={t.weather.icon}
                 className="weatherImg"
                 alt={"image"}
                 width={50}
                 height={50}
               /> */}
-            </div>
           </div>
         </div>
       </div>
@@ -286,7 +284,7 @@ const AutoComplete = () => {
   const Suggestions = () => {
     if (searchTerm.length >= 3) {
       return (
-        <ul className="suggestions">
+        <ul className={`suggestions ${!enableCard && "cardClose"}`}>
           {searchResults.map((item: any) => (
             <li
               key={item.id}
@@ -308,7 +306,10 @@ const AutoComplete = () => {
       <div>
         <span
           className={searchTerm.length > 0 ? "clearIco" : "icoActive"}
-          onClick={() => setSearchTerm("")}
+          onClick={() => {
+            setSearchTerm("");
+            setEnableCard(true);
+          }}
         >
           {<ClearIcon />}
         </span>
@@ -323,7 +324,7 @@ const AutoComplete = () => {
         />
       </div>
       {<Suggestions />}
-      {<PandalCard/>}
+      {<PandalCard />}
     </div>
   );
 };
