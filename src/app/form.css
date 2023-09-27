@@ -14,19 +14,19 @@
 
 .form-container form {
   position: relative;
-  width: calc(100% - 4px);
+  width: calc(100%);
   margin-top: -35px;
-  margin-inline: 2px;
+  /* margin-inline: 2px; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: white;
   font-family: inherit;
+  /* border-top-left-radius: 20px;
+  border-top-right-radius: 20px; */
   background-color: var(--primary-bg);
   box-shadow: 0 -50px 70px rgb(0 0 0 / 0.25);
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
   /* background-color: #303245; */
   /*background-color: #15172b; temporarily changed for testing purpose bara
    font-family: "Josefin Sans", sans-serif; */
