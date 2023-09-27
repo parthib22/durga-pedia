@@ -1,12 +1,12 @@
 {
-    "theme_color": "#5d5858",
-    "background_color": "#4e4945",
+    "theme_color": "#1f2937",
+    "background_color": "#1f2937",
     "display": "standalone",
     "scope": "/",
     "start_url": "/",
-    "name": "DurgaPedia",
-    "short_name": "DurgaPedia",
-    "description": "pandal hopping planner ",
+    "name": "Durga Pedia",
+    "short_name": "Durga Pedia",
+    "description": "This website helps to travel during the Durga Puja days in Kolkata. It helps everyone to search and locate nearby durga pandals and visit them accordingly. Our app also gives detailed information about most of the pandals in west bengal as well as the weather, transit, food places, etc.",
     "icons": [
         {
             "src": "/icon-192x192.png",
