@@ -4,7 +4,7 @@ import { StandaloneSearchBox } from "@react-google-maps/api";
 import ClearIcon from "@mui/icons-material/Clear";
 import { useState, useEffect } from "react";
 import React from "react";
-import "../app/SearchBox.css";
+import "../app/searchbox.css";
 
 async function getPandalData() {
   try {
