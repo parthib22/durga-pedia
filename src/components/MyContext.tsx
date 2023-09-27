@@ -1,5 +1,5 @@
-"use client"
-import React, { createContext, useState, ReactNode } from 'react';
+"use client";
+import React, { createContext, useState, ReactNode } from "react";
 
 type ContextType = {
   contextValue: string | null;
