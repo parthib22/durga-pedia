@@ -57,14 +57,23 @@ function Cards() {
 
       // console.log("Count is not null and its value is: ");
       console.log(count);
-      if(typeof count != "undefined" && count != '' && count[0].type.length>0 && count[0].type=="range")
-      {
+      if (
+        typeof count != "undefined" &&
+        count != "" &&
+        count[0].type.length > 0 &&
+        count[0].type == "range"
+      ) {
         console.log("entered from range");
-      startRangeRouting();
+        startRangeRouting();
       }
-      if(typeof count != "undefined" && count != '' && count[0].type.length>0 && count[0].type=="pandal"){
+      if (
+        typeof count != "undefined" &&
+        count != "" &&
+        count[0].type.length > 0 &&
+        count[0].type == "pandal"
+      ) {
         console.log("entered from pnadal ");
-      startRouting();
+        startRouting();
       }
       // if (count[0].fid != null) {
       //   SetDisplay(true);
@@ -324,7 +333,8 @@ function Cards() {
             }
             //console.log(data['results'][0].results[i].geometry.location.lat);
             if (
-              data["results"][0].results[i].opening_hours.open_now == true && data["results"][0].results[i].rating >= 4
+              data["results"][0].results[i].opening_hours.open_now == true &&
+              data["results"][0].results[i].rating >= 4
             ) {
               latnew = data["results"][0].results[i].geometry.location.lat;
               lngnew = data["results"][0].results[i].geometry.location.lng;
@@ -390,7 +400,7 @@ function Cards() {
     let str: string = "";
     var l1 = count[0].lat,
       ln1 = count[0].lng;
-      var karval: any[]=[];
+    var karval: any[] = [];
 
     for (const keysc of keysval) {
       // console.log(keysc);
@@ -403,7 +413,7 @@ function Cards() {
           if (pandal.id == keysc) {
             la = pandal.lat;
             lo = pandal.lng;
-           // karval.push(la+","+lo);
+            // karval.push(la+","+lo);
             // console.log("l1 ="+l1+",ln1= "+ln1+",la= "+la+", lo"+lo)
             let distance_cal: any = await GetDist({
               lat1: l1,
@@ -450,7 +460,7 @@ function Cards() {
               bst: bus,
               weather: weather,
             });
-           
+
             str = str + la + "," + lo + "|";
             //karval.push({'la':la,'lo':lo});
           }
@@ -478,12 +488,11 @@ function Cards() {
     SetDisplay(true);
     console.log(pandals);
     try {
-      str=count[0].lat+","+count[0].lng+"|"+str;
-      if(count[0].pcheck)
-      {
-        str=str+"|"+count[0].lat+","+count[0].lng;
+      str = count[0].lat + "," + count[0].lng + "|" + str;
+      if (count[0].pcheck) {
+        str = str + "|" + count[0].lat + "," + count[0].lng;
       }
-      let vbar=[{"status":false,"kar":str}]
+      let vbar = [{ status: false, kar: str }];
       dispatch(setSomeProperty(vbar));
     } catch (e) {
       console.error("Error at statecheck dispatch: " + e);
@@ -505,7 +514,7 @@ function Cards() {
         visited.set(count[0].fid.toString(), "bkcd");
         var idvar = count[0].fid;
         var nop = count[0].nopal - 1;
-        console.log(nop+"no of pandals");
+        console.log(nop + "no of pandals");
         var text = " ";
         while (nop > 0) {
           var res = getShortestRoute(idvar, pandalData);
@@ -571,9 +580,9 @@ function Cards() {
     return <div>loading</div>; // or any loading indicator
   } else {
     if (Display) {
-      if (scrollRef.current) {
-        scrollRef.current.scrollIntoView({ behavior: "smooth" });
-      }
+      // if (scrollRef.current) {
+      //   scrollRef.current.scrollIntoView({ behavior: "smooth" });
+      // }
 
       return (
         <div ref={scrollRef} className="timeline">
