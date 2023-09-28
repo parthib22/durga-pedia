@@ -6,7 +6,6 @@ import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import "../app/cards.css";
 import { RootState } from "@/app/store";
 import { useSelector } from "react-redux";
-import axios from "axios";
 import Link from "next/link";
 import { stringify } from "querystring";
 import { setSomeProperty } from "../../slices/StateCheck";
