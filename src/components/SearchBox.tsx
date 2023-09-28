@@ -26,7 +26,7 @@ const AutoComplete = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [datas, setDatas] = useState([]); // Initialize datas as an empty array
   // const [suggestionsActive, setSuggestionsActive] = useState(false);
-  const [enableCard, setEnableCard] = useState(false);
+  const [enableCard, setEnableCard] = useState(true);
 
   useEffect(() => {
     getPandalData()
@@ -113,16 +113,7 @@ const AutoComplete = () => {
               <div className="badge">food</div>
               <div className="badge">food</div>
               <div className="badge">food</div>
-              {/* {t.rst.map((adv: any, index: any) => (
-                <Link
-                  href={adv.map}
-                  target="_blank"
-                  className="badge"
-                  key={index}
-                >
-                  {adv.rame}
-                </Link>
-              ))} */}
+             
             </div>
           </div>
           <div className="pandalMapInfo">
@@ -133,34 +124,7 @@ const AutoComplete = () => {
               <div className="badge">food</div>
               <div className="badge">food</div>
               <div className="badge">food</div>
-              {/* {t.trns.length === 0 ? (
-                <span className="unbadge">! no train stations nearby</span>
-              ) : (
-                t.trns.map(
-                  (
-                    adv: {
-                      tstame:
-                        | string
-                        | number
-                        | boolean
-                        | React.ReactElement<
-                            any,
-                            string | React.JSXElementConstructor<any>
-                          >
-                        | Iterable<React.ReactNode>
-                        | React.ReactPortal
-                        | React.PromiseLikeOfReactNode
-                        | null
-                        | undefined;
-                    },
-                    index: React.Key | null | undefined
-                  ) => (
-                    <span className="badge" key={index}>
-                      {adv.tstame}
-                    </span>
-                  )
-                )
-              )} */}
+             
             </div>
             <div className="badge-container">
               <h4 className="mapTopic">Metro</h4>
@@ -169,34 +133,7 @@ const AutoComplete = () => {
               <div className="badge">food</div>
               <div className="badge">food</div>
               <div className="badge">food</div>
-              {/* {t.met.length === 0 ? (
-                <span className="unbadge">! no metro stations nearby</span>
-              ) : (
-                t.met.map(
-                  (
-                    adv: {
-                      tstame:
-                        | string
-                        | number
-                        | boolean
-                        | React.ReactElement<
-                            any,
-                            string | React.JSXElementConstructor<any>
-                          >
-                        | Iterable<React.ReactNode>
-                        | React.ReactPortal
-                        | React.PromiseLikeOfReactNode
-                        | null
-                        | undefined;
-                    },
-                    index: React.Key | null | undefined
-                  ) => (
-                    <span className="badge" key={index}>
-                      {adv.tstame}
-                    </span>
-                  )
-                )
-              )} */}
+              
             </div>
             <div className="badge-container">
               <h4 className="mapTopic">Bus Stops</h4>
@@ -205,34 +142,7 @@ const AutoComplete = () => {
               <div className="badge">food</div>
               <div className="badge">food</div>
               <div className="badge">food</div>
-              {/* {t.met.length === 0 ? (
-                <span className="unbadge">! no bus stops nearby</span>
-              ) : (
-                t.bst.map(
-                  (
-                    adv: {
-                      tstame:
-                        | string
-                        | number
-                        | boolean
-                        | React.ReactElement<
-                            any,
-                            string | React.JSXElementConstructor<any>
-                          >
-                        | Iterable<React.ReactNode>
-                        | React.ReactPortal
-                        | React.PromiseLikeOfReactNode
-                        | null
-                        | undefined;
-                    },
-                    index: React.Key | null | undefined
-                  ) => (
-                    <a className="badge" key={index}>
-                      {adv.tstame}
-                    </a>
-                  )
-                )
-              )} */}
+              
             </div>
           </div>
           <div className="pandalMapInfo">

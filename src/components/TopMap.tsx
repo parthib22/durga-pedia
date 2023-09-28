@@ -125,7 +125,7 @@ console.log(resultMapArray);
           animateCircle(polyline);
           const markers = [];
     
-          // Create markers for each waypoint
+          //markers for each waypoint
           waypoints.forEach((waypoint) => {
             const marker = new google.maps.Marker({
               position: waypoint,
