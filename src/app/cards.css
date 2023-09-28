@@ -1,14 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 :root {
   --primary-color: #212121;
   --background-color: #111;
   --font: inherit;
   --tw-bg-opacity: 1;
+
+  --primary-text: rgb(248 250 252);
+  --secondary-text: rgb(203 213 225);
+  --blur: 0px;
+  --brightness: 1;
+  --contrast: 1;
+  --grayscale: 0;
+  --hue-rotate: 0deg;
+  --invert: 0;
+  --opacity: 1;
+  --saturate: 1;
+  --sepia: 0;
 }
 
 /*  */
 * {
   margin: 0;
   padding: 0;
+  font-family: "Inter", sans-serif;
 }
 
 /* Timeline Container */
@@ -51,10 +66,10 @@
   content: "YOUR ROADMAP";
   color: orangered;
   position: absolute;
-  top: -58px;
+  top: -53px;
   right: 7%;
-  border: 5px solid orangered;
-  padding-inline: 10px;
+  border-bottom: 5px solid orangered;
+  /* padding-inline: 10px; */
   font-size: 2rem;
   font-weight: 600;
 }
@@ -83,13 +98,13 @@
 }
 
 /* exceptions */
-.card:nth-child(3)::before{
+.card:nth-child(3)::before {
   bottom: -5px;
 }
-.card:nth-child(5)::before{
+.card:nth-child(5)::before {
   bottom: -5px;
 }
-.card:nth-child(8)::before{
+.card:nth-child(8)::before {
   bottom: -1px;
 }
 
@@ -125,7 +140,7 @@
 
 /* Title of the card */
 .title {
-  color: wheat;
+  color: var(--primary-text);
   position: relative;
   font-size: 1.875rem;
   font-weight: 500;
@@ -133,6 +148,7 @@
 
 .info > p {
   text-align: justify;
+  color: var(--secondary-text);
   /* border: 1px solid slategray; */
   box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
   padding: 7px 10px;
@@ -145,28 +161,28 @@
 .title::before {
   content: "";
   position: absolute;
-  top: 50%;
-  width: 15px;
-  height: 15px;
-  background: white;
+  top: 25%;
+  width: 20px;
+  height: 20px;
+  background: rgb(31 41 55 / 1);
   margin-inline-start: -15px;
   border-radius: 999px;
   border: 3px solid orangered;
 }
 
 /* text right if the card is even  */
-.card:nth-child(even) > .info > .title {
+/* .card:nth-child(even) > .info > .title {
   text-align: right;
-}
+} */
 
 /* setting dot to the left if the card is odd */
 .card:nth-child(odd) > .info > .title::before {
-  left: -44px;
+  left: -46px;
 }
 
 /* setting dot to the right if the card is even */
 .card:nth-child(even) > .info > .title::before {
-  right: -59px;
+  right: -61px;
 }
 
 .map_info {
@@ -176,10 +192,11 @@
 }
 
 .map-written {
-  color: wheat;
+  color: var(--primary-text);
   font-weight: 400;
   font-size: 16px;
-  margin-block: 5px;
+  margin-block: 10px;
+  cursor: pointer !important;
 }
 
 /* .map_written_b {
@@ -240,10 +257,8 @@
   /* background-color: rgb(79 70 229 / 1); */
   display: inline;
   position: relative;
-  bottom: 4px;
-  scale: 1.2;
-  margin-inline: 5px;
-  color: crimson;
+  /* scale: 1.2; */
+  /* margin-inline: 5px; */
   filter: drop-shadow(0 0 1px black);
   /* border: 3px solid rgba(255 255 255 / 0.1); */
   cursor: pointer;
@@ -256,13 +271,24 @@
   gap: 5px;
 }
 
+.unbadge {
+  background-color: rgba(255, 0, 0, 0.1);
+  color: var(--secondary-text);
+  opacity: 0.5;
+  font-weight: 300;
+  font-size: 14px;
+  padding: 2px 7px;
+  /* border: 1px solid rgba(112, 128, 144, 0.2); */
+}
+
 .badge {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #fff;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--secondary-text);
   font-weight: 300;
   font-size: 14px;
   padding: 2px 7px;
   border: 1px solid rgba(112, 128, 144, 0.2);
+  cursor: pointer;
   /* border-radius: 6px; */
 }
 
@@ -275,11 +301,11 @@
 .tableHead {
   border-bottom-width: 1px;
   border-color: rgb(71 85 105 / 1);
-  font-weight: 500;
-  color: rgb(226 232 240 / 1);
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--primary-text);
   text-align: left;
   padding-block: 0.5rem;
-  font-size: 1.1rem;
 }
 
 .tableBody {
@@ -300,11 +326,18 @@
   flex-direction: column;
 }
 .tempLg {
-  font-size: 3.75rem /* 60px */;
+  font-family: "Inter", sans-serif !important;
+  font-size: 2.5rem /* 60px */;
   line-height: 1;
   font-weight: 700;
 }
 .locationSm {
   font-weight: 600;
   color: rgb(107 114 128 / 1);
+}
+.imgfilter {
+  filter: blur(var(--blur)) brightness(var(--brightness))
+    contrast(var(--contrast)) grayscale(var(--grayscale))
+    hue-rotate(var(--hue-rotate)) invert(var(--invert)) opacity(var(--opacity))
+    saturate(var(--saturate)) sepia(var(--sepia));
 }

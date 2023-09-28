@@ -12,7 +12,7 @@ export async function POST(request: any) {
 
     const apiCalls = types.map((type) => {
       const apiurl = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?radius=1000&location=${lat},${lng}&keyword=${type}&opennow&radius=1000&key=${googleMapsApiKey}`;
-      console.log(apiurl);
+     // console.log(apiurl);
       return fetch(apiurl).then((response) => response.json());
     });
 

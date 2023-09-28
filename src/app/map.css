@@ -1,4 +1,5 @@
 #map {
+  filter: brightness(0.9);
   transition: none !important;
   position: relative;
   width: 100vw;

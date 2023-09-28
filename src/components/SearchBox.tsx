@@ -2,7 +2,6 @@
 import { StandaloneSearchBox } from "@react-google-maps/api";
 // import data from "@/app/Pandels";
 import ClearIcon from "@mui/icons-material/Clear";
-import IosShareIcon from "@mui/icons-material/IosShare";
 import { useState, useEffect } from "react";
 import React from "react";
 import "../app/SearchBox.css";
@@ -109,10 +108,10 @@ const AutoComplete = () => {
         >
           {<ClearIcon />}
         </span>
-        <span className="shareIco">{<IosShareIcon />}</span>
+        {/* <span className="shareIco">{<IosShareIcon />}</span> */}
         <input
-          className={searchTerm.length > 0 ? "ipPadding" : ""}
-          placeholder=" Bhosdike Subho Poeda Dibos Parthib!"
+          // className={searchTerm.length > 0 ? "ipPadding" : ""}
+          placeholder="Search pandals in Kolkata"
           type="text"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}

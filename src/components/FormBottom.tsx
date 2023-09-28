@@ -3,9 +3,11 @@ import "../app/form.css";
 // import '../app/globals.css'
 import MyLocationIcon from "@mui/icons-material/MyLocation";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
+import LoopIcon from "@mui/icons-material/Loop";
 import { createContext, useContext, useEffect, useRef, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { incrementByAmount } from "../../slices/GlobalStore";
+
 import MyContext from "./MyContext";
 import {
   useJsApiLoader,
@@ -17,10 +19,28 @@ import {
 import { count } from "console";
 import withReactContent from "sweetalert2-react-content";
 import Swal from "sweetalert2";
+import IosShareIcon from "@mui/icons-material/IosShare";
+import { RootState } from "@/app/store";
+import { setSomeProperty } from "../../slices/StateCheck";
 
 export default function FormBottom(props: { onSubmit: any }) {
   const dispatch = useDispatch();
   dispatch(incrementByAmount(null));
+
+  const sCheck = useSelector(
+    (state: RootState) => state.statecheck.someProperty
+  );
+
+  const [stateCheck, setStateCheck] = useState(true);
+
+  useEffect(() => {
+    if (sCheck === false) {
+      setStateCheck(false); // now disabled = {false}
+    }
+    console.log("scheck from useeffect " + stateCheck);
+  }, [sCheck]);
+
+  // console.log(sCheck);
   const { setContextData }: any = useContext(MyContext);
   const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
   console.log(googleMapsApiKey);
@@ -105,6 +125,7 @@ export default function FormBottom(props: { onSubmit: any }) {
     var lat = position.coords.latitude;
     var long = position.coords.longitude;
     setCoordinates({ lat: lat, lng: long });
+    StartPlanner(lat, long);
     console.log("Your latitude is :" + lat + " and longitude is " + long);
     setContextData("Your latitude is :" + lat + " and longitude is " + long);
   }
@@ -130,6 +151,11 @@ export default function FormBottom(props: { onSubmit: any }) {
     let name = null;
     let id = null;
     try {
+      try {
+        dispatch(setSomeProperty(true)); // now disabled = {true}
+      } catch (e) {
+        console.error("Error at statecheck dispatch: " + e);
+      }
       const pandalData = fetch(
         "https://cdn.jsdelivr.net/gh/THUNDERSAMA/durga-pedia@a85947898471f77358f792a840e2e9028c31b86c/output.json"
       ).then((response) => response.json());
@@ -263,7 +289,14 @@ export default function FormBottom(props: { onSubmit: any }) {
             <label
               className="labelCheck"
               htmlFor="ipCheck"
-              style={labelcheck === "range" ? { color: "rgb(255 255 255 / 0.5)", textDecoration:'line-through' } : {}}
+              style={
+                labelcheck === "range"
+                  ? {
+                      color: "rgb(255 255 255 / 0.5)",
+                      textDecoration: "line-through",
+                    }
+                  : {}
+              }
             >
               Is your starting point the end point?
             </label>
@@ -276,8 +309,19 @@ export default function FormBottom(props: { onSubmit: any }) {
             />
           </div>
           <div className="form-layout-4">
-            <button className="sbm-btn" type="submit">
-              {labelcheck === "pandal" ? "Get Roadmap" : "Search"}
+            <button
+              className="sbm-btn"
+              type="submit"
+              // onClick={() => {
+              //   setStateCheck(true);
+              //   console.log("scheck from pds " + stateCheck);
+              // }}
+            >
+              {labelcheck === "pandal" ? "GET ROUTE" : "SEARCH"}
+            </button>
+            <button type="button" className="shareIco" disabled={stateCheck}>
+              <span>Share</span>
+              <IosShareIcon />
             </button>
           </div>
         </form>

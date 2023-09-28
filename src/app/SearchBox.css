@@ -18,12 +18,12 @@
   position: relative;
 }
 
-.ipPadding {
+/* .ipPadding {
   padding-left: 3rem !important;
-}
+} */
 
 .autocomplete > div > input {
-  background: rgb(255 255 255 / 0.7);
+  background: rgb(255 255 255 / 0.8);
   position: relative;
   /* background: rgb(42, 52, 65);
   color: white; */
@@ -38,39 +38,47 @@
   outline: none;
 }
 
+/* .autocomplete > div > .shareIco {
+  position: absolute;
+  height: 3rem;
+  width: 3rem;
+  display: grid;
+  place-content: center;
+  z-index: 2;
+  color: rgb(0 0 0 / 0.4);
+  cursor: pointer;
+} */
+
+/* .autocomplete > div > .clearIco:hover,
+.autocomplete > div > .clearIco:focus, */
+.autocomplete > div > .clearIco:hover,
+.autocomplete > div > .clearIco:focus {
+  background-color: rgb(0 0 0 / 0.1);
+}
+.autocomplete > div > .icoActive {
+  display: none;
+  /* position: absolute;
+  height: 3rem;
+  width: 3rem;
+  right: 0rem;
+  display: grid;
+  place-content: center;
+  z-index: 2;
+  color: rgb(0 0 0 / 0);
+  transition: none; */
+}
+
 .autocomplete > div > .clearIco {
   position: absolute;
   height: 3rem;
   width: 3rem;
-  /* right: 3rem; */
+  right: 0rem;
   display: grid;
   place-content: center;
   z-index: 2;
   color: rgb(0 0 0 / 0.4);
   cursor: pointer;
-}
-
-/* .autocomplete > div > .clearIco:hover,
-.autocomplete > div > .clearIco:focus, */
-.autocomplete > div > .shareIco:hover,
-.autocomplete > div > .shareIco:focus {
-  background-color: rgb(0 0 0 / 0.1);
-}
-
-.autocomplete > div > .shareIco {
-  position: absolute;
-  height: 3rem;
-  width: 3rem;
-  right: 0;
-  display: grid;
-  place-content: center;
-  z-index: 2;
-  color: rgb(0 0 0 / 0.4);
-  cursor: pointer;
-}
-
-.icoActive {
-  display: none;
+  transition: none;
 }
 
 .autocomplete > input::placeholder {
