@@ -1,14 +1,17 @@
 "use client";
 import { StandaloneSearchBox } from "@react-google-maps/api";
-// import data from "@/app/Pandels";
 import ClearIcon from "@mui/icons-material/Clear";
+import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
+import NearMeIcon from "@mui/icons-material/NearMe";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { useState, useEffect } from "react";
 import React from "react";
 import "../app/searchbox.css";
 import "../app/pandalinfo.css";
-import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import Link from "next/link";
 import Image from "next/image";
+import { RotatingLines } from "react-loader-spinner";
+
 async function getPandalData() {
   try {
     const response = await fetch(
@@ -23,24 +26,30 @@ async function getPandalData() {
 }
 
 const AutoComplete = () => {
+  const [foodEx, setFoodEx] = useState(false);
+  const [trainEx, setTrainEx] = useState(false);
+  const [metroEx, setMetroEx] = useState(false);
+  const [busEx, setBusEx] = useState(false);
+
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [datas, setDatas] = useState([]); // Initialize datas as an empty array
   // const [suggestionsActive, setSuggestionsActive] = useState(false);
   const [enableCard, setEnableCard] = useState(true);
-  const [Pandals,setPandals]=useState<
-  {
-    id: string;
-    lat: string;
-    lng: string;
-    name: string;
-    rst: any;
-    trns: any;
-    met: any;
-    bst: any;
-    weather: any;
-  }[]
->([]);
+  const [cardLoad, setCardLoad] = useState(false);
+  const [Pandals, setPandals] = useState<
+    {
+      id: string;
+      lat: string;
+      lng: string;
+      name: string;
+      rst: any;
+      trns: any;
+      met: any;
+      bst: any;
+      weather: any;
+    }[]
+  >([]);
   let frar: {
     id: string;
     lat: string;
@@ -369,8 +378,7 @@ const AutoComplete = () => {
       console.log(e);
     }
   }
-  async function startSearching(i:any)
-  {
+  async function startSearching(i: any) {
     try {
       const pandalData = fetch(
         "https://cdn.jsdelivr.net/gh/THUNDERSAMA/durga-pedia@a85947898471f77358f792a840e2e9028c31b86c/output.json"
@@ -382,7 +390,7 @@ const AutoComplete = () => {
           lo = pandal.lng;
           // karval.push(la+","+lo);
           // console.log("l1 ="+l1+",ln1= "+ln1+",la= "+la+", lo"+lo)
-      
+
           let resname = await GetResturant({
             lat1: la,
             lng1: lo,
@@ -424,181 +432,233 @@ const AutoComplete = () => {
     }
     console.log(frar);
     setPandals(frar);
-    setEnableCard(false)
+    setCardLoad(true);
+    // setEnableCard(false);
     console.log(Pandals);
-    
   }
   const PandalCard = () => {
     if (!Array.isArray(Pandals)) {
       return <div>loading</div>; // or any loading indicator
     } else {
-    if(enableCard==false)
-    {
-      console.log(Pandals);
-    return (
-      <>
-      {Pandals.map((t:any) => (
-      <div key={t.lat} className={`pandalInfo ${enableCard && "cardClose"}`}>
-        
-        <button className="pandalClose" onClick={() => setEnableCard(true)}>
-          <ArrowBackIosNewIcon />
-        </button>
-        
-        <h2 className="pandalTitle">
-          {t.name}
-          <button className="mapPinBtn">📍</button>
-        </h2>
-        <p>
-          From above location Based on driving mode you will need /t.duration/{" "}
-          to travel /t.distance/
-        </p>
-        <div className="pandalMapInfo">
-          <div className="badge-container">
-            <h4 className="mapTopic">Food</h4>
-            <div className="badge">food</div>
-            <div className="badge">food</div>
-            <div className="badge">food</div>
-            <div className="badge">food</div>
-            <div className="badge">food</div>
-            {t.rst.map((adv: any, index: any) => (
-                <Link
-                  href={adv.map}
-                  target="_blank"
-                  className="badge"
-                  key={index}
-                >
-                  {adv.rame}
-                </Link>
-              ))}
-          </div>
-        </div>
-        <div className="pandalMapInfo">
-          <div className="badge-container">
-            <h4 className="mapTopic">Trains</h4>
-            <div className="badge">food</div>
-            <div className="badge">food</div>
-            <div className="badge">food</div>
-            <div className="badge">food</div>
-            <div className="badge">food</div>
-            {t.trns.length === 0 ? (
-                <span className="unbadge">! no train stations nearby</span>
-              ) : (
-                t.trns.map(
-                  (
-                    adv: {
-                      tstame:
-                        | string
-                        | number
-                        | boolean
-                        | React.ReactElement<
-                            any,
-                            string | React.JSXElementConstructor<any>
-                          >
-                        | Iterable<React.ReactNode>
-                        | React.ReactPortal
-                        | React.PromiseLikeOfReactNode
-                        | null
-                        | undefined;
-                    },
-                    index: React.Key | null | undefined
-                  ) => (
-                    <span className="badge" key={index}>
-                      {adv.tstame}
-                    </span>
-                  )
-                )
-              )}
-          </div>
-          <div className="badge-container">
-            <h4 className="mapTopic">Metro</h4>
-           
-            {t.met.length === 0 ? (
-                <span className="unbadge">! no metro stations nearby</span>
-              ) : (
-                t.met.map(
-                  (
-                    adv: {
-                      tstame:
-                        | string
-                        | number
-                        | boolean
-                        | React.ReactElement<
-                            any,
-                            string | React.JSXElementConstructor<any>
-                          >
-                        | Iterable<React.ReactNode>
-                        | React.ReactPortal
-                        | React.PromiseLikeOfReactNode
-                        | null
-                        | undefined;
-                    },
-                    index: React.Key | null | undefined
-                  ) => (
-                    <span className="badge" key={index}>
-                      {adv.tstame}
-                    </span>
-                  )
-                )
-              )}
-          </div>
-          <div className="badge-container">
-            <h4 className="mapTopic">Bus Stops</h4>
-           
-            {t.met.length === 0 ? (
-                <span className="unbadge">! no bus stops nearby</span>
-              ) : (
-                t.bst.map(
-                  (
-                    adv: {
-                      tstame:
-                        | string
-                        | number
-                        | boolean
-                        | React.ReactElement<
-                            any,
-                            string | React.JSXElementConstructor<any>
-                          >
-                        | Iterable<React.ReactNode>
-                        | React.ReactPortal
-                        | React.PromiseLikeOfReactNode
-                        | null
-                        | undefined;
-                    },
-                    index: React.Key | null | undefined
-                  ) => (
-                    <a className="badge" key={index}>
-                      {adv.tstame}
-                    </a>
-                  )
-                )
-              )}
-          </div>
-        </div>
-       
-        <div className="pandalMapInfo">
-          <h3 className="mapTopic">Weather</h3>
-          <div className="pandalWeatherLg">
-            <div className="pandalWeatherSm">
-              <div className="pandalTempLg">{t.weather.temp} °C</div>
-              <span className="pandalLocationSm">{t.weather.name}</span>
+      if (cardLoad === false) {
+        return (
+          <>
+            <div className={`pandalInfo ${enableCard && "cardClose"}`}>
+              <div className="pandalLoader">
+                <RotatingLines
+                  strokeColor="orangered"
+                  strokeWidth="4"
+                  animationDuration="1"
+                  width="50"
+                  visible={true}
+                />
+              </div>
             </div>
-            <Image
-                src={t.weather.icon}
-                className="weatherImg"
-                alt={"image"}
-                width={50}
-                height={50}
-              />
-          </div>
-        </div>
-       
-      </div>
-      ))}
-      </>
-    );
-            }
-          }
-        
+          </>
+        );
+      } else if (cardLoad || enableCard == false) {
+        console.log(Pandals);
+        return (
+          <>
+            <button
+              className={`pandalClose ${enableCard && "cardClose"}`}
+              onClick={() => setEnableCard(true)}
+            >
+              <ArrowBackIosNewIcon />
+            </button>
+            {Pandals.map((t: any) => (
+              <div
+                key={t.lat}
+                className={`pandalInfo ${enableCard && "cardClose"}`}
+              >
+                <h2 className="pandalTitle">
+                  {t.name}
+                  <button className="mapPinBtn">
+                    <NearMeIcon />
+                  </button>
+                </h2>
+                <p>
+                  From above location Based on driving mode you will need
+                  /t.duration/ to travel /t.distance/
+                </p>
+                <div className="pandalMapInfo">
+                  <div className="pandalBadgeContainer">
+                    <h4 className="mapTopic" onClick={() => setFoodEx(!foodEx)}>
+                      Food
+                      <span className={foodEx ? "" : "expandedIcon"}>
+                        <ArrowDropDownIcon />
+                      </span>
+                    </h4>
+                    {t.rst.map((adv: any, index: any) => (
+                      <Link
+                        href={adv.map}
+                        target="_blank"
+                        className={`pandalBadge ${foodEx && "cardClose"}`}
+                        key={index}
+                      >
+                        {adv.rame}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+                <div className="pandalMapInfo">
+                  <div className="pandalBadgeContainer">
+                    <h4
+                      className="mapTopic"
+                      onClick={() => setTrainEx(!trainEx)}
+                    >
+                      Trains
+                      <span className={trainEx ? "" : "expandedIcon"}>
+                        <ArrowDropDownIcon />
+                      </span>
+                    </h4>
+                    {t.trns.length === 0 ? (
+                      <span className="pandalUnBadge">
+                        ! no train stations nearby
+                      </span>
+                    ) : (
+                      t.trns.map(
+                        (
+                          adv: {
+                            tstame:
+                              | string
+                              | number
+                              | boolean
+                              | React.ReactElement<
+                                  any,
+                                  string | React.JSXElementConstructor<any>
+                                >
+                              | Iterable<React.ReactNode>
+                              | React.ReactPortal
+                              | React.PromiseLikeOfReactNode
+                              | null
+                              | undefined;
+                          },
+                          index: React.Key | null | undefined
+                        ) => (
+                          <span
+                            className={`pandalBadge ${trainEx && "cardClose"}`}
+                            key={index}
+                          >
+                            {adv.tstame}
+                          </span>
+                        )
+                      )
+                    )}
+                  </div>
+                  <div className="pandalBadgeContainer">
+                    <h4
+                      className="mapTopic"
+                      onClick={() => setMetroEx(!metroEx)}
+                    >
+                      Metro
+                      <span className={metroEx ? "" : "expandedIcon"}>
+                        <ArrowDropDownIcon />
+                      </span>
+                    </h4>
+
+                    {t.met.length === 0 ? (
+                      <span className="pandalUnBadge">
+                        ! no metro stations nearby
+                      </span>
+                    ) : (
+                      t.met.map(
+                        (
+                          adv: {
+                            tstame:
+                              | string
+                              | number
+                              | boolean
+                              | React.ReactElement<
+                                  any,
+                                  string | React.JSXElementConstructor<any>
+                                >
+                              | Iterable<React.ReactNode>
+                              | React.ReactPortal
+                              | React.PromiseLikeOfReactNode
+                              | null
+                              | undefined;
+                          },
+                          index: React.Key | null | undefined
+                        ) => (
+                          <span
+                            className={`pandalBadge ${metroEx && "cardClose"}`}
+                            key={index}
+                          >
+                            {adv.tstame}
+                          </span>
+                        )
+                      )
+                    )}
+                  </div>
+                  <div className="pandalBadgeContainer">
+                    <h4 className="mapTopic" onClick={() => setBusEx(!busEx)}>
+                      Bus Stops
+                      <span className={busEx ? "" : "expandedIcon"}>
+                        <ArrowDropDownIcon />
+                      </span>
+                    </h4>
+
+                    {t.met.length === 0 ? (
+                      <span className="pandalUnBadge">
+                        ! no bus stops nearby
+                      </span>
+                    ) : (
+                      t.bst.map(
+                        (
+                          adv: {
+                            tstame:
+                              | string
+                              | number
+                              | boolean
+                              | React.ReactElement<
+                                  any,
+                                  string | React.JSXElementConstructor<any>
+                                >
+                              | Iterable<React.ReactNode>
+                              | React.ReactPortal
+                              | React.PromiseLikeOfReactNode
+                              | null
+                              | undefined;
+                          },
+                          index: React.Key | null | undefined
+                        ) => (
+                          <span
+                            className={`pandalBadge ${busEx && "cardClose"}`}
+                            key={index}
+                          >
+                            {adv.tstame}
+                          </span>
+                        )
+                      )
+                    )}
+                  </div>
+                </div>
+
+                <div className="pandalMapInfo">
+                  <h3 className="mapTopic">Weather</h3>
+                  <div className="pandalWeatherLg">
+                    <div className="pandalWeatherSm">
+                      <div className="pandalTempLg">
+                        {t.weather.temp}°C
+                        <Image
+                          src={t.weather.icon}
+                          className="weatherImg"
+                          alt={"image"}
+                          width={80}
+                          height={80}
+                        />
+                      </div>
+                      <span className="pandalLocationSm">{t.weather.name}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </>
+        );
+      }
+    }
   };
 
   const Suggestions = () => {
@@ -610,7 +670,9 @@ const AutoComplete = () => {
               key={item.id}
               onClick={() => {
                 console.log(item.id);
-                startSearching(item.id)
+                setEnableCard(false);
+                setCardLoad(false);
+                startSearching(item.id);
               }}
             >
               {item.pandal}

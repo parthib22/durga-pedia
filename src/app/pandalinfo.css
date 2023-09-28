@@ -20,18 +20,27 @@
   place-items: center;
 } */
 
+.pandalLoader {
+  height: 95%;
+  display: grid;
+  place-items: center;
+}
+
 .pandalClose {
   position: absolute;
-  left: 3vw;
-  top: 3vh;
+  z-index: 2;
+  left: 12vw;
+  top: 14.5vh;
   color: var(--accent-color);
   padding: 10px;
   border-radius: 12px;
 }
 
 .mapPinBtn {
-  scale: 0.75;
-  filter: drop-shadow(0 0 1px black);
+  /* scale: 0.75; */
+  color: var(--accent-color);
+  margin-left: 5px;
+  filter: drop-shadow(0 0 1px rgb(255 255 255 / 0.2));
   cursor: pointer;
   display: inline;
 }
@@ -63,9 +72,10 @@
 .pandalTitle {
   color: var(--primary-text);
   position: relative;
+  width: 80%;
   font-size: 1.875rem;
   font-weight: 500;
-  text-align: center;
+  /* text-align: center; */
   margin-top: 2.5rem;
 }
 
@@ -75,8 +85,8 @@
   /* box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2); */
   font-size: 12px;
   margin-top: 10px;
-  margin-inline: 30px;
-  text-align: center;
+  width: 80%;
+  /* text-align: center; */
   /* padding: 7px 10px; */
   /* margin: 7px -5px; */
   margin-bottom: 20px;
@@ -99,16 +109,55 @@
 }
 
 .mapTopic {
+  width: 100%;
+  text-align: center;
   text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  /* text-decoration: underline 2px var(--accent-color); */
+  border-bottom: 1px solid var(--accent-color);
   margin-top: 3px;
   margin-right: 5px;
-  display: flex;
   color: var(--primary-text);
   font-weight: 600;
   font-size: 14px;
+  cursor: pointer;
 }
 
-.pandalTableBody:first-child {
+.expandedIcon {
+  transform: rotate(180deg);
+}
+
+.pandalBadgeContainer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.pandalUnBadge {
+  background-color: rgba(255, 0, 0, 0.1);
+  color: var(--secondary-text);
+  opacity: 0.5;
+  font-weight: 300;
+  font-size: 14px;
+  padding: 2px 7px;
+  /* border: 1px solid rgba(112, 128, 144, 0.2); */
+}
+
+.pandalBadge {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--secondary-text);
+  font-weight: 400;
+  font-size: 14px;
+  padding: 2px 7px;
+  /* border: 1px solid rgba(112, 128, 144, 0.2); */
+  cursor: pointer;
+  /* border-radius: 6px; */
+}
+
+/* .pandalTableBody:first-child {
   text-align: left;
   font-size: 14px;
   border-color: rgb(51 65 85 / 1);
@@ -120,14 +169,20 @@
   font-size: 14px;
   border-color: rgb(51 65 85 / 1);
   color: var(--tertiary-text);
-}
+} */
 
 .pandalTempLg {
-  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-block: -20px;
+  font-size: 2.3rem;
+  font-weight: 700;
   color: var(--secondary-text);
+  opacity: 0.95;
 }
 
 .pandalLocationSm {
-  font-size: 14px;
+  font-size: 12px;
   color: var(--tertiary-text);
 }
