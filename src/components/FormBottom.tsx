@@ -6,7 +6,7 @@ import LoopIcon from "@mui/icons-material/Loop";
 import { createContext, useContext, useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { incrementByAmount } from "../../slices/GlobalStore";
-
+import { RWebShare } from "react-web-share";
 import MyContext from "./MyContext";
 import {
   useJsApiLoader,
@@ -47,7 +47,8 @@ export default function FormBottom(props: { onSubmit: any }) {
   const { setContextData }: any = useContext(MyContext);
   const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
   console.log(googleMapsApiKey);
-  const address = useRef<HTMLInputElement | null | undefined>();
+  const address = useRef<HTMLInputElement | null>(null);
+  // const address = useRef<HTMLInputElement | null | undefined>(null);
   const [coordinates, setCoordinates] = useState<{
     lat: number | null;
     lng: number | null;
@@ -57,23 +58,7 @@ export default function FormBottom(props: { onSubmit: any }) {
   const [checked, setChecked] = useState(false);
   const [labelcheck, setLabelcheck] = useState("pandal");
   const [geoClickCount, setGeoClickCount] = useState(false);
-  // useEffect(() => {
-  //   const handlescroll = () => {
-  //     setScrollcheck(
-  //       ((window.pageYOffset || document.documentElement.scrollTop) /
-  //         document.documentElement.clientHeight) *
-  //         100
-  //     );
-  //   };
-  //   window.addEventListener("scroll", handlescroll);
-  //   return () => {
-  //     window.removeEventListener("scroll", handlescroll);
-  //   };
-  // }, []);
-  // console.log(scrollcheck);
-  // useEffect(() => {
 
-  // }, [addressbool]);
   const getlatlng = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     if (geoClickCount && coordinates) {
@@ -216,7 +201,7 @@ export default function FormBottom(props: { onSubmit: any }) {
       console.error(e);
     }
   }
-
+  function shareNow() {}
   //ends
   return (
     <>
@@ -335,10 +320,22 @@ export default function FormBottom(props: { onSubmit: any }) {
             >
               {labelcheck === "pandal" ? "GET ROUTE" : "SEARCH"}
             </button>
-            <button type="button" className="shareIco" disabled={stateCheck}>
-              <span>Share</span>
-              <IosShareIcon />
-            </button>
+
+            <RWebShare
+              data={{
+                text:
+                  "This website helps to travel during the Durga Puja days in Kolkata. It helps everyone to search and locate nearby durga pandals and visit them accordingly. Our app also gives detailed information about most of the pandals in west bengal as well as the weather, transit, food places, etc.",
+                url: "https://durgapedia.online/",
+                title:
+                  "Durga Pedia: Travel during the Durga Puja days in Kolkata",
+              }}
+              onClick={() => console.log("shared successfully!")}
+            >
+              <button type="button" className="shareIco">
+                <span>Share</span>
+                <IosShareIcon />
+              </button>
+            </RWebShare>
           </div>
         </form>
       </div>
