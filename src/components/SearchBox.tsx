@@ -7,7 +7,8 @@ import React from "react";
 import "../app/searchbox.css";
 import "../app/pandalinfo.css";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
-
+import Link from "next/link";
+import Image from "next/image";
 async function getPandalData() {
   try {
     const response = await fetch(
@@ -27,7 +28,30 @@ const AutoComplete = () => {
   const [datas, setDatas] = useState([]); // Initialize datas as an empty array
   // const [suggestionsActive, setSuggestionsActive] = useState(false);
   const [enableCard, setEnableCard] = useState(true);
-
+  const [Pandals,setPandals]=useState<
+  {
+    id: string;
+    lat: string;
+    lng: string;
+    name: string;
+    rst: any;
+    trns: any;
+    met: any;
+    bst: any;
+    weather: any;
+  }[]
+>([]);
+  let frar: {
+    id: string;
+    lat: string;
+    lng: string;
+    name: string;
+    rst: any;
+    trns: any;
+    met: any;
+    bst: any;
+    weather: any;
+  }[] = [];
   useEffect(() => {
     getPandalData()
       .then((data) => {
@@ -89,15 +113,339 @@ const AutoComplete = () => {
   //     setSuggestionsActive(false);
   //   }
   // };
+  async function GetTransitTrain(cords: any) {
+    try {
+      var lat = cords.lat1,
+        lng = cords.lng1;
+      let ar: { tstame: string; lat: string; lng: string; map: any }[] = [];
+      await fetch("/api/transits", {
+        method: "POST",
+        headers: {
+          Accept: "text/plain, */*",
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({ lat, lng }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          var cnt = 0,
+            latnew,
+            lngnew;
+          // console.log(data['results'][0].results[0]);
+          for (const i in data["results"][0].results) {
+            if (cnt > 6) {
+              break;
+            }
+            latnew = data["results"][0].results[i].geometry.location.lat;
+            lngnew = data["results"][0].results[i].geometry.location.lng;
+            ar.push({
+              tstame: data["results"][0].results[i].name,
+              lat: data["results"][0].results[i].geometry.location.lat,
+              lng: data["results"][0].results[i].geometry.location.lng,
+              map:
+                "http://maps.google.com/maps?q=" +
+                latnew +
+                "," +
+                lngnew +
+                "&ll=" +
+                latnew +
+                "," +
+                lngnew +
+                "z=17",
+            });
+            cnt++;
+          }
+        })
+        .catch((error) => {
+          console.error("Fetch Error:", error);
+        });
+      return ar;
+    } catch (error) {
+      console.log("error from 132: " + error);
+    }
+  }
 
+  async function GetTransitMetro(cords: any) {
+    try {
+      var lat = cords.lat1,
+        lng = cords.lng1;
+      let ar: { tstame: string; lat: string; lng: string; map: any }[] = [];
+      await fetch("/api/transits", {
+        method: "POST",
+        headers: {
+          Accept: "text/plain, */*",
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({ lat, lng }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          var cnt = 0,
+            latnew,
+            lngnew;
+          var leng = data["results"][1].results;
+          // console.log(leng.length);
+          for (const i in data["results"][1].results) {
+            if (cnt > 6) {
+              break;
+            }
+            if (i >= leng.length) {
+              break;
+            }
+            //console.log(data['results'][0].results[i].geometry.location.lat);
+            latnew = data["results"][1].results[i]["geometry"].location.lat;
+            lngnew = data["results"][1].results[i]["geometry"].location.lng;
+            ar.push({
+              tstame: data["results"][1].results[i].name,
+              lat: data["results"][1].results[i].geometry.location.lat,
+              lng: data["results"][1].results[i].geometry.location.lng,
+              map:
+                "http://maps.google.com/maps?q=" +
+                latnew +
+                "," +
+                lngnew +
+                "&ll=" +
+                latnew +
+                "," +
+                lngnew +
+                "z=17",
+            });
+            cnt++;
+          }
+        })
+        .catch((error) => {
+          console.error("Fetch Error:", error);
+        });
+      return ar;
+    } catch (error) {
+      console.log("error from 132: " + error);
+    }
+  }
+
+  async function GetTransitBus(cords: any) {
+    try {
+      var lat = cords.lat1,
+        lng = cords.lng1;
+      let ar: { tstame: string; lat: string; lng: string; map: any }[] = [];
+      await fetch("/api/transits", {
+        method: "POST",
+        headers: {
+          Accept: "text/plain, */*",
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({ lat, lng }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          var leng = data["results"][2].results;
+          console.log(leng.length);
+          var cnt = 0,
+            latnew,
+            lngnew;
+          for (const i in data["results"][2].results) {
+            if (cnt > 6) {
+              break;
+            }
+            // console.log(data['results'][2]['results'][i]);
+            if (i >= leng.length || data["results"][2]["results"][i] === null) {
+              break;
+            }
+            //console.log(data['results'][0].results[i].geometry.location.lat);
+            latnew = data["results"][2].results[i].geometry.location.lat;
+            lngnew = data["results"][2].results[i].geometry.location.lng;
+            ar.push({
+              tstame: data["results"][2].results[i].name,
+              lat: data["results"][2].results[i].geometry.location.lat,
+              lng: data["results"][2].results[i].geometry.location.lng,
+              map:
+                "http://maps.google.com/maps?q=" +
+                latnew +
+                "," +
+                lngnew +
+                "&ll=" +
+                latnew +
+                "," +
+                lngnew +
+                "z=17",
+            });
+            cnt++;
+          }
+        })
+        .catch((error) => {
+          console.error("Fetch Error:", error);
+        });
+      return ar;
+    } catch (error) {
+      console.log("error from 132: " + error);
+    }
+  }
+
+  async function GetFare(dist: any) {}
+  async function GetResturant(cords: any) {
+    try {
+      var lat = cords.lat1,
+        lng = cords.lng1;
+      let ar: { rame: string; lat: string; lng: string; map: string }[] = [];
+      await fetch("/api/restaurants", {
+        method: "POST",
+        headers: {
+          Accept: "text/plain, */*",
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({ lat, lng }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          var cnt = 0,
+            latnew,
+            lngnew;
+          for (const i in data["results"][0].results) {
+            if (cnt > 6) {
+              break;
+            }
+            //console.log(data['results'][0].results[i].geometry.location.lat);
+            if (
+              data["results"][0].results[i].opening_hours.open_now == true &&
+              data["results"][0].results[i].rating >= 4
+            ) {
+              latnew = data["results"][0].results[i].geometry.location.lat;
+              lngnew = data["results"][0].results[i].geometry.location.lng;
+              ar.push({
+                rame: data["results"][0].results[i].name,
+                lat: data["results"][0].results[i].geometry.location.lat,
+                lng: data["results"][0].results[i].geometry.location.lng,
+                map:
+                  "http://maps.google.com/maps?q=" +
+                  latnew +
+                  "," +
+                  lngnew +
+                  "&ll=" +
+                  latnew +
+                  "," +
+                  lngnew +
+                  "z=17",
+              });
+              cnt++;
+            }
+          }
+        })
+        .catch((error) => {
+          console.error("Fetch Error:", error);
+        });
+      return ar;
+    } catch (error) {
+      console.log("error from 132: " + error);
+    }
+  }
+  async function GetWeather(cords: any) {
+    try {
+      var url =
+        "https://api.openweathermap.org/data/2.5/weather?lat=" +
+        cords.lat1 +
+        "&lon=" +
+        cords.lng1 +
+        "5&appid=0d6fc19faf7830c989855c0eec84a0ad&units=metric";
+      // console.log(url);
+      const response = await fetch(url);
+      const wth = await response.json();
+      // console.log(wth['weather'][0].icon);
+      // console.log(wth['main'].temp);
+      // console.log(wth.name);
+      var iconurl =
+        "https://openweathermap.org/img/wn/" +
+        wth["weather"][0].icon +
+        "@2x.png";
+      return {
+        icon: iconurl,
+        temp: Math.ceil(wth["main"].temp),
+        name: wth.name,
+      };
+      // .then((data)=>{
+      //   console.log(data);
+      // })
+      // console.log(vb);
+    } catch (e) {
+      console.log(e);
+    }
+  }
+  async function startSearching(i:any)
+  {
+    try {
+      const pandalData = fetch(
+        "https://cdn.jsdelivr.net/gh/THUNDERSAMA/durga-pedia@a85947898471f77358f792a840e2e9028c31b86c/output.json"
+      ).then((response) => response.json());
+      var la, lo;
+      for (const pandal of await pandalData) {
+        if (pandal.id == i) {
+          la = pandal.lat;
+          lo = pandal.lng;
+          // karval.push(la+","+lo);
+          // console.log("l1 ="+l1+",ln1= "+ln1+",la= "+la+", lo"+lo)
+      
+          let resname = await GetResturant({
+            lat1: la,
+            lng1: lo,
+          });
+          //console.log(distance_cal);
+          let train = await GetTransitTrain({
+            lat1: la,
+            lng1: lo,
+          });
+          let metro = await GetTransitMetro({
+            lat1: la,
+            lng1: lo,
+          });
+          let bus = await GetTransitBus({
+            lat1: la,
+            lng1: lo,
+          });
+
+          let weather = await GetWeather({
+            lat1: la,
+            lng1: lo,
+          });
+          console.log(weather);
+          frar.push({
+            id: pandal.id,
+            lat: pandal.lat,
+            lng: pandal.lng,
+            name: pandal.pandal,
+            rst: resname,
+            trns: train,
+            met: metro,
+            bst: bus,
+            weather: weather,
+          });
+        }
+      }
+    } catch (e) {
+      console.error(e);
+    }
+    console.log(frar);
+    setPandals(frar);
+    setEnableCard(false)
+    console.log(Pandals);
+    
+  }
   const PandalCard = () => {
+    if (!Array.isArray(Pandals)) {
+      return <div>loading</div>; // or any loading indicator
+    } else {
+    if(enableCard==false)
+    {
+      console.log(Pandals);
     return (
-      <div className={`pandalInfo ${enableCard && "cardClose"}`}>
+      <>
+      {Pandals.map((t:any) => (
+      <div key={t.lat} className={`pandalInfo ${enableCard && "cardClose"}`}>
+        
         <button className="pandalClose" onClick={() => setEnableCard(true)}>
           <ArrowBackIosNewIcon />
         </button>
+        
         <h2 className="pandalTitle">
-          t.name
+          {t.name}
           <button className="mapPinBtn">📍</button>
         </h2>
         <p>
@@ -112,7 +460,7 @@ const AutoComplete = () => {
             <div className="badge">food</div>
             <div className="badge">food</div>
             <div className="badge">food</div>
-            {/* {t.rst.map((adv: any, index: any) => (
+            {t.rst.map((adv: any, index: any) => (
                 <Link
                   href={adv.map}
                   target="_blank"
@@ -121,7 +469,7 @@ const AutoComplete = () => {
                 >
                   {adv.rame}
                 </Link>
-              ))} */}
+              ))}
           </div>
         </div>
         <div className="pandalMapInfo">
@@ -132,7 +480,7 @@ const AutoComplete = () => {
             <div className="badge">food</div>
             <div className="badge">food</div>
             <div className="badge">food</div>
-            {/* {t.trns.length === 0 ? (
+            {t.trns.length === 0 ? (
                 <span className="unbadge">! no train stations nearby</span>
               ) : (
                 t.trns.map(
@@ -159,16 +507,12 @@ const AutoComplete = () => {
                     </span>
                   )
                 )
-              )} */}
+              )}
           </div>
           <div className="badge-container">
             <h4 className="mapTopic">Metro</h4>
-            <div className="badge">food</div>
-            <div className="badge">food</div>
-            <div className="badge">food</div>
-            <div className="badge">food</div>
-            <div className="badge">food</div>
-            {/* {t.met.length === 0 ? (
+           
+            {t.met.length === 0 ? (
                 <span className="unbadge">! no metro stations nearby</span>
               ) : (
                 t.met.map(
@@ -195,16 +539,12 @@ const AutoComplete = () => {
                     </span>
                   )
                 )
-              )} */}
+              )}
           </div>
           <div className="badge-container">
             <h4 className="mapTopic">Bus Stops</h4>
-            <div className="badge">food</div>
-            <div className="badge">food</div>
-            <div className="badge">food</div>
-            <div className="badge">food</div>
-            <div className="badge">food</div>
-            {/* {t.met.length === 0 ? (
+           
+            {t.met.length === 0 ? (
                 <span className="unbadge">! no bus stops nearby</span>
               ) : (
                 t.bst.map(
@@ -231,54 +571,34 @@ const AutoComplete = () => {
                     </a>
                   )
                 )
-              )} */}
+              )}
           </div>
         </div>
-        <div className="pandalMapInfo">
-          <span className="mapTopic">Prices</span>
-          <table className="pandalFareTable">
-            <tbody>
-              <tr>
-                <td className="pandalTableBody">Bus</td>
-                <td className="pandalTableBody">₹ 69/-</td>
-              </tr>
-              <tr>
-                <td className="pandalTableBody">Local Taxi</td>
-                <td className="pandalTableBody">₹ 69/-</td>
-              </tr>
-              <tr>
-                <td className="pandalTableBody">Uber Go</td>
-                <td className="pandalTableBody">₹ 69/-</td>
-              </tr>
-              <tr>
-                <td className="pandalTableBody">Uber Xl</td>
-                <td className="pandalTableBody">₹ 69/-</td>
-              </tr>
-              <tr>
-                <td className="pandalTableBody">Uber Premier</td>
-                <td className="pandalTableBody">₹ 69/-</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+       
         <div className="pandalMapInfo">
           <h3 className="mapTopic">Weather</h3>
           <div className="pandalWeatherLg">
             <div className="pandalWeatherSm">
-              <div className="pandalTempLg">t.weather.temp °C</div>
-              <span className="pandalLocationSm">t.weather.name</span>
+              <div className="pandalTempLg">{t.weather.temp} °C</div>
+              <span className="pandalLocationSm">{t.weather.name}</span>
             </div>
-            {/* <Image
+            <Image
                 src={t.weather.icon}
                 className="weatherImg"
                 alt={"image"}
                 width={50}
                 height={50}
-              /> */}
+              />
           </div>
         </div>
+       
       </div>
+      ))}
+      </>
     );
+            }
+          }
+        
   };
 
   const Suggestions = () => {
@@ -289,8 +609,8 @@ const AutoComplete = () => {
             <li
               key={item.id}
               onClick={() => {
-                console.log("pds from pandalcard");
-                setEnableCard(false);
+                console.log(item.id);
+                startSearching(item.id)
               }}
             >
               {item.pandal}
