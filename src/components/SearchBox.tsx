@@ -234,7 +234,7 @@ const AutoComplete = () => {
               )} */}
           </div>
         </div>
-        <div className="pandalMapInfo">
+        {/* <div className="pandalMapInfo">
           <span className="mapTopic">Prices</span>
           <table className="pandalFareTable">
             <tbody>
@@ -260,7 +260,7 @@ const AutoComplete = () => {
               </tr>
             </tbody>
           </table>
-        </div>
+        </div> */}
         <div className="pandalMapInfo">
           <h3 className="mapTopic">Weather</h3>
           <div className="pandalWeatherLg">
@@ -289,7 +289,7 @@ const AutoComplete = () => {
             <li
               key={item.id}
               onClick={() => {
-                console.log("pds from pandalcard");
+                console.log("pds from pandalcard" + item.id);
                 setEnableCard(false);
               }}
             >
@@ -317,9 +317,13 @@ const AutoComplete = () => {
         <input
           // className={searchTerm.length > 0 ? "ipPadding" : ""}
           placeholder="Search pandals in Kolkata"
+          spellCheck={false}
           type="text"
           value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
+          onChange={(e) => {
+            setSearchTerm(e.target.value);
+            setEnableCard(true);
+          }}
           // onKeyDown={handleKeyDown}
         />
       </div>

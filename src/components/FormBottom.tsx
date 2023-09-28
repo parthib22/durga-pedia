@@ -29,11 +29,15 @@ export default function FormBottom(props: { onSubmit: any }) {
   const sCheck = useSelector(
     (state: RootState) => state.statecheck.someProperty
   );
-console.log(sCheck);
+  console.log(sCheck);
   const [stateCheck, setStateCheck] = useState(true);
 
   useEffect(() => {
-    if (sCheck!=null && sCheck[0].status!=null &&sCheck[0].status === false) {
+    if (
+      sCheck != null &&
+      sCheck[0].status != null &&
+      sCheck[0].status === false
+    ) {
       setStateCheck(false); // now disabled = {false}
     }
     console.log("scheck from useeffect " + stateCheck);
@@ -43,7 +47,7 @@ console.log(sCheck);
   const { setContextData }: any = useContext(MyContext);
   const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
   console.log(googleMapsApiKey);
-  const address = useRef<HTMLInputElement | null>(null);
+  const address = useRef<HTMLInputElement | null | undefined>();
   const [coordinates, setCoordinates] = useState<{
     lat: number | null;
     lng: number | null;
@@ -52,6 +56,7 @@ console.log(sCheck);
   const [countpandal, setCountPandal] = useState(1);
   const [checked, setChecked] = useState(false);
   const [labelcheck, setLabelcheck] = useState("pandal");
+  const [geoClickCount, setGeoClickCount] = useState(false);
   // useEffect(() => {
   //   const handlescroll = () => {
   //     setScrollcheck(
@@ -71,35 +76,40 @@ console.log(sCheck);
   // }, [addressbool]);
   const getlatlng = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    if (address.current && address.current.value.trim() !== "") {
-      const apiKey = "AIzaSyDj2cR40F6xZo8mTepkyEpJl8BGVNDZ2qk";
-      const apiUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(
-        address.current.value
-      )}&key=${apiKey}`;
-
-      fetch(apiUrl)
-        .then((response) => response.json())
-        .then((data) => {
-          if (data.status === "OK" && data.results.length > 0) {
-            const result = data.results[0];
-            const { lat, lng } = result.geometry.location;
-            StartPlanner(lat, lng);
-            setCoordinates({ lat, lng });
-            props.onSubmit(lat + "|" + lng);
-          } else {
-            console.log(data);
-            setCoordinates({ lat: null, lng: null });
-            console.error(
-              "Unable to retrieve coordinates for the given address."
-            );
-          }
-        })
-        .catch((error) => {
-          console.error("Error fetching data from Google Maps API:", error);
-        });
+    if (geoClickCount && coordinates) {
+      StartPlanner(coordinates.lat, coordinates.lng);
+      console.log("pds from click count: " + coordinates.lat + coordinates.lng);
     } else {
-      // Reset coordinates when the address is empty
-      setCoordinates({ lat: null, lng: null });
+      if (address.current && address.current.value.trim() !== "") {
+        const apiKey = "AIzaSyDj2cR40F6xZo8mTepkyEpJl8BGVNDZ2qk";
+        const apiUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(
+          address.current.value
+        )}&key=${apiKey}`;
+
+        fetch(apiUrl)
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.status === "OK" && data.results.length > 0) {
+              const result = data.results[0];
+              const { lat, lng } = result.geometry.location;
+              StartPlanner(lat, lng);
+              setCoordinates({ lat, lng });
+              props.onSubmit(lat + "|" + lng);
+            } else {
+              console.log(data);
+              setCoordinates({ lat: null, lng: null });
+              console.error(
+                "Unable to retrieve coordinates for the given address."
+              );
+            }
+          })
+          .catch((error) => {
+            console.error("Error fetching data from Google Maps API:", error);
+          });
+      } else {
+        // Reset coordinates when the address is empty
+        setCoordinates({ lat: null, lng: null });
+      }
     }
   };
 
@@ -125,6 +135,9 @@ console.log(sCheck);
     var long = position.coords.longitude;
     setCoordinates({ lat: lat, lng: long });
     // StartPlanner(lat, long);
+    if (address.current !== null && address.current !== undefined) {
+      address.current.value = lat + ", " + long;
+    }
     console.log("Your latitude is :" + lat + " and longitude is " + long);
     setContextData("Your latitude is :" + lat + " and longitude is " + long);
   }
@@ -195,6 +208,7 @@ console.log(sCheck);
 
       try {
         dispatch(incrementByAmount(cordiarray || null));
+        setGeoClickCount(false);
       } catch (e) {
         console.error(e);
       }
@@ -224,13 +238,16 @@ console.log(sCheck);
                 required
               />
             </Autocomplete>
-            <button
+            <span
               className="btnStartLoc"
               color="primary"
-              onClick={GetLocation}
+              onClick={() => {
+                GetLocation();
+                setGeoClickCount(true);
+              }}
             >
               {<MyLocationIcon />}
-            </button>
+            </span>
           </div>
 
           <div className="form-layout-2">
