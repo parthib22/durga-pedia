@@ -121,6 +121,8 @@
 /* Information about the timeline */
 .info {
   /* height: 130vh; */
+  position: relative;
+  z-index: 3;
   display: flex;
   flex-direction: column;
   background: rgb(55 65 81 / 0.4);

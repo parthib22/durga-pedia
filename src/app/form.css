@@ -100,7 +100,7 @@
 
 .form-layout-2 {
   position: relative;
-  margin-block: 30px;
+  margin-block: 30px 0;
   width: fit-content;
   display: flex;
   justify-content: center;
@@ -117,7 +117,7 @@
   font-weight: 600;
   /* color: #ffa800; */
   color: var(--accent-color);
-  transition: all 1s ease !important;
+  cursor: pointer;
 }
 .topactive {
   opacity: 0.5;
@@ -189,7 +189,7 @@
   box-shadow: 0 0 30px rgb(0 0 0 / 0.4);
 }
 
-.form-layout-3 {
+/* .form-layout-3 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -212,7 +212,7 @@
   position: relative;
   font-size: 14px;
   color: #eee;
-}
+} */
 
 .form-layout-4 {
   width: 100%;

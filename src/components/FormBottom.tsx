@@ -2,7 +2,6 @@
 import "../app/form.css";
 import MyLocationIcon from "@mui/icons-material/MyLocation";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
-import LoopIcon from "@mui/icons-material/Loop";
 import { createContext, useContext, useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { incrementByAmount } from "../../slices/GlobalStore";
@@ -29,7 +28,7 @@ export default function FormBottom(props: { onSubmit: any }) {
   const sCheck = useSelector(
     (state: RootState) => state.statecheck.someProperty
   );
-  console.log(sCheck);
+  console.log("sCheck: " + sCheck);
   const [stateCheck, setStateCheck] = useState(true);
 
   useEffect(() => {
@@ -286,7 +285,7 @@ export default function FormBottom(props: { onSubmit: any }) {
             </span>
           </div>
 
-          <div className="form-layout-3">
+          {/* <div className="form-layout-3">
             <label
               className="labelCheck"
               htmlFor="ipCheck"
@@ -308,7 +307,7 @@ export default function FormBottom(props: { onSubmit: any }) {
               defaultChecked={checked}
               disabled={labelcheck === "range" ? true : false}
             />
-          </div>
+          </div> */}
           <div className="form-layout-4">
             <button
               className="sbm-btn"
@@ -323,11 +322,9 @@ export default function FormBottom(props: { onSubmit: any }) {
 
             <RWebShare
               data={{
-                text:
-                  "This website helps to travel during the Durga Puja days in Kolkata. It helps everyone to search and locate nearby durga pandals and visit them accordingly. Our app also gives detailed information about most of the pandals in west bengal as well as the weather, transit, food places, etc.",
+                text: "One-stop app for pandal-hopping in Kolkata",
                 url: "https://durgapedia.online/",
-                title:
-                  "Durga Pedia: Travel during the Durga Puja days in Kolkata",
+                title: "Durga Pedia",
               }}
               onClick={() => console.log("shared successfully!")}
             >
