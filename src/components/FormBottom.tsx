@@ -47,7 +47,8 @@ export default function FormBottom(props: { onSubmit: any }) {
   const { setContextData }: any = useContext(MyContext);
   const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
   console.log(googleMapsApiKey);
-  const address = useRef<HTMLInputElement | null | undefined>();
+  const address = useRef<HTMLInputElement | null>(null);
+  // const address = useRef<HTMLInputElement | null | undefined>(null);
   const [coordinates, setCoordinates] = useState<{
     lat: number | null;
     lng: number | null;
@@ -57,23 +58,7 @@ export default function FormBottom(props: { onSubmit: any }) {
   const [checked, setChecked] = useState(false);
   const [labelcheck, setLabelcheck] = useState("pandal");
   const [geoClickCount, setGeoClickCount] = useState(false);
-  // useEffect(() => {
-  //   const handlescroll = () => {
-  //     setScrollcheck(
-  //       ((window.pageYOffset || document.documentElement.scrollTop) /
-  //         document.documentElement.clientHeight) *
-  //         100
-  //     );
-  //   };
-  //   window.addEventListener("scroll", handlescroll);
-  //   return () => {
-  //     window.removeEventListener("scroll", handlescroll);
-  //   };
-  // }, []);
-  // console.log(scrollcheck);
-  // useEffect(() => {
 
-  // }, [addressbool]);
   const getlatlng = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     if (geoClickCount && coordinates) {
