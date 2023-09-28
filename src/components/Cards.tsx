@@ -6,7 +6,6 @@ import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import "../app/cards.css";
 import { RootState } from "@/app/store";
 import { useSelector } from "react-redux";
-import axios from "axios";
 import Link from "next/link";
 import { stringify } from "querystring";
 import { setSomeProperty } from "../../slices/StateCheck";
@@ -33,6 +32,7 @@ function Cards() {
     trns: any;
     met: any;
     bst: any;
+    fares: any;
     weather: any;
   }[] = [];
   const [pandals, setPandals] = useState<
@@ -47,6 +47,7 @@ function Cards() {
       trns: any;
       met: any;
       bst: any;
+      fares: any;
       weather: any;
     }[]
   >([]);
@@ -307,7 +308,44 @@ function Cards() {
     }
   }
 
-  async function GetFare(dist: any) {}
+  async function GetFare(dist: any) {
+    try {
+      var distance = dist.distance;
+      let ar: {
+        bus: any;
+        ubert: any;
+        uberp: any;
+        uberg: any;
+        uberx: any;
+        uberpre: any;
+      }[] = [];
+      await fetch("/api/fare", {
+        method: "POST",
+        headers: {
+          Accept: "text/plain, */*",
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({ distance }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          // console.log("For distance = " + distance.distance);
+          // console.log(distance);
+          console.log(data);
+          ar.push({
+            bus: data["results"][0].bus,
+            ubert: data["results"][1].uber_taxi,
+            uberp: data["results"][2].uber_pool,
+            uberg: data["results"][3].uber_ubergo,
+            uberx: data["results"][4].uber_uberxl,
+            uberpre: data["results"][5].uber_premier,
+          });
+        });
+      return ar;
+    } catch (error) {
+      console.log("error from 132: " + error);
+    }
+  }
   async function GetResturant(cords: any) {
     try {
       var lat = cords.lat1,
@@ -421,9 +459,13 @@ function Cards() {
               lat2: la,
               lng2: lo,
             });
+            // console.log(Math.ceil(parseInt(distance_cal[0].split(" ")[0])));
             //var spl_dist=distance_cal.split("|");
             l1 = la;
             ln1 = lo;
+            let fare = await GetFare({
+              distance: Math.ceil(parseInt(distance_cal[0].split(" ")[0])),
+            });
             let resname = await GetResturant({
               lat1: la,
               lng1: lo,
@@ -458,9 +500,9 @@ function Cards() {
               trns: train,
               met: metro,
               bst: bus,
+              fares: fare,
               weather: weather,
             });
-
             str = str + la + "," + lo + "|";
             //karval.push({'la':la,'lo':lo});
           }
@@ -763,26 +805,34 @@ function Cards() {
                           <th className="tableHead">Fare</th>
                         </tr>
                       </thead> */}
-                      <tbody style={{ display: priceVis ? "" : "none" }}>
+                      <tbody style={{ display: priceVis ? "" : "" }}>
                         <tr>
                           <td className="tableBody">Bus</td>
-                          <td className="tableBody">₹ 69/-</td>
+                          <td className="tableBody">₹ {t["fares"][0].bus}/-</td>
                         </tr>
                         <tr>
                           <td className="tableBody">Local Taxi</td>
-                          <td className="tableBody">₹ 69/-</td>
+                          <td className="tableBody">
+                            ₹ {t["fares"][0].ubert}/-
+                          </td>
                         </tr>
                         <tr>
                           <td className="tableBody">Uber Go</td>
-                          <td className="tableBody">₹ 69/-</td>
+                          <td className="tableBody">
+                            ₹ {t["fares"][0].uberg}/-
+                          </td>
                         </tr>
                         <tr>
                           <td className="tableBody">Uber Xl</td>
-                          <td className="tableBody">₹ 69/-</td>
+                          <td className="tableBody">
+                            ₹ {t["fares"][0].uberx}/-
+                          </td>
                         </tr>
                         <tr>
                           <td className="tableBody">Uber Premier</td>
-                          <td className="tableBody">₹ 69/-</td>
+                          <td className="tableBody">
+                            ₹ {t["fares"][0].uberpre}/-
+                          </td>
                         </tr>
                       </tbody>
                     </table>
