@@ -8,7 +8,7 @@ export async function POST(request: any) {
       const opennow = true;
 
       const apiCalls = types.map((typeval) => {
-        const apiurl = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?radius=500&location=${lat},${lng}&keyword=${typeval.kword}&keyword=${typeval.type}&key=${googleMapsApiKey}`; 
+        const apiurl = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?radius=1000&location=${lat},${lng}&keyword=${typeval.kword}&keyword=${typeval.type}&key=${googleMapsApiKey}`; 
     // console.log(apiurl);
 
           return fetch(apiurl).then((response) => response.json());
