@@ -645,27 +645,14 @@ function Cards() {
                   </div>
                   <h2 className="title">
                     {t.name}
-                    <button className="circular-button">
-                      {/* {<LocationOnIcon />} */}
-                      📍
-                    </button>
+                    <button className="circular-button">📍</button>
                   </h2>
                   <p>
-                    ✅From above location Based on driving mode you will need{" "}
+                    From above location Based on driving mode you will need{" "}
                     {t.duration} to travel {t.distance}
                   </p>
-                  {/* <div className="map_info">
-              <h3 className="map-written">
-                Map
-                <p className="map_written_b">(মানচিত্র) </p>
-              </h3>
-              
-            </div> */}
                   <div className="map_info">
-                    <h3 className="map-written">
-                      Food 🍟
-                      {/* <p className="map_written_b">(খাবারের জায়গা) </p> */}
-                    </h3>
+                    <h3 className="map-written">Food 🍟</h3>
                     <div className="badge-container">
                       {t.rst.map((adv: any, index: any) => (
                         <Link
@@ -680,15 +667,7 @@ function Cards() {
                     </div>
                   </div>
                   <div className="map_info">
-                    {/* <h3 className="map-written">
-                      Transits
-                      <p className="map_written_b">(গণপরিবহন) </p>
-                    </h3> */}
-
-                    <h4 className="map-written">
-                      Trains 🚅
-                      {/* <p className="map_written_b">(খাবারের জায়গা) </p> */}
-                    </h4>
+                    <h4 className="map-written">Trains 🚅</h4>
                     <div className="badge-container">
                       {t.trns.length === 0 ? (
                         <span className="unbadge">
@@ -722,10 +701,7 @@ function Cards() {
                       )}
                       {}
                     </div>
-                    <h4 className="map-written">
-                      Metro 🚇
-                      {/* <p className="map_written_b">(খাবারের জায়গা) </p> */}
-                    </h4>
+                    <h4 className="map-written">Metro 🚇</h4>
                     <div className="badge-container">
                       {t.met.length === 0 ? (
                         <span className="unbadge">
@@ -758,10 +734,7 @@ function Cards() {
                         )
                       )}
                     </div>
-                    <h4 className="map-written">
-                      Bus Stops 🚌
-                      {/* <p className="map_written_b">(খাবারের জায়গা) </p> */}
-                    </h4>
+                    <h4 className="map-written">Bus Stops 🚌</h4>
                     <div className="badge-container">
                       {t.met.length === 0 ? (
                         <span className="unbadge">! no bus stops nearby</span>
@@ -803,15 +776,8 @@ function Cards() {
                     >
                       <ArrowDropDownIcon />
                       Prices
-                      {/* <p className="map_written_b">(যাত্রা খরচ) </p> */}
                     </span>
                     <table className="fare_table">
-                      {/* <thead>
-                        <tr>
-                          <th className="tableHead">Medium</th>
-                          <th className="tableHead">Fare</th>
-                        </tr>
-                      </thead> */}
                       <tbody style={{ display: priceVis ? "none" : "" }}>
                         <tr>
                           <td className="tableBody">Bus</td>
@@ -845,10 +811,7 @@ function Cards() {
                     </table>
                   </div>
                   <div className="map_info">
-                    <h3 className="map-written">
-                      Weather
-                      {/* <p className="map_written_b">(আবহাওয়া) </p> */}
-                    </h3>
+                    <h3 className="map-written">Weather</h3>
                     <div className="weatherLg">
                       <div className="weatherSm">
                         <div className="tempLg">{t.weather.temp}°C</div>
@@ -861,12 +824,6 @@ function Cards() {
                         width={50}
                         height={50}
                       />
-
-                      {/* {
-                        <WbSunnyIcon
-                          style={{ color: "orangered", fontSize: "3em" }}
-                        />
-                      } */}
                     </div>
                   </div>
                 </div>
@@ -877,7 +834,6 @@ function Cards() {
       );
     }
   }
-  //}
 }
 
 export default Cards;

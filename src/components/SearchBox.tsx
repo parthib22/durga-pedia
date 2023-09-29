@@ -489,16 +489,22 @@ const AutoComplete = () => {
                         <ArrowDropDownIcon />
                       </span>
                     </h4>
-                    {t.rst.map((adv: any, index: any) => (
-                      <Link
-                        href={adv.map}
-                        target="_blank"
-                        className={`pandalBadge ${foodEx && "cardClose"}`}
-                        key={index}
-                      >
-                        {adv.rame}
-                      </Link>
-                    ))}
+                    {t.rst.length === 0 ? (
+                      <span className="pandalUnBadge">
+                        ! no restaurants nearby
+                      </span>
+                    ) : (
+                      t.rst.map((adv: any, index: any) => (
+                        <Link
+                          href={adv.map}
+                          target="_blank"
+                          className={`pandalBadge ${foodEx && "cardClose"}`}
+                          key={index}
+                        >
+                          {adv.rame}
+                        </Link>
+                      ))
+                    )}
                   </div>
                 </div>
                 <div className="pandalMapInfo">
