@@ -30,7 +30,7 @@
   position: absolute;
   z-index: 2;
   left: 12vw;
-  top: 14.5vh;
+  top: 10vh;
   color: var(--accent-color);
   padding: 10px;
   border-radius: 12px;
@@ -51,7 +51,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 78vh;
+  height: 75vh;
   width: 80vw;
   overflow-y: scroll;
   background-color: var(--primary-bg);

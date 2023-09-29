@@ -22,6 +22,8 @@ import { RootState } from "@/app/store";
 import { setSomeProperty } from "../../slices/StateCheck";
 import { LoaderCheck, setLoaderCheck } from "../../slices/LoaderCheck";
 import { RotatingLines } from "react-loader-spinner";
+import RouteIcon from "@mui/icons-material/Route";
+import SearchIcon from "@mui/icons-material/Search";
 // import GlobalConfig from "../app/app.config.js";
 
 export default function FormBottom(props: { onSubmit: any }) {
@@ -235,7 +237,7 @@ export default function FormBottom(props: { onSubmit: any }) {
                 ref={address}
                 type="text"
                 className="ipStartLoc"
-                placeholder="Enter your start location"
+                placeholder="Type your start location"
                 required
               />
             </Autocomplete>
@@ -329,24 +331,34 @@ export default function FormBottom(props: { onSubmit: any }) {
             <button
               className="sbm-btn"
               type="submit"
-              disabled={stateCheck}
+              disabled={true}
               // onClick={() => {
               //   setStateCheck(true);
               //   console.log("scheck from pds " + stateCheck);
               // }}
             >
-              {stateCheck ? (
+              {true ? (
                 <RotatingLines
                   strokeColor="rgb(31 41 55)"
                   strokeWidth="4"
                   animationDuration="1"
-                  width="25"
+                  width="27"
                   visible={true}
                 />
-              ) : labelcheck === "pandal" ? (
-                "GET ROUTE"
               ) : (
-                "SEARCH"
+                <>
+                  {labelcheck === "pandal" ? (
+                    <>
+                      <span>Route</span>
+                      <RouteIcon />
+                    </>
+                  ) : (
+                    <>
+                      <span>Search</span>
+                      <SearchIcon />
+                    </>
+                  )}
+                </>
               )}
             </button>
 
