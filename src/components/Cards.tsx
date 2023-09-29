@@ -534,6 +534,7 @@ function Cards() {
       if (count[0].pcheck) {
         str = str + "|" + count[0].lat + "," + count[0].lng;
       }
+
       let vbar = [{ status: false, kar: str }];
       dispatch(setSomeProperty(vbar));
     } catch (e) {
@@ -810,7 +811,7 @@ function Cards() {
                           <th className="tableHead">Fare</th>
                         </tr>
                       </thead> */}
-                      <tbody style={{ display: priceVis ? "" : "" }}>
+                      <tbody style={{ display: priceVis ? "none" : "" }}>
                         <tr>
                           <td className="tableBody">Bus</td>
                           <td className="tableBody">₹ {t["fares"][0].bus}/-</td>
