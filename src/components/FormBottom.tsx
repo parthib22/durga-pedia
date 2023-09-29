@@ -188,12 +188,12 @@ export default function FormBottom(props: { onSubmit: any }) {
 
       console.log(shortestDistance, flat, flng, name);
 
-      const MySwal = withReactContent(Swal);
-      MySwal.fire({
-        title: "Found!",
-        html: "Check your nearest pandal is :" + name,
-        icon: "success",
-      });
+      // const MySwal = withReactContent(Swal);
+      // MySwal.fire({
+      //   title: "Found!",
+      //   html: "Check your nearest pandal is :" + name,
+      //   icon: "success",
+      // });
       const cordiarray = [
         {
           lat: lat,
