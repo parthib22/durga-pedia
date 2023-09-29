@@ -67,6 +67,9 @@ const TopMap: React.FC<TopMapProps> = ({ name }) => {
           zoomControl: false,
           mapTypeControl: false,
           fullscreenControl: true,
+          fullscreenControlOptions: {
+            position: google.maps.ControlPosition.RIGHT_BOTTOM,
+          },
           keyboardShortcuts: false,
           gestureHandling: "cooperative",
           center: { lat: 22.5726, lng: 88.3639 },
