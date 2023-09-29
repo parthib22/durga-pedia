@@ -331,13 +331,13 @@ export default function FormBottom(props: { onSubmit: any }) {
             <button
               className="sbm-btn"
               type="submit"
-              disabled={true}
+              disabled={stateCheck}
               // onClick={() => {
               //   setStateCheck(true);
               //   console.log("scheck from pds " + stateCheck);
               // }}
             >
-              {true ? (
+              {stateCheck ? (
                 <RotatingLines
                   strokeColor="rgb(31 41 55)"
                   strokeWidth="4"
