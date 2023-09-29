@@ -20,6 +20,7 @@ import Swal from "sweetalert2";
 import IosShareIcon from "@mui/icons-material/IosShare";
 import { RootState } from "@/app/store";
 import { setSomeProperty } from "../../slices/StateCheck";
+// import GlobalConfig from "../app/app.config.js";
 
 export default function FormBottom(props: { onSubmit: any }) {
   const dispatch = useDispatch();
@@ -30,7 +31,7 @@ export default function FormBottom(props: { onSubmit: any }) {
   );
   console.log("sCheck: " + sCheck);
   const [stateCheck, setStateCheck] = useState(true);
-
+  const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
   useEffect(() => {
     if (
       sCheck != null &&
@@ -44,7 +45,7 @@ export default function FormBottom(props: { onSubmit: any }) {
 
   // console.log(sCheck);
   const { setContextData }: any = useContext(MyContext);
-  const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
+  // const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
   console.log(googleMapsApiKey);
   const address = useRef<HTMLInputElement | null>(null);
   // const address = useRef<HTMLInputElement | null | undefined>(null);
@@ -65,7 +66,8 @@ export default function FormBottom(props: { onSubmit: any }) {
       console.log("pds from click count: " + coordinates.lat + coordinates.lng);
     } else {
       if (address.current && address.current.value.trim() !== "") {
-        const apiKey = "Api Key";
+        const apiKey = "AIzaSyAasL3sXM79w4Te2AaE_nOkxWiB4Ukjx48";
+        console.log(apiKey);
         const apiUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(
           address.current.value
         )}&key=${apiKey}`;
@@ -96,9 +98,9 @@ export default function FormBottom(props: { onSubmit: any }) {
       }
     }
   };
-
+  const globalapi = googleMapsApiKey;
   const { isLoaded }: any = useJsApiLoader({
-    googleMapsApiKey: "AIzaSyDj2cR40F6xZo8mTepkyEpJl8BGVNDZ2qk",
+    googleMapsApiKey: "AIzaSyAasL3sXM79w4Te2AaE_nOkxWiB4Ukjx48",
     libraries: ["places"],
   });
   if (!isLoaded) {

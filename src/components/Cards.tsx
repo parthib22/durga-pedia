@@ -20,6 +20,7 @@ function Cards() {
   let visited = new Map();
   const dispatch = useDispatch();
   dispatch(setSomeProperty(null));
+  const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
   const count = useSelector((state: RootState) => state.cordinates.value);
   let frar: {
     id: string;
@@ -593,16 +594,16 @@ function Cards() {
         visited.set(count[0].fid.toString(), "bkcd");
         var idvar = count[0].fid;
         for (const i in pandalData[idvar - 1][idvar]) {
-          if (!visited.has(i) && knt < 23) {
+          if (!visited.has(i) && knt < 11) {
             // console.log(i);
-            if (pandalData[idvar - 1][idvar][i] <= count[0].nopal && knt < 23) {
+            if (pandalData[idvar - 1][idvar][i] <= count[0].nopal && knt < 11) {
               let k = pandalData[idvar - 1][idvar][i];
               ar = [{ nid: i, ndist: k }];
               visited.set(ar[0].nid, "bkcd");
               knt++;
             }
           }
-          if (knt >= 23) {
+          if (knt >= 11) {
             break;
           }
         }
