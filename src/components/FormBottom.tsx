@@ -20,6 +20,8 @@ import Swal from "sweetalert2";
 import IosShareIcon from "@mui/icons-material/IosShare";
 import { RootState } from "@/app/store";
 import { setSomeProperty } from "../../slices/StateCheck";
+import { LoaderCheck, setLoaderCheck } from "../../slices/LoaderCheck";
+import { RotatingLines } from "react-loader-spinner";
 // import GlobalConfig from "../app/app.config.js";
 
 export default function FormBottom(props: { onSubmit: any }) {
@@ -27,20 +29,28 @@ export default function FormBottom(props: { onSubmit: any }) {
   //dispatch(incrementByAmount(null));
 
   const sCheck = useSelector(
-    (state: RootState) => state.statecheck.someProperty
+    (state: RootState) => state.loadercheck.loaderCheck
   );
-  console.log("sCheck: " + sCheck);
-  const [stateCheck, setStateCheck] = useState(true);
+  console.log("sCheck: " + sCheck[0].status);
+  const [stateCheck, setStateCheck] = useState(false);
   const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
   useEffect(() => {
     if (
       sCheck != null &&
-      sCheck[0].status != null &&
-      sCheck[0].status === false
+      sCheck.length > 0 &&
+      typeof sCheck[0].status !== "undefined" &&
+      sCheck[0].status != null
     ) {
-      setStateCheck(false); // now disabled = {false}
+      if (sCheck[0].status) {
+        // start loader
+        setStateCheck(true);
+        console.log("from formbottom > scheck > loader is true");
+      } else {
+        // stop loader
+        setStateCheck(false);
+        console.log("from formbottom > scheck > loader is false");
+      }
     }
-    console.log("scheck from useeffect " + stateCheck);
   }, [sCheck]);
 
   // console.log(sCheck);
@@ -142,6 +152,7 @@ export default function FormBottom(props: { onSubmit: any }) {
 
     return d;
   }
+
   async function StartPlanner(lat: any, lng: any) {
     let shortestDistance = Infinity;
     let flat = null;
@@ -149,11 +160,15 @@ export default function FormBottom(props: { onSubmit: any }) {
     let name = null;
     let id = null;
     try {
-      // try {
-      //   dispatch(setSomeProperty(true)); // now disabled = {true}
-      // } catch (e) {
-      //   console.error("Error at statecheck dispatch: " + e);
-      // }
+      try {
+        let wbar = [{ status: true }];
+        dispatch(setLoaderCheck(wbar));
+        console.log(
+          "from formbottom > startplanner > loader is changed to true"
+        );
+      } catch (e) {
+        console.error("Error at statecheck dispatch: " + e);
+      }
       const pandalData = fetch(
         "https://cdn.jsdelivr.net/gh/THUNDERSAMA/durga-pedia@a85947898471f77358f792a840e2e9028c31b86c/output.json"
       ).then((response) => response.json());
@@ -279,7 +294,7 @@ export default function FormBottom(props: { onSubmit: any }) {
               <div
                 id="plus"
                 onClick={() =>
-                  countpandal < 40 && setCountPandal(countpandal + 1)
+                  countpandal < 10 && setCountPandal(countpandal + 1)
                 }
               >
                 +
@@ -314,12 +329,25 @@ export default function FormBottom(props: { onSubmit: any }) {
             <button
               className="sbm-btn"
               type="submit"
+              disabled={stateCheck}
               // onClick={() => {
               //   setStateCheck(true);
               //   console.log("scheck from pds " + stateCheck);
               // }}
             >
-              {labelcheck === "pandal" ? "GET ROUTE" : "SEARCH"}
+              {stateCheck ? (
+                <RotatingLines
+                  strokeColor="rgb(31 41 55)"
+                  strokeWidth="4"
+                  animationDuration="1"
+                  width="25"
+                  visible={true}
+                />
+              ) : labelcheck === "pandal" ? (
+                "GET ROUTE"
+              ) : (
+                "SEARCH"
+              )}
             </button>
 
             <RWebShare

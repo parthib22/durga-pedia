@@ -2,12 +2,13 @@ import { configureStore } from '@reduxjs/toolkit'
 // ...
 import GlobalStore from '../../slices/GlobalStore'
 import StateCheck from '../../slices/StateCheck'
+import LoaderCheck from '../../slices/LoaderCheck'
 
 export const store = configureStore({
   reducer: {
     cordinates: GlobalStore,
     statecheck: StateCheck,
-
+    loadercheck: LoaderCheck,
   }
 })
 

@@ -62,7 +62,7 @@
 } */
 
 .card:first-child::before {
-  border-top: dotted var(--accent-color);
+  border-top: double var(--accent-color);
   width: 50%;
 }
 

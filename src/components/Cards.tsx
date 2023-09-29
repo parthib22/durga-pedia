@@ -11,6 +11,7 @@ import { stringify } from "querystring";
 import { setSomeProperty } from "../../slices/StateCheck";
 import { useDispatch } from "react-redux";
 import Image from "next/image";
+import { setLoaderCheck } from "../../slices/LoaderCheck";
 
 function Cards() {
   const [Display, SetDisplay] = useState(false);
@@ -538,6 +539,11 @@ function Cards() {
 
       let vbar = [{ status: false, kar: str }];
       dispatch(setSomeProperty(vbar));
+      let wbar = [{ status: false }];
+      dispatch(setLoaderCheck(wbar));
+      console.log(
+        "from formbottom > startplanner > loader is changed to false"
+      );
     } catch (e) {
       console.error("Error at statecheck dispatch: " + e);
     }
