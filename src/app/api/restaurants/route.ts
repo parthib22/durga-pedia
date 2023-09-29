@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-const googleMapsApiKey = "AIzaSyDj2cR40F6xZo8mTepkyEpJl8BGVNDZ2qk"
+const googleMapsApiKey = "Api key"
 
 export async function POST(request: any) {
   try {

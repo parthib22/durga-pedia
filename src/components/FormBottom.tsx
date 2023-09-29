@@ -66,7 +66,7 @@ export default function FormBottom(props: { onSubmit: any }) {
       console.log("pds from click count: " + coordinates.lat + coordinates.lng);
     } else {
       if (address.current && address.current.value.trim() !== "") {
-        const apiKey = "AIzaSyDj2cR40F6xZo8mTepkyEpJl8BGVNDZ2qk";
+        const apiKey = "Api Key";
         const apiUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(
           address.current.value
         )}&key=${apiKey}`;
