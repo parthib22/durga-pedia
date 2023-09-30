@@ -444,6 +444,12 @@ const AutoComplete = () => {
         return (
           <>
             <div className={`pandalInfo ${enableCard && "cardClose"}`}>
+              <button
+                className={`pandalClose ${enableCard && "cardClose"}`}
+                onClick={() => setEnableCard(true)}
+              >
+                <ArrowBackIosNewIcon />
+              </button>
               <div className="pandalLoader">
                 <RotatingLines
                   strokeColor="orangered"
@@ -460,27 +466,27 @@ const AutoComplete = () => {
         console.log(Pandals);
         return (
           <>
-            <button
-              className={`pandalClose ${enableCard && "cardClose"}`}
-              onClick={() => setEnableCard(true)}
-            >
-              <ArrowBackIosNewIcon />
-            </button>
             {Pandals.map((t: any) => (
               <div
                 key={t.lat}
                 className={`pandalInfo ${enableCard && "cardClose"}`}
               >
+                <button
+                  className={`pandalClose ${enableCard && "cardClose"}`}
+                  onClick={() => setEnableCard(true)}
+                >
+                  <ArrowBackIosNewIcon />
+                </button>
                 <h2 className="pandalTitle">
                   {t.name}
                   <button className="mapPinBtn">
                     <NearMeIcon />
                   </button>
                 </h2>
-                <p>
+                {/* <p>
                   From above location Based on driving mode you will need
                   /t.duration/ to travel /t.distance/
-                </p>
+                </p> */}
                 <div className="pandalMapInfo">
                   <div className="pandalBadgeContainer">
                     <h4 className="mapTopic" onClick={() => setFoodEx(!foodEx)}>

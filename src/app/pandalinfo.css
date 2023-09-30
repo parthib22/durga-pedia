@@ -26,14 +26,21 @@
   place-items: center;
 }
 
-.pandalClose {
+/* .pandalClose {
   position: absolute;
   z-index: 2;
   left: 3vw;
   top: calc(80px + 1.1rem);
   color: var(--accent-color);
-  padding: 10px;
-  border-radius: 12px;
+} */
+
+.pandalClose {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  top: calc(80px + 1.1rem);
+  color: var(--accent-color);
 }
 
 .mapPinBtn {
@@ -47,17 +54,17 @@
 
 .pandalInfo {
   position: absolute !important;
-  top: 60px;
+  top: 3.7rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 75vh;
+  height: calc(93vh - (4rem + 110px));
   width: 80vw;
   overflow-y: scroll;
   background-color: var(--primary-bg);
   box-shadow: 0 30px 50px rgb(0 0 0 / 0.5);
   border: 2px solid rgba(0 0 0 / 0.2);
-  padding: 20px;
+  padding: 30px;
   border-radius: 20px;
 }
 
@@ -72,10 +79,10 @@
 .pandalTitle {
   color: var(--primary-text);
   position: relative;
-  width: 80%;
+  width: 100%;
   font-size: 1.875rem;
   font-weight: 500;
-  /* text-align: center; */
+  text-align: left;
   margin-top: 1.1rem;
 }
 
@@ -96,7 +103,7 @@
 .pandalMapInfo {
   display: flex;
   align-items: left;
-  width: 80%;
+  width: 100%;
   flex-direction: column;
   margin-bottom: 20px;
   gap: 10px;
@@ -118,7 +125,7 @@
   /* text-decoration: underline 2px var(--accent-color); */
   border-bottom: 1px solid var(--accent-color);
   margin-top: 3px;
-  margin-right: 5px;
+  /* margin-right: 5px; */
   color: var(--primary-text);
   font-weight: 600;
   font-size: 14px;

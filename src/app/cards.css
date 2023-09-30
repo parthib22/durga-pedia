@@ -14,20 +14,11 @@
   font-family: "Inter", sans-serif;
 }
 
-/* Timeline Container */
 .timeline {
   padding: 20px;
   margin-block: -50px 0px;
   /* padding-block: 100px 0; */
 }
-
-/* .timeline-bck {
-  background: var(--background-color);
-  font-family: var(--font);
-  display: flex;
-  justify-content: center;
-} */
-/* Card container */
 
 .card {
   /* Set the desired width for your card */
@@ -140,12 +131,15 @@
 }
 
 .info > p {
-  text-align: justify;
   color: var(--secondary-text);
   /* border: 1px solid slategray; */
-  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
-  padding: 7px 10px;
-  margin: 7px -5px;
+  /* box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2); */
+  font-size: 12px;
+  margin-top: 10px;
+  width: 80%;
+  /* text-align: center; */
+  /* padding: 7px 10px; */
+  /* margin: 7px -5px; */
   margin-bottom: 20px;
   /* border-radius: 10px; */
 }
@@ -191,10 +185,6 @@
   margin-block: 10px;
   cursor: pointer !important;
 }
-
-/* .map_written_b {
-  font-family: "Noto Sans Bengali", sans-serif;
-} */
 
 .button_container {
   position: relative;
@@ -284,12 +274,11 @@
 }
 
 .fare_table {
-  width: 100%;
   font-size: 0.875rem /* 14px */;
   line-height: 1.25rem /* 20px */;
 }
 
-.tableHead {
+/* .tableHead {
   border-bottom-width: 1px;
   border-color: rgb(71 85 105 / 1);
   font-weight: 400;
@@ -297,13 +286,20 @@
   color: var(--primary-text);
   text-align: left;
   padding-block: 0.5rem;
+} */
+
+.pandalTableBody:first-child {
+  text-align: left;
+  font-size: 14px;
+  border-color: rgb(51 65 85 / 1);
+  color: var(--tertiary-text);
 }
 
-.tableBody {
-  text-align: left;
+.pandalTableBody:nth-child(2) {
+  text-align: right;
+  font-size: 14px;
   border-color: rgb(51 65 85 / 1);
-  color: rgb(148 163 184 / 1);
-  padding-block: 0.1rem;
+  color: var(--tertiary-text);
 }
 
 .weatherLg {

@@ -2,6 +2,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import DoneIcon from "@mui/icons-material/Done";
 import ClearIcon from "@mui/icons-material/Clear";
+import NearMeIcon from "@mui/icons-material/NearMe";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import "../app/cards.css";
 import { RootState } from "@/app/store";
@@ -14,6 +15,12 @@ import Image from "next/image";
 import { setLoaderCheck } from "../../slices/LoaderCheck";
 
 function Cards() {
+  const [foodEx, setFoodEx] = useState(true);
+  const [trainEx, setTrainEx] = useState(true);
+  const [metroEx, setMetroEx] = useState(true);
+  const [busEx, setBusEx] = useState(true);
+  const [priceEx, setPriceEx] = useState(true);
+
   const [Display, SetDisplay] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const [priceVis, setPriceVis] = useState(false);
@@ -645,20 +652,188 @@ function Cards() {
             {pandals.map((t) => (
               <div className="card" key={t.id}>
                 <div className="info">
-                  <div className="button_container">
+                  {/* <div className="button_container">
                     <button className="mark mark-right">{<DoneIcon />}</button>
                     <button className="mark mark-wrong">{<ClearIcon />}</button>
-                  </div>
+                  </div> */}
                   <h2 className="title">
                     {t.name}
-                    <button className="circular-button">📍</button>
+                    <button className="mapPinBtn">
+                      <NearMeIcon />
+                    </button>
                   </h2>
                   <p>
                     From above location Based on driving mode you will need{" "}
                     {t.duration} to travel {t.distance}
                   </p>
-                  <div className="map_info">
-                    <h3 className="map-written">Food 🍟</h3>
+                  <div className="pandalMapInfo">
+                    <div className="pandalBadgeContainer">
+                      <h4
+                        className="mapTopic"
+                        onClick={() => setFoodEx(!foodEx)}
+                      >
+                        Food
+                        <span className={foodEx ? "" : "expandedIcon"}>
+                          <ArrowDropDownIcon />
+                        </span>
+                      </h4>
+                      {t.rst.length === 0 ? (
+                        <span className="pandalUnBadge">
+                          ! no restaurants nearby
+                        </span>
+                      ) : (
+                        t.rst.map((adv: any, index: any) => (
+                          <Link
+                            href={adv.map}
+                            target="_blank"
+                            className={`pandalBadge ${foodEx && "cardClose"}`}
+                            key={index}
+                          >
+                            {adv.rame}
+                          </Link>
+                        ))
+                      )}
+                    </div>
+                  </div>
+                  <div className="pandalMapInfo">
+                    <div className="pandalBadgeContainer">
+                      <h4
+                        className="mapTopic"
+                        onClick={() => setTrainEx(!trainEx)}
+                      >
+                        Trains
+                        <span className={trainEx ? "" : "expandedIcon"}>
+                          <ArrowDropDownIcon />
+                        </span>
+                      </h4>
+                      {t.trns.length === 0 ? (
+                        <span className="pandalUnBadge">
+                          ! no train stations nearby
+                        </span>
+                      ) : (
+                        t.trns.map(
+                          (
+                            adv: {
+                              tstame:
+                                | string
+                                | number
+                                | boolean
+                                | React.ReactElement<
+                                    any,
+                                    string | React.JSXElementConstructor<any>
+                                  >
+                                | Iterable<React.ReactNode>
+                                | React.ReactPortal
+                                | React.PromiseLikeOfReactNode
+                                | null
+                                | undefined;
+                            },
+                            index: React.Key | null | undefined
+                          ) => (
+                            <span
+                              className={`pandalBadge ${
+                                trainEx && "cardClose"
+                              }`}
+                              key={index}
+                            >
+                              {adv.tstame}
+                            </span>
+                          )
+                        )
+                      )}
+                    </div>
+                    <div className="pandalBadgeContainer">
+                      <h4
+                        className="mapTopic"
+                        onClick={() => setMetroEx(!metroEx)}
+                      >
+                        Metro
+                        <span className={metroEx ? "" : "expandedIcon"}>
+                          <ArrowDropDownIcon />
+                        </span>
+                      </h4>
+
+                      {t.met.length === 0 ? (
+                        <span className="pandalUnBadge">
+                          ! no metro stations nearby
+                        </span>
+                      ) : (
+                        t.met.map(
+                          (
+                            adv: {
+                              tstame:
+                                | string
+                                | number
+                                | boolean
+                                | React.ReactElement<
+                                    any,
+                                    string | React.JSXElementConstructor<any>
+                                  >
+                                | Iterable<React.ReactNode>
+                                | React.ReactPortal
+                                | React.PromiseLikeOfReactNode
+                                | null
+                                | undefined;
+                            },
+                            index: React.Key | null | undefined
+                          ) => (
+                            <span
+                              className={`pandalBadge ${
+                                metroEx && "cardClose"
+                              }`}
+                              key={index}
+                            >
+                              {adv.tstame}
+                            </span>
+                          )
+                        )
+                      )}
+                    </div>
+                    <div className="pandalBadgeContainer">
+                      <h4 className="mapTopic" onClick={() => setBusEx(!busEx)}>
+                        Bus Stops
+                        <span className={busEx ? "" : "expandedIcon"}>
+                          <ArrowDropDownIcon />
+                        </span>
+                      </h4>
+
+                      {t.met.length === 0 ? (
+                        <span className="pandalUnBadge">
+                          ! no bus stops nearby
+                        </span>
+                      ) : (
+                        t.bst.map(
+                          (
+                            adv: {
+                              tstame:
+                                | string
+                                | number
+                                | boolean
+                                | React.ReactElement<
+                                    any,
+                                    string | React.JSXElementConstructor<any>
+                                  >
+                                | Iterable<React.ReactNode>
+                                | React.ReactPortal
+                                | React.PromiseLikeOfReactNode
+                                | null
+                                | undefined;
+                            },
+                            index: React.Key | null | undefined
+                          ) => (
+                            <span
+                              className={`pandalBadge ${busEx && "cardClose"}`}
+                              key={index}
+                            >
+                              {adv.tstame}
+                            </span>
+                          )
+                        )
+                      )}
+                    </div>
+                    {/* </div> */}
+                    {/* <div className="map_info">
+                    <h3 className="map-written">Food</h3>
                     <div className="badge-container">
                       {t.rst.map((adv: any, index: any) => (
                         <Link
@@ -771,65 +946,72 @@ function Cards() {
                         )
                       )}
                     </div>
-                  </div>
-                  <div className="map_info">
-                    <span
-                      className="map-written"
+                  </div> */}
+                    {/* <div className="pandalMapInfo"> */}
+                    <h4
+                      className="mapTopic"
                       onClick={() => {
-                        setPriceVis(!priceVis);
-                        console.log(priceVis);
+                        setPriceEx(!priceEx);
                       }}
                     >
-                      <ArrowDropDownIcon />
-                      Prices
-                    </span>
+                      Fares
+                      <span className={priceEx ? "" : "expandedIcon"}>
+                        <ArrowDropDownIcon />
+                      </span>
+                    </h4>
                     <table className="fare_table">
-                      <tbody style={{ display: priceVis ? "none" : "" }}>
+                      <tbody style={{ display: priceEx ? "none" : "" }}>
                         <tr>
-                          <td className="tableBody">Bus</td>
-                          <td className="tableBody">₹ {t["fares"][0].bus}/-</td>
+                          <td className="pandalTableBody">Bus</td>
+                          <td className="pandalTableBody">
+                            ₹ {t["fares"][0].bus}/-
+                          </td>
                         </tr>
                         <tr>
-                          <td className="tableBody">Local Taxi</td>
-                          <td className="tableBody">
+                          <td className="pandalTableBody">Local Taxi</td>
+                          <td className="pandalTableBody">
                             ₹ {t["fares"][0].ubert}/-
                           </td>
                         </tr>
                         <tr>
-                          <td className="tableBody">Uber Go</td>
-                          <td className="tableBody">
+                          <td className="pandalTableBody">Uber Go</td>
+                          <td className="pandalTableBody">
                             ₹ {t["fares"][0].uberg}/-
                           </td>
                         </tr>
                         <tr>
-                          <td className="tableBody">Uber Xl</td>
-                          <td className="tableBody">
+                          <td className="pandalTableBody">Uber Xl</td>
+                          <td className="pandalTableBody">
                             ₹ {t["fares"][0].uberx}/-
                           </td>
                         </tr>
                         <tr>
-                          <td className="tableBody">Uber Premier</td>
-                          <td className="tableBody">
+                          <td className="pandalTableBody">Uber Premier</td>
+                          <td className="pandalTableBody">
                             ₹ {t["fares"][0].uberpre}/-
                           </td>
                         </tr>
                       </tbody>
                     </table>
                   </div>
-                  <div className="map_info">
-                    <h3 className="map-written">Weather</h3>
-                    <div className="weatherLg">
-                      <div className="weatherSm">
-                        <div className="tempLg">{t.weather.temp}°C</div>
-                        <span className="locationSm">{t.weather.name}</span>
+                  <div className="pandalMapInfo">
+                    <h3 className="mapTopic">Weather</h3>
+                    <div className="pandalWeatherLg">
+                      <div className="pandalWeatherSm">
+                        <div className="pandalTempLg">
+                          {t.weather.temp}°C
+                          <Image
+                            src={t.weather.icon}
+                            className="weatherImg"
+                            alt={"image"}
+                            width={80}
+                            height={80}
+                          />
+                        </div>
+                        <span className="pandalLocationSm">
+                          {t.weather.name}
+                        </span>
                       </div>
-                      <Image
-                        src={t.weather.icon}
-                        className="weatherImg"
-                        alt={"image"}
-                        width={50}
-                        height={50}
-                      />
                     </div>
                   </div>
                 </div>
