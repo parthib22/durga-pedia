@@ -78,11 +78,8 @@ export default function FormBottom(props: { onSubmit: any }) {
       console.log("pds from click count: " + coordinates.lat + coordinates.lng);
     } else {
       if (address.current && address.current.value.trim() !== "") {
-<<<<<<< HEAD
-        const apiKey = "AIzaSyBbUTfwowrhJJ-lMPZlMlLM_v2Pui0QKDM";
-=======
-        const apiKey = "AIzaSyD0_Qw5yEu-Q8CNb6q2cz1seNxjv1rz4O8";
->>>>>>> 272e96a226a7b2a248113cda733eb792bdd11db0
+        const apiKey = "AIzaSyC2ompvWOrF8Azjm8viRlkvWl4Re7fGn2I";
+
         console.log(apiKey);
         const apiUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(
           address.current.value
@@ -115,12 +112,9 @@ export default function FormBottom(props: { onSubmit: any }) {
     }
   };
   const globalapi = googleMapsApiKey;
+
   const { isLoaded }: any = useJsApiLoader({
-<<<<<<< HEAD
-    googleMapsApiKey: "AIzaSyBbUTfwowrhJJ-lMPZlMlLM_v2Pui0QKDM",
-=======
-    googleMapsApiKey: "AIzaSyD0_Qw5yEu-Q8CNb6q2cz1seNxjv1rz4O8",
->>>>>>> 272e96a226a7b2a248113cda733eb792bdd11db0
+    googleMapsApiKey: "AIzaSyC2ompvWOrF8Azjm8viRlkvWl4Re7fGn2I",
     libraries: ["places"],
   });
   if (!isLoaded) {
