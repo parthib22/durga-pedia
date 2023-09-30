@@ -144,6 +144,11 @@
   /* border-radius: 10px; */
 }
 
+.info > p > p {
+  display: inline;
+  color: var(--primary-text);
+}
+
 /* Timeline dot  */
 .title::before {
   content: "";
@@ -324,4 +329,12 @@
 }
 .weatherImg {
   backdrop-filter: drop-shadow(0 0 50px black);
+}
+
+.rmv-btn {
+  /* background-color: rgba(255, 255, 255, 0.1); */
+  padding-block: 7px;
+  opacity: 0.8;
+  border: 2px dashed var(--accent-color);
+  border-radius: 7px;
 }

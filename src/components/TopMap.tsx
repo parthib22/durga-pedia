@@ -4,7 +4,8 @@ import React, { useEffect, useState } from "react";
 import "../app/map.css";
 import { useSelector } from "react-redux";
 import { RootState } from "@/app/store";
-
+import { LoaderCheck, setLoaderCheck } from "../../slices/LoaderCheck";
+import { RotatingLines } from "react-loader-spinner";
 declare global {
   interface Window {
     google: {
@@ -19,6 +20,9 @@ interface TopMapProps {
 }
 
 const TopMap: React.FC<TopMapProps> = ({ name }) => {
+  const kCheck = useSelector(
+    (state: RootState) => state.loadercheck.loaderCheck
+  );
   interface MyData {
     kar?: string | null;
   }
@@ -192,6 +196,19 @@ const TopMap: React.FC<TopMapProps> = ({ name }) => {
   console.log(name);
   return (
     <>
+      {kCheck[0].status && (
+        <>
+          <div className="mapLoader">
+            <RotatingLines
+              strokeColor="rgb(31 41 55)"
+              strokeWidth="3"
+              animationDuration="1"
+              width="100"
+              visible={true}
+            />
+          </div>
+        </>
+      )}
       <div
         id="map"
         // style={{ width: '100vw', height: '100vh' }}

@@ -1,7 +1,5 @@
 "use client";
 import React, { useEffect, useState, useRef } from "react";
-import DoneIcon from "@mui/icons-material/Done";
-import ClearIcon from "@mui/icons-material/Clear";
 import NearMeIcon from "@mui/icons-material/NearMe";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import "../app/cards.css";
@@ -13,6 +11,7 @@ import { setSomeProperty } from "../../slices/StateCheck";
 import { useDispatch } from "react-redux";
 import Image from "next/image";
 import { setLoaderCheck } from "../../slices/LoaderCheck";
+import Footer from "./Footer";
 
 function Cards() {
   const [foodEx, setFoodEx] = useState(true);
@@ -663,8 +662,9 @@ function Cards() {
                     </button>
                   </h2>
                   <p>
-                    From above location Based on driving mode you will need{" "}
-                    {t.duration} to travel {t.distance}
+                    From above location, you will need to travel{" "}
+                    {<p>{t.distance}</p>} in {<p>{t.duration}</p>} to reach here
+                    by road.
                   </p>
                   <div className="pandalMapInfo">
                     <div className="pandalBadgeContainer">
@@ -1014,10 +1014,12 @@ function Cards() {
                       </div>
                     </div>
                   </div>
+                  <button className="rmv-btn">Remove</button>
                 </div>
               </div>
             ))}
           </div>
+          <Footer />
         </div>
       );
     }
