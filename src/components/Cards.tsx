@@ -471,8 +471,16 @@ function Cards() {
             //var spl_dist=distance_cal.split("|");
             l1 = la;
             ln1 = lo;
+            var faret = null;
+            if (
+              distance_cal !== undefined &&
+              distance_cal !== null &&
+              typeof distance_cal === "string"
+            ) {
+              faret = Math.ceil(parseInt(distance_cal[0].split(" ")[0]));
+            }
             let fare = await GetFare({
-              distance: Math.ceil(parseInt(distance_cal[0].split(" ")[0])),
+              distance: faret,
             });
             let resname = await GetResturant({
               lat1: la,
