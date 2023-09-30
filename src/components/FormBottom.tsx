@@ -111,6 +111,7 @@ export default function FormBottom(props: { onSubmit: any }) {
     }
   };
   const globalapi = googleMapsApiKey;
+
   const { isLoaded }: any = useJsApiLoader({
     googleMapsApiKey: "AIzaSyC2ompvWOrF8Azjm8viRlkvWl4Re7fGn2I",
     libraries: ["places"],
