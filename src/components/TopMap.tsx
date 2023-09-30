@@ -66,10 +66,7 @@ const TopMap: React.FC<TopMapProps> = ({ name }) => {
           streetViewControl: false,
           zoomControl: false,
           mapTypeControl: false,
-          // mapTypeControlOptions: {
-          //   position: google.maps.ControlPosition.RIGHT_BOTTOM,
-          // },
-          fullscreenControl: true, // might increase loading time
+          fullscreenControl: true,
           fullscreenControlOptions: {
             position: google.maps.ControlPosition.RIGHT_BOTTOM,
           },
@@ -165,7 +162,10 @@ const TopMap: React.FC<TopMapProps> = ({ name }) => {
           streetViewControl: false,
           zoomControl: false,
           mapTypeControl: false,
-          fullscreenControl: false,
+          fullscreenControl: true,
+          fullscreenControlOptions: {
+            position: google.maps.ControlPosition.RIGHT_BOTTOM,
+          },
           keyboardShortcuts: false,
           gestureHandling: "cooperative",
           center: { lat: 22.5726, lng: 88.3639 },
