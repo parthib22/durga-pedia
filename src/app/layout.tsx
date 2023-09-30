@@ -29,16 +29,13 @@ export default function RootLayout({
         <meta property="og:url" content="https://durgapedia.online/" />
         <meta
           property="og:site_name"
-          content="Durga Pedia: Travel during the Durga Puja days in Kolkata"
+          content="Durga Pedia: One-stop app for pandal-hopping in Kolkata"
         />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Durga Pedia: Travel during the Durga Puja days in Kolkata"
-        />
+        <meta name="twitter:title" content="Durga Pedia" />
         <meta
           name="twitter:description"
-          content="This website helps to travel during the Durga Puja days in Kolkata. It helps everyone to search and locate nearby durga pandals and visit them accordingly. Our app also gives detailed information about most of the pandals in west bengal as well as the weather, transit, food places, etc."
+          content="One-stop app for pandal-hopping in Kolkata"
         />
         <meta name="twitter:image" content="/icon-192x192.png" />
         <link rel="manifest" href="/manifest.json" />
