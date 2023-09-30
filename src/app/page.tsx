@@ -26,6 +26,7 @@ export default function Home() {
         <SearchBox />
         <TopMap name={passCords} />
         <FormBottom onSubmit={getData} />
+
         <Cards />
       </Providers>
     </>
