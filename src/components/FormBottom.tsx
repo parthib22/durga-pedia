@@ -78,7 +78,7 @@ export default function FormBottom(props: { onSubmit: any }) {
       console.log("pds from click count: " + coordinates.lat + coordinates.lng);
     } else {
       if (address.current && address.current.value.trim() !== "") {
-        const apiKey = "AIzaSyAasL3sXM79w4Te2AaE_nOkxWiB4Ukjx48";
+        const apiKey = "AIzaSyAwmXe9mVIAXDiWnY7IDBPhIe5VS9g1OtM";
         console.log(apiKey);
         const apiUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(
           address.current.value
@@ -112,7 +112,7 @@ export default function FormBottom(props: { onSubmit: any }) {
   };
   const globalapi = googleMapsApiKey;
   const { isLoaded }: any = useJsApiLoader({
-    googleMapsApiKey: "AIzaSyAasL3sXM79w4Te2AaE_nOkxWiB4Ukjx48",
+    googleMapsApiKey: "AIzaSyAwmXe9mVIAXDiWnY7IDBPhIe5VS9g1OtM",
     libraries: ["places"],
   });
   if (!isLoaded) {
