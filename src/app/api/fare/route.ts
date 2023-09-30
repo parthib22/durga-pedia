@@ -1,21 +1,21 @@
 // bus fare
 import { NextResponse } from "next/server";
 const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
-var fare = 0;
+var fares = 0;
 function busfare(distance: number) {
   //let time = Date.getHours();
   console.log(distance);
-  if (distance < 3) fare= fare+8;
-  else if (distance > 3 && distance < 7) fare= fare+10;
-  else if (distance > 7 && distance < 12) fare= fare+12;
-  else if (distance > 10 && distance < 15) fare= fare+15;
+  if (distance <= 3) fares= 8;
+  else if (distance > 3 && distance <= 7) fares= 10;
+  else if (distance > 7 && distance <= 12) fares= 12;
+  else if (distance > 10 && distance <= 15) fares= 15;
   else {
     if (distance > 15) {
-      fare = fare+ 15;
-      busfare(distance - 15);
+      
+      fares = fares + busfare(distance - 15);
     }
   }
-  return fare;
+  return fares;
 }
 // uber fare
 function uberfare(distance: number, cartype: string) {
@@ -55,7 +55,7 @@ export async function POST(request: any) {
     console.log("Request Payload:", { distance });
 
     // fare in array format
-    fare = 0;
+    fares = 0;
     const allfareu = uberfare(distance, 'ubergo');
     const allfareb = busfare(distance);
     const allfare = [{ "bus": busfare(distance) }, { "uber_taxi": uberfare(distance,"taxi")}, { "uber_pool": uberfare(distance,"pool")},{ "uber_ubergo": uberfare(distance,"ubergo")} , { "uber_uberxl": uberfare(distance,"uberxl")},{ "uber_premier": uberfare(distance,"premier")}];

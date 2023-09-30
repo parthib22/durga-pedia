@@ -2,11 +2,10 @@
 import "../app/form.css";
 import MyLocationIcon from "@mui/icons-material/MyLocation";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
-import LoopIcon from "@mui/icons-material/Loop";
 import { createContext, useContext, useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { incrementByAmount } from "../../slices/GlobalStore";
-
+import { RWebShare } from "react-web-share";
 import MyContext from "./MyContext";
 import {
   useJsApiLoader,
@@ -21,33 +20,47 @@ import Swal from "sweetalert2";
 import IosShareIcon from "@mui/icons-material/IosShare";
 import { RootState } from "@/app/store";
 import { setSomeProperty } from "../../slices/StateCheck";
+import { LoaderCheck, setLoaderCheck } from "../../slices/LoaderCheck";
+import { RotatingLines } from "react-loader-spinner";
+import RouteIcon from "@mui/icons-material/Route";
+import SearchIcon from "@mui/icons-material/Search";
+// import GlobalConfig from "../app/app.config.js";
 
 export default function FormBottom(props: { onSubmit: any }) {
   const dispatch = useDispatch();
   //dispatch(incrementByAmount(null));
 
   const sCheck = useSelector(
-    (state: RootState) => state.statecheck.someProperty
+    (state: RootState) => state.loadercheck.loaderCheck
   );
-  console.log(sCheck);
-  const [stateCheck, setStateCheck] = useState(true);
-
+  console.log("sCheck: " + sCheck[0].status);
+  const [stateCheck, setStateCheck] = useState(false);
+  const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
   useEffect(() => {
     if (
       sCheck != null &&
-      sCheck[0].status != null &&
-      sCheck[0].status === false
+      sCheck.length > 0 &&
+      typeof sCheck[0].status !== "undefined" &&
+      sCheck[0].status != null
     ) {
-      setStateCheck(false); // now disabled = {false}
+      if (sCheck[0].status) {
+        // start loader
+        setStateCheck(true);
+        console.log("from formbottom > scheck > loader is true");
+      } else {
+        // stop loader
+        setStateCheck(false);
+        console.log("from formbottom > scheck > loader is false");
+      }
     }
-    console.log("scheck from useeffect " + stateCheck);
   }, [sCheck]);
 
   // console.log(sCheck);
   const { setContextData }: any = useContext(MyContext);
-  const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
+  // const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
   console.log(googleMapsApiKey);
-  const address = useRef<HTMLInputElement | null | undefined>();
+  const address = useRef<HTMLInputElement | null>(null);
+  // const address = useRef<HTMLInputElement | null | undefined>(null);
   const [coordinates, setCoordinates] = useState<{
     lat: number | null;
     lng: number | null;
@@ -57,23 +70,7 @@ export default function FormBottom(props: { onSubmit: any }) {
   const [checked, setChecked] = useState(false);
   const [labelcheck, setLabelcheck] = useState("pandal");
   const [geoClickCount, setGeoClickCount] = useState(false);
-  // useEffect(() => {
-  //   const handlescroll = () => {
-  //     setScrollcheck(
-  //       ((window.pageYOffset || document.documentElement.scrollTop) /
-  //         document.documentElement.clientHeight) *
-  //         100
-  //     );
-  //   };
-  //   window.addEventListener("scroll", handlescroll);
-  //   return () => {
-  //     window.removeEventListener("scroll", handlescroll);
-  //   };
-  // }, []);
-  // console.log(scrollcheck);
-  // useEffect(() => {
 
-  // }, [addressbool]);
   const getlatlng = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     if (geoClickCount && coordinates) {
@@ -81,7 +78,8 @@ export default function FormBottom(props: { onSubmit: any }) {
       console.log("pds from click count: " + coordinates.lat + coordinates.lng);
     } else {
       if (address.current && address.current.value.trim() !== "") {
-        const apiKey = "AIzaSyDj2cR40F6xZo8mTepkyEpJl8BGVNDZ2qk";
+        const apiKey = "AIzaSyC2ompvWOrF8Azjm8viRlkvWl4Re7fGn2I";
+        console.log(apiKey);
         const apiUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(
           address.current.value
         )}&key=${apiKey}`;
@@ -112,9 +110,10 @@ export default function FormBottom(props: { onSubmit: any }) {
       }
     }
   };
+  const globalapi = googleMapsApiKey;
 
   const { isLoaded }: any = useJsApiLoader({
-    googleMapsApiKey: "AIzaSyDj2cR40F6xZo8mTepkyEpJl8BGVNDZ2qk",
+    googleMapsApiKey: "AIzaSyC2ompvWOrF8Azjm8viRlkvWl4Re7fGn2I",
     libraries: ["places"],
   });
   if (!isLoaded) {
@@ -156,6 +155,7 @@ export default function FormBottom(props: { onSubmit: any }) {
 
     return d;
   }
+
   async function StartPlanner(lat: any, lng: any) {
     let shortestDistance = Infinity;
     let flat = null;
@@ -163,11 +163,15 @@ export default function FormBottom(props: { onSubmit: any }) {
     let name = null;
     let id = null;
     try {
-      // try {
-      //   dispatch(setSomeProperty(true)); // now disabled = {true}
-      // } catch (e) {
-      //   console.error("Error at statecheck dispatch: " + e);
-      // }
+      try {
+        let wbar = [{ status: true }];
+        dispatch(setLoaderCheck(wbar));
+        console.log(
+          "from formbottom > startplanner > loader is changed to true"
+        );
+      } catch (e) {
+        console.error("Error at statecheck dispatch: " + e);
+      }
       const pandalData = fetch(
         "https://cdn.jsdelivr.net/gh/THUNDERSAMA/durga-pedia@a85947898471f77358f792a840e2e9028c31b86c/output.json"
       ).then((response) => response.json());
@@ -187,12 +191,12 @@ export default function FormBottom(props: { onSubmit: any }) {
 
       console.log(shortestDistance, flat, flng, name);
 
-      const MySwal = withReactContent(Swal);
-      MySwal.fire({
-        title: "Found!",
-        html: "Check your nearest pandal is :" + name,
-        icon: "success",
-      });
+      // const MySwal = withReactContent(Swal);
+      // MySwal.fire({
+      //   title: "Found!",
+      //   html: "Check your nearest pandal is :" + name,
+      //   icon: "success",
+      // });
       const cordiarray = [
         {
           lat: lat,
@@ -216,7 +220,7 @@ export default function FormBottom(props: { onSubmit: any }) {
       console.error(e);
     }
   }
-
+  function shareNow() {}
   //ends
   return (
     <>
@@ -234,7 +238,7 @@ export default function FormBottom(props: { onSubmit: any }) {
                 ref={address}
                 type="text"
                 className="ipStartLoc"
-                placeholder="Enter your start location"
+                placeholder="Type your start location"
                 required
               />
             </Autocomplete>
@@ -293,7 +297,7 @@ export default function FormBottom(props: { onSubmit: any }) {
               <div
                 id="plus"
                 onClick={() =>
-                  countpandal < 40 && setCountPandal(countpandal + 1)
+                  countpandal < 10 && setCountPandal(countpandal + 1)
                 }
               >
                 +
@@ -301,7 +305,7 @@ export default function FormBottom(props: { onSubmit: any }) {
             </span>
           </div>
 
-          <div className="form-layout-3">
+          {/* <div className="form-layout-3">
             <label
               className="labelCheck"
               htmlFor="ipCheck"
@@ -323,22 +327,55 @@ export default function FormBottom(props: { onSubmit: any }) {
               defaultChecked={checked}
               disabled={labelcheck === "range" ? true : false}
             />
-          </div>
+          </div> */}
           <div className="form-layout-4">
             <button
               className="sbm-btn"
               type="submit"
+              disabled={stateCheck}
               // onClick={() => {
               //   setStateCheck(true);
               //   console.log("scheck from pds " + stateCheck);
               // }}
             >
-              {labelcheck === "pandal" ? "GET ROUTE" : "SEARCH"}
+              {stateCheck ? (
+                <RotatingLines
+                  strokeColor="rgb(31 41 55)"
+                  strokeWidth="4"
+                  animationDuration="1"
+                  width="27"
+                  visible={true}
+                />
+              ) : (
+                <div>
+                  {labelcheck === "pandal" ? (
+                    <>
+                      <span>Route</span>
+                      <RouteIcon />
+                    </>
+                  ) : (
+                    <>
+                      <span>Search</span>
+                      <SearchIcon />
+                    </>
+                  )}
+                </div>
+              )}
             </button>
-            <button type="button" className="shareIco" disabled={stateCheck}>
-              <span>Share</span>
-              <IosShareIcon />
-            </button>
+
+            <RWebShare
+              data={{
+                text: "One-stop app for pandal-hopping in Kolkata",
+                url: "https://durgapedia.online/",
+                title: "Durga Pedia",
+              }}
+              onClick={() => console.log("shared successfully!")}
+            >
+              <button type="button" className="shareIco">
+                <span>Share</span>
+                <IosShareIcon />
+              </button>
+            </RWebShare>
           </div>
         </form>
       </div>

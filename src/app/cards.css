@@ -17,7 +17,7 @@
 /* Timeline Container */
 .timeline {
   padding: 20px;
-  margin-block: -70px 0px;
+  margin-block: -50px 0px;
   /* padding-block: 100px 0; */
 }
 
@@ -62,7 +62,7 @@
 } */
 
 .card:first-child::before {
-  border-top: dotted var(--accent-color);
+  border-top: double var(--accent-color);
   width: 50%;
 }
 
@@ -108,19 +108,21 @@
 
 /* Removing the border if it is the last card  and it's odd */
 .card:last-child:nth-child(odd)::before {
-  border-bottom: dotted var(--accent-color);
+  /* border-bottom: dotted var(--accent-color); */
   border-bottom-left-radius: 50px;
 }
 
 /* Removing the border if it is the last card  and it's even */
 .card:last-child:nth-child(even)::before {
-  border-bottom: dotted var(--accent-color);
+  /* border-bottom: dotted var(--accent-color); */
   border-bottom-right-radius: 50px;
 }
 
 /* Information about the timeline */
 .info {
   /* height: 130vh; */
+  position: relative;
+  z-index: 3;
   display: flex;
   flex-direction: column;
   background: rgb(55 65 81 / 0.4);

@@ -6,12 +6,12 @@ import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import "../app/cards.css";
 import { RootState } from "@/app/store";
 import { useSelector } from "react-redux";
-import axios from "axios";
 import Link from "next/link";
 import { stringify } from "querystring";
 import { setSomeProperty } from "../../slices/StateCheck";
 import { useDispatch } from "react-redux";
 import Image from "next/image";
+import { setLoaderCheck } from "../../slices/LoaderCheck";
 
 function Cards() {
   const [Display, SetDisplay] = useState(false);
@@ -21,6 +21,7 @@ function Cards() {
   let visited = new Map();
   const dispatch = useDispatch();
   dispatch(setSomeProperty(null));
+  const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
   const count = useSelector((state: RootState) => state.cordinates.value);
   let frar: {
     id: string;
@@ -33,6 +34,7 @@ function Cards() {
     trns: any;
     met: any;
     bst: any;
+    fares: any;
     weather: any;
   }[] = [];
   const [pandals, setPandals] = useState<
@@ -47,6 +49,7 @@ function Cards() {
       trns: any;
       met: any;
       bst: any;
+      fares: any;
       weather: any;
     }[]
   >([]);
@@ -307,7 +310,44 @@ function Cards() {
     }
   }
 
-  async function GetFare(dist: any) {}
+  async function GetFare(dist: any) {
+    try {
+      var distance = dist.distance;
+      let ar: {
+        bus: any;
+        ubert: any;
+        uberp: any;
+        uberg: any;
+        uberx: any;
+        uberpre: any;
+      }[] = [];
+      await fetch("/api/fare", {
+        method: "POST",
+        headers: {
+          Accept: "text/plain, */*",
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({ distance }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          // console.log("For distance = " + distance.distance);
+          // console.log(distance);
+          console.log(data);
+          ar.push({
+            bus: data["results"][0].bus,
+            ubert: data["results"][1].uber_taxi,
+            uberp: data["results"][2].uber_pool,
+            uberg: data["results"][3].uber_ubergo,
+            uberx: data["results"][4].uber_uberxl,
+            uberpre: data["results"][5].uber_premier,
+          });
+        });
+      return ar;
+    } catch (error) {
+      console.log("error from 132: " + error);
+    }
+  }
   async function GetResturant(cords: any) {
     try {
       var lat = cords.lat1,
@@ -421,10 +461,13 @@ function Cards() {
               lat2: la,
               lng2: lo,
             });
-
+            // console.log(Math.ceil(parseInt(distance_cal[0].split(" ")[0])));
             //var spl_dist=distance_cal.split("|");
             l1 = la;
             ln1 = lo;
+            let fare = await GetFare({
+              distance: Math.ceil(parseInt(distance_cal[0].split(" ")[0])),
+            });
             let resname = await GetResturant({
               lat1: la,
               lng1: lo,
@@ -459,9 +502,9 @@ function Cards() {
               trns: train,
               met: metro,
               bst: bus,
+              fares: fare,
               weather: weather,
             });
-
             str = str + la + "," + lo + "|";
             //karval.push({'la':la,'lo':lo});
           }
@@ -493,8 +536,14 @@ function Cards() {
       if (count[0].pcheck) {
         str = str + "|" + count[0].lat + "," + count[0].lng;
       }
+
       let vbar = [{ status: false, kar: str }];
       dispatch(setSomeProperty(vbar));
+      let wbar = [{ status: false }];
+      dispatch(setLoaderCheck(wbar));
+      console.log(
+        "from formbottom > startplanner > loader is changed to false"
+      );
     } catch (e) {
       console.error("Error at statecheck dispatch: " + e);
     }
@@ -546,17 +595,22 @@ function Cards() {
         //  console.log(count);
         let ar: any[] = [];
 
+        var knt = 0;
         // const cordiarray:[number, number][]=[];
         visited.set(count[0].fid.toString(), "bkcd");
         var idvar = count[0].fid;
         for (const i in pandalData[idvar - 1][idvar]) {
-          if (!visited.has(i)) {
+          if (!visited.has(i) && knt < 11) {
             // console.log(i);
-            if (pandalData[idvar - 1][idvar][i] <= count[0].nopal) {
+            if (pandalData[idvar - 1][idvar][i] <= count[0].nopal && knt < 11) {
               let k = pandalData[idvar - 1][idvar][i];
               ar = [{ nid: i, ndist: k }];
               visited.set(ar[0].nid, "bkcd");
+              knt++;
             }
+          }
+          if (knt >= 11) {
+            break;
           }
         }
 
@@ -597,27 +651,14 @@ function Cards() {
                   </div>
                   <h2 className="title">
                     {t.name}
-                    <button className="circular-button">
-                      {/* {<LocationOnIcon />} */}
-                      📍
-                    </button>
+                    <button className="circular-button">📍</button>
                   </h2>
                   <p>
-                    ✅From above location Based on driving mode you will need{" "}
+                    From above location Based on driving mode you will need{" "}
                     {t.duration} to travel {t.distance}
                   </p>
-                  {/* <div className="map_info">
-              <h3 className="map-written">
-                Map
-                <p className="map_written_b">(মানচিত্র) </p>
-              </h3>
-              
-            </div> */}
                   <div className="map_info">
-                    <h3 className="map-written">
-                      Food 🍟
-                      {/* <p className="map_written_b">(খাবারের জায়গা) </p> */}
-                    </h3>
+                    <h3 className="map-written">Food 🍟</h3>
                     <div className="badge-container">
                       {t.rst.map((adv: any, index: any) => (
                         <Link
@@ -632,15 +673,7 @@ function Cards() {
                     </div>
                   </div>
                   <div className="map_info">
-                    {/* <h3 className="map-written">
-                      Transits
-                      <p className="map_written_b">(গণপরিবহন) </p>
-                    </h3> */}
-
-                    <h4 className="map-written">
-                      Trains 🚅
-                      {/* <p className="map_written_b">(খাবারের জায়গা) </p> */}
-                    </h4>
+                    <h4 className="map-written">Trains 🚅</h4>
                     <div className="badge-container">
                       {t.trns.length === 0 ? (
                         <span className="unbadge">
@@ -674,10 +707,7 @@ function Cards() {
                       )}
                       {}
                     </div>
-                    <h4 className="map-written">
-                      Metro 🚇
-                      {/* <p className="map_written_b">(খাবারের জায়গা) </p> */}
-                    </h4>
+                    <h4 className="map-written">Metro 🚇</h4>
                     <div className="badge-container">
                       {t.met.length === 0 ? (
                         <span className="unbadge">
@@ -710,10 +740,7 @@ function Cards() {
                         )
                       )}
                     </div>
-                    <h4 className="map-written">
-                      Bus Stops 🚌
-                      {/* <p className="map_written_b">(খাবারের জায়গা) </p> */}
-                    </h4>
+                    <h4 className="map-written">Bus Stops 🚌</h4>
                     <div className="badge-container">
                       {t.met.length === 0 ? (
                         <span className="unbadge">! no bus stops nearby</span>
@@ -755,44 +782,42 @@ function Cards() {
                     >
                       <ArrowDropDownIcon />
                       Prices
-                      {/* <p className="map_written_b">(যাত্রা খরচ) </p> */}
                     </span>
                     <table className="fare_table">
-                      {/* <thead>
-                        <tr>
-                          <th className="tableHead">Medium</th>
-                          <th className="tableHead">Fare</th>
-                        </tr>
-                      </thead> */}
-                      <tbody style={{ display: priceVis ? "" : "none" }}>
+                      <tbody style={{ display: priceVis ? "none" : "" }}>
                         <tr>
                           <td className="tableBody">Bus</td>
-                          <td className="tableBody">₹ 69/-</td>
+                          <td className="tableBody">₹ {t["fares"][0].bus}/-</td>
                         </tr>
                         <tr>
                           <td className="tableBody">Local Taxi</td>
-                          <td className="tableBody">₹ 69/-</td>
+                          <td className="tableBody">
+                            ₹ {t["fares"][0].ubert}/-
+                          </td>
                         </tr>
                         <tr>
                           <td className="tableBody">Uber Go</td>
-                          <td className="tableBody">₹ 69/-</td>
+                          <td className="tableBody">
+                            ₹ {t["fares"][0].uberg}/-
+                          </td>
                         </tr>
                         <tr>
                           <td className="tableBody">Uber Xl</td>
-                          <td className="tableBody">₹ 69/-</td>
+                          <td className="tableBody">
+                            ₹ {t["fares"][0].uberx}/-
+                          </td>
                         </tr>
                         <tr>
                           <td className="tableBody">Uber Premier</td>
-                          <td className="tableBody">₹ 69/-</td>
+                          <td className="tableBody">
+                            ₹ {t["fares"][0].uberpre}/-
+                          </td>
                         </tr>
                       </tbody>
                     </table>
                   </div>
                   <div className="map_info">
-                    <h3 className="map-written">
-                      Weather
-                      {/* <p className="map_written_b">(আবহাওয়া) </p> */}
-                    </h3>
+                    <h3 className="map-written">Weather</h3>
                     <div className="weatherLg">
                       <div className="weatherSm">
                         <div className="tempLg">{t.weather.temp}°C</div>
@@ -805,12 +830,6 @@ function Cards() {
                         width={50}
                         height={50}
                       />
-
-                      {/* {
-                        <WbSunnyIcon
-                          style={{ color: "orangered", fontSize: "3em" }}
-                        />
-                      } */}
                     </div>
                   </div>
                 </div>
@@ -821,7 +840,6 @@ function Cards() {
       );
     }
   }
-  //}
 }
 
 export default Cards;
