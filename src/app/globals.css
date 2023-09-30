@@ -3,6 +3,16 @@
 @tailwind utilities;
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Merriweather&family=Noto+Sans+Bengali&display=swap");
+
+:root {
+  --primary-bg: rgb(31 41 55);
+  --accent-color: orangered;
+  --text-on-accent: rgb(31 41 55);
+  --primary-text: rgb(248 250 252);
+  --secondary-text: rgb(203 213 225);
+  --tertiary-text: rgb(148 163 184 / 1);
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -11,6 +21,9 @@
   font-family: "Fira Code", monospace;
   font-family: "Inter", sans-serif;
   /* background-color: rgb(0 128 0 / 0.1); */
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
 }
 
 html,
@@ -18,7 +31,7 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
   scroll-behavior: smooth;
-  background: rgb(31 41 55 / 1);
+  background: var(--primary-bg);
 }
 
 /* body {

@@ -9,6 +9,7 @@ import { Providers } from "./Provider";
 import { configureStore } from "@reduxjs/toolkit";
 import reducer from "../../slices/GlobalStore";
 import Cards from "@/components/Cards";
+import PandalInfo from "@/components/PandalInfo";
 
 export default function Home() {
   const [passCords, setCords] = useState(""); //changes by sam
@@ -21,6 +22,7 @@ export default function Home() {
   return (
     <>
       <Providers>
+        {/* <PandalInfo /> */}
         <SearchBox />
         <TopMap name={passCords} />
         <FormBottom onSubmit={getData} />

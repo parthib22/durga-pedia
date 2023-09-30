@@ -1,19 +1,32 @@
 /* @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap"); */
 
+:root {
+  --primary-bg: rgb(31 41 55 / 1);
+  --accent-color: orangered;
+  --text-on-accent: rgb(31 41 55 / 1);
+  --primary-text: rgb(248 250 252);
+  --secondary-text: rgb(203 213 225);
+}
+
 * {
   transition: all 0.3s ease !important;
 }
+
 .form-container form {
   position: relative;
-  width: 100%;
+  width: calc(100%);
+  margin-top: -35px;
+  /* margin-inline: 2px; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: white;
   font-family: inherit;
-  background: rgb(31 41 55 / 1);
-  box-shadow: 0 -70px 70px rgb(0 0 0 / 0.25);
+  /* border-top-left-radius: 20px;
+  border-top-right-radius: 20px; */
+  background-color: var(--primary-bg);
+  box-shadow: 0 -50px 70px rgb(0 0 0 / 0.25);
   /* background-color: #303245; */
   /*background-color: #15172b; temporarily changed for testing purpose bara
    font-family: "Josefin Sans", sans-serif; */
@@ -73,12 +86,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--text-on-accent);
+  background-color: var(--accent-color);
   /* border-top-right-radius: 10px;
   border-bottom-right-radius: 10px; */
   /* font: 13px/40px "lucida sans", "trebuchet MS", "Tahoma"; */
-  color: rgb(31 41 55 / 1);
   /* background: rgb(0, 112, 225); */
-  background-color: orangered;
   /* margin-top: -11.3%;
   margin-right: 1%; */
   /* right: 7px;
@@ -103,7 +116,7 @@
   border: 1px solid transparent;
   font-weight: 600;
   /* color: #ffa800; */
-  color: orangered;
+  color: var(--accent-color);
   transition: all 1s ease !important;
 }
 .topactive {
@@ -184,7 +197,7 @@
 }
 
 #ipCheck {
-  accent-color: orangered !important;
+  accent-color: var(--accent-color) !important;
   background-color: oranngered;
   scale: 1.1;
   width: fit-content;
@@ -210,17 +223,19 @@
 }
 
 .sbm-btn {
+  position: relative;
+  z-index: 2;
   margin-block: 30px;
   /* background-color: #405cf5; */
   /* background-color: rgb(79 70 229 / var(--tw-bg-opacity)); */
   /* background: rgb(0, 112, 225); */
-  background-color: orangered;
+  background-color: var(--accent-color);
   border: 3px solid rgba(0, 0, 0, 0.2);
   border-radius: 0;
   box-shadow: 0 0 50px rgb(0 0 0 / 0.3);
   /* box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset,
     rgba(50, 50, 93, 0.1) 0 2px 5px 0, rgba(0, 0, 0, 0.07) 0 1px 1px 0; */
-  color: rgb(31 41 55 / 1);
+  color: var(--text-on-accent);
   cursor: pointer;
   font-weight: 800;
   letter-spacing: 0.5px;
@@ -246,6 +261,8 @@
 } */
 
 .shareIco {
+  position: relative;
+  z-index: 2;
   height: 3rem;
   width: 6.5rem;
   color: white;

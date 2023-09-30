@@ -1,25 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 :root {
-  --primary-color: #212121;
-  --background-color: #111;
-  --font: inherit;
-  --tw-bg-opacity: 1;
-
+  --primary-bg: rgb(31 41 55 / 1);
+  --accent-color: orangered;
+  --text-on-accent: rgb(31 41 55 / 1);
   --primary-text: rgb(248 250 252);
   --secondary-text: rgb(203 213 225);
-  --blur: 0px;
-  --brightness: 1;
-  --contrast: 1;
-  --grayscale: 0;
-  --hue-rotate: 0deg;
-  --invert: 0;
-  --opacity: 1;
-  --saturate: 1;
-  --sepia: 0;
 }
 
-/*  */
 * {
   margin: 0;
   padding: 0;
@@ -28,9 +16,9 @@
 
 /* Timeline Container */
 .timeline {
-  background: rgb(31 41 55 / 1);
   padding: 20px;
-  padding-block: 100px 0;
+  margin-block: -70px 0px;
+  /* padding-block: 100px 0; */
 }
 
 /* .timeline-bck {
@@ -59,24 +47,27 @@
   content: "";
   position: absolute;
   width: 50%;
-  border: solid orangered;
+  border: double var(--accent-color);
 }
 
-.card:first-child::after {
+/* .card:first-child::after {
   content: "YOUR ROADMAP";
-  color: orangered;
+  color: var(--accent-color);
   position: absolute;
-  top: -53px;
+  top: -52.5px;
   right: 7%;
-  border-bottom: 5px solid orangered;
-  /* padding-inline: 10px; */
+  border-bottom: 5px solid var(--accent-color);
   font-size: 2rem;
   font-weight: 600;
-}
+} */
 
 .card:first-child::before {
-  /* border-top: transparent; */
-  width: 86%;
+  border-top: dotted var(--accent-color);
+  width: 50%;
+}
+
+.card:last-child::before {
+  border-bottom: transparent;
 }
 
 /* Setting the border of top, bottom, left */
@@ -117,14 +108,14 @@
 
 /* Removing the border if it is the last card  and it's odd */
 .card:last-child:nth-child(odd)::before {
-  border-bottom: 0;
-  border-bottom-left-radius: 0;
+  border-bottom: dotted var(--accent-color);
+  border-bottom-left-radius: 50px;
 }
 
 /* Removing the border if it is the last card  and it's even */
 .card:last-child:nth-child(even)::before {
-  border-bottom: 0;
-  border-bottom-right-radius: 0;
+  border-bottom: dotted var(--accent-color);
+  border-bottom-right-radius: 50px;
 }
 
 /* Information about the timeline */
@@ -167,7 +158,7 @@
   background: rgb(31 41 55 / 1);
   margin-inline-start: -15px;
   border-radius: 999px;
-  border: 3px solid orangered;
+  border: 3px solid var(--accent-color);
 }
 
 /* text right if the card is even  */
@@ -218,7 +209,6 @@
   border: 1px solid rgb(74 222 128 / 0.9); */
   /* border-radius: 50%; */
   padding: 5px;
-  float: left;
 }
 
 .card:nth-child(odd) > .info > .button_container > .mark-wrong {
@@ -227,7 +217,6 @@
   border: 1px solid rgb(248 113 113 / 1); */
   /* border-radius: 50%; */
   padding: 5px;
-  float: left;
 }
 
 .card:nth-child(even) > .info > .button_container > .mark-right {
@@ -242,7 +231,7 @@
   color: rgb(248 113 113 / 1);
   /* background-color: rgb(69 10 10 / 1);
   border: 1px solid rgb(248 113 113 / 1); */
-  border-radius: 50%;
+  /* border-radius: 50%; */
   padding: 5px;
 }
 
@@ -335,9 +324,6 @@
   font-weight: 600;
   color: rgb(107 114 128 / 1);
 }
-.imgfilter {
-  filter: blur(var(--blur)) brightness(var(--brightness))
-    contrast(var(--contrast)) grayscale(var(--grayscale))
-    hue-rotate(var(--hue-rotate)) invert(var(--invert)) opacity(var(--opacity))
-    saturate(var(--saturate)) sepia(var(--sepia));
+.weatherImg {
+  backdrop-filter: drop-shadow(0 0 50px black);
 }

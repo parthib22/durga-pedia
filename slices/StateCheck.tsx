@@ -10,7 +10,7 @@ export interface StateCheck {
 
 // Define the initial state for the new slice
 const initialState: StateCheck = {
-  someProperty: '', // Initialize properties as needed
+  someProperty: [{'status':null,'kar':null}], // Initialize properties as needed
 }
 
 export const NewGlobalStore = createSlice({

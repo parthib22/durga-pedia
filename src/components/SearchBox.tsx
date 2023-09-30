@@ -1,10 +1,16 @@
 "use client";
 import { StandaloneSearchBox } from "@react-google-maps/api";
-// import data from "@/app/Pandels";
 import ClearIcon from "@mui/icons-material/Clear";
+import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
+import NearMeIcon from "@mui/icons-material/NearMe";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { useState, useEffect } from "react";
 import React from "react";
-import "../app/SearchBox.css";
+import "../app/searchbox.css";
+import "../app/pandalinfo.css";
+import Link from "next/link";
+import Image from "next/image";
+import { RotatingLines } from "react-loader-spinner";
 
 async function getPandalData() {
   try {
@@ -20,11 +26,41 @@ async function getPandalData() {
 }
 
 const AutoComplete = () => {
+  const [foodEx, setFoodEx] = useState(false);
+  const [trainEx, setTrainEx] = useState(false);
+  const [metroEx, setMetroEx] = useState(false);
+  const [busEx, setBusEx] = useState(false);
+
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [datas, setDatas] = useState([]); // Initialize datas as an empty array
   // const [suggestionsActive, setSuggestionsActive] = useState(false);
-
+  const [enableCard, setEnableCard] = useState(true);
+  const [cardLoad, setCardLoad] = useState(false);
+  const [Pandals, setPandals] = useState<
+    {
+      id: string;
+      lat: string;
+      lng: string;
+      name: string;
+      rst: any;
+      trns: any;
+      met: any;
+      bst: any;
+      weather: any;
+    }[]
+  >([]);
+  let frar: {
+    id: string;
+    lat: string;
+    lng: string;
+    name: string;
+    rst: any;
+    trns: any;
+    met: any;
+    bst: any;
+    weather: any;
+  }[] = [];
   useEffect(() => {
     getPandalData()
       .then((data) => {
@@ -86,13 +122,561 @@ const AutoComplete = () => {
   //     setSuggestionsActive(false);
   //   }
   // };
+  async function GetTransitTrain(cords: any) {
+    try {
+      var lat = cords.lat1,
+        lng = cords.lng1;
+      let ar: { tstame: string; lat: string; lng: string; map: any }[] = [];
+      await fetch("/api/transits", {
+        method: "POST",
+        headers: {
+          Accept: "text/plain, */*",
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({ lat, lng }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          var cnt = 0,
+            latnew,
+            lngnew;
+          // console.log(data['results'][0].results[0]);
+          for (const i in data["results"][0].results) {
+            if (cnt > 6) {
+              break;
+            }
+            latnew = data["results"][0].results[i].geometry.location.lat;
+            lngnew = data["results"][0].results[i].geometry.location.lng;
+            ar.push({
+              tstame: data["results"][0].results[i].name,
+              lat: data["results"][0].results[i].geometry.location.lat,
+              lng: data["results"][0].results[i].geometry.location.lng,
+              map:
+                "http://maps.google.com/maps?q=" +
+                latnew +
+                "," +
+                lngnew +
+                "&ll=" +
+                latnew +
+                "," +
+                lngnew +
+                "z=17",
+            });
+            cnt++;
+          }
+        })
+        .catch((error) => {
+          console.error("Fetch Error:", error);
+        });
+      return ar;
+    } catch (error) {
+      console.log("error from 132: " + error);
+    }
+  }
+
+  async function GetTransitMetro(cords: any) {
+    try {
+      var lat = cords.lat1,
+        lng = cords.lng1;
+      let ar: { tstame: string; lat: string; lng: string; map: any }[] = [];
+      await fetch("/api/transits", {
+        method: "POST",
+        headers: {
+          Accept: "text/plain, */*",
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({ lat, lng }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          var cnt = 0,
+            latnew,
+            lngnew;
+          var leng = data["results"][1].results;
+          // console.log(leng.length);
+          for (const i in data["results"][1].results) {
+            if (cnt > 6) {
+              break;
+            }
+            if (i >= leng.length) {
+              break;
+            }
+            //console.log(data['results'][0].results[i].geometry.location.lat);
+            latnew = data["results"][1].results[i]["geometry"].location.lat;
+            lngnew = data["results"][1].results[i]["geometry"].location.lng;
+            ar.push({
+              tstame: data["results"][1].results[i].name,
+              lat: data["results"][1].results[i].geometry.location.lat,
+              lng: data["results"][1].results[i].geometry.location.lng,
+              map:
+                "http://maps.google.com/maps?q=" +
+                latnew +
+                "," +
+                lngnew +
+                "&ll=" +
+                latnew +
+                "," +
+                lngnew +
+                "z=17",
+            });
+            cnt++;
+          }
+        })
+        .catch((error) => {
+          console.error("Fetch Error:", error);
+        });
+      return ar;
+    } catch (error) {
+      console.log("error from 132: " + error);
+    }
+  }
+
+  async function GetTransitBus(cords: any) {
+    try {
+      var lat = cords.lat1,
+        lng = cords.lng1;
+      let ar: { tstame: string; lat: string; lng: string; map: any }[] = [];
+      await fetch("/api/transits", {
+        method: "POST",
+        headers: {
+          Accept: "text/plain, */*",
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({ lat, lng }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          var leng = data["results"][2].results;
+          console.log(leng.length);
+          var cnt = 0,
+            latnew,
+            lngnew;
+          for (const i in data["results"][2].results) {
+            if (cnt > 6) {
+              break;
+            }
+            // console.log(data['results'][2]['results'][i]);
+            if (i >= leng.length || data["results"][2]["results"][i] === null) {
+              break;
+            }
+            //console.log(data['results'][0].results[i].geometry.location.lat);
+            latnew = data["results"][2].results[i].geometry.location.lat;
+            lngnew = data["results"][2].results[i].geometry.location.lng;
+            ar.push({
+              tstame: data["results"][2].results[i].name,
+              lat: data["results"][2].results[i].geometry.location.lat,
+              lng: data["results"][2].results[i].geometry.location.lng,
+              map:
+                "http://maps.google.com/maps?q=" +
+                latnew +
+                "," +
+                lngnew +
+                "&ll=" +
+                latnew +
+                "," +
+                lngnew +
+                "z=17",
+            });
+            cnt++;
+          }
+        })
+        .catch((error) => {
+          console.error("Fetch Error:", error);
+        });
+      return ar;
+    } catch (error) {
+      console.log("error from 132: " + error);
+    }
+  }
+
+  async function GetFare(dist: any) {}
+  async function GetResturant(cords: any) {
+    try {
+      var lat = cords.lat1,
+        lng = cords.lng1;
+      let ar: { rame: string; lat: string; lng: string; map: string }[] = [];
+      await fetch("/api/restaurants", {
+        method: "POST",
+        headers: {
+          Accept: "text/plain, */*",
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({ lat, lng }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          var cnt = 0,
+            latnew,
+            lngnew;
+          for (const i in data["results"][0].results) {
+            if (cnt > 6) {
+              break;
+            }
+            //console.log(data['results'][0].results[i].geometry.location.lat);
+            if (
+              data["results"][0].results[i].opening_hours.open_now == true &&
+              data["results"][0].results[i].rating >= 4
+            ) {
+              latnew = data["results"][0].results[i].geometry.location.lat;
+              lngnew = data["results"][0].results[i].geometry.location.lng;
+              ar.push({
+                rame: data["results"][0].results[i].name,
+                lat: data["results"][0].results[i].geometry.location.lat,
+                lng: data["results"][0].results[i].geometry.location.lng,
+                map:
+                  "http://maps.google.com/maps?q=" +
+                  latnew +
+                  "," +
+                  lngnew +
+                  "&ll=" +
+                  latnew +
+                  "," +
+                  lngnew +
+                  "z=17",
+              });
+              cnt++;
+            }
+          }
+        })
+        .catch((error) => {
+          console.error("Fetch Error:", error);
+        });
+      return ar;
+    } catch (error) {
+      console.log("error from 132: " + error);
+    }
+  }
+  async function GetWeather(cords: any) {
+    try {
+      var url =
+        "https://api.openweathermap.org/data/2.5/weather?lat=" +
+        cords.lat1 +
+        "&lon=" +
+        cords.lng1 +
+        "5&appid=0d6fc19faf7830c989855c0eec84a0ad&units=metric";
+      // console.log(url);
+      const response = await fetch(url);
+      const wth = await response.json();
+      // console.log(wth['weather'][0].icon);
+      // console.log(wth['main'].temp);
+      // console.log(wth.name);
+      var iconurl =
+        "https://openweathermap.org/img/wn/" +
+        wth["weather"][0].icon +
+        "@2x.png";
+      return {
+        icon: iconurl,
+        temp: Math.ceil(wth["main"].temp),
+        name: wth.name,
+      };
+      // .then((data)=>{
+      //   console.log(data);
+      // })
+      // console.log(vb);
+    } catch (e) {
+      console.log(e);
+    }
+  }
+  async function startSearching(i: any) {
+    try {
+      const pandalData = fetch(
+        "https://cdn.jsdelivr.net/gh/THUNDERSAMA/durga-pedia@a85947898471f77358f792a840e2e9028c31b86c/output.json"
+      ).then((response) => response.json());
+      var la, lo;
+      for (const pandal of await pandalData) {
+        if (pandal.id == i) {
+          la = pandal.lat;
+          lo = pandal.lng;
+          // karval.push(la+","+lo);
+          // console.log("l1 ="+l1+",ln1= "+ln1+",la= "+la+", lo"+lo)
+
+          let resname = await GetResturant({
+            lat1: la,
+            lng1: lo,
+          });
+          //console.log(distance_cal);
+          let train = await GetTransitTrain({
+            lat1: la,
+            lng1: lo,
+          });
+          let metro = await GetTransitMetro({
+            lat1: la,
+            lng1: lo,
+          });
+          let bus = await GetTransitBus({
+            lat1: la,
+            lng1: lo,
+          });
+
+          let weather = await GetWeather({
+            lat1: la,
+            lng1: lo,
+          });
+          console.log(weather);
+          frar.push({
+            id: pandal.id,
+            lat: pandal.lat,
+            lng: pandal.lng,
+            name: pandal.pandal,
+            rst: resname,
+            trns: train,
+            met: metro,
+            bst: bus,
+            weather: weather,
+          });
+        }
+      }
+    } catch (e) {
+      console.error(e);
+    }
+    console.log(frar);
+    setPandals(frar);
+    setCardLoad(true);
+    // setEnableCard(false);
+    console.log(Pandals);
+  }
+  const PandalCard = () => {
+    if (!Array.isArray(Pandals)) {
+      return <div>loading</div>; // or any loading indicator
+    } else {
+      if (cardLoad === false) {
+        return (
+          <>
+            <div className={`pandalInfo ${enableCard && "cardClose"}`}>
+              <div className="pandalLoader">
+                <RotatingLines
+                  strokeColor="orangered"
+                  strokeWidth="4"
+                  animationDuration="1"
+                  width="50"
+                  visible={true}
+                />
+              </div>
+            </div>
+          </>
+        );
+      } else if (cardLoad || enableCard == false) {
+        console.log(Pandals);
+        return (
+          <>
+            <button
+              className={`pandalClose ${enableCard && "cardClose"}`}
+              onClick={() => setEnableCard(true)}
+            >
+              <ArrowBackIosNewIcon />
+            </button>
+            {Pandals.map((t: any) => (
+              <div
+                key={t.lat}
+                className={`pandalInfo ${enableCard && "cardClose"}`}
+              >
+                <h2 className="pandalTitle">
+                  {t.name}
+                  <button className="mapPinBtn">
+                    <NearMeIcon />
+                  </button>
+                </h2>
+                <p>
+                  From above location Based on driving mode you will need
+                  /t.duration/ to travel /t.distance/
+                </p>
+                <div className="pandalMapInfo">
+                  <div className="pandalBadgeContainer">
+                    <h4 className="mapTopic" onClick={() => setFoodEx(!foodEx)}>
+                      Food
+                      <span className={foodEx ? "" : "expandedIcon"}>
+                        <ArrowDropDownIcon />
+                      </span>
+                    </h4>
+                    {t.rst.map((adv: any, index: any) => (
+                      <Link
+                        href={adv.map}
+                        target="_blank"
+                        className={`pandalBadge ${foodEx && "cardClose"}`}
+                        key={index}
+                      >
+                        {adv.rame}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+                <div className="pandalMapInfo">
+                  <div className="pandalBadgeContainer">
+                    <h4
+                      className="mapTopic"
+                      onClick={() => setTrainEx(!trainEx)}
+                    >
+                      Trains
+                      <span className={trainEx ? "" : "expandedIcon"}>
+                        <ArrowDropDownIcon />
+                      </span>
+                    </h4>
+                    {t.trns.length === 0 ? (
+                      <span className="pandalUnBadge">
+                        ! no train stations nearby
+                      </span>
+                    ) : (
+                      t.trns.map(
+                        (
+                          adv: {
+                            tstame:
+                              | string
+                              | number
+                              | boolean
+                              | React.ReactElement<
+                                  any,
+                                  string | React.JSXElementConstructor<any>
+                                >
+                              | Iterable<React.ReactNode>
+                              | React.ReactPortal
+                              | React.PromiseLikeOfReactNode
+                              | null
+                              | undefined;
+                          },
+                          index: React.Key | null | undefined
+                        ) => (
+                          <span
+                            className={`pandalBadge ${trainEx && "cardClose"}`}
+                            key={index}
+                          >
+                            {adv.tstame}
+                          </span>
+                        )
+                      )
+                    )}
+                  </div>
+                  <div className="pandalBadgeContainer">
+                    <h4
+                      className="mapTopic"
+                      onClick={() => setMetroEx(!metroEx)}
+                    >
+                      Metro
+                      <span className={metroEx ? "" : "expandedIcon"}>
+                        <ArrowDropDownIcon />
+                      </span>
+                    </h4>
+
+                    {t.met.length === 0 ? (
+                      <span className="pandalUnBadge">
+                        ! no metro stations nearby
+                      </span>
+                    ) : (
+                      t.met.map(
+                        (
+                          adv: {
+                            tstame:
+                              | string
+                              | number
+                              | boolean
+                              | React.ReactElement<
+                                  any,
+                                  string | React.JSXElementConstructor<any>
+                                >
+                              | Iterable<React.ReactNode>
+                              | React.ReactPortal
+                              | React.PromiseLikeOfReactNode
+                              | null
+                              | undefined;
+                          },
+                          index: React.Key | null | undefined
+                        ) => (
+                          <span
+                            className={`pandalBadge ${metroEx && "cardClose"}`}
+                            key={index}
+                          >
+                            {adv.tstame}
+                          </span>
+                        )
+                      )
+                    )}
+                  </div>
+                  <div className="pandalBadgeContainer">
+                    <h4 className="mapTopic" onClick={() => setBusEx(!busEx)}>
+                      Bus Stops
+                      <span className={busEx ? "" : "expandedIcon"}>
+                        <ArrowDropDownIcon />
+                      </span>
+                    </h4>
+
+                    {t.met.length === 0 ? (
+                      <span className="pandalUnBadge">
+                        ! no bus stops nearby
+                      </span>
+                    ) : (
+                      t.bst.map(
+                        (
+                          adv: {
+                            tstame:
+                              | string
+                              | number
+                              | boolean
+                              | React.ReactElement<
+                                  any,
+                                  string | React.JSXElementConstructor<any>
+                                >
+                              | Iterable<React.ReactNode>
+                              | React.ReactPortal
+                              | React.PromiseLikeOfReactNode
+                              | null
+                              | undefined;
+                          },
+                          index: React.Key | null | undefined
+                        ) => (
+                          <span
+                            className={`pandalBadge ${busEx && "cardClose"}`}
+                            key={index}
+                          >
+                            {adv.tstame}
+                          </span>
+                        )
+                      )
+                    )}
+                  </div>
+                </div>
+
+                <div className="pandalMapInfo">
+                  <h3 className="mapTopic">Weather</h3>
+                  <div className="pandalWeatherLg">
+                    <div className="pandalWeatherSm">
+                      <div className="pandalTempLg">
+                        {t.weather.temp}°C
+                        <Image
+                          src={t.weather.icon}
+                          className="weatherImg"
+                          alt={"image"}
+                          width={80}
+                          height={80}
+                        />
+                      </div>
+                      <span className="pandalLocationSm">{t.weather.name}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </>
+        );
+      }
+    }
+  };
 
   const Suggestions = () => {
     if (searchTerm.length >= 3) {
       return (
-        <ul className="suggestions">
+        <ul className={`suggestions ${!enableCard && "cardClose"}`}>
           {searchResults.map((item: any) => (
-            <li key={item.id}>{item.pandal}</li>
+            <li
+              key={item.id}
+              onClick={() => {
+                console.log(item.id);
+                setEnableCard(false);
+                setCardLoad(false);
+                startSearching(item.id);
+              }}
+            >
+              {item.pandal}
+            </li>
           ))}
         </ul>
       );
@@ -104,7 +688,10 @@ const AutoComplete = () => {
       <div>
         <span
           className={searchTerm.length > 0 ? "clearIco" : "icoActive"}
-          onClick={() => setSearchTerm("")}
+          onClick={() => {
+            setSearchTerm("");
+            setEnableCard(true);
+          }}
         >
           {<ClearIcon />}
         </span>
@@ -112,13 +699,18 @@ const AutoComplete = () => {
         <input
           // className={searchTerm.length > 0 ? "ipPadding" : ""}
           placeholder="Search pandals in Kolkata"
+          spellCheck={false}
           type="text"
           value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
+          onChange={(e) => {
+            setSearchTerm(e.target.value);
+            setEnableCard(true);
+          }}
           // onKeyDown={handleKeyDown}
         />
       </div>
       {<Suggestions />}
+      {<PandalCard />}
     </div>
   );
 };

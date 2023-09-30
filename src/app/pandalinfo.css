@@ -1,0 +1,188 @@
+:root {
+  --primary-bg: rgb(31 41 55);
+  --accent-color: orangered;
+  --text-on-accent: rgb(31 41 55);
+  --primary-text: rgb(248 250 252);
+  --secondary-text: rgb(203 213 225);
+  --tertiary-text: rgb(148 163 184 / 1);
+}
+
+/* .pandalCard {
+  font-family: inherit;
+  color: #eee;
+  position: absolute;
+  z-index: 3;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(0 0 0 / 0.2);
+  backdrop-filter: blur(5px);
+  display: grid;
+  place-items: center;
+} */
+
+.pandalLoader {
+  height: 95%;
+  display: grid;
+  place-items: center;
+}
+
+.pandalClose {
+  position: absolute;
+  z-index: 2;
+  left: 12vw;
+  top: 14.5vh;
+  color: var(--accent-color);
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.mapPinBtn {
+  /* scale: 0.75; */
+  color: var(--accent-color);
+  margin-left: 5px;
+  filter: drop-shadow(0 0 1px rgb(255 255 255 / 0.2));
+  cursor: pointer;
+  display: inline;
+}
+
+.pandalInfo {
+  position: absolute !important;
+  top: 78px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 80vh;
+  width: 80vw;
+  overflow-y: scroll;
+  background-color: var(--primary-bg);
+  box-shadow: 0 30px 50px rgb(0 0 0 / 0.5);
+  border: 2px solid rgba(0 0 0 / 0.2);
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.cardClose {
+  display: none;
+}
+
+.pandalInfo::-webkit-scrollbar {
+  display: none;
+}
+
+.pandalTitle {
+  color: var(--primary-text);
+  position: relative;
+  width: 80%;
+  font-size: 1.875rem;
+  font-weight: 500;
+  /* text-align: center; */
+  margin-top: 2.5rem;
+}
+
+.pandalInfo > p {
+  color: var(--secondary-text);
+  /* border: 1px solid slategray; */
+  /* box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2); */
+  font-size: 12px;
+  margin-top: 10px;
+  width: 80%;
+  /* text-align: center; */
+  /* padding: 7px 10px; */
+  /* margin: 7px -5px; */
+  margin-bottom: 20px;
+  /* border-radius: 10px; */
+}
+
+.pandalMapInfo {
+  display: flex;
+  align-items: left;
+  width: 80%;
+  flex-direction: column;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.pandalMapInfo .badge-container .badge {
+  font-size: 12px;
+  padding-block: -2px;
+  padding-inline: 6px;
+}
+
+.mapTopic {
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  /* text-decoration: underline 2px var(--accent-color); */
+  border-bottom: 1px solid var(--accent-color);
+  margin-top: 3px;
+  margin-right: 5px;
+  color: var(--primary-text);
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.expandedIcon {
+  transform: rotate(180deg);
+}
+
+.pandalBadgeContainer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.pandalUnBadge {
+  background-color: rgba(255, 0, 0, 0.1);
+  color: var(--secondary-text);
+  opacity: 0.5;
+  font-weight: 300;
+  font-size: 14px;
+  padding: 2px 7px;
+  /* border: 1px solid rgba(112, 128, 144, 0.2); */
+}
+
+.pandalBadge {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--secondary-text);
+  font-weight: 400;
+  font-size: 14px;
+  padding: 2px 7px;
+  /* border: 1px solid rgba(112, 128, 144, 0.2); */
+  cursor: pointer;
+  /* border-radius: 6px; */
+}
+
+/* .pandalTableBody:first-child {
+  text-align: left;
+  font-size: 14px;
+  border-color: rgb(51 65 85 / 1);
+  color: var(--tertiary-text);
+}
+
+.pandalTableBody:nth-child(2) {
+  text-align: right;
+  font-size: 14px;
+  border-color: rgb(51 65 85 / 1);
+  color: var(--tertiary-text);
+} */
+
+.pandalTempLg {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-block: -20px;
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: var(--secondary-text);
+  opacity: 0.95;
+}
+
+.pandalLocationSm {
+  font-size: 12px;
+  color: var(--tertiary-text);
+}
