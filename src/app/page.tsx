@@ -22,7 +22,6 @@ export default function Home() {
   return (
     <>
       <Providers>
-        {/* <PandalInfo /> */}
         <SearchBox />
         <TopMap name={passCords} />
         <FormBottom onSubmit={getData} />
