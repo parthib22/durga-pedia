@@ -50,9 +50,9 @@ const Footer = () => {
             gap: "10px",
           }}
         >
-          <Link className="contactD" href={`mailto:team.durgapedia@gmail.com`}>
+          <a className="contactD" href={`mailto:team.durgapedia@gmail.com`}>
             Contact Us
-          </Link>
+          </a>
           <p>© 2023 DurgaPedia</p>
         </div>
       </div>

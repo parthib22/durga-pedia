@@ -687,7 +687,7 @@ function Cards() {
                       </h4>
                       {t.rst.length === 0 ? (
                         <span className="pandalUnBadge">
-                          ! no restaurants nearby
+                          ! no restaurants within 1km
                         </span>
                       ) : (
                         t.rst.map((adv: any, index: any) => (
@@ -716,7 +716,7 @@ function Cards() {
                       </h4>
                       {t.trns.length === 0 ? (
                         <span className="pandalUnBadge">
-                          ! no train stations nearby
+                          ! no train stations within 1km
                         </span>
                       ) : (
                         t.trns.map(
@@ -763,7 +763,7 @@ function Cards() {
 
                       {t.met.length === 0 ? (
                         <span className="pandalUnBadge">
-                          ! no metro stations nearby
+                          ! no metro stations within 1km
                         </span>
                       ) : (
                         t.met.map(
@@ -807,7 +807,7 @@ function Cards() {
 
                       {t.met.length === 0 ? (
                         <span className="pandalUnBadge">
-                          ! no bus stops nearby
+                          ! no bus stops within 1km
                         </span>
                       ) : (
                         t.bst.map(
