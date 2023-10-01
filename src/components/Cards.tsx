@@ -640,6 +640,11 @@ function Cards() {
   function redirect(red: string) {
     window.open(red, "_blank");
   }
+  function handleRemove(id: any) {
+    const newList = pandals.filter((item) => item.id !== id);
+
+    setPandals(newList);
+  }
   //console.log(pandals);
   //if(Display)
   // if (true)
@@ -1022,7 +1027,12 @@ function Cards() {
                       </div>
                     </div>
                   </div>
-                  <button className="rmv-btn">Remove</button>
+                  <button
+                    className="rmv-btn"
+                    onClick={() => handleRemove(t.id)}
+                  >
+                    Remove
+                  </button>
                 </div>
               </div>
             ))}
