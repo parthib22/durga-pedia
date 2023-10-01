@@ -11,6 +11,8 @@ import "../app/pandalinfo.css";
 import Link from "next/link";
 import Image from "next/image";
 import { RotatingLines } from "react-loader-spinner";
+import { Placeholder } from "rsuite";
+import "rsuite/dist/rsuite.min.css";
 
 async function getPandalData() {
   try {
@@ -451,12 +453,63 @@ const AutoComplete = () => {
                 <ArrowBackIosNewIcon />
               </button>
               <div className="pandalLoader">
-                <RotatingLines
-                  strokeColor="orangered"
-                  strokeWidth="4"
-                  animationDuration="1"
-                  width="50"
-                  visible={true}
+                <Placeholder.Paragraph
+                  className="ph"
+                  rows={1}
+                  rowHeight={30}
+                  rowMargin={25}
+                />
+                <br />
+                <Placeholder.Paragraph
+                  className="ph"
+                  rows={3}
+                  rowHeight={12}
+                  rowMargin={10}
+                />
+                <br />
+                <Placeholder.Paragraph
+                  className="ph"
+                  rows={1}
+                  rowHeight={17}
+                  rowMargin={20}
+                />
+                <br />
+                <Placeholder.Paragraph
+                  className="ph"
+                  rows={1}
+                  rowHeight={17}
+                  rowMargin={20}
+                />
+                <br />
+                <Placeholder.Paragraph
+                  className="ph"
+                  rows={1}
+                  rowHeight={17}
+                  rowMargin={20}
+                />
+                <br />
+                <Placeholder.Paragraph
+                  className="ph"
+                  rows={1}
+                  rowHeight={17}
+                  rowMargin={20}
+                />
+                <br />
+                <Placeholder.Paragraph
+                  className="ph"
+                  rows={1}
+                  rowHeight={17}
+                  rowMargin={20}
+                />
+                <br />
+                <br />
+                <Placeholder.Paragraph
+                  className="ph"
+                  graph={"square"}
+                  rows={2}
+                  rowHeight={17}
+                  rowMargin={10}
+                  style={{ paddingBottom: "40px" }}
                 />
               </div>
             </div>

@@ -8,10 +8,6 @@
   --secondary-text: rgb(203 213 225);
 }
 
-/* * {
-  transition: all 0.3s ease !important;
-} */
-
 .form-container form {
   position: relative;
   width: calc(100%);
@@ -123,6 +119,7 @@
   opacity: 0.5;
 }
 .pandal-active {
+  transition: all 0.3s ease-in-out !important;
   position: absolute;
   left: calc(50% - 7rem);
   height: 1.8rem;
@@ -132,6 +129,7 @@
 }
 
 .range-active {
+  transition: all 0.3s ease-in-out !important;
   position: absolute;
   left: calc(50% + 3.95rem);
   height: 1.8rem;

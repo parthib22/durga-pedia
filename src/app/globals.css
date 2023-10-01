@@ -15,8 +15,6 @@
 
 * {
   box-sizing: border-box;
-  padding: 0;
-  margin: 0;
   /* transition: all 0.3s ease !important; */
   font-family: "Fira Code", monospace;
   font-family: "Inter", sans-serif;
@@ -70,6 +68,10 @@ body::-webkit-scrollbar {
   justify-content: center;
 }
 
+.footer a {
+  color: var(--secondary-text);
+}
+
 .footer a:hover,
 .footer a:focus,
 .footer a:active {
@@ -84,4 +86,8 @@ body::-webkit-scrollbar {
 
 .footer .contactD {
   text-decoration: underline;
+}
+
+a:hover {
+  color: white !important;
 }
