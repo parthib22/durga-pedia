@@ -5,9 +5,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Merriweather&family=Noto+Sans+Bengali&display=swap");
 
 :root {
-  --primary-bg: rgb(31 41 55);
+  --primary-bg: rgb(21, 28, 45);
   --accent-color: orangered;
-  --text-on-accent: rgb(31 41 55);
+  --text-on-accent: rgb(21, 28, 45);
   --primary-text: rgb(248 250 252);
   --secondary-text: rgb(203 213 225);
   --tertiary-text: rgb(148 163 184 / 1);

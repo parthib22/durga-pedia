@@ -12,8 +12,6 @@ import { useDispatch } from "react-redux";
 import Image from "next/image";
 import { setLoaderCheck } from "../../slices/LoaderCheck";
 import Footer from "./Footer";
-// import { Placeholder } from "semantic-ui-react";
-// import "semantic-ui-css/semantic.min.css";
 import { Placeholder } from "rsuite";
 import "rsuite/dist/rsuite.min.css";
 
@@ -25,11 +23,13 @@ function Cards() {
   const [priceEx, setPriceEx] = useState(true);
 
   const [Display, SetDisplay] = useState(false);
-  const kCheck = useSelector(
-    (state: RootState) => state.loadercheck.loaderCheck
-  );
+  const [tCheck, setTCheck] = useState(false);
+  // const kCheck = useSelector(
+  //   (state: RootState) => state.loadercheck.loaderCheck
+  // );
   const scrollRef = useRef<HTMLDivElement>(null);
   const [priceVis, setPriceVis] = useState(false);
+  const [gblstr, Setgblstr] = useState("");
   //console.log(Display);
   let visited = new Map();
   const dispatch = useDispatch();
@@ -80,6 +80,7 @@ function Cards() {
         count[0].type == "range"
       ) {
         console.log("entered from range");
+        setTCheck(true);
         startRangeRouting();
       }
       if (
@@ -89,6 +90,7 @@ function Cards() {
         count[0].type == "pandal"
       ) {
         console.log("entered from pnadal ");
+        setTCheck(true);
         startRouting();
       }
       // if (count[0].fid != null) {
@@ -554,14 +556,19 @@ function Cards() {
     console.log(pandals);
     try {
       str = count[0].lat + "," + count[0].lng + "|" + str;
+      Setgblstr(str);
+      console.log(gblstr);
+      console.log(str);
       if (count[0].pcheck) {
         str = str + "|" + count[0].lat + "," + count[0].lng;
       }
+      console.log("str > show computed route: " + str);
 
       let vbar = [{ status: false, kar: str }];
       dispatch(setSomeProperty(vbar));
       let wbar = [{ status: false }];
       dispatch(setLoaderCheck(wbar));
+      setTCheck(false);
       console.log(
         "from formbottom > startplanner > loader is changed to false"
       );
@@ -647,10 +654,17 @@ function Cards() {
   function redirect(red: string) {
     window.open(red, "_blank");
   }
-  function handleRemove(id: any) {
+  function handleRemove(id: any, lat: any, lng: any) {
     const newList = pandals.filter((item) => item.id !== id);
-
     setPandals(newList);
+    console.log("from 660");
+    var vc = lat + "," + lng + "|";
+    console.log(vc);
+    console.log(gblstr);
+    Setgblstr(gblstr.replace(vc, ""));
+    console.log(gblstr);
+    let vbar = [{ status: false, kar: gblstr }];
+    dispatch(setSomeProperty(vbar));
   }
   //console.log(pandals);
   //if(Display)
@@ -660,7 +674,7 @@ function Cards() {
   if (!Array.isArray(pandals)) {
     return <div>loading</div>; // or any loading indicator
   } else {
-    if (kCheck[0].status) {
+    if (tCheck) {
       // if (scrollRef.current) {
       //   scrollRef.current.scrollIntoView({ behavior: "smooth" });
       // }
@@ -991,7 +1005,7 @@ function Cards() {
                     </div>
                     <button
                       className="rmv-btn"
-                      onClick={() => handleRemove(t.id)}
+                      onClick={() => handleRemove(t.id, t.lat, t.lng)}
                     >
                       Remove
                     </button>

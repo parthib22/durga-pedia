@@ -1,21 +1,11 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
-import { useSelector } from "react-redux";
-import { LoaderCheck, setLoaderCheck } from "../../slices/LoaderCheck";
-import { RootState } from "@/app/store";
 
 const Footer = () => {
-  //   const [kCheck, setKCheck] = useState(true);
-  //   const sCheck = useSelector(
-  //     (state: RootState) => state.loadercheck.loaderCheck
-  //   );
-  //   if (sCheck[0].staus) setKCheck(false);
-  //   console.log("scheck from footer: " + sCheck[0].status);
   return (
     <>
-      <div className={`footer ${""}`}>
-        {/* <p>Thank you for using our app</p> */}
+      <div className="footer">
         <p>Made with 💟 by</p>
         <p style={{ flexDirection: "row", gap: "5px", marginBottom: "7px" }}>
           <Link
@@ -23,7 +13,7 @@ const Footer = () => {
             href={`https://www.linkedin.com/in/parthibds/`}
             target="_blank"
           >
-            Parthib DS
+            Parthib
           </Link>
           |
           <Link
@@ -31,7 +21,7 @@ const Footer = () => {
             href={`https://www.linkedin.com/in/samadrit-das/`}
             target="_blank"
           >
-            Samadrit Das
+            Samadrit
           </Link>
           |
           <Link
@@ -39,7 +29,15 @@ const Footer = () => {
             href={`https://www.linkedin.com/in/biswaraj-bhattacharyya-77601023a/`}
             target="_blank"
           >
-            Biswaraj Bhatt
+            Biswaraj
+          </Link>
+          |
+          <Link
+            className="nameD"
+            href={`https://www.linkedin.com/in/sudip-biswas-2b1377216/`}
+            target="_blank"
+          >
+            Sudip
           </Link>
         </p>
         <div
