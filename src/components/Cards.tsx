@@ -188,15 +188,12 @@ function Cards() {
               lat: data["results"][0].results[i].geometry.location.lat,
               lng: data["results"][0].results[i].geometry.location.lng,
               map:
-                "http://maps.google.com/maps?q=" +
+                "https://www.google.com/maps/search/?api=1&query=" +
                 latnew +
                 "," +
                 lngnew +
-                "&ll=" +
-                latnew +
-                "," +
-                lngnew +
-                "z=17",
+                "&query_place_id=" +
+                data["results"][0].results[i].place_id,
             });
             cnt++;
           }
@@ -245,15 +242,12 @@ function Cards() {
               lat: data["results"][1].results[i].geometry.location.lat,
               lng: data["results"][1].results[i].geometry.location.lng,
               map:
-                "http://maps.google.com/maps?q=" +
+                "https://www.google.com/maps/search/?api=1&query=" +
                 latnew +
                 "," +
                 lngnew +
-                "&ll=" +
-                latnew +
-                "," +
-                lngnew +
-                "z=17",
+                "&query_place_id=" +
+                data["results"][1].results[i].place_id,
             });
             cnt++;
           }
@@ -303,15 +297,12 @@ function Cards() {
               lat: data["results"][2].results[i].geometry.location.lat,
               lng: data["results"][2].results[i].geometry.location.lng,
               map:
-                "http://maps.google.com/maps?q=" +
+                "https://www.google.com/maps/search/?api=1&query=" +
                 latnew +
                 "," +
                 lngnew +
-                "&ll=" +
-                latnew +
-                "," +
-                lngnew +
-                "z=17",
+                "&query_place_id=" +
+                data["results"][2].results[i].place_id,
             });
             cnt++;
           }
@@ -398,15 +389,12 @@ function Cards() {
                 lat: data["results"][0].results[i].geometry.location.lat,
                 lng: data["results"][0].results[i].geometry.location.lng,
                 map:
-                  "http://maps.google.com/maps?q=" +
+                  "https://www.google.com/maps/search/?api=1&query=" +
                   latnew +
                   "," +
                   lngnew +
-                  "&ll=" +
-                  latnew +
-                  "," +
-                  lngnew +
-                  "z=17",
+                  "&query_place_id=" +
+                  data["results"][0].results[i].place_id,
               });
               cnt++;
             }
