@@ -6,6 +6,16 @@ const Footer = () => {
   return (
     <>
       <div className="footer">
+        <p style={{ marginBottom: 3 }}>*Results may vary from real life*</p>
+        <a
+          href="https://forms.gle/wMnzHZSYGg2gVoMH9"
+          target="_blank"
+          style={{ textDecoration: "underline" }}
+        >
+          Report missing Durga Puja
+        </a>
+        <br />
+        <br />
         <p>Made with 💟 by</p>
         <p style={{ flexDirection: "row", gap: "5px", marginBottom: "7px" }}>
           <Link

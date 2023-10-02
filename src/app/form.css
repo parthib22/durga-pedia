@@ -48,19 +48,22 @@
   height: 3rem;
   padding-block: 0;
   width: calc(80vw - 3.5rem);
-  padding-inline-start: 10px;
-  border-left: 3px solid transparent;
+  padding-left: 12px;
+  border-left: 3px solid rgba(255, 255, 255, 0.05);
+  border-block: 3px solid rgba(255, 255, 255, 0.05);
+  border-right: 0;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   box-sizing: border-box;
   color: #eee;
   font-size: 18px;
   /* box-shadow: 0 0 30px rgb(0 0 0 / 0.3); */
+  transition: all 0.3s ease-in-out !important;
 }
 
 .ipStartLoc:focus {
-  border-block: 3px solid rgba(255, 255, 255, 0.05);
-  border-left: 3px solid rgba(255, 255, 255, 0.05);
+  border-block: 3px solid rgba(255, 255, 255, 0.1);
+  border-left: 3px solid rgba(255, 255, 255, 0.1);
   border-right: 0;
 }
 
