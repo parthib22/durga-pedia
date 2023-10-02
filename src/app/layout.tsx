@@ -2,6 +2,8 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { MyProvider } from "../components/MyContext";
+import Script from "next/script";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -39,6 +41,17 @@ export default function RootLayout({
         />
         <meta name="twitter:image" content="/icon-192x192.png" />
         <link rel="manifest" href="/manifest.json" />
+
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-Y5GXJMVDSN" />
+        <Script id="google-analytics">
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+ 
+          gtag('config', 'G-Y5GXJMVDSN');
+        `}
+        </Script>
       </head>
       <body className={inter.className}>
         <MyProvider>{children}</MyProvider>
