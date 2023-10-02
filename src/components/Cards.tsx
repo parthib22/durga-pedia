@@ -750,6 +750,8 @@ function Cards() {
                         <NearMeIcon />
                       </button>
                     </h2>
+                    {/* <p>t.address</p>
+                    <br /> */}
                     <p>
                       From above location, you will need to travel{" "}
                       {<p>{t.distance}</p>} in {<p>{t.duration}</p>} to reach
@@ -819,14 +821,16 @@ function Cards() {
                               },
                               index: React.Key | null | undefined
                             ) => (
-                              <span
+                              <Link
+                                href={"/"}
+                                target="_blank"
                                 className={`pandalBadge ${
                                   trainEx && "cardClose"
                                 }`}
                                 key={index}
                               >
                                 {adv.tstame}
-                              </span>
+                              </Link>
                             )
                           )
                         )}
@@ -866,14 +870,16 @@ function Cards() {
                               },
                               index: React.Key | null | undefined
                             ) => (
-                              <span
+                              <Link
+                                href={"/"}
+                                target="_blank"
                                 className={`pandalBadge ${
                                   metroEx && "cardClose"
                                 }`}
                                 key={index}
                               >
                                 {adv.tstame}
-                              </span>
+                              </Link>
                             )
                           )
                         )}
@@ -913,14 +919,16 @@ function Cards() {
                               },
                               index: React.Key | null | undefined
                             ) => (
-                              <span
+                              <Link
+                                href={"/"}
+                                target="_blank"
                                 className={`pandalBadge ${
                                   busEx && "cardClose"
                                 }`}
                                 key={index}
                               >
                                 {adv.tstame}
-                              </span>
+                              </Link>
                             )
                           )
                         )}
@@ -974,7 +982,12 @@ function Cards() {
                     <div className="pandalMapInfo">
                       <h3 className="mapTopic">Weather</h3>
                       <div className="pandalWeatherLg">
-                        <div className="pandalWeatherSm">
+                        <Link
+                          href={"/"}
+                          target="_blank"
+                          className="pandalWeatherSm"
+                          style={{ textDecoration: "none" }}
+                        >
                           <div className="pandalTempLg">
                             {t.weather.temp}°C
                             <Image
@@ -988,7 +1001,7 @@ function Cards() {
                           <span className="pandalLocationSm">
                             {t.weather.name}
                           </span>
-                        </div>
+                        </Link>
                       </div>
                     </div>
                     <button
