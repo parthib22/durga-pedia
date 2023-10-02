@@ -805,6 +805,7 @@ function Cards() {
                           t.trns.map(
                             (
                               adv: {
+                                map: URL;
                                 tstame:
                                   | string
                                   | number
@@ -822,7 +823,7 @@ function Cards() {
                               index: React.Key | null | undefined
                             ) => (
                               <Link
-                                href={"/"}
+                                href={adv.map}
                                 target="_blank"
                                 className={`pandalBadge ${
                                   trainEx && "cardClose"
@@ -854,6 +855,7 @@ function Cards() {
                           t.met.map(
                             (
                               adv: {
+                                map: URL;
                                 tstame:
                                   | string
                                   | number
@@ -871,7 +873,7 @@ function Cards() {
                               index: React.Key | null | undefined
                             ) => (
                               <Link
-                                href={"/"}
+                                href={adv.map}
                                 target="_blank"
                                 className={`pandalBadge ${
                                   metroEx && "cardClose"
@@ -903,6 +905,7 @@ function Cards() {
                           t.bst.map(
                             (
                               adv: {
+                                map: URL;
                                 tstame:
                                   | string
                                   | number
@@ -920,7 +923,7 @@ function Cards() {
                               index: React.Key | null | undefined
                             ) => (
                               <Link
-                                href={"/"}
+                                href={adv.map}
                                 target="_blank"
                                 className={`pandalBadge ${
                                   busEx && "cardClose"
