@@ -518,12 +518,12 @@ const AutoComplete = () => {
                 >
                   <ArrowBackIosNewIcon />
                 </button>
-                <h2 className="pandalTitle">
+                <Link href={"/"} target="_blank" style={{textDecoration:"none"}} className="pandalTitle">
                   {t.name}
                   <button className="mapPinBtn">
                     <NearMeIcon />
                   </button>
-                </h2>
+                </Link>
                 {/* <p>
                   From above location Based on driving mode you will need
                   /t.duration/ to travel /t.distance/
