@@ -40,6 +40,7 @@ function Cards() {
     id: string;
     lat: string;
     lng: string;
+    adr: string;
     name: string;
     rst: any;
     distance: any;
@@ -55,6 +56,7 @@ function Cards() {
       id: string;
       lat: string;
       lng: string;
+      adr: string;
       name: string;
       rst: any;
       distance: any;
@@ -451,11 +453,12 @@ function Cards() {
         const pandalData = fetch(
           "https://cdn.jsdelivr.net/gh/THUNDERSAMA/durga-pedia@a85947898471f77358f792a840e2e9028c31b86c/output.json"
         ).then((response) => response.json());
-        var la, lo;
+        var la, lo, adr;
         for (const pandal of await pandalData) {
           if (pandal.id == keysc) {
             la = pandal.lat;
             lo = pandal.lng;
+            adr = pandal.address;
             // karval.push(la+","+lo);
             // console.log("l1 ="+l1+",ln1= "+ln1+",la= "+la+", lo"+lo)
             let distance_cal: any = await GetDist({
@@ -506,6 +509,7 @@ function Cards() {
               id: pandal.id,
               lat: pandal.lat,
               lng: pandal.lng,
+              adr: pandal.address,
               name: pandal.pandal,
               rst: resname,
               distance: distance_cal[0],
@@ -744,14 +748,24 @@ function Cards() {
               {pandals.map((t) => (
                 <div className="card" key={t.id}>
                   <div className="info">
-                    <Link href={"/"} target="_blank" style={{textDecoration:"none"}} className="title">
+                    <Link
+                      href={
+                        "https://www.google.com/maps/search/?api=1&query=" +
+                        t.lat +
+                        "," +
+                        t.lng
+                      }
+                      target="_blank"
+                      style={{ textDecoration: "none" }}
+                      className="title"
+                    >
                       {t.name}
                       <button className="mapPinBtn">
                         <NearMeIcon />
                       </button>
                     </Link>
-                    {/* <p>t.address</p>
-                    <br /> */}
+                    <p>{t.adr}</p>
+                    <br />
                     <p>
                       From above location, you will need to travel{" "}
                       {<p>{t.distance}</p>} in {<p>{t.duration}</p>} to reach

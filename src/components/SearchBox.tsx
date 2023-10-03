@@ -44,6 +44,7 @@ const AutoComplete = () => {
       id: string;
       lat: string;
       lng: string;
+      adr: string;
       name: string;
       rst: any;
       trns: any;
@@ -56,6 +57,7 @@ const AutoComplete = () => {
     id: string;
     lat: string;
     lng: string;
+    adr: string;
     name: string;
     rst: any;
     trns: any;
@@ -408,6 +410,7 @@ const AutoComplete = () => {
             id: pandal.id,
             lat: pandal.lat,
             lng: pandal.lng,
+            adr: pandal.address,
             name: pandal.pandal,
             rst: resname,
             trns: train,
@@ -518,16 +521,23 @@ const AutoComplete = () => {
                 >
                   <ArrowBackIosNewIcon />
                 </button>
-                <Link href={"/"} target="_blank" style={{textDecoration:"none"}} className="pandalTitle">
+                <Link
+                  href={
+                    "https://www.google.com/maps/search/?api=1&query=" +
+                    t.lat +
+                    "," +
+                    t.lng
+                  }
+                  target="_blank"
+                  style={{ textDecoration: "none" }}
+                  className="pandalTitle"
+                >
                   {t.name}
                   <button className="mapPinBtn">
                     <NearMeIcon />
                   </button>
                 </Link>
-                {/* <p>
-                  From above location Based on driving mode you will need
-                  /t.duration/ to travel /t.distance/
-                </p> */}
+                <p>{t.adr}</p>
                 <div className="pandalMapInfo">
                   <div className="pandalBadgeContainer">
                     <h4 className="mapTopic" onClick={() => setFoodEx(!foodEx)}>
