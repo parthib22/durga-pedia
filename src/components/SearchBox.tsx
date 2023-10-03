@@ -589,12 +589,14 @@ const AutoComplete = () => {
                           },
                           index: React.Key | null | undefined
                         ) => (
-                          <span
+                          <Link
+                            href={"/"}
+                            target="_blank"
                             className={`pandalBadge ${trainEx && "cardClose"}`}
                             key={index}
                           >
                             {adv.tstame}
-                          </span>
+                          </Link>
                         )
                       )
                     )}
@@ -634,12 +636,14 @@ const AutoComplete = () => {
                           },
                           index: React.Key | null | undefined
                         ) => (
-                          <span
+                          <Link
+                            href={"/"}
+                            target="_blank"
                             className={`pandalBadge ${metroEx && "cardClose"}`}
                             key={index}
                           >
                             {adv.tstame}
-                          </span>
+                          </Link>
                         )
                       )
                     )}
@@ -676,12 +680,14 @@ const AutoComplete = () => {
                           },
                           index: React.Key | null | undefined
                         ) => (
-                          <span
+                          <Link
+                            href={"/"}
+                            target="_blank"
                             className={`pandalBadge ${busEx && "cardClose"}`}
                             key={index}
                           >
                             {adv.tstame}
-                          </span>
+                          </Link>
                         )
                       )
                     )}
@@ -691,7 +697,12 @@ const AutoComplete = () => {
                 <div className="pandalMapInfo">
                   <h3 className="mapTopic">Weather</h3>
                   <div className="pandalWeatherLg">
-                    <div className="pandalWeatherSm">
+                    <Link
+                      href={"/"}
+                      target="_blank"
+                      className="pandalWeatherSm"
+                      style={{ textDecoration: "none" }}
+                    >
                       <div className="pandalTempLg">
                         {t.weather.temp}°C
                         <Image
@@ -703,7 +714,7 @@ const AutoComplete = () => {
                         />
                       </div>
                       <span className="pandalLocationSm">{t.weather.name}</span>
-                    </div>
+                    </Link>
                   </div>
                 </div>
               </div>

@@ -72,6 +72,8 @@
   width: 3rem;
   right: 0rem;
   display: grid;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
   place-content: center;
   z-index: 2;
   color: rgb(0 0 0 / 0.4);
