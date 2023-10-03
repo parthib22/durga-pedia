@@ -537,7 +537,7 @@ const AutoComplete = () => {
                     <NearMeIcon />
                   </button>
                 </Link>
-                <p>{t.adr}</p>
+                <p style={{ width: "100%", textAlign: "left" }}>{t.adr}</p>
                 <div className="pandalMapInfo">
                   <div className="pandalBadgeContainer">
                     <h4 className="mapTopic" onClick={() => setFoodEx(!foodEx)}>

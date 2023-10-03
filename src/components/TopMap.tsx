@@ -160,6 +160,15 @@ const TopMap: React.FC<TopMapProps> = ({ name }) => {
       );
       let infoWindow: google.maps.InfoWindow;
       infoWindow = new google.maps.InfoWindow();
+      const locationButton = document.createElement("button");
+
+      locationButton.textContent = "Pan to Current Location";
+      locationButton.classList.add("custom-map-control-button");
+
+      map.controls[google.maps.ControlPosition.BOTTOM_CENTER].push(
+        locationButton
+      );
+
       setTimeout(function () {
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(
@@ -176,8 +185,10 @@ const TopMap: React.FC<TopMapProps> = ({ name }) => {
 
               infoWindow.setPosition(pos);
               infoWindow.setContent("Your Location");
-              // infoWindow.open(map);
-              // map.setCenter(pos);
+              locationButton.addEventListener("click", () => {
+                infoWindow.open(map);
+                map.setCenter(pos);
+              });
             },
             () => {
               console.log("Browser doesn't support Geolocation");

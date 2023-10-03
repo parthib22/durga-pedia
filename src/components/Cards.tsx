@@ -764,8 +764,7 @@ function Cards() {
                         <NearMeIcon />
                       </button>
                     </Link>
-                    <p>{t.adr}</p>
-                    <br />
+                    <p style={{ marginBottom: 5 }}>{t.adr}</p>
                     <p>
                       From above location, you will need to travel{" "}
                       {<p>{t.distance}</p>} in {<p>{t.duration}</p>} to reach
