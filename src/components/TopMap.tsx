@@ -158,8 +158,39 @@ const TopMap: React.FC<TopMapProps> = ({ name }) => {
           }
         }
       );
+      let infoWindow: google.maps.InfoWindow;
+      infoWindow = new google.maps.InfoWindow();
+      setTimeout(function () {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(
+            (position: GeolocationPosition) => {
+              const pos = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude,
+              };
+              new google.maps.Marker({
+                position: pos,
+                map,
+                title: "Hello World!",
+              });
+
+              infoWindow.setPosition(pos);
+              infoWindow.setContent("Your Location");
+              // infoWindow.open(map);
+              // map.setCenter(pos);
+            },
+            () => {
+              console.log("Browser doesn't support Geolocation");
+            }
+          );
+        } else {
+          // Browser doesn't support Geolocation
+          console.log("Browser doesn't support Geolocation");
+        }
+      }, 10000);
       console.log("rendered if");
     } else {
+      let infoWindow: google.maps.InfoWindow;
       const map = new window.google.maps.Map(
         document.getElementById("map") as HTMLElement,
         {
@@ -177,10 +208,34 @@ const TopMap: React.FC<TopMapProps> = ({ name }) => {
           styles: [],
         }
       );
+      infoWindow = new google.maps.InfoWindow();
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (position: GeolocationPosition) => {
+            const pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude,
+            };
+
+            infoWindow.setPosition(pos);
+            infoWindow.setContent("Your Location");
+            infoWindow.open(map);
+            map.setCenter(pos);
+          },
+          () => {
+            console.log("Browser doesn't support Geolocation");
+          }
+        );
+      } else {
+        // Browser doesn't support Geolocation
+        console.log("Browser doesn't support Geolocation");
+      }
+
       console.log("rendered else" + stch);
       console.log(sCheck);
     }
   }, [bCheck]);
+
   function animateCircle(line: google.maps.Polyline) {
     let count = 0;
 
