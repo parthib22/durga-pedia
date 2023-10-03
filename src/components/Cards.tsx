@@ -744,12 +744,12 @@ function Cards() {
               {pandals.map((t) => (
                 <div className="card" key={t.id}>
                   <div className="info">
-                    <h2 className="title">
+                    <Link href={"/"} target="_blank" style={{textDecoration:"none"}} className="title">
                       {t.name}
                       <button className="mapPinBtn">
                         <NearMeIcon />
                       </button>
-                    </h2>
+                    </Link>
                     {/* <p>t.address</p>
                     <br /> */}
                     <p>
