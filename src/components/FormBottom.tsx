@@ -238,7 +238,7 @@ export default function FormBottom(props: { onSubmit: any }) {
                 ref={address}
                 type="text"
                 className="ipStartLoc"
-                placeholder="Type your start location"
+                placeholder="Type your starting location"
                 required
               />
             </Autocomplete>
