@@ -178,7 +178,7 @@ const TopMap: React.FC<TopMapProps> = ({ name }) => {
       infoWindow = new google.maps.InfoWindow();
       const locationButton = document.createElement("button");
 
-      locationButton.textContent = "Pan";
+      locationButton.textContent = "P";
       locationButton.classList.add("custom-map-control-button");
 
       map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(
@@ -195,27 +195,11 @@ const TopMap: React.FC<TopMapProps> = ({ name }) => {
             new google.maps.Marker({
               position: pos,
               map,
-              title: "Hello World!",
+              title: "Your starting location",
             });
 
-              infoWindow.setPosition(pos);
-              infoWindow.setContent("<div id='urloc'>Your Location</div>");
-              locationButton.addEventListener("click", () => {
-                infoWindow.open(map);
-                map.setCenter(pos);
-              });
-            },
-            () => {
-              console.log("Browser doesn't support Geolocation");
-            }
-          );
-        } else {
-          // Browser doesn't support Geolocation
-          console.log("Browser doesn't support Geolocation");
-        }
-      }, 100); // bc 10sec er por?
             infoWindow.setPosition(pos);
-            infoWindow.setContent("Your Location");
+            infoWindow.setContent("<div id='urloc'>Your Location</div>");
             locationButton.addEventListener("click", () => {
               infoWindow.open(map);
               map.setCenter(pos);
