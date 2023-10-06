@@ -45,3 +45,14 @@
   overflow: hidden;
   padding: 0 0.5em;
 }
+
+#urloc {
+  color: black;
+  font-family: inherit;
+  font-weight: 600;
+  outline: none;
+}
+
+.fullscr {
+  height: 10rem;
+}

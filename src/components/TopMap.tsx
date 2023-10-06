@@ -162,10 +162,10 @@ const TopMap: React.FC<TopMapProps> = ({ name }) => {
       infoWindow = new google.maps.InfoWindow();
       const locationButton = document.createElement("button");
 
-      locationButton.textContent = "Pan to Current Location";
+      locationButton.textContent = "Pan";
       locationButton.classList.add("custom-map-control-button");
 
-      map.controls[google.maps.ControlPosition.BOTTOM_CENTER].push(
+      map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(
         locationButton
       );
 
@@ -180,11 +180,11 @@ const TopMap: React.FC<TopMapProps> = ({ name }) => {
               new google.maps.Marker({
                 position: pos,
                 map,
-                title: "Hello World!",
+                title: "Your starting point",
               });
 
               infoWindow.setPosition(pos);
-              infoWindow.setContent("Your Location");
+              infoWindow.setContent("<div id='urloc'>Your Location</div>");
               locationButton.addEventListener("click", () => {
                 infoWindow.open(map);
                 map.setCenter(pos);
@@ -198,7 +198,7 @@ const TopMap: React.FC<TopMapProps> = ({ name }) => {
           // Browser doesn't support Geolocation
           console.log("Browser doesn't support Geolocation");
         }
-      }, 10000);
+      }, 100); // bc 10sec er por?
       console.log("rendered if");
     } else {
       let infoWindow: google.maps.InfoWindow;
@@ -229,7 +229,7 @@ const TopMap: React.FC<TopMapProps> = ({ name }) => {
             };
 
             infoWindow.setPosition(pos);
-            infoWindow.setContent("Your Location");
+            infoWindow.setContent("<div id='urloc'>Your Location</div>");
             infoWindow.open(map);
             map.setCenter(pos);
           },
