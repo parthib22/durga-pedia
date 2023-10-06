@@ -91,7 +91,10 @@ const TopMap: React.FC<TopMapProps> = ({ name }) => {
         .substring(0, sCheck[0].kar.length - 1)
         .split("|");
       console.log(coordinatePairs);
-      const resultMapArray = [];
+      var resultMapArray: {
+        location: google.maps.LatLng;
+        stopover: boolean;
+      }[] = [];
       if (coordinatePairs.length > 2) {
         for (let i = 1; i < coordinatePairs.length - 1; i++) {
           const pair = coordinatePairs[i];
@@ -117,7 +120,26 @@ const TopMap: React.FC<TopMapProps> = ({ name }) => {
         (response, status) => {
           if (status === google.maps.DirectionsStatus.OK && response) {
             directionsRenderer.setDirections(response);
+            console.log(response);
             const waypoints = response.routes[0].legs[0].via_waypoints; // Extract waypoints from the response
+
+            console.log("in line 122");
+            console.log(resultMapArray);
+            // for (let i = 1; i < coordinatePairs.length; i++) {
+            //   //console.log(waypoint);
+            //   const pair = coordinatePairs[i];
+            //   const [latitude, longitude] = pair.split(",");
+            //   const marker = new google.maps.Marker({
+            //     position: new google.maps.LatLng(
+            //       parseFloat(latitude),
+            //       parseFloat(longitude)
+            //     ),
+            //     map: map,
+            //     icon: "/images/durga.png",
+            //     title: "Waypoint",
+            //   });
+            //   // markers.push(marker);
+            // }
             const arrowSymbol = {
               path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
               scale: 4, // Adjust the size of the arrowhead
@@ -126,12 +148,14 @@ const TopMap: React.FC<TopMapProps> = ({ name }) => {
               strokeWeight: 0, // No border
             };
             const lineSymbol = {
-              path: google.maps.SymbolPath.CIRCLE,
-              scale: 8,
-              strokeColor: "#393",
+              path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
+              scale: 3,
+              strokeColor: "yellow",
             };
             const polyline = new google.maps.Polyline({
-              path: waypoints,
+              path: google.maps.geometry.encoding.decodePath(
+                response.routes[0].overview_polyline
+              ),
               icons: [
                 {
                   icon: lineSymbol,
@@ -139,22 +163,14 @@ const TopMap: React.FC<TopMapProps> = ({ name }) => {
                 },
               ],
               strokeColor: "blue", // Polyline color
-              strokeOpacity: 0.8, // Opacity of the polyline
-              strokeWeight: 4, // Width of the polyline
+              strokeOpacity: 1, // Opacity of the polyline
+              strokeWeight: 5, // Width of the polyline
               map: map,
             });
             animateCircle(polyline);
             const markers = [];
 
             //markers for each waypoint
-            waypoints.forEach((waypoint) => {
-              const marker = new google.maps.Marker({
-                position: waypoint,
-                map: map,
-                title: "Waypoint",
-              });
-              markers.push(marker);
-            });
           }
         }
       );
@@ -169,19 +185,18 @@ const TopMap: React.FC<TopMapProps> = ({ name }) => {
         locationButton
       );
 
-      setTimeout(function () {
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(
-            (position: GeolocationPosition) => {
-              const pos = {
-                lat: position.coords.latitude,
-                lng: position.coords.longitude,
-              };
-              new google.maps.Marker({
-                position: pos,
-                map,
-                title: "Your starting point",
-              });
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (position: GeolocationPosition) => {
+            const pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude,
+            };
+            new google.maps.Marker({
+              position: pos,
+              map,
+              title: "Hello World!",
+            });
 
               infoWindow.setPosition(pos);
               infoWindow.setContent("<div id='urloc'>Your Location</div>");
@@ -199,6 +214,22 @@ const TopMap: React.FC<TopMapProps> = ({ name }) => {
           console.log("Browser doesn't support Geolocation");
         }
       }, 100); // bc 10sec er por?
+            infoWindow.setPosition(pos);
+            infoWindow.setContent("Your Location");
+            locationButton.addEventListener("click", () => {
+              infoWindow.open(map);
+              map.setCenter(pos);
+            });
+          },
+          () => {
+            console.log("Browser doesn't support Geolocation");
+          }
+        );
+      } else {
+        // Browser doesn't support Geolocation
+        console.log("Browser doesn't support Geolocation");
+      }
+
       console.log("rendered if");
     } else {
       let infoWindow: google.maps.InfoWindow;
@@ -219,7 +250,16 @@ const TopMap: React.FC<TopMapProps> = ({ name }) => {
           styles: [],
         }
       );
+      // const locationButton = document.createElement("button");
+
+      // locationButton.textContent = "Pan to Current Location";
+      // locationButton.classList.add("custom-map-control-button");
+
+      // map.controls[google.maps.ControlPosition.BOTTOM_CENTER].push(
+      //   locationButton
+      // );
       infoWindow = new google.maps.InfoWindow();
+      // setTimeout(function () {
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
           (position: GeolocationPosition) => {
@@ -232,6 +272,7 @@ const TopMap: React.FC<TopMapProps> = ({ name }) => {
             infoWindow.setContent("<div id='urloc'>Your Location</div>");
             infoWindow.open(map);
             map.setCenter(pos);
+            console.log("triggered");
           },
           () => {
             console.log("Browser doesn't support Geolocation");
@@ -241,6 +282,7 @@ const TopMap: React.FC<TopMapProps> = ({ name }) => {
         // Browser doesn't support Geolocation
         console.log("Browser doesn't support Geolocation");
       }
+      //}, 2000);
 
       console.log("rendered else" + stch);
       console.log(sCheck);
