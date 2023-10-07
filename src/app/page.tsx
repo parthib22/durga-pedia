@@ -34,12 +34,7 @@ export default function Home() {
               </button>
             </h3>
             <div className="tSteps">
-              <Image
-                src={"/tutorial.gif"}
-                alt="pub"
-                width={1000}
-                height={100}
-              />
+              <img className="tutimg" src="/tutorial.gif" alt="pub" />
             </div>
           </div>
         </div>

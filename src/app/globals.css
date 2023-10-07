@@ -109,8 +109,8 @@ a:hover {
 }
 
 .tPanel {
-  width: 90vw;
-  /* height: 100%; */
+  /* width: 90vw; */
+  /* height: 80vh; */
   z-index: 5;
   display: flex;
   flex-direction: column;
@@ -193,4 +193,7 @@ a:hover {
   opacity: 0.2;
   object-fit: cover;
   filter: blur(10px);
+}
+
+.tutimg {
 }
