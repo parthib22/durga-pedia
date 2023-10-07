@@ -90,8 +90,9 @@ export default function FormBottom(props: { onSubmit: any }) {
             if (data.status === "OK" && data.results.length > 0) {
               const result = data.results[0];
               const { lat, lng } = result.geometry.location;
+
+              setCoordinates({ lat: lat, lng: lng });
               StartPlanner(lat, lng);
-              setCoordinates({ lat, lng });
               props.onSubmit(lat + "|" + lng);
             } else {
               console.log(data);
@@ -239,6 +240,9 @@ export default function FormBottom(props: { onSubmit: any }) {
                 type="text"
                 className="ipStartLoc"
                 placeholder="Type your starting location"
+                onChange={() => {
+                  setGeoClickCount(false);
+                }}
                 required
               />
             </Autocomplete>
