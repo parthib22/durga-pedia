@@ -6,6 +6,8 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/app/store";
 import { LoaderCheck, setLoaderCheck } from "../../slices/LoaderCheck";
 import { RotatingLines } from "react-loader-spinner";
+import MyLocationIcon from "@mui/icons-material/MyLocation";
+
 declare global {
   interface Window {
     google: {
@@ -140,17 +142,21 @@ const TopMap: React.FC<TopMapProps> = ({ name }) => {
             //   });
             //   // markers.push(marker);
             // }
-            const arrowSymbol = {
-              path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
-              scale: 4, // Adjust the size of the arrowhead
-              fillColor: "blue", // Arrowhead color
-              fillOpacity: 1, // Opacity of the arrowhead
-              strokeWeight: 0, // No border
-            };
+
+            // const arrowSymbol = {
+            //   path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
+            //   scale: 4, // Adjust the size of the arrowhead
+            //   fillColor: "blue", // Arrowhead color
+            //   fillOpacity: 1, // Opacity of the arrowhead
+            //   strokeWeight: 0, // No border
+            // };
             const lineSymbol = {
               path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
               scale: 3,
-              strokeColor: "yellow",
+              fillColor: "blue",
+              strokeColor: "black",
+              strokeOpacity: 1,
+              fillOpacity: 1,
             };
             const polyline = new google.maps.Polyline({
               path: google.maps.geometry.encoding.decodePath(
@@ -163,8 +169,8 @@ const TopMap: React.FC<TopMapProps> = ({ name }) => {
                 },
               ],
               strokeColor: "blue", // Polyline color
-              strokeOpacity: 1, // Opacity of the polyline
-              strokeWeight: 5, // Width of the polyline
+              strokeOpacity: 0.5, // Opacity of the polyline
+              strokeWeight: 2, // Width of the polyline
               map: map,
             });
             animateCircle(polyline);
@@ -177,9 +183,10 @@ const TopMap: React.FC<TopMapProps> = ({ name }) => {
       let infoWindow: google.maps.InfoWindow;
       infoWindow = new google.maps.InfoWindow();
       const locationButton = document.createElement("button");
+      locationButton.innerHTML = `<svg className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiBox-root css-uqopch" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="MyLocationIcon"><path d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm8.94 3c-.46-4.17-3.77-7.48-7.94-7.94V1h-2v2.06C6.83 3.52 3.52 6.83 3.06 11H1v2h2.06c.46 4.17 3.77 7.48 7.94 7.94V23h2v-2.06c4.17-.46 7.48-3.77 7.94-7.94H23v-2h-2.06zM12 19c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"></path></svg>`;
 
-      locationButton.textContent = "P";
-      locationButton.classList.add("custom-map-control-button");
+      // locationButton.textContent = "📍";
+      locationButton.classList.add("urlocbtn");
 
       map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(
         locationButton

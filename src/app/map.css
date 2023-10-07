@@ -33,7 +33,8 @@
   }
 }
 
-.custom-map-control-button {
+.urlocbtn {
+  color: red !important;
   background-color: #fff;
   border: 0;
   border-radius: 2px;
@@ -41,9 +42,20 @@
   cursor: pointer;
   font: 400 18px Roboto, Arial, sans-serif;
   height: 40px;
+  width: 40px;
   margin: 10px;
   overflow: hidden;
   padding: 0 0.5em;
+}
+
+.urlocbtn svg {
+  /* fill: grey; */
+  opacity: 0.55;
+}
+
+.urlocbtn:hover > svg,
+.urlocbtn:focus > svg {
+  opacity: 0.8;
 }
 
 #urloc {

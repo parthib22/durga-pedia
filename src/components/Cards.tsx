@@ -667,9 +667,9 @@ function Cards() {
     return <div>loading</div>; // or any loading indicator
   } else {
     if (tCheck) {
-      // if (scrollRef.current) {
-      //   scrollRef.current.scrollIntoView({ behavior: "smooth" });
-      // }
+      if (scrollRef.current) {
+        scrollRef.current.scrollIntoView({ behavior: "smooth" });
+      }
       // if (true) {
       return (
         <>
