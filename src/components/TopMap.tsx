@@ -6,7 +6,6 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/app/store";
 import { LoaderCheck, setLoaderCheck } from "../../slices/LoaderCheck";
 import { RotatingLines } from "react-loader-spinner";
-import MyLocationIcon from "@mui/icons-material/MyLocation";
 
 declare global {
   interface Window {

@@ -10,7 +10,7 @@
   --text-on-accent: rgb(21, 28, 45);
   --primary-text: rgb(248 250 252);
   --secondary-text: rgb(203 213 225);
-  --tertiary-text: rgb(148 163 184 / 1);
+  --tertiary-text: rgb(148 163 184);
 }
 
 * {
@@ -90,4 +90,107 @@ body::-webkit-scrollbar {
 
 a:hover {
   color: white !important;
+}
+
+/* TUTORIAL */
+
+.tutorial {
+  position: absolute;
+  z-index: 3;
+  background-image: url(/bgmap.jpg);
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.8);
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  /* height: calc(100vh + 215px); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tPanel {
+  width: 90vw;
+  /* height: 100%; */
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  overflow-y: hidden;
+  background-color: rgb(255 255 255 / 0.7);
+  box-shadow: 0 30px 50px rgb(0 0 0 / 0.5);
+  border: 2px solid rgba(0 0 0 / 0.2);
+  padding-inline: 20px;
+  padding-top: 20px;
+  padding-bottom: 5px;
+  border-radius: 20px;
+}
+
+.tPanel::-webkit-scrollbar {
+  display: none;
+}
+
+.tPanel > h3 {
+  color: var(--text-on-accent);
+  position: relative;
+  width: 100%;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tutorial svg {
+  scale: 1.4;
+  fill: var(--accent-color);
+  margin-inline: 10px;
+  margin-bottom: 4px;
+}
+
+.tPanel > button {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  margin: none;
+  /* background-color: rgb(255 255 255 / 0.1); */
+}
+
+.tPanel > button > svg {
+  margin: auto;
+  padding-bottom: 0;
+}
+
+.tSteps {
+  /* margin-block: 20px; */
+  /* height: 100%; */
+  width: 100%;
+  overflow-y: scroll;
+  /* background-color: rgb(255 255 255 / 0.1); */
+}
+
+.tSteps::-webkit-scrollbar {
+  display: none;
+}
+
+.tSteps {
+  color: var(--tertiary-text);
+}
+
+.tSteps img {
+  margin-bottom: 15px;
+  margin-top: 7px;
+  border-block: 2px solid rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.bgimg {
+  height: 100vh;
+  position: absolute;
+  z-index: 3;
+  opacity: 0.2;
+  object-fit: cover;
+  filter: blur(10px);
 }

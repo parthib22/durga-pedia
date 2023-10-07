@@ -49,6 +49,7 @@
 .urlocbtn svg {
   /* fill: grey; */
   opacity: 0.55;
+  scale: 0.8;
 }
 
 .urlocbtn:hover > svg,

@@ -9,8 +9,9 @@ import { Providers } from "./Provider";
 import { configureStore } from "@reduxjs/toolkit";
 import reducer from "../../slices/GlobalStore";
 import Cards from "@/components/Cards";
-import PandalInfo from "@/components/PandalInfo";
-import Footer from "@/components/Footer";
+import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline";
+import CloseIcon from "@mui/icons-material/Close";
+import Image from "next/image";
 
 export default function Home() {
   const [passCords, setCords] = useState(""); //changes by sam
@@ -19,15 +20,40 @@ export default function Home() {
     console.log("i am in page.tsx my data" + data);
     setCords(data);
   };
-
-  return (
-    <>
-      <Providers>
-        <SearchBox />
-        <TopMap name={passCords} />
-        <FormBottom onSubmit={getData} />
-        <Cards />
-      </Providers>
-    </>
-  );
+  const [check, setCheck] = useState(true);
+  if (check)
+    return (
+      <>
+        <div className="tutorial">
+          <div className="tPanel">
+            <h3>
+              {/* <ErrorOutlineIcon /> */}
+              How to use?
+              <button onClick={() => setCheck(!check)}>
+                <CloseIcon />
+              </button>
+            </h3>
+            <div className="tSteps">
+              <Image
+                src={"/tutorial.gif"}
+                alt="pub"
+                width={1000}
+                height={100}
+              />
+            </div>
+          </div>
+        </div>
+      </>
+    );
+  else
+    return (
+      <>
+        <Providers>
+          <SearchBox />
+          <TopMap name={passCords} />
+          <FormBottom onSubmit={getData} />
+          <Cards />
+        </Providers>
+      </>
+    );
 }
