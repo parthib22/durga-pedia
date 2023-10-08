@@ -2,7 +2,7 @@
 import { StandaloneSearchBox } from "@react-google-maps/api";
 import ClearIcon from "@mui/icons-material/Clear";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
-import NearMeIcon from "@mui/icons-material/NearMe";
+import NavigationIcon from "@mui/icons-material/Navigation";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { useState, useEffect } from "react";
 import React from "react";
@@ -534,7 +534,7 @@ const AutoComplete = () => {
                 >
                   {t.name}
                   <button className="mapPinBtn">
-                    <NearMeIcon />
+                    <NavigationIcon />
                   </button>
                 </Link>
                 <p style={{ width: "100%", textAlign: "left" }}>{t.adr}</p>

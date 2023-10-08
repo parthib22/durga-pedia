@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState, useRef } from "react";
-import NearMeIcon from "@mui/icons-material/NearMe";
+import NavigationIcon from "@mui/icons-material/Navigation";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import "../app/cards.css";
 import { RootState } from "@/app/store";
@@ -663,6 +663,10 @@ function Cards() {
   // if (true)
   //{
   // return <>{<CardsDisplay />}</>;
+
+  const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  let index = 0;
+
   if (!Array.isArray(pandals)) {
     return <div>loading</div>; // or any loading indicator
   } else {
@@ -759,9 +763,10 @@ function Cards() {
                       style={{ textDecoration: "none" }}
                       className="title"
                     >
+                      <button className="marker">{labels[index++]}</button>
                       {t.name}
                       <button className="mapPinBtn">
-                        <NearMeIcon />
+                        <NavigationIcon />
                       </button>
                     </Link>
                     <p style={{ marginBottom: 5 }}>{t.adr}</p>
