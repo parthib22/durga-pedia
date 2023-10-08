@@ -119,7 +119,9 @@
 
 .marker {
   margin-right: 10px;
-  background-color: var(--accent-color);
+  color: var(--primary-text);
+  background-color: #d33c30;
+  border: 2px solid #c32f27;
   font-size: 1rem;
   font-weight: 400;
   width: 1.7rem;

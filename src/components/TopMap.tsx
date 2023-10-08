@@ -139,7 +139,7 @@ const TopMap: React.FC<TopMapProps> = ({ name }) => {
                 text: "\ue55c",
                 fontFamily: "Material Icons",
                 color: "#ffffff",
-                fontSize: "18px",
+                fontSize: "17px",
               },
               title: "starting position",
             });
@@ -152,7 +152,13 @@ const TopMap: React.FC<TopMapProps> = ({ name }) => {
                   parseFloat(longitude)
                 ),
                 map: map,
-                label: labels[labelIndex++ % labels.length],
+                label: {
+                  text: labels[labelIndex++ % labels.length],
+                  color: "#ffffff",
+                  fontWeight: "400",
+                  fontSize: "1rem",
+                  fontFamily: "Inter",
+                },
                 title: "pandal",
               });
               // markers.push(marker);
