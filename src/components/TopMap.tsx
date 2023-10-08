@@ -305,7 +305,7 @@ const TopMap: React.FC<TopMapProps> = ({ name }) => {
 
       icons[0].offset = count / 2 + "%";
       line.set("icons", icons);
-    }, 20);
+    }, 100);
   }
   console.log(name);
   return (
