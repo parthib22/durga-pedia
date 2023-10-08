@@ -775,6 +775,7 @@ const AutoComplete = () => {
           {<ClearIcon />}
         </span>
         {/* <span className="shareIco">{<IosShareIcon />}</span> */}
+        <img className="logoimg" src="\icon-192x192.png" alt="ico" />
         <input
           // className={searchTerm.length > 0 ? "ipPadding" : ""}
           placeholder="Search pandals in Kolkata"
