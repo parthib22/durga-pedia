@@ -109,7 +109,7 @@ a:hover {
 }
 
 .tPanel {
-  /* width: 90vw; */
+  width: 90vw;
   /* height: 80vh; */
   z-index: 5;
   display: flex;
@@ -123,7 +123,7 @@ a:hover {
   padding-inline: 20px;
   padding-top: 20px;
   padding-bottom: 5px;
-  border-radius: 20px;
+  border-radius: 25px;
 }
 
 .tPanel::-webkit-scrollbar {
@@ -138,12 +138,12 @@ a:hover {
   font-size: 1.5rem;
   font-weight: 500;
   text-align: center;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .tutorial svg {
+  position: absolute;
+  top: 0px;
+  right: -7px;
   scale: 1.4;
   fill: var(--accent-color);
   margin-inline: 10px;
@@ -181,11 +181,11 @@ a:hover {
 
 .tSteps img {
   margin-bottom: 15px;
-  margin-top: 7px;
+  margin-top: 20px;
   border-block: 2px solid rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   margin-left: auto;
-    margin-right: auto;
+  margin-right: auto;
 }
 
 .bgimg {
@@ -197,5 +197,20 @@ a:hover {
   filter: blur(10px);
 }
 
-.tutimg {
+.tSteps span {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 10px;
+  margin-inline: 20px;
+}
+
+.tSteps h6 {
+  font-family: inherit;
+  color: var(--accent-color);
+}
+
+.tSteps p {
+  font-family: inherit;
+  color: var(--text-on-accent);
 }
