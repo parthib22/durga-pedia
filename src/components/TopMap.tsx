@@ -85,6 +85,7 @@ const TopMap: React.FC<TopMapProps> = ({ name }) => {
       const directionsService = new google.maps.DirectionsService();
       const directionsRenderer = new google.maps.DirectionsRenderer({
         map: map,
+        suppressMarkers: true,
       });
 
       Ststch(0);
@@ -123,24 +124,39 @@ const TopMap: React.FC<TopMapProps> = ({ name }) => {
             directionsRenderer.setDirections(response);
             console.log(response);
             const waypoints = response.routes[0].legs[0].via_waypoints; // Extract waypoints from the response
-
+            const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            let labelIndex = 0;
             console.log("in line 122");
             console.log(resultMapArray);
-            // for (let i = 1; i < coordinatePairs.length; i++) {
-            //   //console.log(waypoint);
-            //   const pair = coordinatePairs[i];
-            //   const [latitude, longitude] = pair.split(",");
-            //   const marker = new google.maps.Marker({
-            //     position: new google.maps.LatLng(
-            //       parseFloat(latitude),
-            //       parseFloat(longitude)
-            //     ),
-            //     map: map,
-            //     icon: "/images/durga.png",
-            //     title: "Waypoint",
-            //   });
-            //   // markers.push(marker);
-            // }
+            const [latp, lonp] = coordinatePairs[0].split(",");
+            const markerp = new google.maps.Marker({
+              position: new google.maps.LatLng(
+                parseFloat(latp),
+                parseFloat(lonp)
+              ),
+              map: map,
+              label: {
+                text: "\ue55c",
+                fontFamily: "Material Icons",
+                color: "#ffffff",
+                fontSize: "18px",
+              },
+              title: "starting position",
+            });
+            for (let i = 1; i < coordinatePairs.length; i++) {
+              const pair = coordinatePairs[i];
+              const [latitude, longitude] = pair.split(",");
+              const marker = new google.maps.Marker({
+                position: new google.maps.LatLng(
+                  parseFloat(latitude),
+                  parseFloat(longitude)
+                ),
+                map: map,
+                label: labels[labelIndex++ % labels.length],
+                title: "pandal",
+              });
+              // markers.push(marker);
+            }
 
             // const arrowSymbol = {
             //   path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
