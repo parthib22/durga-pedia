@@ -15,6 +15,14 @@ const Footer = () => {
           Report missing Durga Puja
         </a>
         <br />
+        <a
+          href="https://sites.google.com/view/durga-pedia/"
+          target="_blank"
+          style={{ textDecoration: "underline" }}
+        >
+          Contributors
+        </a>
+        <br />
         <br />
         <p>Made with 💟 by</p>
         <p style={{ flexDirection: "row", gap: "5px", marginBottom: "7px" }}>

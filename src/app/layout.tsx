@@ -41,7 +41,10 @@ export default function RootLayout({
         />
         <meta name="twitter:image" content="/icon-192x192.png" />
         <link rel="manifest" href="/manifest.json" />
-
+        <link
+          href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet"
+        />
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-Y5GXJMVDSN" />
         <Script id="google-analytics">
           {`
