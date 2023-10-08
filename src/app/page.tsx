@@ -42,59 +42,26 @@ export default function Home() {
                 <CloseIcon />
               </button>
             </h3>
-            <ListItem>
-              <ListItemText
-                primary={
-                  <Typography
-                    variant="h6"
-                    style={{ color: "#ff4500", fontWeight: "bold" }}
-                  >
-                    Step 1
-                  </Typography>
-                }
-                secondary={
-                  <Typography style={{ color: "black", fontWeight: "700" }}>
-                    Enter your start location
-                  </Typography>
-                }
-              />
-            </ListItem>
-            <ListItem>
-              <ListItemText
-                primary={
-                  <Typography
-                    variant="h6"
-                    style={{ color: "#ff4500", fontWeight: "bold" }}
-                  >
-                    Step 2
-                  </Typography>
-                }
-                secondary={
-                  <Typography style={{ color: "black", fontWeight: "700" }}>
-                    Choose no of pandals/range
-                  </Typography>
-                }
-              />
-            </ListItem>
-            <ListItem>
-              <ListItemText
-                primary={
-                  <Typography
-                    variant="h6"
-                    style={{ color: "#ff4500", fontWeight: "bold" }}
-                  >
-                    Step 3
-                  </Typography>
-                }
-                secondary={
-                  <Typography style={{ color: "black", fontWeight: "700" }}>
-                    Press route to get your ideal pandal hopping plan
-                  </Typography>
-                }
-              />
-            </ListItem>
+
             <div className="tSteps">
-              <img className="tutimg" src="/tutorial.gif" alt="pub" />
+              <span>
+                <h6>1. </h6>
+                <p>Type your starting location</p>
+              </span>
+              <span>
+                <h6>2. </h6>
+                <p>
+                  Choose the number of pujas, or find pujas in a certain range
+                </p>
+              </span>
+              <span>
+                <h6>3. </h6>
+                <p>
+                  Press the "Route" / "Search" button to get your perfect pandal
+                  hopping plan
+                </p>
+              </span>
+              <img src="/tutorial.gif" alt="pub" />
             </div>
           </div>
         </div>
