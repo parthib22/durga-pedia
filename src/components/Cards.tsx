@@ -763,9 +763,11 @@ function Cards() {
                       style={{ textDecoration: "none" }}
                       className="title"
                     >
-                      <button className="marker">{labels[index++]}</button>
+                      <button className="marker" aria-label="marker">
+                        {labels[index++]}
+                      </button>
                       {t.name}
-                      <button className="mapPinBtn">
+                      <button className="mapPinBtn" aria-label="navigation">
                         <NavigationIcon />
                       </button>
                     </Link>
@@ -1027,6 +1029,7 @@ function Cards() {
                     </div>
                     <button
                       className="rmv-btn"
+                      aria-label="remove"
                       onClick={() => handleRemove(t.id, t.lat, t.lng)}
                     >
                       Remove

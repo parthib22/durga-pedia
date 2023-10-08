@@ -335,6 +335,7 @@ export default function FormBottom(props: { onSubmit: any }) {
           <div className="form-layout-4">
             <button
               className="sbm-btn"
+              aria-label="submit"
               type="submit"
               disabled={stateCheck}
               // onClick={() => {
@@ -375,7 +376,7 @@ export default function FormBottom(props: { onSubmit: any }) {
               }}
               onClick={() => console.log("shared successfully!")}
             >
-              <button type="button" className="shareIco">
+              <button type="button" aria-label="share" className="shareIco">
                 <span>Share</span>
                 <IosShareIcon />
               </button>

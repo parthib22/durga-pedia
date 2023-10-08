@@ -208,7 +208,7 @@ const TopMap: React.FC<TopMapProps> = ({ name }) => {
 
       // locationButton.textContent = "📍";
       locationButton.classList.add("urlocbtn");
-
+      locationButton.ariaLabel = "current location";
       map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(
         locationButton
       );

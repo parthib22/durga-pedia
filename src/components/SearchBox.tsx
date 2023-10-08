@@ -438,6 +438,7 @@ const AutoComplete = () => {
           <>
             <div className={`pandalInfo ${enableCard && "cardClose"}`}>
               <button
+                aria-label="close"
                 className={`pandalClose ${enableCard && "cardClose"}`}
                 onClick={() => setEnableCard(true)}
               >
@@ -516,6 +517,7 @@ const AutoComplete = () => {
                 className={`pandalInfo ${enableCard && "cardClose"}`}
               >
                 <button
+                  aria-label="close"
                   className={`pandalClose ${enableCard && "cardClose"}`}
                   onClick={() => setEnableCard(true)}
                 >
@@ -533,7 +535,7 @@ const AutoComplete = () => {
                   className="pandalTitle"
                 >
                   {t.name}
-                  <button className="mapPinBtn">
+                  <button aria-label="navigation" className="mapPinBtn">
                     <NavigationIcon />
                   </button>
                 </Link>

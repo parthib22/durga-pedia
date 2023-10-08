@@ -38,7 +38,7 @@ export default function Home() {
             <h3>
               {/* <ErrorOutlineIcon /> */}
               How to use?
-              <button onClick={() => setCheck(!check)}>
+              <button aria-label="close" onClick={() => setCheck(!check)}>
                 <CloseIcon />
               </button>
             </h3>
