@@ -57,8 +57,8 @@ export default function Home() {
               <span>
                 <h6>3. </h6>
                 <p>
-                  Press the "Route" / "Search" button to get your perfect pandal
-                  hopping plan
+                  {`Press the "Route" / "Search" button to get your perfect pandal
+                  hopping plan`}
                 </p>
               </span>
               <img src="/tutorial.gif" alt="pub" />

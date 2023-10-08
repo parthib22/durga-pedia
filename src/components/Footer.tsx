@@ -20,7 +20,7 @@ const Footer = () => {
           target="_blank"
           style={{ textDecoration: "underline" }}
         >
-          Contributors
+          Devs & Contributors
         </a>
         <br />
         <br />
