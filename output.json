@@ -59,9 +59,9 @@
         "id": 8,
         "pandal": "Telengabagan",
         "address": "Adhar Chandra Das Ln, Surir Bagan, Ultadanga, Kolkata, West Bengal 700067",
-        "map": "http://maps.google.com/maps?q=22.59491, 88.38539&ll=22.59491, 88.38539&z=17",
-        "lat": 22.59491,
-        "lng": 88.38539
+        "map": "http://maps.google.com/maps?q=\n22.59491, 88.38539&ll=\n22.59491, 88.38539&z=17",
+        "lat": null,
+        "lng": null
     },
     {
         "id": 9,
@@ -150,22 +150,6 @@
         "map": "http://maps.google.com/maps?q=22.57677, 88.41416&ll=22.57677, 88.41416&z=17",
         "lat": 22.57677,
         "lng": 88.41416
-    },
-    {
-        "id": 20,
-        "pandal": "Salt Lake HA Block",
-        "address": "HA Park, HA Block, Sector III, Bidhannagar, Kolkata, West Bengal 700106",
-        "map": "http://maps.google.com/maps?q=22.57641, 88.41297&ll=22.57641, 88.41297&z=17",
-        "lat": 22.57641,
-        "lng": 88.41297
-    },
-    {
-        "id": 21,
-        "pandal": "Salt Lake IA Block",
-        "address": "IA market,, shop no.17,, salt lake,, sector-3, IA Block, Sector III, Bidhannagar, Kolkata, West Bengal 700097",
-        "map": "http://maps.google.com/maps?q=22.5743, 88.40952&ll=22.5743, 88.40952&z=17",
-        "lat": 22.5743,
-        "lng": 88.40952
     },
     {
         "id": 22,
@@ -1982,5 +1966,85 @@
         "map": "http://maps.google.com/maps?q=22.533213,88.345477&ll=22.533213,88.345477&z=17",
         "lat": 22.533213,
         "lng": 88.345477
+    },
+    {
+        "id": 249,
+        "pandal": "Agnibina club",
+        "address": "PRPG+89P, Baduria, West Bengal 743427",
+        "map": "http://maps.google.com/maps?q=22.735882079355985, 88.82611073565803&ll=22.735882079355985, 88.82611073565803&z=17",
+        "lat": 22.735882079355985,
+        "lng": 88.82611073565803
+    },
+    {
+        "id": 250,
+        "pandal": "Sodepur Club",
+        "address": "F-14, School Road, Sodepur, Kolkata, 700110",
+        "map": "http://maps.google.com/maps?q=22.70140657194855, 88.3867410845968&ll=22.70140657194855, 88.3867410845968&z=17",
+        "lat": 22.70140657194855,
+        "lng": 88.3867410845968
+    },
+    {
+        "id": 251,
+        "pandal": "Udayan Sangha Club",
+        "address": "M9WX+R5H, Purbayan, Ashok Sen Nagar, Sodepur, Panihati, West Bengal 700110",
+        "map": "http://maps.google.com/maps?q=22.69728720621938, 88.39802844406402&ll=22.69728720621938, 88.39802844406402&z=17",
+        "lat": 22.69728720621938,
+        "lng": 88.39802844406402
+    },
+    {
+        "id": 252,
+        "pandal": "Purbapally Club Sodepur",
+        "address": "Rd Number 1, Purbapally, Amarabati, Sodepur, Kolkata, Khardaha, West Bengal 700110",
+        "map": "http://maps.google.com/maps?q=22.701284081485813, 88.38872628650584&ll=22.701284081485813, 88.38872628650584&z=17",
+        "lat": 22.701284081485813,
+        "lng": 88.38872628650584
+    },
+    {
+        "id": 253,
+        "pandal": "Bejoypur Sarbojanin Durga Puja Committee",
+        "address": "Road No. 2, H B Town, Sodepur, Khardaha, West Bengal 700110",
+        "map": "http://maps.google.com/maps?q=22.694799110084233, 88.39141811522327&ll=22.694799110084233, 88.39141811522327&z=17",
+        "lat": 22.694799110084233,
+        "lng": 88.39141811522327
+    },
+    {
+        "id": 254,
+        "pandal": "Sahid Colony Sarbojanin Durga Pujo",
+        "address": "M9WG+2H8, Sahid Colony, Panihati, Kolkata, Khardaha, West Bengal 700110",
+        "map": "http://maps.google.com/maps?q=22.695342590386662, 88.37642904232943&ll=22.695342590386662, 88.37642904232943&z=17",
+        "lat": 22.695342590386662,
+        "lng": 88.37642904232943
+    },
+    {
+        "id": 255,
+        "pandal": "Nabapally club pujo",
+        "address": "237, Shyama Mukherjee Rd, Amarabati, Sodepur, Kolkata, Khardaha, West Bengal 700114",
+        "map": "http://maps.google.com/maps?q=22.70461899226403, 88.39184099989532&ll=22.70461899226403, 88.39184099989532&z=17",
+        "lat": 22.70461899226403,
+        "lng": 88.39184099989532
+    },
+    {
+        "id": 256,
+        "pandal": " Yuva Shamsad Club",
+        "address": "Uttarpally, Bankimpally, Amarabati, Sodepur, Kolkata, Khardaha, West Bengal 700110",
+        "map": "http://maps.google.com/maps?q=22.705580880197164, 88.38836872875385&ll=22.705580880197164, 88.38836872875385&z=17",
+        "lat": 22.705580880197164,
+        "lng": 88.38836872875385
+    },
+    {
+        "id": 257,
+        "pandal": "Jagrani club",
+        "address": "M98G+C72, Santhi Nagra Colony, Dakshineswar, Kolkata, West Bengal 700058",
+        "map": "http://maps.google.com/maps?q=22.666297556017064, 88.3755817557026&ll=22.666297556017064, 88.3755817557026&z=17",
+        "lat": 22.666297556017064,
+        "lng": 88.3755817557026
+    },
+    {
+        "id": 258,
+        "pandal": "Irongate sporting club",
+        "address": "2RVM+RJH, Shimultala Kali Bari Rd, Matiganj, Bangaon, West Bengal 743235",
+        "map": "http://maps.google.com/maps?q=23.044769462502387, 88.83405878454411&ll=23.044769462502387, 88.83405878454411&z=17",
+        "lat": 23.044769462502387,
+        "lng": 88.83405878454411
     }
 ]
