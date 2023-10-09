@@ -97,8 +97,8 @@ a:hover {
 .tutorial {
   position: absolute;
   z-index: 3;
-  background-image: url(/bgmap.jpg);
-  box-shadow: inset 0 0 0 1000px rgba(21 28 45 / 0.97);
+  background-image: url(/bgmap.avif);
+  box-shadow: inset 0 0 0 1000px rgba(21 28 45 / 0.95);
   background-size: cover;
   width: 100vw;
   height: 100vh;
@@ -139,6 +139,18 @@ a:hover {
   font-size: 1.5rem;
   font-weight: 500;
   text-align: center;
+  /* display: flex;
+  align-items: center;
+  justify-content: space-around; */
+  /* gap: 100px; */
+  /* margin-left: -30px; */
+}
+
+.tPanel > h3 > img {
+  margin-inline: 5px;
+  height: 25px;
+  position: absolute;
+  left: 0px;
 }
 
 .tutorial svg {
@@ -180,10 +192,12 @@ a:hover {
   color: var(--tertiary-text);
 }
 
-.tSteps img {
+.tSteps video {
+  height: 50vh;
   margin-bottom: 15px;
   margin-top: 20px;
-  border-block: 2px solid rgba(0, 0, 0, 0.5);
+  /* border-block: 1px solid rgba(0, 0, 0, 0.5); */
+  box-shadow: 0 0 20px rgb(0 0 0 / 0.2);
   border-radius: 10px;
   margin-left: auto;
   margin-right: auto;

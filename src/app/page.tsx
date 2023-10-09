@@ -36,6 +36,7 @@ export default function Home() {
         <div className="tutorial">
           <div className="tPanel">
             <h3>
+              <img src="/icon-192x192.png" alt="ico" />
               {/* <ErrorOutlineIcon /> */}
               How to use?
               <button aria-label="close" onClick={() => setCheck(!check)}>
@@ -61,7 +62,9 @@ export default function Home() {
                   hopping plan`}
                 </p>
               </span>
-              <img src="/tutorial.gif" alt="pub" />
+              <video loop controls controlsList="nodownload" autoPlay>
+                <source src="/tutorial.webm" type="video/webm" />
+              </video>
             </div>
           </div>
         </div>

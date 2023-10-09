@@ -743,21 +743,35 @@ const AutoComplete = () => {
   const Suggestions = () => {
     if (searchTerm.length >= 3) {
       return (
-        <ul className={`suggestions ${!enableCard && "cardClose"}`}>
-          {searchResults.map((item: any) => (
-            <li
-              key={item.id}
-              onClick={() => {
-                console.log(item.id);
-                setEnableCard(false);
-                setCardLoad(false);
-                startSearching(item.id);
-              }}
-            >
-              {item.pandal}
+        <>
+          {" "}
+          <ul className={`suggestions ${!enableCard && "cardClose"}`}>
+            {searchResults.map((item: any) => (
+              <li
+                key={item.id}
+                onClick={() => {
+                  console.log(item.id);
+                  setEnableCard(false);
+                  setCardLoad(false);
+                  startSearching(item.id);
+                }}
+              >
+                {item.pandal}
+              </li>
+            ))}
+          </ul>
+          <ul className={`defaultReport ${!enableCard && "cardClose"}`}>
+            <li>
+              <a
+                href="https://forms.gle/wMnzHZSYGg2gVoMH9"
+                target="_blank"
+                style={{ textDecoration: "underline" }}
+              >
+                Report a missing Durga Puja
+              </a>
             </li>
-          ))}
-        </ul>
+          </ul>
+        </>
       );
     }
   };
