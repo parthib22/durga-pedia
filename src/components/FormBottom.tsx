@@ -174,7 +174,7 @@ export default function FormBottom(props: { onSubmit: any }) {
         console.error("Error at statecheck dispatch: " + e);
       }
       const pandalData = fetch(
-        "https://cdn.jsdelivr.net/gh/THUNDERSAMA/durga-pedia@0df0b67b2e918b28082ea799ea9a242ab559021e/output.json"
+        "https://cdn.jsdelivr.net/gh/THUNDERSAMA/durga-pedia@373f6e9cc17329cefa8b3fdb420efcd6f2eee949/output.json"
       ).then((response) => response.json());
       for (const pandal of await pandalData) {
         const latPandal = pandal.lat;
