@@ -114,11 +114,12 @@
   font-weight: 500;
   display: flex;
   align-items: center;
+  justify-content: start;
   flex-wrap: wrap;
+  gap: 10px;
 }
 
 .marker {
-  margin-right: 10px;
   color: var(--primary-text);
   background-color: #d33c30;
   border: 2px solid #c32f27;

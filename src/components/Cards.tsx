@@ -767,9 +767,9 @@ function Cards() {
                         {labels[index++]}
                       </button>
                       {t.name}
-                      <button className="mapPinBtn" aria-label="navigation">
+                      {/* <button className="mapPinBtn" aria-label="navigation">
                         <NavigationIcon />
-                      </button>
+                      </button> */}
                     </Link>
                     <p style={{ marginBottom: 5 }}>{t.adr}</p>
                     <p>
