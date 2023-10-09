@@ -373,7 +373,7 @@ const AutoComplete = () => {
   async function startSearching(i: any) {
     try {
       const pandalData = fetch(
-        "https://cdn.jsdelivr.net/gh/THUNDERSAMA/durga-pedia@a85947898471f77358f792a840e2e9028c31b86c/output.json"
+        "https://cdn.jsdelivr.net/gh/THUNDERSAMA/durga-pedia@373f6e9cc17329cefa8b3fdb420efcd6f2eee949/output.json"
       ).then((response) => response.json());
       var la, lo;
       for (const pandal of await pandalData) {

@@ -102,24 +102,26 @@ function Cards() {
   }, [count]);
   function getShortestRoute(idvar: any, pandalData: any) {
     let ar: any[] = [];
+    console.log("from 105");
     try {
-      //console.log(idvar);
+      console.log(pandalData[idvar - 1][idvar]);
       var k = 9999;
       for (const i in pandalData[idvar - 1][idvar]) {
-        // console.log(pandalData[idvar-1][idvar][i]);
+        console.log(pandalData[idvar - 1][idvar][i]);
         if (!visited.has(i)) {
-          // console.log(i);
+          console.log(i);
           if (pandalData[idvar - 1][idvar][i] < k) {
             k = pandalData[idvar - 1][idvar][i];
             ar = [{ nid: i, ndist: k }];
+            console.log(ar);
           }
         }
       }
-      // console.log(ar[0].nid);
       if (ar.length > 0) {
         visited.set(ar[0].nid, "bkcd");
       }
-
+      console.log("from 123");
+      console.log(ar);
       return ar;
     } catch (e) {
       console.log(e);
@@ -451,7 +453,7 @@ function Cards() {
       // console.log(keysc);
       try {
         const pandalData = fetch(
-          "https://cdn.jsdelivr.net/gh/THUNDERSAMA/durga-pedia@0df0b67b2e918b28082ea799ea9a242ab559021e/output.json"
+          "https://cdn.jsdelivr.net/gh/THUNDERSAMA/durga-pedia@373f6e9cc17329cefa8b3fdb420efcd6f2eee949/output.json"
         ).then((response) => response.json());
         var la, lo, adr;
         for (const pandal of await pandalData) {
@@ -570,7 +572,7 @@ function Cards() {
   }
   async function startRouting() {
     const pandalData = await fetch(
-      "https://cdn.jsdelivr.net/gh/THUNDERSAMA/durga-pedia@0df0b67b2e918b28082ea799ea9a242ab559021e/outputk.json"
+      "https://cdn.jsdelivr.net/gh/THUNDERSAMA/durga-pedia@373f6e9cc17329cefa8b3fdb420efcd6f2eee949/outputk.json"
     ).then((response) => response.json());
 
     console.log("entered" + count);
@@ -607,7 +609,7 @@ function Cards() {
   }
   async function startRangeRouting() {
     const pandalData = await fetch(
-      "https://cdn.jsdelivr.net/gh/THUNDERSAMA/durga-pedia@0df0b67b2e918b28082ea799ea9a242ab559021e/outputk.json"
+      "https://cdn.jsdelivr.net/gh/THUNDERSAMA/durga-pedia@373f6e9cc17329cefa8b3fdb420efcd6f2eee949/outputk.json"
     ).then((response) => response.json());
     try {
       if (count[0].fid != null) {
