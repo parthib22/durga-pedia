@@ -120,15 +120,23 @@
 }
 
 .marker {
+  position: absolute;
   color: var(--primary-text);
   background-color: #d33c30;
   border: 2px solid #c32f27;
   font-size: 1rem;
   font-weight: 400;
   width: 1.7rem;
-  /* padding: 5px; */
   aspect-ratio: 1/1;
   border-radius: 50%;
+}
+
+.card:nth-child(odd) > .info > .title > .marker {
+  left: -65px;
+}
+
+.card:nth-child(even) > .info > .title > .marker {
+  right: -65px;
 }
 
 .info > p {
@@ -151,7 +159,7 @@
 }
 
 /* Timeline dot  */
-.title::before {
+/* .title::before {
   content: "";
   position: absolute;
   top: 25%;
@@ -161,7 +169,7 @@
   margin-inline-start: -15px;
   border-radius: 999px;
   border: 3px solid var(--accent-color);
-}
+} */
 
 /* text right if the card is even  */
 /* .card:nth-child(even) > .info > .title {
@@ -169,14 +177,14 @@
 } */
 
 /* setting dot to the left if the card is odd */
-.card:nth-child(odd) > .info > .title::before {
+/* .card:nth-child(odd) > .info > .title::before {
   left: -46px;
-}
+} */
 
 /* setting dot to the right if the card is even */
-.card:nth-child(even) > .info > .title::before {
+/* .card:nth-child(even) > .info > .title::before {
   right: -61px;
-}
+} */
 
 .map_info {
   display: flex;
