@@ -1972,79 +1972,79 @@
         "pandal": "Agnibina club",
         "address": "PRPG+89P, Baduria, West Bengal 743427",
         "map": "http://maps.google.com/maps?q=22.735882079355985, 88.82611073565803&ll=22.735882079355985, 88.82611073565803&z=17",
-        "lat": 22.735882079355985,
-        "lng": 88.82611073565803
+        "lat": 22.735882,
+        "lng": 88.826110
     },
     {
         "id": 250,
         "pandal": "Sodepur Club",
         "address": "F-14, School Road, Sodepur, Kolkata, 700110",
         "map": "http://maps.google.com/maps?q=22.70140657194855, 88.3867410845968&ll=22.70140657194855, 88.3867410845968&z=17",
-        "lat": 22.70140657194855,
-        "lng": 88.3867410845968
+        "lat": 22.701406,
+        "lng": 88.386741
     },
     {
         "id": 251,
         "pandal": "Udayan Sangha Club",
         "address": "M9WX+R5H, Purbayan, Ashok Sen Nagar, Sodepur, Panihati, West Bengal 700110",
         "map": "http://maps.google.com/maps?q=22.69728720621938, 88.39802844406402&ll=22.69728720621938, 88.39802844406402&z=17",
-        "lat": 22.69728720621938,
-        "lng": 88.39802844406402
+        "lat": 22.697287,
+        "lng": 88.398028
     },
     {
         "id": 252,
         "pandal": "Purbapally Club Sodepur",
         "address": "Rd Number 1, Purbapally, Amarabati, Sodepur, Kolkata, Khardaha, West Bengal 700110",
         "map": "http://maps.google.com/maps?q=22.701284081485813, 88.38872628650584&ll=22.701284081485813, 88.38872628650584&z=17",
-        "lat": 22.701284081485813,
-        "lng": 88.38872628650584
+        "lat": 22.701284,
+        "lng": 88.388726
     },
     {
         "id": 253,
         "pandal": "Bejoypur Sarbojanin Durga Puja Committee",
         "address": "Road No. 2, H B Town, Sodepur, Khardaha, West Bengal 700110",
         "map": "http://maps.google.com/maps?q=22.694799110084233, 88.39141811522327&ll=22.694799110084233, 88.39141811522327&z=17",
-        "lat": 22.694799110084233,
-        "lng": 88.39141811522327
+        "lat": 22.694799,
+        "lng": 88.391418
     },
     {
         "id": 254,
         "pandal": "Sahid Colony Sarbojanin Durga Pujo",
         "address": "M9WG+2H8, Sahid Colony, Panihati, Kolkata, Khardaha, West Bengal 700110",
         "map": "http://maps.google.com/maps?q=22.695342590386662, 88.37642904232943&ll=22.695342590386662, 88.37642904232943&z=17",
-        "lat": 22.695342590386662,
-        "lng": 88.37642904232943
+        "lat": 22.695342,
+        "lng": 88.376429
     },
     {
         "id": 255,
         "pandal": "Nabapally club pujo",
         "address": "237, Shyama Mukherjee Rd, Amarabati, Sodepur, Kolkata, Khardaha, West Bengal 700114",
         "map": "http://maps.google.com/maps?q=22.70461899226403, 88.39184099989532&ll=22.70461899226403, 88.39184099989532&z=17",
-        "lat": 22.70461899226403,
-        "lng": 88.39184099989532
+        "lat": 22.704618,
+        "lng": 88.391840
     },
     {
         "id": 256,
         "pandal": " Yuva Shamsad Club",
         "address": "Uttarpally, Bankimpally, Amarabati, Sodepur, Kolkata, Khardaha, West Bengal 700110",
         "map": "http://maps.google.com/maps?q=22.705580880197164, 88.38836872875385&ll=22.705580880197164, 88.38836872875385&z=17",
-        "lat": 22.705580880197164,
-        "lng": 88.38836872875385
+        "lat": 22.705580,
+        "lng": 88.388368
     },
     {
         "id": 257,
         "pandal": "Jagrani club",
         "address": "M98G+C72, Santhi Nagra Colony, Dakshineswar, Kolkata, West Bengal 700058",
         "map": "http://maps.google.com/maps?q=22.666297556017064, 88.3755817557026&ll=22.666297556017064, 88.3755817557026&z=17",
-        "lat": 22.666297556017064,
-        "lng": 88.3755817557026
+        "lat": 22.666297,
+        "lng": 88.375581
     },
     {
         "id": 258,
         "pandal": "Irongate sporting club",
         "address": "2RVM+RJH, Shimultala Kali Bari Rd, Matiganj, Bangaon, West Bengal 743235",
         "map": "http://maps.google.com/maps?q=23.044769462502387, 88.83405878454411&ll=23.044769462502387, 88.83405878454411&z=17",
-        "lat": 23.044769462502387,
-        "lng": 88.83405878454411
+        "lat": 23.044769,
+        "lng": 88.834058
     }
 ]
