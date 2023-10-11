@@ -117,7 +117,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
   justify-content: start;
   overflow-y: hidden;
   background-color: var(--primary-bg);
@@ -150,7 +150,7 @@ a:hover {
   align-items: center;
   justify-content: start;
   gap: 7px;
-  margin-top: 50px;
+  margin-top: 40px;
 }
 
 .tPanel > .tTop > span > img {
@@ -160,8 +160,8 @@ a:hover {
 
 .tutorial svg {
   position: absolute;
-  top: 12px;
-  right: 7px;
+  top: 7px;
+  right: 0px;
   scale: 1.5;
   fill: var(--accent-color);
   margin-inline: 10px;
@@ -213,9 +213,9 @@ a:hover {
 }
 
 .tPanel video {
-  height: 57vh;
+  height: 50vh;
   margin-bottom: 15px;
-  margin-top: 20px;
+  margin-top: 10px;
   /* border-block: 1px solid rgba(0, 0, 0, 0.5); */
   /* box-shadow: 0 0 20px rgb(255 255 255 / 0.2); */
   border-inline: 7px solid black;
