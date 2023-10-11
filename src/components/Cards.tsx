@@ -768,8 +768,8 @@ function Cards() {
   if (!Array.isArray(pandals)) {
     return <div>loading</div>; // or any loading indicator
   } else {
-    // if (tCheck) {
-    if (true) {
+    if (tCheck) {
+      // if (true) {
       if (scrollRef.current) {
         scrollRef.current.scrollIntoView({ behavior: "smooth" });
       }
