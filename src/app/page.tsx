@@ -66,7 +66,6 @@ export default function Home() {
               </span>
             </div>
             <video loop controls controlsList="nodownload" autoPlay>
-              <div>parthib</div>
               <source src="/tutorial.webm" type="video/webm" />
             </video>
           </div>
