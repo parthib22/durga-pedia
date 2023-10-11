@@ -668,28 +668,24 @@ function Cards() {
 
   const TextLoader: React.FC = () => {
     const text = [
-      "Loading...",
-      "Fetching information...",
-      "Calculating a route...",
-      "Plotting on the map...",
-      "It may take longer...",
-      "We are working on it...",
-      "Please wait...",
+      { load: "Loading...", intv: 1000 },
+      { load: "Fetching information...", intv: 2500 },
+      { load: "Calculating a route...", intv: 6000 },
+      { load: "Plotting on the map...", intv: 15000 },
+      { load: "It is taking longer...", intv: 6000 },
+      { load: "We are working on it...", intv: 5000 },
+      { load: "Please wait...", intv: 10000 },
     ];
     const [index, setIndex] = useState(0);
-
-    // var prevIndex = 0;
     useEffect(() => {
       const interval = setInterval(() => {
-        // setIndex(index + 1);
         setIndex((prevIndex) =>
-          prevIndex !== text.length - 1 ? prevIndex + 1 : text.length - 1
+          prevIndex === text.length - 1 ? 4 : prevIndex + 1
         );
-      }, 3000);
+      }, text[index].intv);
 
       return () => clearInterval(interval);
-    }, []);
-
+    }, [index]);
     return (
       <div>
         <h5
@@ -699,7 +695,7 @@ function Cards() {
             marginBottom: 7,
           }}
         >
-          {text[index]}
+          {text[index].load}
         </h5>
         <Placeholder.Paragraph
           className="ph"
