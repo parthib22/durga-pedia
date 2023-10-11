@@ -692,7 +692,7 @@ function Cards() {
 
     return (
       <div>
-        <h3
+        <h5
           style={{
             color: "var(--tertiary-text)",
             fontWeight: 400,
@@ -700,7 +700,7 @@ function Cards() {
           }}
         >
           {text[index]}
-        </h3>
+        </h5>
         <Placeholder.Paragraph
           className="ph"
           rows={1}

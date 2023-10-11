@@ -98,7 +98,7 @@ a:hover {
   position: absolute;
   z-index: 3;
   background-image: url(/bgmap.avif);
-  box-shadow: inset 0 0 0 1000px rgba(21 28 45 / 0.95);
+  box-shadow: inset 0 0 0 1000px rgba(0 0 0 / 0.1);
   background-size: cover;
   width: 100vw;
   height: 100vh;
@@ -106,58 +106,63 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .tPanel {
-  width: 90vw;
-  /* height: 80vh; */
-  z-index: 5;
+  width: 85vw;
+  height: 100vh;
+  margin-top: 10vh;
+  /* z-index: 5; */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  gap: 20px;
+  justify-content: start;
   overflow-y: hidden;
-  background-color: rgb(255 255 255 / 0.7);
+  background-color: var(--primary-bg);
   backdrop-filter: blur(50px);
-  box-shadow: 0 30px 50px rgb(0 0 0 / 0.5);
-  border: 2px solid rgba(0 0 0 / 0.2);
-  padding-inline: 20px;
-  padding-top: 20px;
-  padding-bottom: 5px;
-  border-radius: 25px;
+  /* box-shadow: 0 30px 50px rgb(0 0 0 / 0.5); */
+  /* border: 2px solid rgba(0 0 0 / 0.2); */
+  padding: 30px;
+  border-radius: 30px;
 }
 
 .tPanel::-webkit-scrollbar {
   display: none;
 }
 
-.tPanel > h3 {
-  color: var(--text-on-accent);
+.tPanel > .tTop {
+  color: var(--primary-text);
   position: relative;
   width: 100%;
-  margin-bottom: 10px;
-  font-size: 1.5rem;
+  font-size: 1.875rem;
   font-weight: 500;
   text-align: center;
-  /* display: flex;
-  align-items: center;
-  justify-content: space-around; */
+  display: flex;
+  justify-content: start;
   /* gap: 100px; */
   /* margin-left: -30px; */
 }
 
-.tPanel > h3 > img {
+.tPanel > .tTop > span {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 7px;
+  margin-top: 50px;
+}
+
+.tPanel > .tTop > span > img {
   margin-inline: 5px;
   height: 25px;
-  position: absolute;
-  left: 0px;
 }
 
 .tutorial svg {
   position: absolute;
-  top: 0px;
-  right: -7px;
-  scale: 1.4;
+  top: 12px;
+  right: 7px;
+  scale: 1.5;
   fill: var(--accent-color);
   margin-inline: 10px;
   margin-bottom: 4px;
@@ -181,6 +186,7 @@ a:hover {
   /* height: 100%; */
   width: 100%;
   overflow-y: scroll;
+  color: var(--tertiary-text);
   /* background-color: rgb(255 255 255 / 0.1); */
 }
 
@@ -188,36 +194,12 @@ a:hover {
   display: none;
 }
 
-.tSteps {
-  color: var(--tertiary-text);
-}
-
-.tSteps video {
-  height: 50vh;
-  margin-bottom: 15px;
-  margin-top: 20px;
-  /* border-block: 1px solid rgba(0, 0, 0, 0.5); */
-  box-shadow: 0 0 20px rgb(0 0 0 / 0.2);
-  border-radius: 10px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.bgimg {
-  height: 100vh;
-  position: absolute;
-  z-index: 3;
-  opacity: 0.2;
-  object-fit: cover;
-  filter: blur(10px);
-}
-
 .tSteps span {
   display: flex;
   align-items: center;
   justify-content: left;
   gap: 10px;
-  margin-inline: 20px;
+  margin-inline: 10px;
 }
 
 .tSteps h6 {
@@ -227,5 +209,36 @@ a:hover {
 
 .tSteps p {
   font-family: inherit;
-  color: var(--text-on-accent);
+  color: var(--secondary-text);
+}
+
+.tPanel video {
+  height: 57vh;
+  margin-bottom: 15px;
+  margin-top: 20px;
+  /* border-block: 1px solid rgba(0, 0, 0, 0.5); */
+  /* box-shadow: 0 0 20px rgb(255 255 255 / 0.2); */
+  border-inline: 7px solid black;
+  border-block: 20px solid black;
+  border-radius: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tPanel > video > div {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 40px;
+  width: 40px;
+  background: #000;
+}
+
+.bgimg {
+  height: 100vh;
+  position: absolute;
+  z-index: 3;
+  opacity: 0.2;
+  object-fit: cover;
+  filter: blur(10px);
 }

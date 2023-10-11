@@ -35,14 +35,16 @@ export default function Home() {
       <>
         <div className="tutorial">
           <div className="tPanel">
-            <h3>
-              <img src="/icon-192x192.png" alt="ico" />
-              {/* <ErrorOutlineIcon /> */}
-              How to use?
+            <div className="tTop">
+              <span>
+                <img src="/icon-192x192.png" alt="ico" />
+                {/* <ErrorOutlineIcon /> */}
+                How to use?
+              </span>
               <button aria-label="close" onClick={() => setCheck(!check)}>
                 <CloseIcon />
               </button>
-            </h3>
+            </div>
 
             <div className="tSteps">
               <span>
@@ -62,10 +64,11 @@ export default function Home() {
                   hopping plan`}
                 </p>
               </span>
-              <video loop controls controlsList="nodownload" autoPlay>
-                <source src="/tutorial.webm" type="video/webm" />
-              </video>
             </div>
+            <video loop controls controlsList="nodownload" autoPlay>
+              <div>parthib</div>
+              <source src="/tutorial.webm" type="video/webm" />
+            </video>
           </div>
         </div>
       </>
