@@ -666,85 +666,123 @@ function Cards() {
   //{
   // return <>{<CardsDisplay />}</>;
 
+  const TextLoader: React.FC = () => {
+    const text = [
+      "Loading...",
+      "Fetching information...",
+      "Calculating a route...",
+      "Plotting on the map...",
+      "It may take longer...",
+      "We are working on it...",
+      "Please wait...",
+    ];
+    const [index, setIndex] = useState(0);
+
+    // var prevIndex = 0;
+    useEffect(() => {
+      const interval = setInterval(() => {
+        // setIndex(index + 1);
+        setIndex((prevIndex) =>
+          prevIndex !== text.length - 1 ? prevIndex + 1 : text.length - 1
+        );
+      }, 3000);
+
+      return () => clearInterval(interval);
+    }, []);
+
+    return (
+      <div>
+        <h3
+          style={{
+            color: "var(--tertiary-text)",
+            fontWeight: 400,
+            marginBottom: 7,
+          }}
+        >
+          {text[index]}
+        </h3>
+        <Placeholder.Paragraph
+          className="ph"
+          rows={1}
+          rowHeight={30}
+          rowMargin={25}
+        />
+        <br />
+        <Placeholder.Paragraph
+          className="ph"
+          rows={3}
+          rowHeight={12}
+          rowMargin={10}
+        />
+        <br />
+        <Placeholder.Paragraph
+          className="ph"
+          rows={1}
+          rowHeight={17}
+          rowMargin={20}
+        />
+        <br />
+        <Placeholder.Paragraph
+          className="ph"
+          rows={1}
+          rowHeight={17}
+          rowMargin={20}
+        />
+        <br />
+        <Placeholder.Paragraph
+          className="ph"
+          rows={1}
+          rowHeight={17}
+          rowMargin={20}
+        />
+        <br />
+        <Placeholder.Paragraph
+          className="ph"
+          rows={1}
+          rowHeight={17}
+          rowMargin={20}
+        />
+        <br />
+        <Placeholder.Paragraph
+          className="ph"
+          rows={1}
+          rowHeight={17}
+          rowMargin={20}
+        />
+        <br />
+        <br />
+        <Placeholder.Paragraph
+          className="ph"
+          graph={"square"}
+          rows={2}
+          rowHeight={17}
+          rowMargin={10}
+        />
+      </div>
+    );
+  };
+
   const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   let index = 0;
 
   if (!Array.isArray(pandals)) {
     return <div>loading</div>; // or any loading indicator
   } else {
-    if (tCheck) {
+    // if (tCheck) {
+    if (true) {
       if (scrollRef.current) {
         scrollRef.current.scrollIntoView({ behavior: "smooth" });
       }
-      // if (true) {
       return (
-        <>
-          <div className="timeline">
-            <div className="outer">
-              <div className="card">
-                <div className="info">
-                  <Placeholder.Paragraph
-                    className="ph"
-                    rows={1}
-                    rowHeight={30}
-                    rowMargin={25}
-                  />
-                  <br />
-                  <Placeholder.Paragraph
-                    className="ph"
-                    rows={3}
-                    rowHeight={12}
-                    rowMargin={10}
-                  />
-                  <br />
-                  <Placeholder.Paragraph
-                    className="ph"
-                    rows={1}
-                    rowHeight={17}
-                    rowMargin={20}
-                  />
-                  <br />
-                  <Placeholder.Paragraph
-                    className="ph"
-                    rows={1}
-                    rowHeight={17}
-                    rowMargin={20}
-                  />
-                  <br />
-                  <Placeholder.Paragraph
-                    className="ph"
-                    rows={1}
-                    rowHeight={17}
-                    rowMargin={20}
-                  />
-                  <br />
-                  <Placeholder.Paragraph
-                    className="ph"
-                    rows={1}
-                    rowHeight={17}
-                    rowMargin={20}
-                  />
-                  <br />
-                  <Placeholder.Paragraph
-                    className="ph"
-                    rows={1}
-                    rowHeight={17}
-                    rowMargin={20}
-                  />
-                  <br />
-                  <br />
-                  <Placeholder.Paragraph
-                    className="ph"
-                    graph={"square"}
-                    rows={2}
-                    rowHeight={17}
-                    rowMargin={10}
-                  />
-                </div>
+        <div className="timeline">
+          <div className="outer">
+            <div className="card">
+              <div className="info">
+                <TextLoader />
               </div>
             </div>
           </div>
-        </>
+        </div>
       );
     } else {
       if (Display) {
