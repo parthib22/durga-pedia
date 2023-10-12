@@ -622,16 +622,16 @@ function Cards() {
         visited.set(count[0].fid.toString(), "bkcd");
         var idvar = count[0].fid;
         for (const i in pandalData[idvar - 1][idvar]) {
-          if (!visited.has(i) && knt < 10) {
+          if (!visited.has(i) && knt < 6) {
             // console.log(i);
-            if (pandalData[idvar - 1][idvar][i] <= count[0].nopal && knt < 10) {
+            if (pandalData[idvar - 1][idvar][i] <= count[0].nopal && knt < 6) {
               let k = pandalData[idvar - 1][idvar][i];
               ar = [{ nid: i, ndist: k }];
               visited.set(ar[0].nid, "bkcd");
               knt++;
             }
           }
-          if (knt >= 10) {
+          if (knt >= 5) {
             break;
           }
         }
