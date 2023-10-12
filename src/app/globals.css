@@ -101,18 +101,18 @@ a:hover {
   box-shadow: inset 0 0 0 1000px rgba(0 0 0 / 0.1);
   background-size: cover;
   width: 100vw;
-  height: 100vh;
+  /* height: 100%; */
   /* height: calc(100vh + 215px); */
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .tPanel {
   width: 90vw;
-  height: 100vh;
-  margin-top: 10vh;
+  height: 100%;
+  margin-block: 5vh;
   /* z-index: 5; */
   font-family: inherit;
   display: flex;
@@ -156,9 +156,29 @@ a:hover {
 
 .tPanel > .tTop > span > img {
   margin-inline: 5px;
-  height: 25px;
+  height: 40px;
   background-color: rgb(255 255 255 / 0.8);
   border-radius: 50%;
+}
+
+.tPanel > .tTop > span > div {
+  font-size: 1.875rem;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+
+.tPanel > .tTop > span > div > p {
+  font-size: 12px;
+  font-weight: 400;
+  /* width: 100%; */
+  text-align: center;
+  padding-inline: 4px;
+  border: 1px dashed var(--tertiary-text);
+  border-radius: 7px;
+  color: var(--tertiary-text);
 }
 
 .tutorial svg {
@@ -199,7 +219,7 @@ a:hover {
 
 .tSteps span {
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: left;
   gap: 10px;
   margin-inline: 10px;

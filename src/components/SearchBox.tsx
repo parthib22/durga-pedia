@@ -741,7 +741,7 @@ const AutoComplete = () => {
   };
 
   const Suggestions = () => {
-    if (searchTerm.length >= 3) {
+    if (searchTerm.length >= 1) {
       return (
         <>
           {" "}
@@ -792,7 +792,7 @@ const AutoComplete = () => {
         <img className="logoimg" src="\icon-192x192.png" alt="ico" />
         <input
           // className={searchTerm.length > 0 ? "ipPadding" : ""}
-          placeholder="Search pandals in Kolkata"
+          placeholder="Search any pandal in Kolkata"
           spellCheck={false}
           type="text"
           value={searchTerm}
