@@ -27,7 +27,7 @@
 .mapPinBtn {
   /* scale: 0.75; */
   color: var(--accent-color);
-  margin-left: 5px;
+  /* margin-left: 5px; */
   filter: drop-shadow(0 0 1px rgb(255 255 255 / 0.2));
   cursor: pointer;
   display: inline;
@@ -39,7 +39,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: calc(93vh - (4rem + 110px));
+  height: calc(93vh - (4rem + 160px));
   width: 80vw;
   overflow-y: scroll;
   background-color: var(--primary-bg);

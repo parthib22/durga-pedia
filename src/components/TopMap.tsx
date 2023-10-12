@@ -319,13 +319,13 @@ const TopMap: React.FC<TopMapProps> = ({ name }) => {
       {kCheck[0].status && (
         <>
           <div className="mapLoader">
-            <RotatingLines
+            {/* <RotatingLines
               strokeColor="rgb(31 41 55)"
               strokeWidth="3"
               animationDuration="1"
               width="50"
               visible={true}
-            />
+            /> */}
           </div>
         </>
       )}

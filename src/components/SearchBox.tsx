@@ -741,23 +741,37 @@ const AutoComplete = () => {
   };
 
   const Suggestions = () => {
-    if (searchTerm.length >= 3) {
+    if (searchTerm.length >= 1) {
       return (
-        <ul className={`suggestions ${!enableCard && "cardClose"}`}>
-          {searchResults.map((item: any) => (
-            <li
-              key={item.id}
-              onClick={() => {
-                console.log(item.id);
-                setEnableCard(false);
-                setCardLoad(false);
-                startSearching(item.id);
-              }}
-            >
-              {item.pandal}
+        <>
+          {" "}
+          <ul className={`suggestions ${!enableCard && "cardClose"}`}>
+            {searchResults.map((item: any) => (
+              <li
+                key={item.id}
+                onClick={() => {
+                  console.log(item.id);
+                  setEnableCard(false);
+                  setCardLoad(false);
+                  startSearching(item.id);
+                }}
+              >
+                {item.pandal}
+              </li>
+            ))}
+          </ul>
+          <ul className={`defaultReport ${!enableCard && "cardClose"}`}>
+            <li>
+              <a
+                href="https://forms.gle/wMnzHZSYGg2gVoMH9"
+                target="_blank"
+                style={{ textDecoration: "underline" }}
+              >
+                Report a missing Durga Puja
+              </a>
             </li>
-          ))}
-        </ul>
+          </ul>
+        </>
       );
     }
   };
@@ -778,7 +792,7 @@ const AutoComplete = () => {
         <img className="logoimg" src="\icon-192x192.png" alt="ico" />
         <input
           // className={searchTerm.length > 0 ? "ipPadding" : ""}
-          placeholder="Search pandals in Kolkata"
+          placeholder="Search any pandal in Kolkata"
           spellCheck={false}
           type="text"
           value={searchTerm}

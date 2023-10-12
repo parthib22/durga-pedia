@@ -55,6 +55,25 @@ export default function FormBottom(props: { onSubmit: any }) {
     }
   }, [sCheck]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop =
+        window.pageYOffset || document.documentElement.scrollTop;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      const scrollHeight = documentHeight - windowHeight;
+
+      const percentage = (scrollTop / scrollHeight) * 100;
+      setScrollcheck(percentage);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   // console.log(sCheck);
   const { setContextData }: any = useContext(MyContext);
   // const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
@@ -65,7 +84,7 @@ export default function FormBottom(props: { onSubmit: any }) {
     lat: number | null;
     lng: number | null;
   }>({ lat: null, lng: null });
-  // const [scrollcheck, setScrollcheck] = useState(0);
+  const [scrollcheck, setScrollcheck] = useState(0);
   const [countpandal, setCountPandal] = useState(1);
   const [checked, setChecked] = useState(false);
   const [labelcheck, setLabelcheck] = useState("pandal");
@@ -228,8 +247,8 @@ export default function FormBottom(props: { onSubmit: any }) {
       <div className="form-container">
         <form onSubmit={getlatlng}>
           <div
-            // className={`expandIcon ${scrollcheck > 50 ? "expandIconRot" : ""}`}
-            className="expandIcon"
+            className={`expandIcon ${scrollcheck > 70 ? "expandIconRot" : ""}`}
+            // className="expandIcon"
           >
             {<ExpandLessIcon />}
           </div>

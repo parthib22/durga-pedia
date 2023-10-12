@@ -12,7 +12,7 @@ const Footer = () => {
           target="_blank"
           style={{ textDecoration: "underline" }}
         >
-          Report missing Durga Puja
+          Report a missing Durga Puja
         </a>
         <br />
         <a

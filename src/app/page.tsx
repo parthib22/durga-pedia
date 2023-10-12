@@ -35,24 +35,27 @@ export default function Home() {
       <>
         <div className="tutorial">
           <div className="tPanel">
-            <h3>
-              {/* <ErrorOutlineIcon /> */}
-              How to use?
+            <div className="tTop">
+              <span>
+                <img src="/icon-192x192.png" alt="ico" />
+                {/* <ErrorOutlineIcon /> */}
+                <div>
+                  DURGAPEDIA <p>How to use</p>
+                </div>
+              </span>
               <button aria-label="close" onClick={() => setCheck(!check)}>
                 <CloseIcon />
               </button>
-            </h3>
+            </div>
 
             <div className="tSteps">
               <span>
                 <h6>1. </h6>
-                <p>Type your starting location</p>
+                <p>Type your starting location below</p>
               </span>
               <span>
                 <h6>2. </h6>
-                <p>
-                  Choose the number of pujas, or find pujas in a certain range
-                </p>
+                <p>{`Set the "Number of Pandals" you want to visit`}</p>
               </span>
               <span>
                 <h6>3. </h6>
@@ -61,7 +64,33 @@ export default function Home() {
                   hopping plan`}
                 </p>
               </span>
-              <img src="/tutorial.gif" alt="pub" />
+            </div>
+            <video loop controls controlsList="nodownload" autoPlay>
+              <source src="/tutorial.webm" type="video/webm" />
+            </video>
+            <div className="tTop">
+              <span style={{ marginTop: 0 }}>
+                <div>
+                  <p style={{ marginLeft: 7, marginTop: -10 }}>You can also</p>
+                </div>
+              </span>
+            </div>
+            <div className="tSteps">
+              <span>
+                <h6>4. </h6>
+                <p>Press on any information to find them on Google Maps</p>
+              </span>
+              <span>
+                <h6>5. </h6>
+                <p>Search for any pandal on the searchbar at the top</p>
+              </span>
+              <span>
+                <h6>6. </h6>
+                <p>
+                  If you dont find a pandal, you can directly report or submit
+                  it
+                </p>
+              </span>
             </div>
           </div>
         </div>

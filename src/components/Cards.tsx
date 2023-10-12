@@ -666,6 +666,98 @@ function Cards() {
   //{
   // return <>{<CardsDisplay />}</>;
 
+  const TextLoader: React.FC = () => {
+    const text = [
+      { load: "Loading...", intv: 1000 },
+      { load: "Fetching information...", intv: 2500 },
+      { load: "Calculating a route...", intv: 6000 },
+      { load: "Plotting on the map...", intv: 15000 },
+      { load: "It is taking longer...", intv: 6000 },
+      { load: "We are working on it...", intv: 5000 },
+      { load: "Please wait...", intv: 10000 },
+    ];
+    const [index, setIndex] = useState(0);
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setIndex((prevIndex) =>
+          prevIndex === text.length - 1 ? 4 : prevIndex + 1
+        );
+      }, text[index].intv);
+
+      return () => clearInterval(interval);
+    }, [index]);
+    return (
+      <div>
+        <h5
+          style={{
+            color: "var(--tertiary-text)",
+            fontWeight: 400,
+            marginBottom: 7,
+          }}
+        >
+          {text[index].load}
+        </h5>
+        <Placeholder.Paragraph
+          className="ph"
+          rows={1}
+          rowHeight={30}
+          rowMargin={25}
+        />
+        <br />
+        <Placeholder.Paragraph
+          className="ph"
+          rows={3}
+          rowHeight={12}
+          rowMargin={10}
+        />
+        <br />
+        <Placeholder.Paragraph
+          className="ph"
+          rows={1}
+          rowHeight={17}
+          rowMargin={20}
+        />
+        <br />
+        <Placeholder.Paragraph
+          className="ph"
+          rows={1}
+          rowHeight={17}
+          rowMargin={20}
+        />
+        <br />
+        <Placeholder.Paragraph
+          className="ph"
+          rows={1}
+          rowHeight={17}
+          rowMargin={20}
+        />
+        <br />
+        <Placeholder.Paragraph
+          className="ph"
+          rows={1}
+          rowHeight={17}
+          rowMargin={20}
+        />
+        <br />
+        <Placeholder.Paragraph
+          className="ph"
+          rows={1}
+          rowHeight={17}
+          rowMargin={20}
+        />
+        <br />
+        <br />
+        <Placeholder.Paragraph
+          className="ph"
+          graph={"square"}
+          rows={2}
+          rowHeight={17}
+          rowMargin={10}
+        />
+      </div>
+    );
+  };
+
   const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   let index = 0;
 
@@ -673,78 +765,20 @@ function Cards() {
     return <div>loading</div>; // or any loading indicator
   } else {
     if (tCheck) {
+      // if (true) {
       if (scrollRef.current) {
         scrollRef.current.scrollIntoView({ behavior: "smooth" });
       }
-      // if (true) {
       return (
-        <>
-          <div className="timeline">
-            <div className="outer">
-              <div className="card">
-                <div className="info">
-                  <Placeholder.Paragraph
-                    className="ph"
-                    rows={1}
-                    rowHeight={30}
-                    rowMargin={25}
-                  />
-                  <br />
-                  <Placeholder.Paragraph
-                    className="ph"
-                    rows={3}
-                    rowHeight={12}
-                    rowMargin={10}
-                  />
-                  <br />
-                  <Placeholder.Paragraph
-                    className="ph"
-                    rows={1}
-                    rowHeight={17}
-                    rowMargin={20}
-                  />
-                  <br />
-                  <Placeholder.Paragraph
-                    className="ph"
-                    rows={1}
-                    rowHeight={17}
-                    rowMargin={20}
-                  />
-                  <br />
-                  <Placeholder.Paragraph
-                    className="ph"
-                    rows={1}
-                    rowHeight={17}
-                    rowMargin={20}
-                  />
-                  <br />
-                  <Placeholder.Paragraph
-                    className="ph"
-                    rows={1}
-                    rowHeight={17}
-                    rowMargin={20}
-                  />
-                  <br />
-                  <Placeholder.Paragraph
-                    className="ph"
-                    rows={1}
-                    rowHeight={17}
-                    rowMargin={20}
-                  />
-                  <br />
-                  <br />
-                  <Placeholder.Paragraph
-                    className="ph"
-                    graph={"square"}
-                    rows={2}
-                    rowHeight={17}
-                    rowMargin={10}
-                  />
-                </div>
+        <div className="timeline">
+          <div className="outer">
+            <div className="card">
+              <div className="info">
+                <TextLoader />
               </div>
             </div>
           </div>
-        </>
+        </div>
       );
     } else {
       if (Display) {
@@ -769,9 +803,9 @@ function Cards() {
                         {labels[index++]}
                       </button>
                       {t.name}
-                      <button className="mapPinBtn" aria-label="navigation">
+                      {/* <button className="mapPinBtn" aria-label="navigation">
                         <NavigationIcon />
-                      </button>
+                      </button> */}
                     </Link>
                     <p style={{ marginBottom: 5 }}>{t.adr}</p>
                     <p>
