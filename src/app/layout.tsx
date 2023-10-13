@@ -59,7 +59,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <MyProvider>{children}</MyProvider>
         <script
-          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2ompvWOrF8Azjm8viRlkvWl4Re7fGn2I&callback=initMap&libraries=places"
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbUTfwowrhJJ-lMPZlMlLM_v2Pui0QKDM&callback=initMap&libraries=places"
           defer
         ></script>
       </body>
