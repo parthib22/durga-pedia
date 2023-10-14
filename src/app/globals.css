@@ -150,15 +150,25 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: start;
+  flex-direction: column;
   gap: 7px;
+}
+
+.tPanel > .tTop h6 {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--secondary-text);
+  margin-block: 10px;
 }
 
 .tPanel > .tTop > span > img {
   position: absolute;
   right: 0;
+  top: 0;
   /* margin-inline: 5px; */
-  height: 40px;
-  background-color: rgb(255 255 255 / 0.8);
+  height: 50px;
+  background-color: rgb(255 255 255 / 0.3);
+  border: 1px solid white;
   border-radius: 50%;
 }
 
@@ -173,14 +183,15 @@ a:hover {
 }
 
 .tPanel > .tTop > span > div > p {
-  font-size: 12px;
-  font-weight: 400;
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 7px;
   /* width: 100%; */
   text-align: center;
   padding-inline: 6px;
-  border: 1px dashed var(--tertiary-text);
+  /* border: 1px dashed var(--tertiary-text); */
   border-radius: 7px;
-  color: var(--tertiary-text);
+  color: var(--primary-text);
 }
 
 /* .tutorial svg {
@@ -252,8 +263,8 @@ a:hover {
   width: calc(100% - 25px);
   height: 50vh;
   object-fit: contain;
-  background-color: var(--primary-bg);
-  margin-bottom: 15px;
+  background-color: black;
+  margin-bottom: 20px;
   margin-top: 10px;
   /* border-block: 1px solid rgba(0, 0, 0, 0.5); */
   box-shadow: 0 0 20px rgb(255 255 255 / 0.05);

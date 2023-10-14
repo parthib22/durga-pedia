@@ -47,7 +47,18 @@ export default function Home() {
             <span>
               {/* <ErrorOutlineIcon /> */}
               <div>
-                What is DurgaPedia? <p>How to use</p>
+                <span style={{ color: "var(--secondary-text)", fontSize: 20 }}>
+                  What is
+                </span>
+                DurgaPedia?
+                <h6>
+                  Durgapedia is a solution to optimise your pandal-hopping
+                  experience. You get precise locations of pandals and the
+                  shortest route to take between them. This lets you spend less
+                  time on the road and more time clicking pictures with durga
+                  protimas.
+                </h6>
+                <p>How to use?</p>
               </div>
               <img src="/icon-192x192.png" alt="ico" />
             </span>
@@ -56,7 +67,7 @@ export default function Home() {
           <div className="tSteps">
             <span>
               <h6>1. </h6>
-              <p>Type your location in the bottom </p>
+              <p>Scroll down and type your starting location</p>
             </span>
             <span>
               <h6>2. </h6>
@@ -76,7 +87,7 @@ export default function Home() {
           <div className="tTop">
             <span style={{ marginTop: 0 }}>
               <div>
-                <p style={{ marginLeft: 7, marginTop: -10 }}>You can also</p>
+                <p style={{ marginLeft: 7, marginTop: -10 }}>You can also:</p>
               </div>
             </span>
           </div>
