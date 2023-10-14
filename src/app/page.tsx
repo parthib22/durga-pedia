@@ -33,67 +33,79 @@ export default function Home() {
   if (check)
     return (
       <>
-        <div className="tutorial">
-          <div className="tPanel">
-            <div className="tTop">
-              <span>
-                <img src="/icon-192x192.png" alt="ico" />
-                {/* <ErrorOutlineIcon /> */}
-                <div>
-                  DURGAPEDIA <p>How to use</p>
-                </div>
-              </span>
-              <button aria-label="close" onClick={() => setCheck(!check)}>
-                <CloseIcon />
-              </button>
-            </div>
-
-            <div className="tSteps">
-              <span>
-                <h6>1. </h6>
-                <p>Type your starting location below</p>
-              </span>
-              <span>
-                <h6>2. </h6>
-                <p>{`Set the "Number of Pandals" you want to visit`}</p>
-              </span>
-              <span>
-                <h6>3. </h6>
-                <p>
-                  {`Press the "Route" / "Search" button to get your perfect pandal
-                  hopping plan`}
-                </p>
-              </span>
-            </div>
-            <video loop controls controlsList="nodownload" autoPlay>
-              <source src="/tutorial.webm" type="video/webm" />
-            </video>
-            <div className="tTop">
-              <span style={{ marginTop: 0 }}>
-                <div>
-                  <p style={{ marginLeft: 7, marginTop: -10 }}>You can also</p>
-                </div>
-              </span>
-            </div>
-            <div className="tSteps">
-              <span>
-                <h6>4. </h6>
-                <p>Press on any information to find them on Google Maps</p>
-              </span>
-              <span>
-                <h6>5. </h6>
-                <p>Search for any pandal on the searchbar at the top</p>
-              </span>
-              <span>
-                <h6>6. </h6>
-                <p>
-                  If you dont find a pandal, you can directly report or submit
-                  it
-                </p>
-              </span>
-            </div>
+        {/* <div className="tutorial"> */}
+        <div className="tPanel">
+          <button
+            className="proceedBtn"
+            aria-label="close"
+            onClick={() => setCheck(!check)}
+          >
+            {/* <CloseIcon /> */}
+            Click here to skip
+          </button>
+          <div className="tTop">
+            <span>
+              {/* <ErrorOutlineIcon /> */}
+              <div>
+                What is DurgaPedia? <p>How to use</p>
+              </div>
+              <img src="/icon-192x192.png" alt="ico" />
+            </span>
           </div>
+
+          <div className="tSteps">
+            <span>
+              <h6>1. </h6>
+              <p>Type your location in the bottom </p>
+            </span>
+            <span>
+              <h6>2. </h6>
+              <p>{`Set the "Number of Pandals" you want to visit`}</p>
+            </span>
+            <span>
+              <h6>3. </h6>
+              <p>
+                {`Press the button below to get your perfect pandal
+                  hopping plan`}
+              </p>
+            </span>
+          </div>
+          <video loop controls controlsList="nodownload" autoPlay>
+            <source src="/tutorial.webm" type="video/webm" />
+          </video>
+          <div className="tTop">
+            <span style={{ marginTop: 0 }}>
+              <div>
+                <p style={{ marginLeft: 7, marginTop: -10 }}>You can also</p>
+              </div>
+            </span>
+          </div>
+          <div className="tSteps">
+            <span>
+              <h6>4. </h6>
+              <p>Press on any information to find them on Google Maps</p>
+            </span>
+            <span>
+              <h6>5. </h6>
+              <p>Search for any pandal on the searchbar at the top</p>
+            </span>
+            <span>
+              <h6>6. </h6>
+              <p>
+                If you dont find a pandal, you can directly report or submit it
+              </p>
+            </span>
+          </div>
+          <button
+            className="proceedBtn"
+            aria-label="close"
+            onClick={() => setCheck(!check)}
+          >
+            {/* <CloseIcon /> */}
+            Click here to proceed
+          </button>
         </div>
+        {/* </div> */}
       </>
     );
   else
