@@ -2046,5 +2046,293 @@
         "map": "http://maps.google.com/maps?q=23.044769462502387, 88.83405878454411&ll=23.044769462502387, 88.83405878454411&z=17",
         "lat": 23.044769462502387,
         "lng": 88.83405878454411
+    },
+    {
+        "id": 257,
+        "pandal": "Sidheswari kali mandir and Mahajati Sangha",
+        "address": "MC6P+6R4, Madhusudan Banerjee Rd, Block 1, Mahajati Nagar, Birati, North Dumdum, West Bengal 700051",
+        "map": "http://maps.google.com/maps?q=22.66052,88.43701&ll=22.66052, 88.43701&z=17",
+        "lat": 22.66052,
+        "lng": 88.43701
+    },
+    {
+        "id": 258,
+        "pandal": "BETAJI COLONY LOWLAND",
+        "address": "J9MM+X7Q, Unnamed Road, Sadhan Pally, Baranagar, West Bengal 700090",
+        "map": "http://maps.google.com/maps?q=22.635004549916882, 88.3832276719573&ll=22.635004549916882, 88.3832276719573&z=17",
+        "lat": 22.635004549916882,
+        "lng": 88.3832276719573
+    },
+    {
+        "id": 259,
+        "pandal": "Bangali Sangha Club",
+        "address": "MC3J+FJG, Khalisha Kota, Birati, Kolkata, West Bengal 700051",
+        "map": "http://maps.google.com/maps?q=22.65371904402716, 88.43160366821155&ll=22.65371904402716,  88.43160366821155&z=17",
+        "lat": 22.65371904402716,
+        "lng": 88.43160366821155
+    },
+    {
+        "id": 260,
+        "pandal": "4 No. Khalishakota Pally Sarbojonin Durgotsov",
+        "address": "99, Khalisha Kota, Birati, Kolkata, West Bengal 700051",
+        "map": "http://maps.google.com/maps?q=22.655547104312987, 88.4322740228387&ll=22.655547104312987, 88.4322740228387&z=17",
+        "lat": 22.655547104312987,
+        "lng": 88.4322740228387
+    },
+    {
+        "id": 261,
+        "pandal": "17 Pally",
+        "address": "17, Umesh Mukherjee Rd, Satero Pally, Verner Lane, Belghoria, Kolkata, West Bengal 700056",
+        "map": "http://maps.google.com/maps?q=22.663244905861774, 88.38594989814368&ll=22.663244905861774,88.38594989814368&z=17",
+        "lat": 22.663244905861774,
+        "lng": 88.38594989814368
+    },
+    {
+        "id": 262,
+        "pandal": "Bani Mandir",
+        "address": "24, 5, Adarsha Pally, Belghoria, Kolkata, West Bengal 700056",
+        "map": "http://maps.google.com/maps?q=22.663404706526116, 88.37919648465353&ll=22.663404706526116,88.37919648465353&z=17",
+        "lat": 22.663404706526116,
+        "lng": 88.37919648465353
+    },
+    {
+        "id": 263,
+        "pandal": "Mahua Club",
+        "address": "M96H+674, Beehive Garden, Belghoria, Kolkata, West Bengal 700058",
+        "map": "http://maps.google.com/maps?q=22.66068901149281, 88.37822042883661&ll=22.66068901149281, 88.37822042883661&z=17",
+        "lat": 22.66068901149281,
+        "lng": 88.37822042883661
+    },
+    {
+        "id": 264,
+        "pandal": "Basanta Bihar",
+        "address": "Adarsha Pally, Belghoria",
+        "map": "http://maps.google.com/maps?q=22.66284419104616, 88.3798941362061&ll=22.66284419104616, 88.3798941362061&z=17",
+        "lat": 22.66284419104616,
+        "lng": 88.3798941362061
+    },
+    {
+        "id": 265,
+        "pandal": "Amrita Nagar Durga Mandop",
+        "address": "97/1, SH 1, Dunlop, Beehive Garden, Belghoria, Kolkata, West Bengal 700056",
+        "map": "http://maps.google.com/maps?q=22.657345105048798, 88.37741441349014&ll=22.657345105048798, 88.37741441349014&z=17",
+        "lat": 22.657345105048798,
+        "lng": 88.37741441349014
+    },
+    {
+        "id": 266,
+        "pandal": "ManasBag",
+        "address": "33, Anupama Rd, Manasbag, Belghoria, Kolkata, West Bengal 700056",
+        "map": "http://maps.google.com/maps?q=22.665486545189122, 88.37677208295204&ll=22.665486545189122, 88.37677208295204&z=17",
+        "lat": 22.665486545189122,
+        "lng": 88.37677208295204
+    },
+    {
+        "id": 267,
+        "pandal": "Vidyapati Kalidas Krittibas Durga Puja",
+        "address": "26/12, Bharti Rd, Area, Durgapur, West Bengal 713208",
+        "map": "http://maps.google.com/maps?q=23.56309742025934, 87.31717109257474&ll=23.56309742025934,  87.31717109257474&z=17",
+        "lat": 23.56309742025934,
+        "lng": 87.31717109257474
+    },
+    {
+        "id": 268,
+        "pandal": "Salkia Santi sangha",
+        "address": "368/1, Grand Trunk Rd, Babudanga, Salkia North, Salkia, Howrah, West Bengal 711106",
+        "map": "http://maps.google.com/maps?q=22.603463656710648, 88.34227844047045&ll=22.603463656710648, 88.34227844047045&z=17",
+        "lat": 22.603463656710648,
+        "lng": 88.34227844047045
+    },
+    {
+        "id": 269,
+        "pandal": "Milan Sangha",
+        "address": "Aru para, 119A, Arupara Rd, Ramrajatala, Howrah, West Bengal 711112",
+        "map": "http://maps.google.com/maps?q=22.59755505665799, 88.29915738465353&ll=22.59755505665799,  88.29915738465353&z=17",
+        "lat": 22.59755505665799,
+        "lng": 88.29915738465353
+    },
+    {
+        "id": 270,
+        "pandal": "Bally deshbandhu club",
+        "address": "Aru para, 119A, Arupara Rd, Ramrajatala, Howrah, West Bengal 711112",
+        "map": "http://maps.google.com/maps?q=22.59760458238311, 88.29911446930706&ll=22.59760458238311,88.29911446930706&z=17",
+        "lat": 22.59760458238311,
+        "lng": 88.29911446930706
+    },
+    {
+        "id": 271,
+        "pandal": "Shibaji Sangha",
+        "address": "H8Q4+FQ4, ??????????, Howrah, ??????, ??????? ?????? 711104",
+        "map": "http://maps.google.com/maps?q=22.588708234712303, 88.3069635&ll=22.588708234712303, 88.3069635&z=17",
+        "lat": 22.588708234712303,
+        "lng": 88.3069635
+    },
+    {
+        "id": 272,
+        "pandal": "The ghashbagan sporting club",
+        "address": "142, Salkia School Rd, Ghose Bagan, Mali Panchghara, Howrah, West Bengal 711106",
+        "map": "http://maps.google.com/maps?q=22.59219747752145, 88.34349748465353&ll=22.59219747752145, 88.34349748465353&z=17",
+        "lat": 22.59219747752145,
+        "lng": 88.34349748465353
+    },
+    {
+        "id": 273,
+        "pandal": "Alapani club",
+        "address": "1, Tripura Roy Ln, Babudanga, Golabari, Bandhaghat, Mali Panchghara, Howrah, West Bengal 711106",
+        "map": "http://maps.google.com/maps?q=22.59822889188524, 88.34634935767323&ll=22.59822889188524, 88.34634935767323&z=17",
+        "lat": 22.59822889188524,
+        "lng": 88.34634935767323
+    },
+    {
+        "id": 274,
+        "pandal": "Salkia tarundal club",
+        "address": "H8XW+C25, Babudanga, Golabari, Bandhaghat, Howrah, ??????, ??????? ?????? 711106",
+        "map": "http://maps.google.com/maps?q=22.59869509635937, 88.34511795767324&ll=22.59869509635937,  88.34511795767324&z=17",
+        "lat": 22.59869509635937,
+        "lng": 88.34511795767324
+    },
+    {
+        "id": 275,
+        "pandal": "Uttarpara C.A. Math durga pujo",
+        "address": "H8XW+C25, Babudanga, Golabari, Bandhaghat, Howrah, ??????, ??????? ?????? 711106",
+        "map": "http://maps.google.com/maps?q=22.598645571026587, 88.34505358465354&ll=22.598645571026587,88.34505358465354&z=17",
+        "lat": 22.598645571026587,
+        "lng": 88.34505358465354
+    },
+    {
+        "id": 276,
+        "pandal": "Balaka Math",
+        "address": "M9C2+PGC, A.L.Banerjee Street, Bhadrakali, Uttarpara, West Bengal 712232",
+        "map": "http://maps.google.com/maps?q=22.671907797921182, 88.35122025581691&ll=22.671907797921182,  88.35122025581691&z=17",
+        "lat": 22.671907797921182,
+        "lng": 88.35122025581691
+    },
+    {
+        "id": 277,
+        "pandal": "Swamiji sporting club",
+        "address": "H8M4+HQG, Pal Bari, Baruipara, Ichapur, Howrah, West Bengal 711104",
+        "map": "http://maps.google.com/maps?q=22.584098897927156, 88.30696892883661&ll=22.584098897927156, 88.30696892883661&z=17",
+        "lat": 22.584098897927156,
+        "lng": 88.30696892883661
+    },
+    {
+        "id": 278,
+        "pandal": "Chandronath Bidyarotno Lane",
+        "address": "71/A, Bhatpara, Jagatdal, Kolkata, Bhatpara, West Bengal 743123",
+        "map": "http://maps.google.com/maps?q=22.875263276574138, 88.40990657746497&ll=22.875263276574138, 88.40990657746497&z=17",
+        "lat": 22.875263276574138,
+        "lng": 88.40990657746497
+    },
+    {
+        "id": 279,
+        "pandal": "Bakultala Ghat",
+        "address": "15, Gourmohan Roy Ln, Bhatpara, Jagatdal, Kolkata, Bhatpara, West Bengal 743123",
+        "map": "http://maps.google.com/maps?q=22.874454863922995, 88.40792401424896&ll=22.874454863922995, 88.40792401424896&z=17",
+        "lat": 22.874454863922995,
+        "lng": 88.40792401424896
+    },
+    {
+        "id": 280,
+        "pandal": "Madhya Bhatpara",
+        "address": "15, Gourmohan Roy Ln, Bhatpara, Jagatdal, Kolkata, Bhatpara, West Bengal 743124",
+        "map": "http://maps.google.com/maps?q=22.87491983195995, 88.40646667819883&ll=22.87491983195995, 88.40646667819883&z=17",
+        "lat": 22.87491983195995,
+        "lng": 88.40646667819883
+    },
+    {
+        "id": 281,
+        "pandal": "Satadal Byam Samiti",
+        "address": "VCH6+X79, Bhatpara, Jagatdal, Kolkata, Bhatpara, West Bengal 743123",
+        "map": "http://maps.google.com/maps?q=22.879928168600358, 88.41072597728825&ll=22.879928168600358, 88.41072597728825&z=17",
+        "lat": 22.879928168600358,
+        "lng": 88.41072597728825
+    },
+    {
+        "id": 282,
+        "pandal": "Juger Pratik Club",
+        "address": "R9JR+RVQ, Banarjee Para, Shyamnagar, Kolkata, Bhatpara, West Bengal 743128",
+        "map": "http://maps.google.com/maps?q=22.832235790243278, 88.39229899787316&ll=22.832235790243278, 88.39229899787316&z=17",
+        "lat": 22.832235790243278,
+        "lng": 88.39229899787316
+    },
+    {
+        "id": 283,
+        "pandal": "Netaji Sangha",
+        "address": "Naihati,Kankinara, SH 1, Bhatpara, Jagatdal, Bhatpara, West Bengal 743123",
+        "map": "http://maps.google.com/maps?q=22.876601859230774, 88.40958598771228&ll=22.876601859230774, 88.40958598771228&z=17",
+        "lat": 22.876601859230774,
+        "lng": 88.40958598771228
+    },
+    {
+        "id": 284,
+        "pandal": "Amra Kojon Club",
+        "address": "Bhatpara, Jagatdal, Bhatpara, West Bengal 743123",
+        "map": "http://maps.google.com/maps?q=22.87312792805025, 88.40612054627073&ll=22.87312792805025, 88.40612054627073&z=17",
+        "lat": 22.87312792805025,
+        "lng": 88.40612054627073
+    },
+    {
+        "id": 285,
+        "pandal": "Nehru Smriti Sangha",
+        "address": "118/A, Bhatpara, Jagatdal, Kolkata, Bhatpara, West Bengal 743123",
+        "map": "http://maps.google.com/maps?q=22.87108475537007, 88.40790967151378&ll=22.87108475537007, 88.40790967151378&z=17",
+        "lat": 22.87108475537007,
+        "lng": 88.40790967151378
+    },
+    {
+        "id": 286,
+        "pandal": "Baburanipara  Barowari Samiti",
+        "address": "80, Baburani Para Rd, Bhatpara, Jagatdal, Bhatpara, West Bengal 743123",
+        "map": "http://maps.google.com/maps?q=22.87751176084552, 88.4110256182652&ll=22.87751176084552, 88.4110256182652&z=17",
+        "lat": 22.87751176084552,
+        "lng": 88.4110256182652
+    },
+    {
+        "id": 287,
+        "pandal": "Bindubasini United Club",
+        "address": "Bhatpara, Jagatdal, Bhatpara, West Bengal 743123",
+        "map": "http://maps.google.com/maps?q=22.872316170977076, 88.4090352403633&ll=22.872316170977076, 88.4090352403633&z=17",
+        "lat": 22.872316170977076,
+        "lng": 88.4090352403633
+    },
+    {
+        "id": 288,
+        "pandal": "Ghatakpara Baroyari Durgotsob Comitee",
+        "address": "Ghatakpara, Bhatpara, West Bengal 743123",
+        "map": "http://maps.google.com/maps?q=22.876172963543613, 88.41113156584211&ll=22.876172963543613, 88.41113156584211&z=17",
+        "lat": 22.876172963543613,
+        "lng": 88.41113156584211
+    },
+    {
+        "id": 289,
+        "pandal": "Babupara United Club",
+        "address": "VCF3+5QJ, Bhatpara, Jagatdal, Kolkata, Bhatpara, West Bengal 743126",
+        "map": "http://maps.google.com/maps?q=22.87310831284529, 88.40441275674014&ll=22.87310831284529, 88.40441275674014&z=17",
+        "lat": 22.87310831284529,
+        "lng": 88.40441275674014
+    },
+    {
+        "id": 290,
+        "pandal": "Thakurpara Durgapuja Comitee",
+        "address": "Thakurpara Rd, Bhatpara, Jagatdal, Kolkata, Bhatpara, West Bengal 743123",
+        "map": "http://maps.google.com/maps?q=22.874285152086095, 88.4084471960181&ll=22.874285152086095, 88.4084471960181&z=17",
+        "lat": 22.874285152086095,
+        "lng": 88.4084471960181
+    },
+    {
+        "id": 291,
+        "pandal": "Nayalanka Thakurpara Durgapuja Comitee",
+        "address": "VCF5+WPF, Bhatpara, Jagatdal, Kolkata, Bhatpara, West Bengal 743122",
+        "map": "http://maps.google.com/maps?q=22.874859433279934, 88.40930409341081&ll=22.874859433279934, 88.40930409341081&z=17",
+        "lat": 22.874859433279934,
+        "lng": 88.40930409341081
+    },
+    {
+        "id": 292,
+        "pandal": "Pall Para",
+        "address": "VCF5+WPF, Bhatpara, Jagatdal, Kolkata, Bhatpara, West Bengal 743123",
+        "map": "http://maps.google.com/maps?q=22.879216600311967, 88.40995220050536&ll=22.879216600311967, 88.40995220050536&z=17",
+        "lat": 22.879216600311967,
+        "lng": 88.40995220050536
     }
 ]
