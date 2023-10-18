@@ -17,7 +17,7 @@ import "rsuite/dist/rsuite.min.css";
 async function getPandalData() {
   try {
     const response = await fetch(
-      "https://cdn.jsdelivr.net/gh/THUNDERSAMA/durga-pedia@0df0b67b2e918b28082ea799ea9a242ab559021e/output.json"
+      "https://cdn.jsdelivr.net/gh/THUNDERSAMA/durga-pedia@76798f91ac960d9ea1ed9e6f8b708edc5c3504df/output.json"
     );
     const pandalData = await response.json();
     return pandalData;
@@ -373,7 +373,7 @@ const AutoComplete = () => {
   async function startSearching(i: any) {
     try {
       const pandalData = fetch(
-        "https://cdn.jsdelivr.net/gh/THUNDERSAMA/durga-pedia@373f6e9cc17329cefa8b3fdb420efcd6f2eee949/output.json"
+        "https://cdn.jsdelivr.net/gh/THUNDERSAMA/durga-pedia@76798f91ac960d9ea1ed9e6f8b708edc5c3504df/output.json"
       ).then((response) => response.json());
       var la, lo;
       for (const pandal of await pandalData) {

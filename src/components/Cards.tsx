@@ -453,7 +453,7 @@ function Cards() {
       // console.log(keysc);
       try {
         const pandalData = fetch(
-          "https://cdn.jsdelivr.net/gh/THUNDERSAMA/durga-pedia@373f6e9cc17329cefa8b3fdb420efcd6f2eee949/output.json"
+          "https://cdn.jsdelivr.net/gh/THUNDERSAMA/durga-pedia@76798f91ac960d9ea1ed9e6f8b708edc5c3504df/output.json"
         ).then((response) => response.json());
         var la, lo, adr;
         for (const pandal of await pandalData) {
@@ -572,7 +572,7 @@ function Cards() {
   }
   async function startRouting() {
     const pandalData = await fetch(
-      "https://cdn.jsdelivr.net/gh/THUNDERSAMA/durga-pedia@373f6e9cc17329cefa8b3fdb420efcd6f2eee949/outputk.json"
+      "https://cdn.jsdelivr.net/gh/THUNDERSAMA/durga-pedia@76798f91ac960d9ea1ed9e6f8b708edc5c3504df/outputk.json"
     ).then((response) => response.json());
 
     console.log("entered" + count);
@@ -609,7 +609,7 @@ function Cards() {
   }
   async function startRangeRouting() {
     const pandalData = await fetch(
-      "https://cdn.jsdelivr.net/gh/THUNDERSAMA/durga-pedia@373f6e9cc17329cefa8b3fdb420efcd6f2eee949/outputk.json"
+      "https://cdn.jsdelivr.net/gh/THUNDERSAMA/durga-pedia@76798f91ac960d9ea1ed9e6f8b708edc5c3504df/outputk.json"
     ).then((response) => response.json());
     try {
       if (count[0].fid != null) {
