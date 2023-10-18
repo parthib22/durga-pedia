@@ -110,9 +110,9 @@ a:hover {
 }
 
 .tPanel {
-  width: 90vw;
+  width: 100vw;
   height: 100%;
-  margin-block: 5vh;
+  /* margin-block: 5vh; */
   /* z-index: 5; */
   font-family: inherit;
   display: flex;
@@ -126,7 +126,7 @@ a:hover {
   /* box-shadow: 0 30px 50px rgb(0 0 0 / 0.5); */
   /* border: 2px solid rgba(0 0 0 / 0.2); */
   padding: 30px;
-  border-radius: 30px;
+  /* border-radius: 30px; */
 }
 
 .tPanel::-webkit-scrollbar {
@@ -150,38 +150,51 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: start;
+  flex-direction: column;
   gap: 7px;
-  margin-top: 40px;
+}
+
+.tPanel > .tTop h6 {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--secondary-text);
+  margin-block: 10px;
 }
 
 .tPanel > .tTop > span > img {
-  margin-inline: 5px;
-  height: 40px;
-  background-color: rgb(255 255 255 / 0.8);
+  position: absolute;
+  right: 0;
+  top: 0;
+  /* margin-inline: 5px; */
+  height: 50px;
+  background-color: rgb(255 255 255 / 0.3);
+  border: 1px solid white;
   border-radius: 50%;
 }
 
 .tPanel > .tTop > span > div {
-  font-size: 1.875rem;
-  font-weight: 600;
+  font-size: 1.7rem;
+  font-weight: 500;
   display: flex;
   flex-direction: column;
   align-items: start;
   justify-content: center;
+  text-align: left;
 }
 
 .tPanel > .tTop > span > div > p {
-  font-size: 12px;
-  font-weight: 400;
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 7px;
   /* width: 100%; */
   text-align: center;
-  padding-inline: 4px;
-  border: 1px dashed var(--tertiary-text);
+  padding-inline: 6px;
+  /* border: 1px dashed var(--tertiary-text); */
   border-radius: 7px;
-  color: var(--tertiary-text);
+  color: var(--primary-text);
 }
 
-.tutorial svg {
+/* .tutorial svg {
   position: absolute;
   top: 0px;
   right: -7px;
@@ -189,14 +202,24 @@ a:hover {
   fill: var(--accent-color);
   margin-inline: 10px;
   margin-bottom: 4px;
+} */
+
+.proceedBtn {
+  width: 99%;
+  font-size: 18px;
+  color: var(--primary-text);
+  padding: 10px 20px;
+  opacity: 0.8;
+  border: 2px dashed var(--accent-color);
+  border-radius: 7px;
 }
 
-.tPanel > button {
-  height: 3rem;
-  width: 3rem;
-  border-radius: 50%;
-  margin: none;
-  /* background-color: rgb(255 255 255 / 0.1); */
+.proceedBtn:first-child {
+  margin-bottom: 20px;
+}
+
+.proceedBtn:last-child {
+  margin-top: 20px;
 }
 
 .tPanel > button > svg {
@@ -222,12 +245,13 @@ a:hover {
   align-items: start;
   justify-content: left;
   gap: 10px;
-  margin-inline: 10px;
+  margin: 5px 10px;
 }
 
 .tSteps h6 {
   font-family: inherit;
   color: var(--accent-color);
+  font-weight: 500;
 }
 
 .tSteps p {
@@ -236,17 +260,18 @@ a:hover {
 }
 
 .tPanel video {
-  width: calc(100% - 20px);
+  width: calc(100% - 25px);
   height: 50vh;
   object-fit: contain;
-  background-color: var(--primary-bg);
-  margin-bottom: 15px;
+  background-color: black;
+  margin-bottom: 20px;
   margin-top: 10px;
   /* border-block: 1px solid rgba(0, 0, 0, 0.5); */
   box-shadow: 0 0 20px rgb(255 255 255 / 0.05);
   /* box-shadow: inset 0 0 10px rgb(0 0 0 / 0.5); */
-  border-inline: 7px solid black;
-  border-block: 10px solid black;
+  border: 2px solid var(--tertiary-text);
+  /* border-inline: 7px solid white;
+  border-block: 10px solid white; */
   border-radius: 15px;
   margin-left: auto;
   margin-right: auto;
